@@ -1,0 +1,602 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"538 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"537
+[u S20 `S21 1 ]
+[n S20 . . ]
+"549
+[v _PIR1bits `VS20 ~T0 @X0 0 e@12 ]
+"648
+[v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
+"641
+[v _TMR1L `Vuc ~T0 @X0 0 e@14 ]
+"29 serial.h
+[v _serial_tx_str `(v ~T0 @X0 0 ef1`*Cuc ]
+"460 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . RBIF INTF TMR0IF RBIE INTE TMR0IE PEIE GIE ]
+"470
+[s S19 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S19 . . T0IF . T0IE ]
+"459
+[u S17 `S18 1 `S19 1 ]
+[n S17 . . . ]
+"477
+[v _INTCONbits `VS17 ~T0 @X0 0 e@11 ]
+"284
+[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"283
+[u S9 `S10 1 ]
+[n S9 . . ]
+"295
+[v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
+"906
+[v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
+"655
+[v _T1CON `Vuc ~T0 @X0 0 e@16 ]
+[p mainexit ]
+"1325
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1375
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1437
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"1499
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"1561
+[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
+"18 lcd.h
+[v _lcd_init `(v ~T0 @X0 0 ef ]
+"15 matricial_key.h
+[v _keyboard_init `(v ~T0 @X0 0 ef ]
+"22 lcd.h
+[v _printlnLCD `(v ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"19
+[v _lcd_cmd `(v ~T0 @X0 0 ef1`uc ]
+"17 matricial_key.h
+[v _switch_press_scan `(uc ~T0 @X0 0 ef ]
+"20 lcd.h
+[v _lcd_dat `(v ~T0 @X0 0 ef1`uc ]
+"45 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\string.h
+[v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"25 lcd.h
+[v _printlnL2LCD `(v ~T0 @X0 0 ef1`*Cuc ]
+"23
+[v _delay_ms `(v ~T0 @X0 0 ef1`ui ]
+"27 serial.h
+[v _serial_init `(v ~T0 @X0 0 ef ]
+"3 adc.h
+[v _adc_init `(v ~T0 @X0 0 ef ]
+"5 pwm.h
+[v _PWM1_Init `(v ~T0 @X0 0 ef1`ui ]
+"6
+[v _PWM1_Start `(v ~T0 @X0 0 ef ]
+"78 main.c
+[v _isr_init `(v ~T0 @X0 0 ef ]
+"24 lcd.h
+[v _printlnL1LCD `(v ~T0 @X0 0 ef1`*Cuc ]
+"222 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"221
+[u S7 `S8 1 ]
+[n S7 . . ]
+"233
+[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
+"4 adc.h
+[v _readADC `(ui ~T0 @X0 0 ef1`uc ]
+"7 pwm.h
+[v _PWM1_Set_Duty `(v ~T0 @X0 0 ef1`uc ]
+"194 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"56 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\string.h
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+"39
+[v _strncpy `(*uc ~T0 @X0 0 ef3`*uc`*Cuc`ui ]
+"340 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"5 eeprom_ext.h
+[v _e2pext_w `(v ~T0 @X0 0 ef2`ui`uc ]
+"1624 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[s S64 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S64 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"1623
+[u S63 `S64 1 ]
+[n S63 . . ]
+"1635
+[v _PIE1bits `VS63 ~T0 @X0 0 e@140 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"218
+[; <" PORTB equ 06h ;# ">
+"280
+[; <" PORTC equ 07h ;# ">
+"342
+[; <" PORTD equ 08h ;# ">
+"404
+[; <" PORTE equ 09h ;# ">
+"436
+[; <" PCLATH equ 0Ah ;# ">
+"456
+[; <" INTCON equ 0Bh ;# ">
+"534
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; <" PIR2 equ 0Dh ;# ">
+"636
+[; <" TMR1 equ 0Eh ;# ">
+"643
+[; <" TMR1L equ 0Eh ;# ">
+"650
+[; <" TMR1H equ 0Fh ;# ">
+"657
+[; <" T1CON equ 010h ;# ">
+"732
+[; <" TMR2 equ 011h ;# ">
+"739
+[; <" T2CON equ 012h ;# ">
+"810
+[; <" SSPBUF equ 013h ;# ">
+"817
+[; <" SSPCON equ 014h ;# ">
+"887
+[; <" CCPR1 equ 015h ;# ">
+"894
+[; <" CCPR1L equ 015h ;# ">
+"901
+[; <" CCPR1H equ 016h ;# ">
+"908
+[; <" CCP1CON equ 017h ;# ">
+"966
+[; <" RCSTA equ 018h ;# ">
+"1061
+[; <" TXREG equ 019h ;# ">
+"1068
+[; <" RCREG equ 01Ah ;# ">
+"1075
+[; <" CCPR2 equ 01Bh ;# ">
+"1082
+[; <" CCPR2L equ 01Bh ;# ">
+"1089
+[; <" CCPR2H equ 01Ch ;# ">
+"1096
+[; <" CCP2CON equ 01Dh ;# ">
+"1154
+[; <" ADRESH equ 01Eh ;# ">
+"1161
+[; <" ADCON0 equ 01Fh ;# ">
+"1257
+[; <" OPTION_REG equ 081h ;# ">
+"1327
+[; <" TRISA equ 085h ;# ">
+"1377
+[; <" TRISB equ 086h ;# ">
+"1439
+[; <" TRISC equ 087h ;# ">
+"1501
+[; <" TRISD equ 088h ;# ">
+"1563
+[; <" TRISE equ 089h ;# ">
+"1620
+[; <" PIE1 equ 08Ch ;# ">
+"1682
+[; <" PIE2 equ 08Dh ;# ">
+"1722
+[; <" PCON equ 08Eh ;# ">
+"1756
+[; <" SSPCON2 equ 091h ;# ">
+"1818
+[; <" PR2 equ 092h ;# ">
+"1825
+[; <" SSPADD equ 093h ;# ">
+"1832
+[; <" SSPSTAT equ 094h ;# ">
+"2001
+[; <" TXSTA equ 098h ;# ">
+"2082
+[; <" SPBRG equ 099h ;# ">
+"2089
+[; <" CMCON equ 09Ch ;# ">
+"2159
+[; <" CVRCON equ 09Dh ;# ">
+"2224
+[; <" ADRESL equ 09Eh ;# ">
+"2231
+[; <" ADCON1 equ 09Fh ;# ">
+"2290
+[; <" EEDATA equ 010Ch ;# ">
+"2297
+[; <" EEADR equ 010Dh ;# ">
+"2304
+[; <" EEDATH equ 010Eh ;# ">
+"2311
+[; <" EEADRH equ 010Fh ;# ">
+"2318
+[; <" EECON1 equ 018Ch ;# ">
+"2363
+[; <" EECON2 equ 018Dh ;# ">
+"17 main.c
+[p x FOSC=HS ]
+"18
+[p x WDTE=OFF ]
+"19
+[p x PWRTE=OFF ]
+"20
+[p x BOREN=OFF ]
+"21
+[p x LVP=OFF ]
+"22
+[p x CPD=OFF ]
+"23
+[p x WRT=OFF ]
+"24
+[p x CP=OFF ]
+"30
+[v _nMSeconds `i ~T0 @X0 1 e ]
+[i _nMSeconds
+-> 0 `i
+]
+"31
+[v _nSeconds `i ~T0 @X0 1 e ]
+[i _nSeconds
+-> 0 `i
+]
+"32
+[v _str `uc ~T0 @X0 -> 16 `i e ]
+"33
+[v _run `uc ~T0 @X0 1 e ]
+[i _run
+-> -> 1 `i `uc
+]
+[v $root$_isr `(v ~T0 @X0 0 e ]
+[v F1069 `(v ~T0 @X0 1 tf ]
+"37
+[v _isr `IF1069 ~T0 @X0 1 e ]
+{
+[e :U _isr ]
+[f ]
+"39
+[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 97  ]
+{
+"40
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"41
+[e = _TMR1H -> -> 207 `i `uc ]
+"42
+[e = _TMR1L -> -> 44 `i `uc ]
+"43
+[e $ ! == _nMSeconds -> 10 `i 98  ]
+{
+"44
+[e ++ _nSeconds -> 1 `i ]
+"45
+[e = _nMSeconds -> 0 `i ]
+"46
+[e $ ! == _nSeconds -> 51 `i 99  ]
+{
+"47
+[e ( _serial_tx_str (1 -> &U _str `*Cuc ]
+"48
+[e = _nSeconds -> 0 `i ]
+"49
+}
+[e :U 99 ]
+"50
+}
+[e $U 100  ]
+"51
+[e :U 98 ]
+[e ++ _nMSeconds -> 1 `i ]
+[e :U 100 ]
+"52
+}
+[e :U 97 ]
+"55
+[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 101  ]
+{
+"56
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"57
+[e $ ! != -> _run `i -> -> -> 0 `i `uc `i 102  ]
+{
+"58
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+"59
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+"61
+[e = _CCP1CON -> -> 0 `i `uc ]
+"62
+[e = _T1CON -> -> 0 `i `uc ]
+"63
+[e = _nSeconds -> 0 `i ]
+"64
+[e = _nMSeconds -> 0 `i ]
+"65
+}
+[e $U 103  ]
+"66
+[e :U 102 ]
+{
+"67
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+"68
+[e = _CCP1CON -> -> 15 `i `uc ]
+"69
+[e = _T1CON -> -> 49 `i `uc ]
+"70
+}
+[e :U 103 ]
+"71
+[e = _run -> -> ! != -> _run `i -> -> -> 0 `i `uc `i `i `uc ]
+"72
+}
+[e :U 101 ]
+"76
+[e :UE 96 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"82
+[v _main `(i ~T0 @X0 1 ef ]
+"83
+{
+[e :U _main ]
+[f ]
+"85
+[e = _TRISA -> -> 195 `i `uc ]
+"86
+[e = _TRISB -> -> 255 `i `uc ]
+"87
+[e = _TRISC -> -> 128 `i `uc ]
+"88
+[e = _TRISD -> -> 0 `i `uc ]
+"89
+[e = _TRISE -> -> 0 `i `uc ]
+"91
+[e ( _lcd_init ..  ]
+"92
+[e ( _keyboard_init ..  ]
+"94
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[v _tempRB3 `i ~T0 @X0 1 a ]
+[e = _tempRB3 -> 0 `i ]
+"95
+[v _potP1 `ui ~T0 @X0 1 a ]
+[v _potP2 `ui ~T0 @X0 1 a ]
+[v _tempC `ui ~T0 @X0 1 a ]
+[v _duty `ui ~T0 @X0 1 a ]
+[v F1080 `uc ~T0 @X0 -> 5 `i s ]
+[i F1080
+:U ..
+-> 52 `c
+-> 50 `c
+-> 48 `c
+-> 57 `c
+-> 0 `c
+..
+]
+"96
+[v _pass `uc ~T0 @X0 -> 5 `i a ]
+[e = _pass F1080 ]
+"97
+[v _boolPass `uc ~T0 @X0 1 a ]
+[e = _boolPass -> -> 0 `i `uc ]
+[v _bool_emerg `uc ~T0 @X0 1 a ]
+[e = _bool_emerg -> -> 0 `i `uc ]
+"98
+[v _code `uc ~T0 @X0 -> 5 `i a ]
+[v _str_old `uc ~T0 @X0 -> 16 `i a ]
+[v _str1 `uc ~T0 @X0 -> 16 `i a ]
+"99
+[v _strConfig `uc ~T0 @X0 -> 13 `i a ]
+"100
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"103
+[e $U 105  ]
+[e :U 106 ]
+{
+"104
+[e ( _printlnLCD (2 , :s 1C :s 2C ]
+"105
+[e ( _lcd_cmd (1 -> + -> 192 `i -> 5 `i `uc ]
+"106
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 108  ]
+[e $U 109  ]
+[e :U 108 ]
+{
+"107
+[e = *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ( _switch_press_scan ..  ]
+"108
+[e ( _lcd_dat (1 *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ]
+"109
+}
+"106
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 108  ]
+[e :U 109 ]
+"109
+}
+"110
+[e $ ! ! != ( _strcmp (2 , -> &U _code `*Cuc -> &U _pass `*Cuc -> 0 `i 111  ]
+{
+"111
+[e = _boolPass -> -> 1 `i `uc ]
+"112
+[e ( _printlnL2LCD (1 :s 3C ]
+"113
+}
+[e $U 112  ]
+"114
+[e :U 111 ]
+[e ( _printlnL2LCD (1 :s 4C ]
+[e :U 112 ]
+"115
+[e ( _delay_ms (1 -> -> 100 `i `ui ]
+"116
+}
+[e :U 105 ]
+"103
+[e $ ! != -> _boolPass `i -> -> -> 0 `i `uc `i 106  ]
+[e :U 107 ]
+"119
+[e = _TRISA -> -> 7 `i `uc ]
+"120
+[e ( _serial_init ..  ]
+"121
+[e ( _adc_init ..  ]
+"122
+[e ( _PWM1_Init (1 -> -> 5000 `i `ui ]
+"123
+[e ( _PWM1_Start ..  ]
+"124
+[e ( _isr_init ..  ]
+"125
+[e = _run -> -> 1 `i `uc ]
+"126
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+"128
+[e ( _printlnL1LCD (1 :s 5C ]
+"130
+[e :U 114 ]
+{
+"131
+[e $ ! != -> _run `i -> -> -> 0 `i `uc `i 116  ]
+{
+"133
+[e $ ! && ! != -> . . _PORTBbits 0 3 `i -> -> -> 0 `i `Vuc `i ! != _tempRB3 -> 0 `i 117  ]
+[e = . . _PORTCbits 0 5 -> -> ! != -> . . _PORTCbits 0 5 `i -> -> -> 0 `i `Vuc `i `i `uc ]
+[e :U 117 ]
+"134
+[e = _tempRB3 -> ! != -> . . _PORTBbits 0 3 `i -> -> -> 0 `i `Vuc `i `i ]
+"137
+[e = _potP1 / * ( _readADC (1 -> -> 0 `i `uc -> -> 10 `i `ui -> -> 102 `i `ui ]
+"138
+[e = _duty / * _potP1 -> -> 255 `i `ui -> -> 100 `i `ui ]
+"139
+[e ( _PWM1_Set_Duty (1 -> _duty `uc ]
+"140
+[e = _potP2 / * ( _readADC (1 -> -> 1 `i `uc -> -> 10 `i `ui -> -> 102 `i `ui ]
+"141
+[e = _tempC / * ( _readADC (1 -> -> 2 `i `uc -> -> 100 `i `ui -> -> 202 `i `ui ]
+"144
+[e ( _sprintf (1 , , , (. , &U _str :s 6C _tempC _potP1 _potP2 ]
+"145
+[e $ ! != ( _strcmp (2 , -> &U _str `*Cuc -> &U _str_old `*Cuc -> 0 `i 118  ]
+{
+"146
+[e $ ! != ( _strlen (1 -> &U _str_old `*Cuc ( _strlen (1 -> &U _str `*Cuc 119  ]
+{
+"147
+[e ( _lcd_cmd (1 -> -> 1 `i `uc ]
+"148
+[e ( _printlnL1LCD (1 :s 7C ]
+"149
+}
+[e :U 119 ]
+"150
+[e ( _printlnL2LCD (1 -> &U _str `*Cuc ]
+"151
+[e ( _strncpy (3 , , &U _str_old -> &U _str `*Cuc -> -> 16 `i `ui ]
+"152
+}
+[e :U 118 ]
+"155
+[e $ ! && && < _potP2 -> -> 20 `i `ui > _potP1 -> -> 80 `i `ui > _tempC -> -> 40 `i `ui 120  ]
+{
+"156
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+"157
+[e = _PORTD -> -> 128 `i `uc ]
+"158
+[e $ ! ! != -> _bool_emerg `i -> -> -> 0 `i `uc `i 121  ]
+{
+"159
+[e ( _sprintf (1 , , , (. , &U _str1 :s 8C _tempC _potP1 _potP2 ]
+"160
+[e ( _serial_tx_str (1 -> &U _str1 `*Cuc ]
+"161
+[e ( _e2pext_w (2 , -> -> 1 `i `ui -> _potP1 `uc ]
+"162
+[e ( _e2pext_w (2 , -> -> 2 `i `ui -> _potP2 `uc ]
+"163
+[e ( _e2pext_w (2 , -> -> 3 `i `ui -> _tempC `uc ]
+"164
+}
+[e :U 121 ]
+"165
+[e = _bool_emerg -> -> 1 `i `uc ]
+"167
+}
+[e $U 122  ]
+"168
+[e :U 120 ]
+{
+"169
+[e = _bool_emerg -> -> 0 `i `uc ]
+"170
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"171
+}
+[e :U 122 ]
+"180
+[e ( _delay_ms (1 -> -> 20 `i `ui ]
+"181
+}
+[e :U 116 ]
+"182
+}
+[e :U 113 ]
+"130
+[e $U 114  ]
+[e :U 115 ]
+"183
+[e :UE 104 ]
+}
+"186
+[v _isr_init `(v ~T0 @X0 1 ef ]
+{
+[e :U _isr_init ]
+[f ]
+"193
+[e = _T1CON -> -> 49 `i `uc ]
+"194
+[e = _TMR1H -> -> 207 `i `uc ]
+"195
+[e = _TMR1L -> -> 44 `i `uc ]
+"196
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"197
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"198
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"199
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+"200
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"201
+[e :UE 123 ]
+}
+[p f _sprintf 8388736 ]
+[a 4C 80 97 115 115 119 111 114 100 32 105 110 99 111 114 114 101 99 116 0 ]
+[a 3C 80 97 115 115 119 111 114 100 32 99 111 114 114 101 99 116 0 ]
+[a 1C 87 101 97 116 104 101 114 32 83 116 97 116 105 111 110 0 ]
+[a 5C 84 101 109 112 47 70 97 110 47 72 117 109 0 ]
+[a 7C 84 101 109 112 47 70 97 110 47 72 117 109 0 ]
+[a 8C 101 37 100 47 37 100 47 37 100 0 ]
+[a 6C 37 100 47 37 100 47 37 100 0 ]
+[a 2C 80 97 115 115 58 0 ]

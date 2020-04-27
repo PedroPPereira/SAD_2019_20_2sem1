@@ -1,0 +1,253 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"8 i2c.h
+[v _i2c_start `(v ~T0 @X0 0 ef ]
+"10
+[v _i2c_wb `(v ~T0 @X0 0 ef1`uc ]
+"11
+[v _i2c_rb `(uc ~T0 @X0 0 ef1`uc ]
+"9
+[v _i2c_stop `(v ~T0 @X0 0 ef ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"218
+[; <" PORTB equ 06h ;# ">
+"280
+[; <" PORTC equ 07h ;# ">
+"342
+[; <" PORTD equ 08h ;# ">
+"404
+[; <" PORTE equ 09h ;# ">
+"436
+[; <" PCLATH equ 0Ah ;# ">
+"456
+[; <" INTCON equ 0Bh ;# ">
+"534
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; <" PIR2 equ 0Dh ;# ">
+"636
+[; <" TMR1 equ 0Eh ;# ">
+"643
+[; <" TMR1L equ 0Eh ;# ">
+"650
+[; <" TMR1H equ 0Fh ;# ">
+"657
+[; <" T1CON equ 010h ;# ">
+"732
+[; <" TMR2 equ 011h ;# ">
+"739
+[; <" T2CON equ 012h ;# ">
+"810
+[; <" SSPBUF equ 013h ;# ">
+"817
+[; <" SSPCON equ 014h ;# ">
+"887
+[; <" CCPR1 equ 015h ;# ">
+"894
+[; <" CCPR1L equ 015h ;# ">
+"901
+[; <" CCPR1H equ 016h ;# ">
+"908
+[; <" CCP1CON equ 017h ;# ">
+"966
+[; <" RCSTA equ 018h ;# ">
+"1061
+[; <" TXREG equ 019h ;# ">
+"1068
+[; <" RCREG equ 01Ah ;# ">
+"1075
+[; <" CCPR2 equ 01Bh ;# ">
+"1082
+[; <" CCPR2L equ 01Bh ;# ">
+"1089
+[; <" CCPR2H equ 01Ch ;# ">
+"1096
+[; <" CCP2CON equ 01Dh ;# ">
+"1154
+[; <" ADRESH equ 01Eh ;# ">
+"1161
+[; <" ADCON0 equ 01Fh ;# ">
+"1257
+[; <" OPTION_REG equ 081h ;# ">
+"1327
+[; <" TRISA equ 085h ;# ">
+"1377
+[; <" TRISB equ 086h ;# ">
+"1439
+[; <" TRISC equ 087h ;# ">
+"1501
+[; <" TRISD equ 088h ;# ">
+"1563
+[; <" TRISE equ 089h ;# ">
+"1620
+[; <" PIE1 equ 08Ch ;# ">
+"1682
+[; <" PIE2 equ 08Dh ;# ">
+"1722
+[; <" PCON equ 08Eh ;# ">
+"1756
+[; <" SSPCON2 equ 091h ;# ">
+"1818
+[; <" PR2 equ 092h ;# ">
+"1825
+[; <" SSPADD equ 093h ;# ">
+"1832
+[; <" SSPSTAT equ 094h ;# ">
+"2001
+[; <" TXSTA equ 098h ;# ">
+"2082
+[; <" SPBRG equ 099h ;# ">
+"2089
+[; <" CMCON equ 09Ch ;# ">
+"2159
+[; <" CVRCON equ 09Dh ;# ">
+"2224
+[; <" ADRESL equ 09Eh ;# ">
+"2231
+[; <" ADCON1 equ 09Fh ;# ">
+"2290
+[; <" EEDATA equ 010Ch ;# ">
+"2297
+[; <" EEADR equ 010Dh ;# ">
+"2304
+[; <" EEDATH equ 010Eh ;# ">
+"2311
+[; <" EEADRH equ 010Fh ;# ">
+"2318
+[; <" EECON1 equ 018Ch ;# ">
+"2363
+[; <" EECON2 equ 018Dh ;# ">
+"5 eeprom_ext.c
+[v _e2pext_r `(uc ~T0 @X0 1 ef1`ui ]
+{
+[e :U _e2pext_r ]
+[v _addr `ui ~T0 @X0 1 r1 ]
+[f ]
+"6
+[v _ret `uc ~T0 @X0 1 a ]
+"7
+[v _ah `uc ~T0 @X0 1 a ]
+"8
+[v _al `uc ~T0 @X0 1 a ]
+"10
+[e = _ah -> >> & _addr -> -> 256 `i `ui -> 8 `i `uc ]
+"11
+[e = _al -> & _addr -> -> 255 `i `ui `uc ]
+"13
+[e ( _i2c_start ..  ]
+"14
+[e $ ! != -> _ah `i -> -> -> 0 `i `uc `i 96  ]
+{
+"15
+[e ( _i2c_wb (1 -> -> 162 `i `uc ]
+"16
+}
+[e $U 97  ]
+"17
+[e :U 96 ]
+{
+"18
+[e ( _i2c_wb (1 -> -> 160 `i `uc ]
+"19
+}
+[e :U 97 ]
+"20
+[e ( _i2c_wb (1 _al ]
+"21
+[e ( _i2c_start ..  ]
+"22
+[e $ ! != -> _ah `i -> -> -> 0 `i `uc `i 98  ]
+{
+"23
+[e ( _i2c_wb (1 -> -> 163 `i `uc ]
+"24
+}
+[e $U 99  ]
+"25
+[e :U 98 ]
+{
+"26
+[e ( _i2c_wb (1 -> -> 161 `i `uc ]
+"27
+}
+[e :U 99 ]
+"28
+[e = _ret ( _i2c_rb (1 -> -> 1 `i `uc ]
+"29
+[e ( _i2c_stop ..  ]
+"30
+[e ) _ret ]
+[e $UE 95  ]
+"31
+[e :UE 95 ]
+}
+"34
+[v _e2pext_w `(v ~T0 @X0 1 ef2`ui`uc ]
+{
+[e :U _e2pext_w ]
+[v _addr `ui ~T0 @X0 1 r1 ]
+[v _val `uc ~T0 @X0 1 r2 ]
+[f ]
+"35
+[v _tmp `ui ~T0 @X0 1 a ]
+"36
+[v _ah `uc ~T0 @X0 1 a ]
+"37
+[v _al `uc ~T0 @X0 1 a ]
+"38
+[v _nt `uc ~T0 @X0 1 a ]
+"40
+[e = _tmp -> _val `ui ]
+"41
+[e = _ah -> >> & _addr -> -> 256 `i `ui -> 8 `i `uc ]
+"42
+[e = _al -> & _addr -> -> 255 `i `ui `uc ]
+"43
+[e = _nt -> -> 0 `i `uc ]
+"45
+[e :U 103 ]
+{
+"46
+[e ( _i2c_start ..  ]
+"47
+[e $ ! != -> _ah `i -> -> -> 0 `i `uc `i 104  ]
+{
+"48
+[e ( _i2c_wb (1 -> -> 162 `i `uc ]
+"49
+}
+[e $U 105  ]
+"50
+[e :U 104 ]
+{
+"51
+[e ( _i2c_wb (1 -> -> 160 `i `uc ]
+"52
+}
+[e :U 105 ]
+"53
+[e ( _i2c_wb (1 _al ]
+"54
+[e ( _i2c_wb (1 -> _tmp `uc ]
+"55
+[e ( _i2c_stop ..  ]
+"56
+[e ++ _nt -> -> 1 `i `uc ]
+"57
+}
+"58
+[e $ && != _tmp -> ( _e2pext_r (1 _addr `ui < -> _nt `i -> 10 `i 103  ]
+[e :U 102 ]
+"59
+[e :UE 100 ]
+}

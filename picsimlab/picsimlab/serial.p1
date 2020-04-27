@@ -1,0 +1,314 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"2080 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
+"2005
+[s S81 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S81 . TX9D TRMT BRGH . SYNC TXEN TX9 CSRC ]
+"2015
+[s S82 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S82 . TXD8 . nTX8 ]
+"2020
+[s S83 :6 `uc 1 :1 `uc 1 ]
+[n S83 . . TX8_9 ]
+"2004
+[u S80 `S81 1 `S82 1 `S83 1 ]
+[n S80 . . . . ]
+"2025
+[v _TXSTAbits `VS80 ~T0 @X0 0 e@152 ]
+"970
+[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S38 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"980
+[s S39 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S39 . RCD8 . RC9 ]
+"985
+[s S40 :6 `uc 1 :1 `uc 1 ]
+[n S40 . . nRC8 ]
+"989
+[s S41 :6 `uc 1 :1 `uc 1 ]
+[n S41 . . RC8_9 ]
+"969
+[u S37 `S38 1 `S39 1 `S40 1 `S41 1 ]
+[n S37 . . . . . ]
+"994
+[v _RCSTAbits `VS37 ~T0 @X0 0 e@24 ]
+"538
+[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"537
+[u S20 `S21 1 ]
+[n S20 . . ]
+"549
+[v _PIR1bits `VS20 ~T0 @X0 0 e@12 ]
+"1059
+[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
+"1066
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"218
+[; <" PORTB equ 06h ;# ">
+"280
+[; <" PORTC equ 07h ;# ">
+"342
+[; <" PORTD equ 08h ;# ">
+"404
+[; <" PORTE equ 09h ;# ">
+"436
+[; <" PCLATH equ 0Ah ;# ">
+"456
+[; <" INTCON equ 0Bh ;# ">
+"534
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; <" PIR2 equ 0Dh ;# ">
+"636
+[; <" TMR1 equ 0Eh ;# ">
+"643
+[; <" TMR1L equ 0Eh ;# ">
+"650
+[; <" TMR1H equ 0Fh ;# ">
+"657
+[; <" T1CON equ 010h ;# ">
+"732
+[; <" TMR2 equ 011h ;# ">
+"739
+[; <" T2CON equ 012h ;# ">
+"810
+[; <" SSPBUF equ 013h ;# ">
+"817
+[; <" SSPCON equ 014h ;# ">
+"887
+[; <" CCPR1 equ 015h ;# ">
+"894
+[; <" CCPR1L equ 015h ;# ">
+"901
+[; <" CCPR1H equ 016h ;# ">
+"908
+[; <" CCP1CON equ 017h ;# ">
+"966
+[; <" RCSTA equ 018h ;# ">
+"1061
+[; <" TXREG equ 019h ;# ">
+"1068
+[; <" RCREG equ 01Ah ;# ">
+"1075
+[; <" CCPR2 equ 01Bh ;# ">
+"1082
+[; <" CCPR2L equ 01Bh ;# ">
+"1089
+[; <" CCPR2H equ 01Ch ;# ">
+"1096
+[; <" CCP2CON equ 01Dh ;# ">
+"1154
+[; <" ADRESH equ 01Eh ;# ">
+"1161
+[; <" ADCON0 equ 01Fh ;# ">
+"1257
+[; <" OPTION_REG equ 081h ;# ">
+"1327
+[; <" TRISA equ 085h ;# ">
+"1377
+[; <" TRISB equ 086h ;# ">
+"1439
+[; <" TRISC equ 087h ;# ">
+"1501
+[; <" TRISD equ 088h ;# ">
+"1563
+[; <" TRISE equ 089h ;# ">
+"1620
+[; <" PIE1 equ 08Ch ;# ">
+"1682
+[; <" PIE2 equ 08Dh ;# ">
+"1722
+[; <" PCON equ 08Eh ;# ">
+"1756
+[; <" SSPCON2 equ 091h ;# ">
+"1818
+[; <" PR2 equ 092h ;# ">
+"1825
+[; <" SSPADD equ 093h ;# ">
+"1832
+[; <" SSPSTAT equ 094h ;# ">
+"2001
+[; <" TXSTA equ 098h ;# ">
+"2082
+[; <" SPBRG equ 099h ;# ">
+"2089
+[; <" CMCON equ 09Ch ;# ">
+"2159
+[; <" CVRCON equ 09Dh ;# ">
+"2224
+[; <" ADRESL equ 09Eh ;# ">
+"2231
+[; <" ADCON1 equ 09Fh ;# ">
+"2290
+[; <" EEDATA equ 010Ch ;# ">
+"2297
+[; <" EEADR equ 010Dh ;# ">
+"2304
+[; <" EEDATH equ 010Eh ;# ">
+"2311
+[; <" EEADRH equ 010Fh ;# ">
+"2318
+[; <" EECON1 equ 018Ch ;# ">
+"2363
+[; <" EECON2 equ 018Dh ;# ">
+"6 serial.c
+[v _serial_init `(v ~T0 @X0 1 ef ]
+"7
+{
+[e :U _serial_init ]
+[f ]
+"8
+[e = _SPBRG -> -> 103 `i `uc ]
+"12
+[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
+"13
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"14
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"15
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"16
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"17
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"18
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"21
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"22
+[e :UE 95 ]
+}
+"26
+[v _serial_tx `(v ~T0 @X0 1 ef1`uc ]
+"27
+{
+[e :U _serial_tx ]
+"26
+[v _val `uc ~T0 @X0 1 r1 ]
+"27
+[f ]
+"28
+[e = _TXREG _val ]
+"29
+[e $U 97  ]
+[e :U 98 ]
+[e :U 97 ]
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 98  ]
+[e :U 99 ]
+"30
+[e :UE 96 ]
+}
+"32
+[v _serial_tx_str `(v ~T0 @X0 1 ef1`*Cuc ]
+"33
+{
+[e :U _serial_tx_str ]
+"32
+[v _val `*Cuc ~T0 @X0 1 r1 ]
+"33
+[f ]
+"34
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"36
+[e $U 101  ]
+[e :U 102 ]
+"37
+{
+"38
+[e ( _serial_tx (1 *U + _val * -> _i `ux -> -> # *U _val `ui `ux ]
+"39
+[e ++ _i -> -> 1 `i `uc ]
+"40
+}
+[e :U 101 ]
+"36
+[e $ != -> *U + _val * -> _i `ux -> -> # *U _val `ui `ux `i -> -> -> 0 `i `Cuc `i 102  ]
+[e :U 103 ]
+"41
+[e ( _serial_tx (1 -> -> 10 `ui `uc ]
+"42
+[e ( _serial_tx (1 -> -> 13 `ui `uc ]
+"44
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"45
+[e :UE 100 ]
+}
+"47
+[v _serial_rx `(uc ~T0 @X0 1 ef ]
+"48
+{
+[e :U _serial_rx ]
+[f ]
+"49
+[e $ ! || != -> . . _RCSTAbits 0 2 `i -> -> -> 0 `i `Vuc `i != -> . . _RCSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 105  ]
+"50
+{
+"51
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"52
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"53
+}
+[e :U 105 ]
+"54
+[e $U 106  ]
+[e :U 107 ]
+[e :U 106 ]
+[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 107  ]
+[e :U 108 ]
+"55
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"56
+[e ) _RCREG ]
+[e $UE 104  ]
+"57
+[e :UE 104 ]
+}
+"59
+[v _readSerial `(*uc ~T0 @X0 1 ef2`*uc`i ]
+{
+[e :U _readSerial ]
+[v _s `*uc ~T0 @X0 1 r1 ]
+[v _len `i ~T0 @X0 1 r2 ]
+[f ]
+"60
+[v _p `*uc ~T0 @X0 1 a ]
+[e = _p _s ]
+"61
+[e :U 112 ]
+{
+"62
+[e = *U _s ( _serial_rx ..  ]
+"63
+[e ++ _s * -> -> 1 `i `x -> -> # *U _s `i `x ]
+"64
+[e -- _len -> 1 `i ]
+"65
+}
+"66
+[e $ > _len -> 1 `i 112  ]
+[e :U 111 ]
+"67
+[e = *U _s -> -> 0 `ui `uc ]
+"69
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"70
+[e ) _p ]
+[e $UE 109  ]
+"71
+[e :UE 109 ]
+}
