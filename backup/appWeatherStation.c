@@ -95,7 +95,7 @@ int main()
                     "---  History of risk situations  >>   *1*   ---\n"
                     "---  Risk situation config       >>   *2*   ---\n"
                     "---                                         ---\n"
-                    "-----------------------------------------------\n\n");
+                    "-----------------------------------------------\n");
     do {
       /*****************************WRITE TO SERIAL PORT************************/
       if( kbhit() ){ //check if key was pressed

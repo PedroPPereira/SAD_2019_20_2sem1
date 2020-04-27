@@ -10,6 +10,7 @@
 #include "matricial_key.h"
 #include "eeprom_ext.h"
 #include "i2c.h"
+
 //xc8 --chip=16f877a main.c adc.c display7s.c lcd.c serial.c matricial_key.c pwm.c i2c.c eeprom_ext.c
 
 //configuration
@@ -39,7 +40,7 @@ void interrupt isr(){
 		PIR1bits.TMR1IF = 0x00; //clean flag
 		TMR1H = 0xCF;
 		TMR1L = 0x2C;
-		if(nMSeconds==10){ //1second
+		if(nMSeconds==10){
 			nSeconds++;
 			nMSeconds=0;
 			if(nSeconds==51){ //should be 60
@@ -55,8 +56,8 @@ void interrupt isr(){
 		INTCONbits.INTF = 0; //clean flag
 		if(run){ //if it was ON, now is OFF
 			PORTCbits.RC5 = 0; //turn off temp
-			PORTCbits.RC1 = 1; //buzzer off
 			PORTCbits.RC2 = 0; //turn off fan
+			//buzzer todo
 			CCP1CON = 0x00;
 			T1CON = 0x00; //turn off timer
 			nSeconds = 0;
@@ -69,6 +70,7 @@ void interrupt isr(){
 		}
 		run = !run;
 	}
+
 
 
 }
@@ -85,7 +87,6 @@ int main(void)
 	TRISC=0x80; //10000000
 	TRISD=0x00; //00000000  display DATAx for LCD / LEDS as outputs
 	TRISE=0x00; //00000000  EN and RS from LCD
-	PORTCbits.RC1 = 1; //buzzer off
 	//init components
 	lcd_init();
 	keyboard_init();
@@ -95,6 +96,8 @@ int main(void)
 	char pass[5] = "4209";
 	bool boolPass = false, bool_emerg = false; //boolean for password verification
 	char code[5], str_old[16], str1[16];
+	char strConfig[13];
+	PORTCbits.RC1 = 1; //buzzer off
 
 	//password verification
 	while (!boolPass) {
@@ -104,7 +107,7 @@ int main(void)
 			code[i] = switch_press_scan();
 			lcd_dat(code[i]);
 		}
-		if(!strcmp(pass, pass)) {
+		if(!strcmp(code, pass)) {
 			 boolPass = true; //correct password
 			 printlnL2LCD("Password correct");
 		}
@@ -120,13 +123,14 @@ int main(void)
 	PWM1_Start();
 	isr_init();
 	run = true;
-	PORTCbits.RC5 = 1; //temperature on
+	PORTCbits.RC5 = 1; //temperature on/off
+
 	printlnL1LCD("Temp/Fan/Hum");
 
 	while (1){
 		if(run){
 			//change heater state
-			if(!PORTBbits.RB3 && !tempRB3) 	PORTCbits.RC5 = !PORTCbits.RC5;
+			if(!PORTBbits.RB3 && !tempRB3) PORTCbits.RC5 = !PORTCbits.RC5;
 			tempRB3 = !PORTBbits.RB3;
 
 			//change fan velocity
@@ -148,9 +152,9 @@ int main(void)
 			}
 
 			//check for dangerous situations
-			if(potP2<20 && potP1>80 && tempC>40) {
+			if(potP2<20 && potP1>80 && tempC>40){
 				PORTCbits.RC1 = 0; //buzzer on
-				PORTD = 0x80; //turn LED D7 on
+				PORTD = 0x80; //turn LED D7
 				if(!bool_emerg) {
 					sprintf(str1, "e%d/%d/%d", tempC, potP1, potP2);
 					serial_tx_str(str1); //send emergency msg to app
@@ -159,11 +163,19 @@ int main(void)
 					e2pext_w(3,tempC);
 				}
 				bool_emerg = true;
+				//sprintf(str1, "E %d/%d/%d", e2pext_r(1), e2pext_r(2), e2pext_r(3));
 			}
 			else {
 				bool_emerg = false;
 				PORTCbits.RC1 = 1;
 			}
+
+			//check for msg from the app (UART)
+			//if(PIR1bits.RCIF){
+				//strcpy(strConfig, ""); //clean array
+				//readSerial(strConfig, sizeof(strConfig));
+				//printlnL1LCD(strConfig);
+			//}
 
 			delay_ms(20);
 		}
@@ -185,4 +197,5 @@ void isr_init(){
 	PIE1bits.TMR1IE = 1;       //Enable timer interrupt bit in PIE1 register
 	INTCONbits.PEIE = 1;       //Enable the Peripheral Interrupt
 	INTCONbits.INTE = 1;       //Enable RB0 as external Interrupt pin
+	PIE1bits.RCIE = 1;         //for uart
 }
