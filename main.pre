@@ -1860,7 +1860,9 @@ void i2c_acktst(unsigned char val);
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 29
+
+
+
 int nMSeconds = 0;
 int nSeconds = 0;
 char str[16];
@@ -1876,10 +1878,10 @@ TMR1H = 0xCF;
 TMR1L = 0x2C;
 if(nMSeconds==10){
 nSeconds++;
-nMSeconds=0;
+nMSeconds = 0;
 if(nSeconds==51){
 serial_tx_str(str);
-nSeconds=0;
+nSeconds = 0;
 }
 }
 else nMSeconds++;
@@ -1890,8 +1892,8 @@ if(INTCONbits.INTF==1){
 INTCONbits.INTF = 0;
 if(run){
 PORTCbits.RC5 = 0;
+PORTCbits.RC1 = 1;
 PORTCbits.RC2 = 0;
-
 CCP1CON = 0x00;
 T1CON = 0x00;
 nSeconds = 0;
@@ -1904,9 +1906,6 @@ T1CON = 0x31;
 }
 run = !run;
 }
-
-
-
 }
 
 void isr_init();
@@ -1925,21 +1924,18 @@ TRISE=0x00;
 lcd_init();
 keyboard_init();
 
-int i = 0, tempRB3 = 0;
+int tempRB3 = 0;
 unsigned int potP1, potP2, tempC, duty;
-char pass[5] = "0862";
+char pass[5] = "0862", code[5], str_old[16];
 bool boolPass = 0, bool_emerg = 0;
-char code[5], str_old[16], str1[16];
 
 PORTCbits.RC1 = 1;
-lcd_cmd(0x01);
-printlnL1LCD("Weather Station");
 
 
 while (!boolPass) {
-printlnL2LCD("Pass:");
+printlnLCD("Weather Station", "Pass:");
 lcd_cmd(0xC0+5);
-for(int i=0; i<4; i++){
+for(int i=0; i<4; i++) {
 code[i] = switch_press_scan();
 lcd_dat(code[i]);
 }
@@ -1948,7 +1944,7 @@ boolPass = 1;
 printlnL2LCD("Password correct");
 }
 else printlnL2LCD("Password incorrect");
-delay_ms(100);
+delay_ms(50);
 }
 
 
@@ -1991,21 +1987,20 @@ if(potP2<20 && potP1>80 && tempC>40){
 PORTCbits.RC1 = 0;
 PORTD = 0x80;
 if(!bool_emerg) {
-sprintf(str1, "e%d/%d/%d", tempC, potP1, potP2);
-serial_tx_str(str1);
+sprintf(str, "e%d/%d/%d", tempC, potP1, potP2);
+serial_tx_str(str);
 e2pext_w(1,potP1);
 e2pext_w(2,potP2);
 e2pext_w(3,tempC);
 }
 bool_emerg = 1;
-
 }
 else {
 bool_emerg = 0;
 PORTCbits.RC1 = 1;
 }
 
-# 180
+# 172
 delay_ms(20);
 }
 }
@@ -2014,7 +2009,7 @@ delay_ms(20);
 
 void isr_init(){
 
-# 193
+# 185
 T1CON = 0x31;
 TMR1H = 0xCF;
 TMR1L = 0x2C;

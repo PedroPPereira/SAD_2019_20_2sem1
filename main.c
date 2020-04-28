@@ -23,40 +23,39 @@
 #pragma config CP = OFF // Flash Program Memory Code Protection bit
 
 //constans
-#define TIME_MS 200
 
 //global variables
-int nMSeconds = 0;
-int nSeconds = 0;
-char str[16];
-bool run = true;
+int nMSeconds = 0; //represents 100ms
+int nSeconds = 0; //represents 1sec
+char str[16]; //contains temperature, fan velocity and humidity
+bool run = true; //machine status
 
 
 //interrupts
 void interrupt isr(){
-	//send periodic msgs to the app
+	//send periodic (1min) msgs to the app
 	if(PIR1bits.TMR1IF){ //timer1 overflow flag
 		PIR1bits.TMR1IF = 0x00; //clean flag
-		TMR1H = 0xCF;
+		TMR1H = 0xCF; //reset default values
 		TMR1L = 0x2C;
-		if(nMSeconds==10){
+		if(nMSeconds==10){ //1 second
 			nSeconds++;
-			nMSeconds=0;
-			if(nSeconds==51){ //should be 60
+			nMSeconds = 0;
+			if(nSeconds==51){ //should be 60 //1 minute
 				serial_tx_str(str);
-				nSeconds=0;
+				nSeconds = 0;
 			}
 		}
 		else nMSeconds++;
 	}
 
-	//change machine state
-	if(INTCONbits.INTF==1){
+	//change machine status state
+	if(INTCONbits.INTF==1){ //RBO on flag
 		INTCONbits.INTF = 0; //clean flag
 		if(run){ //if it was ON, now is OFF
 			PORTCbits.RC5 = 0; //turn off temp
+			PORTCbits.RC1 = 1; //turn off buzzer
 			PORTCbits.RC2 = 0; //turn off fan
-			//PORTCbits.RC1 = 1; //buzzer off
 			CCP1CON = 0x00;
 			T1CON = 0x00; //turn off timer
 			nSeconds = 0;
@@ -69,9 +68,6 @@ void interrupt isr(){
 		}
 		run = !run;
 	}
-
-
-
 }
 //functions
 void isr_init();
@@ -88,23 +84,20 @@ int main(void)
 	TRISE=0x00; //00000000  EN and RS from LCD
 	//init components
 	lcd_init();
-	keyboard_init();
+	keyboard_init(); //matricial keyboard
 	//init variables
-	int i = 0, tempRB3 = 0;
-	unsigned int potP1, potP2, tempC, duty;
-	char pass[5] = "0862";
-	bool boolPass = false, bool_emerg = false; //boolean for password verification
-	char code[5], str_old[16], str1[16];
+	int tempRB3 = 0; //temp value for RB3 (debounce)
+	unsigned int potP1, potP2, tempC, duty; //for ADC values
+	char pass[5] = "0862", code[5], str_old[16];
+	bool boolPass = false, bool_emerg = false; //boolean for password verification and emergency situation
 	//char strConfig[13];
 	PORTCbits.RC1 = 1; //buzzer off
-	lcd_cmd(L_CLR);
-	printlnL1LCD("Weather Station");
 
 	//password verification
 	while (!boolPass) {
-		printlnL2LCD("Pass:");
+		printlnLCD("Weather Station", "Pass:");
 		lcd_cmd(L_L2+5);
-		for(int i=0; i<4; i++){
+		for(int i=0; i<4; i++) {
 			code[i] = switch_press_scan();
 			lcd_dat(code[i]);
 		}
@@ -113,34 +106,34 @@ int main(void)
 			 printlnL2LCD("Password correct");
 		}
 		else printlnL2LCD("Password incorrect");
-		delay_ms(100);
+		delay_ms(50);
 	}
 
 	//init components
 	TRISA=0x07; //for the temperature
-	serial_init();
+	serial_init(); //uart
 	adc_init();
 	PWM1_Init(5000);
 	PWM1_Start();
-	isr_init();
+	isr_init(); //interrupt
 	run = true;
-	PORTCbits.RC5 = 1; //temperature on/off
+	PORTCbits.RC5 = 1; //temperature on
 	printlnL1LCD("Temp/Fan/Hum");
 
 	while (1){
 		if(run){
 			//change heater state
 			if(!PORTBbits.RB3 && !tempRB3) PORTCbits.RC5 = !PORTCbits.RC5;
-			tempRB3 = !PORTBbits.RB3;
+			tempRB3 = !PORTBbits.RB3; //bebounce button RB3
 
-			//change fan velocity
-			potP1 = ((unsigned int)readADC(0)*10)/102;
+			//read from the ADC to get Temperature/Fan velocity/Humidity
+			potP1 = ((unsigned int)readADC(0)*10)/102; //get fan velocity
 			duty = (potP1*255)/100;
 			PWM1_Set_Duty(duty);
-			potP2 = ((unsigned int)readADC(1)*10)/102;
-			tempC = ((unsigned int)readADC(2)*100)/202;
+			potP2 = ((unsigned int)readADC(1)*10)/102; //get humidity
+			tempC = ((unsigned int)readADC(2)*100)/202; //get temperature
 
-			//print info to the LCD
+			//print info retrieved to the LCD
 			sprintf(str, "%d/%d/%d", tempC, potP1, potP2);
 			if(strcmp(str, str_old)){
 				if(strlen(str_old)!=strlen(str)){
@@ -154,20 +147,19 @@ int main(void)
 			//check for dangerous situations
 			if(potP2<20 && potP1>80 && tempC>40){
 				PORTCbits.RC1 = 0; //buzzer on
-				PORTD = 0x80; //turn LED D7
+				PORTD = 0x80; //turn on LED D7
 				if(!bool_emerg) {
-					sprintf(str1, "e%d/%d/%d", tempC, potP1, potP2);
-					serial_tx_str(str1); //send emergency msg to app
-					e2pext_w(1,potP1); //send info to eeprom
+					sprintf(str, "e%d/%d/%d", tempC, potP1, potP2);
+					serial_tx_str(str); //send emergency msg to app
+					e2pext_w(1,potP1); //store info to eeprom
 					e2pext_w(2,potP2);
 					e2pext_w(3,tempC);
 				}
 				bool_emerg = true;
-				//sprintf(str1, "E %d/%d/%d", e2pext_r(1), e2pext_r(2), e2pext_r(3));
 			}
 			else {
 				bool_emerg = false;
-				PORTCbits.RC1 = 1;
+				PORTCbits.RC1 = 1; //buzzer off
 			}
 
 			//check for msg from the app (UART)

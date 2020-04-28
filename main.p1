@@ -51,19 +51,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_init `(v ~T0 @X0 0 ef ]
 "15 matricial_key.h
 [v _keyboard_init `(v ~T0 @X0 0 ef ]
-"19 lcd.h
+"22 lcd.h
+[v _printlnLCD `(v ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"19
 [v _lcd_cmd `(v ~T0 @X0 0 ef1`uc ]
-"24
-[v _printlnL1LCD `(v ~T0 @X0 0 ef1`*Cuc ]
-"25
-[v _printlnL2LCD `(v ~T0 @X0 0 ef1`*Cuc ]
 "17 matricial_key.h
 [v _switch_press_scan `(uc ~T0 @X0 0 ef ]
 "20 lcd.h
 [v _lcd_dat `(v ~T0 @X0 0 ef1`uc ]
 "45 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\string.h
 [v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
-"23 lcd.h
+"25 lcd.h
+[v _printlnL2LCD `(v ~T0 @X0 0 ef1`*Cuc ]
+"23
 [v _delay_ms `(v ~T0 @X0 0 ef1`ui ]
 "27 serial.h
 [v _serial_init `(v ~T0 @X0 0 ef ]
@@ -73,8 +73,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PWM1_Init `(v ~T0 @X0 0 ef1`ui ]
 "6
 [v _PWM1_Start `(v ~T0 @X0 0 ef ]
-"77 main.c
+"73 main.c
 [v _isr_init `(v ~T0 @X0 0 ef ]
+"24 lcd.h
+[v _printlnL1LCD `(v ~T0 @X0 0 ef1`*Cuc ]
 "222 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -241,142 +243,142 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WRT=OFF ]
 "23
 [p x CP=OFF ]
-"29
+"28
 [v _nMSeconds `i ~T0 @X0 1 e ]
 [i _nMSeconds
 -> 0 `i
 ]
-"30
+"29
 [v _nSeconds `i ~T0 @X0 1 e ]
 [i _nSeconds
 -> 0 `i
 ]
-"31
+"30
 [v _str `uc ~T0 @X0 -> 16 `i e ]
-"32
+"31
 [v _run `uc ~T0 @X0 1 e ]
 [i _run
 -> -> 1 `i `uc
 ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
 [v F1069 `(v ~T0 @X0 1 tf ]
-"36
+"35
 [v _isr `IF1069 ~T0 @X0 1 e ]
 {
 [e :U _isr ]
 [f ]
-"38
+"37
 [e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 97  ]
 {
-"39
+"38
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"40
+"39
 [e = _TMR1H -> -> 207 `i `uc ]
-"41
+"40
 [e = _TMR1L -> -> 44 `i `uc ]
-"42
+"41
 [e $ ! == _nMSeconds -> 10 `i 98  ]
 {
-"43
+"42
 [e ++ _nSeconds -> 1 `i ]
-"44
+"43
 [e = _nMSeconds -> 0 `i ]
-"45
+"44
 [e $ ! == _nSeconds -> 51 `i 99  ]
 {
-"46
+"45
 [e ( _serial_tx_str (1 -> &U _str `*Cuc ]
-"47
+"46
 [e = _nSeconds -> 0 `i ]
-"48
+"47
 }
 [e :U 99 ]
-"49
+"48
 }
 [e $U 100  ]
-"50
+"49
 [e :U 98 ]
 [e ++ _nMSeconds -> 1 `i ]
 [e :U 100 ]
-"51
+"50
 }
 [e :U 97 ]
-"54
+"53
 [e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 101  ]
 {
-"55
+"54
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"56
+"55
 [e $ ! != -> _run `i -> -> -> 0 `i `uc `i 102  ]
 {
-"57
+"56
 [e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+"57
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
 "58
 [e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
-"60
+"59
 [e = _CCP1CON -> -> 0 `i `uc ]
-"61
+"60
 [e = _T1CON -> -> 0 `i `uc ]
-"62
+"61
 [e = _nSeconds -> 0 `i ]
-"63
+"62
 [e = _nMSeconds -> 0 `i ]
-"64
+"63
 }
 [e $U 103  ]
-"65
+"64
 [e :U 102 ]
 {
-"66
+"65
 [e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-"67
+"66
 [e = _CCP1CON -> -> 15 `i `uc ]
-"68
+"67
 [e = _T1CON -> -> 49 `i `uc ]
-"69
+"68
 }
 [e :U 103 ]
-"70
+"69
 [e = _run -> -> ! != -> _run `i -> -> -> 0 `i `uc `i `i `uc ]
-"71
+"70
 }
 [e :U 101 ]
-"75
+"71
 [e :UE 96 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"81
+"77
 [v _main `(i ~T0 @X0 1 ef ]
-"82
+"78
 {
 [e :U _main ]
 [f ]
-"84
+"80
 [e = _TRISA -> -> 195 `i `uc ]
-"85
+"81
 [e = _TRISB -> -> 255 `i `uc ]
-"86
+"82
 [e = _TRISC -> -> 128 `i `uc ]
-"87
+"83
 [e = _TRISD -> -> 0 `i `uc ]
-"88
+"84
 [e = _TRISE -> -> 0 `i `uc ]
-"90
+"86
 [e ( _lcd_init ..  ]
-"91
+"87
 [e ( _keyboard_init ..  ]
-"93
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
+"89
 [v _tempRB3 `i ~T0 @X0 1 a ]
 [e = _tempRB3 -> 0 `i ]
-"94
+"90
 [v _potP1 `ui ~T0 @X0 1 a ]
 [v _potP2 `ui ~T0 @X0 1 a ]
 [v _tempC `ui ~T0 @X0 1 a ]
 [v _duty `ui ~T0 @X0 1 a ]
-[v F1080 `uc ~T0 @X0 -> 5 `i s ]
-[i F1080
+[v F1079 `uc ~T0 @X0 -> 5 `i s ]
+[i F1079
 :U ..
 -> 48 `c
 -> 56 `c
@@ -385,33 +387,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"95
+"91
 [v _pass `uc ~T0 @X0 -> 5 `i a ]
-[e = _pass F1080 ]
-"96
+[e = _pass F1079 ]
+[v _code `uc ~T0 @X0 -> 5 `i a ]
+[v _str_old `uc ~T0 @X0 -> 16 `i a ]
+"92
 [v _boolPass `uc ~T0 @X0 1 a ]
 [e = _boolPass -> -> 0 `i `uc ]
 [v _bool_emerg `uc ~T0 @X0 1 a ]
 [e = _bool_emerg -> -> 0 `i `uc ]
-"97
-[v _code `uc ~T0 @X0 -> 5 `i a ]
-[v _str_old `uc ~T0 @X0 -> 16 `i a ]
-[v _str1 `uc ~T0 @X0 -> 16 `i a ]
-"99
+"94
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"100
-[e ( _lcd_cmd (1 -> -> 1 `i `uc ]
-"101
-[e ( _printlnL1LCD (1 :s 1C ]
-"104
+"97
 [e $U 105  ]
 [e :U 106 ]
 {
-"105
-[e ( _printlnL2LCD (1 :s 2C ]
-"106
+"98
+[e ( _printlnLCD (2 , :s 1C :s 2C ]
+"99
 [e ( _lcd_cmd (1 -> + -> 192 `i -> 5 `i `uc ]
-"107
+"100
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -419,174 +415,174 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 109  ]
 [e :U 108 ]
 {
-"108
+"101
 [e = *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ( _switch_press_scan ..  ]
-"109
+"102
 [e ( _lcd_dat (1 *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ]
-"110
+"103
 }
-"107
+"100
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 108  ]
 [e :U 109 ]
-"110
+"103
 }
-"111
+"104
 [e $ ! ! != ( _strcmp (2 , -> &U _code `*Cuc -> &U _pass `*Cuc -> 0 `i 111  ]
 {
-"112
+"105
 [e = _boolPass -> -> 1 `i `uc ]
-"113
+"106
 [e ( _printlnL2LCD (1 :s 3C ]
-"114
+"107
 }
 [e $U 112  ]
-"115
+"108
 [e :U 111 ]
 [e ( _printlnL2LCD (1 :s 4C ]
 [e :U 112 ]
-"116
-[e ( _delay_ms (1 -> -> 100 `i `ui ]
-"117
+"109
+[e ( _delay_ms (1 -> -> 50 `i `ui ]
+"110
 }
 [e :U 105 ]
-"104
+"97
 [e $ ! != -> _boolPass `i -> -> -> 0 `i `uc `i 106  ]
 [e :U 107 ]
-"120
+"113
 [e = _TRISA -> -> 7 `i `uc ]
-"121
+"114
 [e ( _serial_init ..  ]
-"122
+"115
 [e ( _adc_init ..  ]
-"123
+"116
 [e ( _PWM1_Init (1 -> -> 5000 `i `ui ]
-"124
+"117
 [e ( _PWM1_Start ..  ]
-"125
+"118
 [e ( _isr_init ..  ]
-"126
+"119
 [e = _run -> -> 1 `i `uc ]
-"127
+"120
 [e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-"128
+"121
 [e ( _printlnL1LCD (1 :s 5C ]
-"130
+"123
 [e :U 114 ]
 {
-"131
+"124
 [e $ ! != -> _run `i -> -> -> 0 `i `uc `i 116  ]
 {
-"133
+"126
 [e $ ! && ! != -> . . _PORTBbits 0 3 `i -> -> -> 0 `i `Vuc `i ! != _tempRB3 -> 0 `i 117  ]
 [e = . . _PORTCbits 0 5 -> -> ! != -> . . _PORTCbits 0 5 `i -> -> -> 0 `i `Vuc `i `i `uc ]
 [e :U 117 ]
-"134
+"127
 [e = _tempRB3 -> ! != -> . . _PORTBbits 0 3 `i -> -> -> 0 `i `Vuc `i `i ]
-"137
+"130
 [e = _potP1 / * ( _readADC (1 -> -> 0 `i `uc -> -> 10 `i `ui -> -> 102 `i `ui ]
-"138
+"131
 [e = _duty / * _potP1 -> -> 255 `i `ui -> -> 100 `i `ui ]
-"139
+"132
 [e ( _PWM1_Set_Duty (1 -> _duty `uc ]
-"140
+"133
 [e = _potP2 / * ( _readADC (1 -> -> 1 `i `uc -> -> 10 `i `ui -> -> 102 `i `ui ]
-"141
+"134
 [e = _tempC / * ( _readADC (1 -> -> 2 `i `uc -> -> 100 `i `ui -> -> 202 `i `ui ]
-"144
+"137
 [e ( _sprintf (1 , , , (. , &U _str :s 6C _tempC _potP1 _potP2 ]
-"145
+"138
 [e $ ! != ( _strcmp (2 , -> &U _str `*Cuc -> &U _str_old `*Cuc -> 0 `i 118  ]
 {
-"146
+"139
 [e $ ! != ( _strlen (1 -> &U _str_old `*Cuc ( _strlen (1 -> &U _str `*Cuc 119  ]
 {
-"147
+"140
 [e ( _lcd_cmd (1 -> -> 1 `i `uc ]
-"148
+"141
 [e ( _printlnL1LCD (1 :s 7C ]
-"149
+"142
 }
 [e :U 119 ]
-"150
+"143
 [e ( _printlnL2LCD (1 -> &U _str `*Cuc ]
-"151
+"144
 [e ( _strncpy (3 , , &U _str_old -> &U _str `*Cuc -> -> 16 `i `ui ]
-"152
+"145
 }
 [e :U 118 ]
-"155
+"148
 [e $ ! && && < _potP2 -> -> 20 `i `ui > _potP1 -> -> 80 `i `ui > _tempC -> -> 40 `i `ui 120  ]
 {
-"156
+"149
 [e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
-"157
+"150
 [e = _PORTD -> -> 128 `i `uc ]
-"158
+"151
 [e $ ! ! != -> _bool_emerg `i -> -> -> 0 `i `uc `i 121  ]
 {
-"159
-[e ( _sprintf (1 , , , (. , &U _str1 :s 8C _tempC _potP1 _potP2 ]
-"160
-[e ( _serial_tx_str (1 -> &U _str1 `*Cuc ]
-"161
+"152
+[e ( _sprintf (1 , , , (. , &U _str :s 8C _tempC _potP1 _potP2 ]
+"153
+[e ( _serial_tx_str (1 -> &U _str `*Cuc ]
+"154
 [e ( _e2pext_w (2 , -> -> 1 `i `ui -> _potP1 `uc ]
-"162
+"155
 [e ( _e2pext_w (2 , -> -> 2 `i `ui -> _potP2 `uc ]
-"163
+"156
 [e ( _e2pext_w (2 , -> -> 3 `i `ui -> _tempC `uc ]
-"164
+"157
 }
 [e :U 121 ]
-"165
+"158
 [e = _bool_emerg -> -> 1 `i `uc ]
-"167
+"159
 }
 [e $U 122  ]
-"168
+"160
 [e :U 120 ]
 {
-"169
+"161
 [e = _bool_emerg -> -> 0 `i `uc ]
-"170
+"162
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"171
+"163
 }
 [e :U 122 ]
-"180
+"172
 [e ( _delay_ms (1 -> -> 20 `i `ui ]
-"181
+"173
 }
 [e :U 116 ]
-"182
+"174
 }
 [e :U 113 ]
-"130
+"123
 [e $U 114  ]
 [e :U 115 ]
-"183
+"175
 [e :UE 104 ]
 }
-"186
+"178
 [v _isr_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _isr_init ]
 [f ]
-"193
+"185
 [e = _T1CON -> -> 49 `i `uc ]
-"194
+"186
 [e = _TMR1H -> -> 207 `i `uc ]
-"195
+"187
 [e = _TMR1L -> -> 44 `i `uc ]
-"196
+"188
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"197
+"189
 [e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-"198
+"190
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"199
+"191
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"201
+"193
 [e :UE 123 ]
 }
 [p f _sprintf 8388736 ]

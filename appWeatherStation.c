@@ -4,41 +4,21 @@
 #include <conio.h>
 #include <string.h>
 #include <time.h>
-// gcc -o serial.exe appWeatherStation.c
-// start serial.exe
+//gcc -o serial.exe appWeatherStation.c
+//start serial.exe
 
 
-/*int* convertStringToASCII( char* ch ){
-  int size = strlen(ch);
-  int ascii[size];
-
-  for(int i=0; i < size; i++){
-    ascii[i] = (int)ch[i];
-  }
-  return ascii;
-}*/
-int confirmParam( char *str ){
-  int numNum=0, numSlash=0, i=0;
-  while(*str){ //str must only contain numbers or '/'
-    if ( (int)str[i]>=48 && (int)str[i]<=57 ) numNum++;
-    else if ((int)str[i]==47) numSlash++;
-    else if ((int)str[i]==0) break;
-    else return 0;
-    i++;
-  }
-  if (numSlash!=2 || numNum>9) return 0;
-  return 1;
-}
-
+//functions
+int confirmParam( char *str );
 
 
 int main()
 {
+    //serial port configuration
     // Declare variables and structures
     HANDLE hSerial;
     DCB dcbSerialParams = {0};
     COMMTIMEOUTS timeouts = {0};
-
     // Open the highest available serial port number
     fprintf(stderr, "Opening serial port...  ");
     hSerial = CreateFile(
@@ -77,7 +57,7 @@ int main()
         return 1;
     }
 
-
+    //init variables
     //write to a serial port
     bool boolWritePort = false; //verification to write
     DWORD bytes_written;
@@ -88,18 +68,32 @@ int main()
     DWORD read, written;
     int i = 0;
     time_t t; //current time
+    fprintf(stderr, "---------------------------------------------------\n"
+                    "---           SAD WEATHER STATION               ---\n"
+                    "---------------------------------------------------\n"
+                    "---  History of risk situations  >>  press 1    ---\n"
+                    "---  Risk situation config       >>  press 2    ---\n"
+                    "---  Get updated info            >>  every 1min ---\n"
+                    "---  Get info on the emergency   >>  emergency  ---\n"
+                    "---------------------------------------------------\n\n");
 
-    fprintf(stderr, "-----------------------------------------------\n"
-                    "---           SAD WEATHER STATION           ---\n"
-                    "-----------------------------------------------\n"
-                    "---  History of risk situations  >>   *1*   ---\n"
-                    "---  Risk situation config       >>   *2*   ---\n"
-                    "---                                         ---\n"
-                    "-----------------------------------------------\n\n");
     do {
+      /*****************************READ SERIAL PORT****************************/
+      // check for data on port and display it on screen.
+      ReadFile(hSerial, buffer, sizeof(buffer), &read, NULL);
+      if ( read ){
+        WriteFile(hSerial, buffer, read, &written, NULL);
+        str[i++] = *buffer;
+        if(*buffer=='\r') {
+          time(&t);
+          fprintf(stderr, "Recieved at %s \t>>data: %s\n", ctime(&t), str);
+          i = 0;
+        }
+      }
+
       /*****************************WRITE TO SERIAL PORT************************/
-      /*if( kbhit() ){ //check if key was pressed
-        ch = getch();
+      if( kbhit() ){ //check if key was pressed
+        ch = getch(); //get key pressed value
 
         if(ch == '1') { //History of risk situations
           strcpy(strConfig, "history");
@@ -112,9 +106,8 @@ int main()
                           "\t>> param: ");
           strcpy(strConfig, ""); //clean array
           count = 0; //fscanf get parameters
-          while ( (c = getchar())!='\n' ) {
+          while ( (c = getchar())!='\n' )
             if(count < sizeof(strConfig)) strConfig[count++] = c;
-          }
           strConfig[count] = '\0';
           if(confirmParam(strConfig)) boolWritePort = true; //confirm param is well written
           else fprintf(stderr, "\t>> Invalid parameters\n");
@@ -129,19 +122,6 @@ int main()
           }
           fprintf(stderr, "\t>> %d bytes written\n", bytes_written);
           boolWritePort = false;
-        }
-      }*/
-
-      /*****************************READ SERIAL PORT****************************/
-      // check for data on port and display it on screen.
-      ReadFile(hSerial, buffer, sizeof(buffer), &read, NULL);
-      if ( read ){
-        WriteFile(hSerial, buffer, read, &written, NULL);
-        str[i++] = *buffer;
-        if(*buffer=='\r') {
-          time(&t);
-          fprintf(stderr, "Recieved at %s \t>>%s\n", ctime(&t), str);
-          i = 0;
         }
       }
 
@@ -160,3 +140,28 @@ int main()
     // exit normally
     return 0;
 }
+
+
+
+
+int confirmParam( char *str ){
+  int numNum=0, numSlash=0, i=0;
+  while(*str){ //input must only contain numbers or '/'
+    if ( (int)str[i]>=48 && (int)str[i]<=57 ) numNum++;
+    else if ((int)str[i]==47) numSlash++;
+    else if ((int)str[i]==0) break;
+    else return 0;
+    i++;
+  }
+  if (numSlash!=2 || numNum>9) return 0;
+  return 1;
+}
+/*int* convertStringToASCII( char* ch ){
+  int size = strlen(ch);
+  int ascii[size];
+
+  for(int i=0; i < size; i++){
+    ascii[i] = (int)ch[i];
+  }
+  return ascii;
+}*/
