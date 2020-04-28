@@ -10,7 +10,6 @@
 #include "matricial_key.h"
 #include "eeprom_ext.h"
 #include "i2c.h"
-
 //xc8 --chip=16f877a main.c adc.c display7s.c lcd.c serial.c matricial_key.c pwm.c i2c.c eeprom_ext.c
 
 //configuration
@@ -57,7 +56,7 @@ void interrupt isr(){
 		if(run){ //if it was ON, now is OFF
 			PORTCbits.RC5 = 0; //turn off temp
 			PORTCbits.RC2 = 0; //turn off fan
-			//buzzer todo
+			//PORTCbits.RC1 = 1; //buzzer off
 			CCP1CON = 0x00;
 			T1CON = 0x00; //turn off timer
 			nSeconds = 0;
@@ -93,15 +92,17 @@ int main(void)
 	//init variables
 	int i = 0, tempRB3 = 0;
 	unsigned int potP1, potP2, tempC, duty;
-	char pass[5] = "4209";
+	char pass[5] = "0862";
 	bool boolPass = false, bool_emerg = false; //boolean for password verification
 	char code[5], str_old[16], str1[16];
-	char strConfig[13];
+	//char strConfig[13];
 	PORTCbits.RC1 = 1; //buzzer off
+	lcd_cmd(L_CLR);
+	printlnL1LCD("Weather Station");
 
 	//password verification
 	while (!boolPass) {
-		printlnLCD("Weather Station","Pass:");
+		printlnL2LCD("Pass:");
 		lcd_cmd(L_L2+5);
 		for(int i=0; i<4; i++){
 			code[i] = switch_press_scan();
@@ -124,7 +125,6 @@ int main(void)
 	isr_init();
 	run = true;
 	PORTCbits.RC5 = 1; //temperature on/off
-
 	printlnL1LCD("Temp/Fan/Hum");
 
 	while (1){
@@ -171,11 +171,11 @@ int main(void)
 			}
 
 			//check for msg from the app (UART)
-			//if(PIR1bits.RCIF){
-				//strcpy(strConfig, ""); //clean array
-				//readSerial(strConfig, sizeof(strConfig));
-				//printlnL1LCD(strConfig);
-			//}
+			/*if(PIR1bits.RCIF){
+				strcpy(strConfig, ""); //clean array
+				readSerial(strConfig, sizeof(strConfig));
+				printlnL1LCD(strConfig);
+			}*/
 
 			delay_ms(20);
 		}
@@ -197,5 +197,5 @@ void isr_init(){
 	PIE1bits.TMR1IE = 1;       //Enable timer interrupt bit in PIE1 register
 	INTCONbits.PEIE = 1;       //Enable the Peripheral Interrupt
 	INTCONbits.INTE = 1;       //Enable RB0 as external Interrupt pin
-	PIE1bits.RCIE = 1;         //for uart
+	//PIE1bits.RCIE = 1;         //for uart
 }

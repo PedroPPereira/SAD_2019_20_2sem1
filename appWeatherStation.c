@@ -98,7 +98,7 @@ int main()
                     "-----------------------------------------------\n\n");
     do {
       /*****************************WRITE TO SERIAL PORT************************/
-      if( kbhit() ){ //check if key was pressed
+      /*if( kbhit() ){ //check if key was pressed
         ch = getch();
 
         if(ch == '1') { //History of risk situations
@@ -130,7 +130,7 @@ int main()
           fprintf(stderr, "\t>> %d bytes written\n", bytes_written);
           boolWritePort = false;
         }
-      }
+      }*/
 
       /*****************************READ SERIAL PORT****************************/
       // check for data on port and display it on screen.

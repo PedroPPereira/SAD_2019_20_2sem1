@@ -51,19 +51,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_init `(v ~T0 @X0 0 ef ]
 "15 matricial_key.h
 [v _keyboard_init `(v ~T0 @X0 0 ef ]
-"22 lcd.h
-[v _printlnLCD `(v ~T0 @X0 0 ef2`*Cuc`*Cuc ]
-"19
+"19 lcd.h
 [v _lcd_cmd `(v ~T0 @X0 0 ef1`uc ]
+"24
+[v _printlnL1LCD `(v ~T0 @X0 0 ef1`*Cuc ]
+"25
+[v _printlnL2LCD `(v ~T0 @X0 0 ef1`*Cuc ]
 "17 matricial_key.h
 [v _switch_press_scan `(uc ~T0 @X0 0 ef ]
 "20 lcd.h
 [v _lcd_dat `(v ~T0 @X0 0 ef1`uc ]
 "45 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\string.h
 [v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
-"25 lcd.h
-[v _printlnL2LCD `(v ~T0 @X0 0 ef1`*Cuc ]
-"23
+"23 lcd.h
 [v _delay_ms `(v ~T0 @X0 0 ef1`ui ]
 "27 serial.h
 [v _serial_init `(v ~T0 @X0 0 ef ]
@@ -73,10 +73,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PWM1_Init `(v ~T0 @X0 0 ef1`ui ]
 "6
 [v _PWM1_Start `(v ~T0 @X0 0 ef ]
-"78 main.c
+"77 main.c
 [v _isr_init `(v ~T0 @X0 0 ef ]
-"24 lcd.h
-[v _printlnL1LCD `(v ~T0 @X0 0 ef1`*Cuc ]
 "222 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -227,152 +225,152 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "2363
 [; <" EECON2 equ 018Dh ;# ">
-"17 main.c
+"16 main.c
 [p x FOSC=HS ]
-"18
+"17
 [p x WDTE=OFF ]
-"19
+"18
 [p x PWRTE=OFF ]
-"20
+"19
 [p x BOREN=OFF ]
-"21
+"20
 [p x LVP=OFF ]
-"22
+"21
 [p x CPD=OFF ]
-"23
+"22
 [p x WRT=OFF ]
-"24
+"23
 [p x CP=OFF ]
-"30
+"29
 [v _nMSeconds `i ~T0 @X0 1 e ]
 [i _nMSeconds
 -> 0 `i
 ]
-"31
+"30
 [v _nSeconds `i ~T0 @X0 1 e ]
 [i _nSeconds
 -> 0 `i
 ]
-"32
+"31
 [v _str `uc ~T0 @X0 -> 16 `i e ]
-"33
+"32
 [v _run `uc ~T0 @X0 1 e ]
 [i _run
 -> -> 1 `i `uc
 ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
 [v F1069 `(v ~T0 @X0 1 tf ]
-"37
+"36
 [v _isr `IF1069 ~T0 @X0 1 e ]
 {
 [e :U _isr ]
 [f ]
-"39
+"38
 [e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 97  ]
 {
-"40
+"39
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"41
+"40
 [e = _TMR1H -> -> 207 `i `uc ]
-"42
+"41
 [e = _TMR1L -> -> 44 `i `uc ]
-"43
+"42
 [e $ ! == _nMSeconds -> 10 `i 98  ]
 {
-"44
+"43
 [e ++ _nSeconds -> 1 `i ]
-"45
+"44
 [e = _nMSeconds -> 0 `i ]
-"46
+"45
 [e $ ! == _nSeconds -> 51 `i 99  ]
 {
-"47
+"46
 [e ( _serial_tx_str (1 -> &U _str `*Cuc ]
-"48
+"47
 [e = _nSeconds -> 0 `i ]
-"49
+"48
 }
 [e :U 99 ]
-"50
+"49
 }
 [e $U 100  ]
-"51
+"50
 [e :U 98 ]
 [e ++ _nMSeconds -> 1 `i ]
 [e :U 100 ]
-"52
+"51
 }
 [e :U 97 ]
-"55
+"54
 [e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 101  ]
 {
-"56
+"55
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"57
+"56
 [e $ ! != -> _run `i -> -> -> 0 `i `uc `i 102  ]
 {
-"58
+"57
 [e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"59
+"58
 [e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
-"61
+"60
 [e = _CCP1CON -> -> 0 `i `uc ]
-"62
+"61
 [e = _T1CON -> -> 0 `i `uc ]
-"63
+"62
 [e = _nSeconds -> 0 `i ]
-"64
+"63
 [e = _nMSeconds -> 0 `i ]
-"65
+"64
 }
 [e $U 103  ]
-"66
+"65
 [e :U 102 ]
 {
-"67
+"66
 [e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-"68
+"67
 [e = _CCP1CON -> -> 15 `i `uc ]
-"69
+"68
 [e = _T1CON -> -> 49 `i `uc ]
-"70
+"69
 }
 [e :U 103 ]
-"71
+"70
 [e = _run -> -> ! != -> _run `i -> -> -> 0 `i `uc `i `i `uc ]
-"72
+"71
 }
 [e :U 101 ]
-"76
+"75
 [e :UE 96 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"82
+"81
 [v _main `(i ~T0 @X0 1 ef ]
-"83
+"82
 {
 [e :U _main ]
 [f ]
-"85
+"84
 [e = _TRISA -> -> 195 `i `uc ]
-"86
+"85
 [e = _TRISB -> -> 255 `i `uc ]
-"87
+"86
 [e = _TRISC -> -> 128 `i `uc ]
-"88
+"87
 [e = _TRISD -> -> 0 `i `uc ]
-"89
+"88
 [e = _TRISE -> -> 0 `i `uc ]
-"91
+"90
 [e ( _lcd_init ..  ]
-"92
+"91
 [e ( _keyboard_init ..  ]
-"94
+"93
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [v _tempRB3 `i ~T0 @X0 1 a ]
 [e = _tempRB3 -> 0 `i ]
-"95
+"94
 [v _potP1 `ui ~T0 @X0 1 a ]
 [v _potP2 `ui ~T0 @X0 1 a ]
 [v _tempC `ui ~T0 @X0 1 a ]
@@ -380,38 +378,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F1080 `uc ~T0 @X0 -> 5 `i s ]
 [i F1080
 :U ..
--> 52 `c
--> 50 `c
 -> 48 `c
--> 57 `c
+-> 56 `c
+-> 54 `c
+-> 50 `c
 -> 0 `c
 ..
 ]
-"96
+"95
 [v _pass `uc ~T0 @X0 -> 5 `i a ]
 [e = _pass F1080 ]
-"97
+"96
 [v _boolPass `uc ~T0 @X0 1 a ]
 [e = _boolPass -> -> 0 `i `uc ]
 [v _bool_emerg `uc ~T0 @X0 1 a ]
 [e = _bool_emerg -> -> 0 `i `uc ]
-"98
+"97
 [v _code `uc ~T0 @X0 -> 5 `i a ]
 [v _str_old `uc ~T0 @X0 -> 16 `i a ]
 [v _str1 `uc ~T0 @X0 -> 16 `i a ]
 "99
-[v _strConfig `uc ~T0 @X0 -> 13 `i a ]
-"100
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"103
+"100
+[e ( _lcd_cmd (1 -> -> 1 `i `uc ]
+"101
+[e ( _printlnL1LCD (1 :s 1C ]
+"104
 [e $U 105  ]
 [e :U 106 ]
 {
-"104
-[e ( _printlnLCD (2 , :s 1C :s 2C ]
 "105
-[e ( _lcd_cmd (1 -> + -> 192 `i -> 5 `i `uc ]
+[e ( _printlnL2LCD (1 :s 2C ]
 "106
+[e ( _lcd_cmd (1 -> + -> 192 `i -> 5 `i `uc ]
+"107
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -419,55 +419,55 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 109  ]
 [e :U 108 ]
 {
-"107
-[e = *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ( _switch_press_scan ..  ]
 "108
-[e ( _lcd_dat (1 *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ]
+[e = *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ( _switch_press_scan ..  ]
 "109
+[e ( _lcd_dat (1 *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ]
+"110
 }
-"106
+"107
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 108  ]
 [e :U 109 ]
-"109
-}
 "110
+}
+"111
 [e $ ! ! != ( _strcmp (2 , -> &U _code `*Cuc -> &U _pass `*Cuc -> 0 `i 111  ]
 {
-"111
-[e = _boolPass -> -> 1 `i `uc ]
 "112
-[e ( _printlnL2LCD (1 :s 3C ]
+[e = _boolPass -> -> 1 `i `uc ]
 "113
+[e ( _printlnL2LCD (1 :s 3C ]
+"114
 }
 [e $U 112  ]
-"114
+"115
 [e :U 111 ]
 [e ( _printlnL2LCD (1 :s 4C ]
 [e :U 112 ]
-"115
-[e ( _delay_ms (1 -> -> 100 `i `ui ]
 "116
+[e ( _delay_ms (1 -> -> 100 `i `ui ]
+"117
 }
 [e :U 105 ]
-"103
+"104
 [e $ ! != -> _boolPass `i -> -> -> 0 `i `uc `i 106  ]
 [e :U 107 ]
-"119
-[e = _TRISA -> -> 7 `i `uc ]
 "120
-[e ( _serial_init ..  ]
+[e = _TRISA -> -> 7 `i `uc ]
 "121
-[e ( _adc_init ..  ]
+[e ( _serial_init ..  ]
 "122
-[e ( _PWM1_Init (1 -> -> 5000 `i `ui ]
+[e ( _adc_init ..  ]
 "123
-[e ( _PWM1_Start ..  ]
+[e ( _PWM1_Init (1 -> -> 5000 `i `ui ]
 "124
-[e ( _isr_init ..  ]
+[e ( _PWM1_Start ..  ]
 "125
-[e = _run -> -> 1 `i `uc ]
+[e ( _isr_init ..  ]
 "126
+[e = _run -> -> 1 `i `uc ]
+"127
 [e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
 "128
 [e ( _printlnL1LCD (1 :s 5C ]
@@ -586,8 +586,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "199
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"200
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
 "201
 [e :UE 123 ]
 }

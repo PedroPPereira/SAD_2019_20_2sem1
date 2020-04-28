@@ -1850,7 +1850,7 @@ unsigned char i2c_rb(unsigned char ack);
 void i2c_acktst(unsigned char val);
 
 
-# 17 "main.c"
+# 16 "main.c"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -1860,7 +1860,7 @@ void i2c_acktst(unsigned char val);
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 30
+# 29
 int nMSeconds = 0;
 int nSeconds = 0;
 char str[16];
@@ -1927,15 +1927,17 @@ keyboard_init();
 
 int i = 0, tempRB3 = 0;
 unsigned int potP1, potP2, tempC, duty;
-char pass[5] = "4209";
+char pass[5] = "0862";
 bool boolPass = 0, bool_emerg = 0;
 char code[5], str_old[16], str1[16];
-char strConfig[13];
+
 PORTCbits.RC1 = 1;
+lcd_cmd(0x01);
+printlnL1LCD("Weather Station");
 
 
 while (!boolPass) {
-printlnLCD("Weather Station","Pass:");
+printlnL2LCD("Pass:");
 lcd_cmd(0xC0+5);
 for(int i=0; i<4; i++){
 code[i] = switch_press_scan();
@@ -1958,7 +1960,6 @@ PWM1_Start();
 isr_init();
 run = 1;
 PORTCbits.RC5 = 1;
-
 printlnL1LCD("Temp/Fan/Hum");
 
 while (1){
@@ -2021,5 +2022,5 @@ INTCONbits.GIE = 1;
 PIE1bits.TMR1IE = 1;
 INTCONbits.PEIE = 1;
 INTCONbits.INTE = 1;
-PIE1bits.RCIE = 1;
+
 }
