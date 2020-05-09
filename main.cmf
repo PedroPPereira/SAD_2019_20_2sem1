@@ -12,64 +12,66 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $main.obj
-cinit CODE 0 11 11 34 2
-text1 CODE 0 D46 D46 12 2
-text2 CODE 0 38B 38B C4 2
-text3 CODE 0 EE0 EE0 35 2
-text4 CODE 0 D58 D58 16 2
-text5 CODE 0 E0F E0F 26 2
-text6 CODE 0 2BF 2BF CC 2
-text7 CODE 0 EAE EAE 32 2
-text8 CODE 0 F85 F85 3C 2
-text9 CODE 0 E85 E85 29 2
-text10 CODE 0 CC8 CC8 8 2
-text11 CODE 0 CE4 CE4 C 2
-text12 CODE 0 F4D F4D 38 2
-text13 CODE 0 E5D E5D 28 2
-text14 CODE 0 D27 D27 E 2
-text15 CODE 0 D35 D35 11 2
-text16 CODE 0 DE9 DE9 26 2
-text17 CODE 0 D8A D8A 1D 2
-text18 CODE 0 722 722 4E 2
-text19 CODE 0 D6E D6E 1C 2
-text20 CODE 0 CB0 CB0 4 2
-text21 CODE 0 DC8 DC8 21 2
-text22 CODE 0 CF0 CF0 D 2
-text23 CODE 0 CD8 CD8 C 2
-text24 CODE 0 67F 67F 52 2
-text25 CODE 0 770 770 43 2
-text26 CODE 0 F15 F15 38 2
-text27 CODE 0 D19 D19 E 2
-text28 CODE 0 D0B D0B E 2
-text29 CODE 0 7B3 7B3 42 2
-text30 CODE 0 7F5 7F5 9 2
-text31 CODE 0 CB9 CB9 7 2
-text32 CODE 0 DA7 DA7 21 2
-text33 CODE 0 CFD CFD E 2
-text34 CODE 0 622 622 5D 2
-text35 CODE 0 FC1 FC1 3F 2
-text36 CODE 0 5C4 5C4 5E 2
-text37 CODE 0 4DC 4DC 7D 2
-text38 CODE 0 44F 44F 8D 2
-text39 CODE 0 6D1 6D1 51 2
-text40 CODE 0 E35 E35 28 2
-text41 CODE 0 CC0 CC0 8 2
-idataCOMMON CODE 0 7FE 7FE 1 2
-maintext CODE 0 45 45 27A 2
-cstackCOMMON COMMON 1 70 70 8 1
-cstackBANK0 BANK0 1 20 20 31 1
-cstackBANK1 BANK1 1 A0 A0 28 1
-intentry CODE 0 4 4 A 2
-bssBANK1 BANK1 1 C8 C8 10 1
-idataBANK1 CODE 0 CB4 CB4 5 2
-strings STRING 0 559 559 6B 2
-dataBANK1 BANK1 1 D8 D8 5 1
-dataCOMMON COMMON 1 7C 7C 1 1
-clrtext CODE 0 CD0 CD0 8 2
-bssCOMMON COMMON 1 78 78 4 1
+cinit CODE 0 15 15 3A 2
+text1 CODE 0 AFE AFE 17 2
+text2 CODE 0 B15 B15 1A 2
+text3 CODE 0 5D9 5D9 26 2
+text4 CODE 0 31F 31F 12B 2
+text5 CODE 0 C6A C6A 34 2
+text6 CODE 0 E44 E44 4A 2
+text7 CODE 0 C36 C36 34 2
+text8 CODE 0 A66 A66 8 2
+text9 CODE 0 AED AED 11 2
+text10 CODE 0 C9E C9E 36 2
+text11 CODE 0 A7F A7F A 2
+text12 CODE 0 D0C D0C 38 2
+text13 CODE 0 ACC ACC 10 2
+text14 CODE 0 ADC ADC 11 2
+text15 CODE 0 BAA BAA 26 2
+text16 CODE 0 B2F B2F 1C 2
+text17 CODE 0 E8E E8E 4E 2
+text18 CODE 0 B4B B4B 1D 2
+text19 CODE 0 A4F A4F 4 2
+text20 CODE 0 B89 B89 21 2
+text21 CODE 0 A95 A95 D 2
+text22 CODE 0 A89 A89 C 2
+text23 CODE 0 EDC EDC 52 2
+text24 CODE 0 E01 E01 43 2
+text25 CODE 0 CD4 CD4 38 2
+text26 CODE 0 ABE ABE E 2
+text27 CODE 0 AB0 AB0 E 2
+text28 CODE 0 DBF DBF 42 2
+text29 CODE 0 A76 A76 9 2
+text30 CODE 0 A58 A58 6 2
+text31 CODE 0 B68 B68 21 2
+text32 CODE 0 AA2 AA2 E 2
+text33 CODE 0 F93 F93 6D 2
+text34 CODE 0 D80 D80 3F 2
+text35 CODE 0 568 568 71 2
+text36 CODE 0 6E6 6E6 8D 2
+text37 CODE 0 773 773 8D 2
+text38 CODE 0 F2E F2E 65 2
+text39 CODE 0 44A 44A 11E 2
+text40 CODE 0 BD0 BD0 32 2
+text41 CODE 0 D44 D44 3C 2
+text42 CODE 0 C02 C02 34 2
+text43 CODE 0 A5E A5E 8 2
+maintext CODE 0 4F 4F 2D0 2
+cstackCOMMON COMMON 1 70 70 E 1
+cstackBANK0 BANK0 1 20 20 2B 1
+cstackBANK1 BANK1 1 A0 A0 46 1
+intentry CODE 0 4 4 E 2
+bssBANK0 BANK0 1 4B 4B F 1
+bssBANK3 BANK3 1 190 190 28 1
+idataBANK0 CODE 0 5FF 5FF 1 2
+idataBANK1 CODE 0 A53 A53 5 2
+strings STRING 0 600 600 E6 2
+dataBANK0 BANK0 1 5A 5A 1 1
+dataBANK1 BANK1 1 E6 E6 5 1
+clrtext CODE 0 A6E A6E 8 2
 $startup.obj
 reset_vec CODE 0 0 0 3 2
-end_init CODE 0 E E 3 2
+end_init CODE 0 12 12 3 2
 config CONFIG 0 2007 2007 1 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -77,36 +79,35 @@ config CONFIG 0 2007 2007 1 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 51-6F 1
-RAM DD-EF 1
+RAM 5B-6F 1
+RAM EB-EF 1
 RAM 110-16F 1
-RAM 190-1EF 1
-BANK0 51-6F 1
-BANK1 DD-EF 1
+RAM 1B8-1EF 1
+BANK0 5B-6F 1
+BANK1 EB-EF 1
 BANK2 110-16F 1
-BANK3 190-1EF 1
+BANK3 1B8-1EF 1
 CONST 3-3 2
-CONST 7FF-CAF 2
+CONST 800-A4E 2
 CONST 1000-1FFF 2
 ENTRY 3-3 2
-ENTRY 7FF-CAF 2
+ENTRY 800-A4E 2
 ENTRY 1000-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 7FF-CAF 2
+CODE 800-A4E 2
 CODE 1000-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
-COMMON 7D-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 7FF-CAF 2
+STRCODE 800-A4E 2
 STRCODE 1000-1FFF 2
 STRING 3-3 2
-STRING 7FF-CAF 2
+STRING 800-A4E 2
 STRING 1000-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -122,564 +123,615 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $main.obj
-11 cinit CODE >1493:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-11 cinit CODE >1496:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-11 cinit CODE >1533:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-12 cinit CODE >1534:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-17 cinit CODE >1535:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-18 cinit CODE >1536:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-1D cinit CODE >1537:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-1E cinit CODE >1538:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-23 cinit CODE >1539:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-24 cinit CODE >1540:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-29 cinit CODE >1541:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-2A cinit CODE >1542:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-2F cinit CODE >1543:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-30 cinit CODE >1547:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-35 cinit CODE >1548:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-36 cinit CODE >1567:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-37 cinit CODE >1568:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-38 cinit CODE >1569:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-39 cinit CODE >1570:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-3A cinit CODE >1571:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-3D cinit CODE >1574:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-3E cinit CODE >1575:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-3F cinit CODE >1576:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-40 cinit CODE >1577:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-41 cinit CODE >1583:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-41 cinit CODE >1585:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-42 cinit CODE >1586:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-4 intentry CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CC0 text41 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CC1 text41 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CC4 text41 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E35 text40 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E36 text40 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E37 text40 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E40 text40 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E4B text40 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E4F text40 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E50 text40 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E56 text40 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E5A text40 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E5C text40 CODE >45:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-6D1 text39 CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6D1 text39 CODE >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6D5 text39 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6D6 text39 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6D8 text39 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6DA text39 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6DF text39 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6E5 text39 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6E7 text39 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6EC text39 CODE >45:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6F2 text39 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6F5 text39 CODE >49:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6FB text39 CODE >53:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6FD text39 CODE >54:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6FE text39 CODE >55:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-701 text39 CODE >56:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-702 text39 CODE >57:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-703 text39 CODE >58:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-704 text39 CODE >59:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-705 text39 CODE >60:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-706 text39 CODE >61:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-708 text39 CODE >62:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-70A text39 CODE >63:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-70B text39 CODE >64:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-70B text39 CODE >65:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-70C text39 CODE >66:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-70E text39 CODE >67:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-710 text39 CODE >69:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-719 text39 CODE >71:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-44F text38 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-44F text38 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-450 text38 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-452 text38 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-45D text38 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-45F text38 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-45F text38 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-461 text38 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-46C text38 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-470 text38 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-478 text38 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-47E text38 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-480 text38 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-482 text38 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-48B text38 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-48F text38 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-490 text38 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-499 text38 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-4A9 text38 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-4B7 text38 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-4B8 text38 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-4C1 text38 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-4C5 text38 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-4C8 text38 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-4D3 text38 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-4DB text38 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-4DC text37 CODE >6:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-4DC text37 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-4DD text37 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-4DF text37 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-4E0 text37 CODE >15:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-4E2 text37 CODE >16:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-4E3 text37 CODE >17:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-4E4 text37 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-4E5 text37 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-50D text37 CODE >23:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-514 text37 CODE >24:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-516 text37 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-518 text37 CODE >27:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-529 text37 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-52D text37 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-53E text37 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-550 text37 CODE >33:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-555 text37 CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-558 text37 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-5C4 text36 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5C4 text36 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5CC text36 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5D2 text36 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5D4 text36 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5D6 text36 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5DF text36 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5E3 text36 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5E4 text36 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5ED text36 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-5FD text36 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-60B text36 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-60C text36 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-615 text36 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-619 text36 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-621 text36 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-FC1 text35 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
-FC1 text35 CODE >119:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
-FC9 text35 CODE >121:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
-FCB text35 CODE >122:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
-FDF text35 CODE >123:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
-FE8 text35 CODE >124:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
-FF1 text35 CODE >125:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
-FF7 text35 CODE >128:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
-FFF text35 CODE >129:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
-622 text34 CODE >51:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-624 text34 CODE >53:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-665 text34 CODE >54:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-671 text34 CODE >55:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-67E text34 CODE >56:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-CFD text33 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-CFD text33 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-CFF text33 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-D00 text33 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-D03 text33 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-D04 text33 CODE >45:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-D05 text33 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-D07 text33 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-D08 text33 CODE >48:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
-DA7 text32 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DA7 text32 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DA9 text32 CODE >45:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DAB text32 CODE >46:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DB1 text32 CODE >47:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DB8 text32 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DBF text32 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DC3 text32 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DC7 text32 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-CB9 text31 CODE >5:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-CB9 text31 CODE >6:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-CBC text31 CODE >7:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-CBF text31 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-7F5 text30 CODE >5:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7F5 text30 CODE >7:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7F6 text30 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7F7 text30 CODE >9:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7F8 text30 CODE >10:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7F9 text30 CODE >11:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7FA text30 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7FB text30 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7FC text30 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7FD text30 CODE >16:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7B3 text29 CODE >56:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7B4 text29 CODE >58:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7B5 text29 CODE >60:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7B6 text29 CODE >61:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7B8 text29 CODE >62:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7BA text29 CODE >63:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7BB text29 CODE >64:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7BC text29 CODE >65:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7C1 text29 CODE >66:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7D3 text29 CODE >67:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7D4 text29 CODE >63:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7DC text29 CODE >69:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7DE text29 CODE >70:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7E2 text29 CODE >71:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7E4 text29 CODE >72:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7E4 text29 CODE >73:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7E5 text29 CODE >74:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7EA text29 CODE >75:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7ED text29 CODE >76:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7F0 text29 CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7F3 text29 CODE >79:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-7F4 text29 CODE >80:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D0B text28 CODE >24:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D0B text28 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D0C text28 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D0D text28 CODE >27:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D12 text28 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D15 text28 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D18 text28 CODE >30:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D19 text27 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D19 text27 CODE >33:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D1A text27 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D1B text27 CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D20 text27 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D23 text27 CODE >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-D26 text27 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F15 text26 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F16 text26 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F17 text26 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F18 text26 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F2C text26 CODE >45:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F2D text26 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F32 text26 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F35 text26 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F3D text26 CODE >49:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F3E text26 CODE >50:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F43 text26 CODE >51:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F46 text26 CODE >52:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F49 text26 CODE >53:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-F4C text26 CODE >54:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
-770 text25 CODE >5:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-770 text25 CODE >10:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-775 text25 CODE >11:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-779 text25 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-77E text25 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-783 text25 CODE >15:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-785 text25 CODE >18:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-78B text25 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-791 text25 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-796 text25 CODE >22:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-79B text25 CODE >23:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-79D text25 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-7A3 text25 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-7AC text25 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-7AF text25 CODE >30:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-7B2 text25 CODE >31:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-67F text24 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-67F text24 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-686 text24 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-68B text24 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-68F text24 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-690 text24 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-695 text24 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-69A text24 CODE >48:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-69C text24 CODE >51:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-6A2 text24 CODE >53:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-6A8 text24 CODE >54:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-6AE text24 CODE >55:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-6B3 text24 CODE >56:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-6B9 text24 CODE >58:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
-CD8 text23 CODE >178:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CD8 text23 CODE >185:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CDA text23 CODE >186:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CDC text23 CODE >187:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CDE text23 CODE >188:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CDF text23 CODE >189:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CE1 text23 CODE >190:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CE2 text23 CODE >191:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CE3 text23 CODE >193:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CF0 text22 CODE >6:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-CF0 text22 CODE >7:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-CF1 text22 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-CF2 text22 CODE >9:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-CF4 text22 CODE >10:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-CF6 text22 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-CFC text22 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-DC8 text21 CODE >73:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DC8 text21 CODE >76:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DD2 text21 CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DD3 text21 CODE >79:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DD4 text21 CODE >80:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DD5 text21 CODE >81:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DD6 text21 CODE >82:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DD7 text21 CODE >83:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DD8 text21 CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DE2 text21 CODE >76:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-CB0 text20 CODE >4:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-CB1 text20 CODE >5:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-CB3 text20 CODE >6:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D6E text19 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D6F text19 CODE >9:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D70 text19 CODE >10:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D76 text19 CODE >11:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D77 text19 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D80 text19 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D81 text19 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D88 text19 CODE >15:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D89 text19 CODE >16:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-722 text18 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-722 text18 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-724 text18 CODE >30:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-725 text18 CODE >31:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-72E text18 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-72F text18 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-735 text18 CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-73E text18 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-744 text18 CODE >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-74D text18 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-753 text18 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-759 text18 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-75F text18 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-765 text18 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-76B text18 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-76F text18 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D8A text17 CODE >18:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D8C text17 CODE >19:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D8D text17 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D93 text17 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D94 text17 CODE >22:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D9D text17 CODE >23:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D9E text17 CODE >24:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DA5 text17 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DA6 text17 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DE9 text16 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DE9 text16 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DEA text16 CODE >48:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-DF9 text16 CODE >50:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-E0A text16 CODE >51:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-E0E text16 CODE >48:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D35 text15 CODE >64:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D36 text15 CODE >65:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D3C text15 CODE >66:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D45 text15 CODE >67:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D27 text14 CODE >68:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D27 text14 CODE >69:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D2D text14 CODE >70:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-D34 text14 CODE >71:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-E5D text13 CODE >55:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-E5E text13 CODE >56:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-E64 text13 CODE >57:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-E6A text13 CODE >58:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-E75 text13 CODE >59:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-E7B text13 CODE >60:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-E84 text13 CODE >62:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-F4D text12 CODE >11:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F4E text12 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F4F text12 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F51 text12 CODE >17:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F53 text12 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F55 text12 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F56 text12 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F61 text12 CODE >22:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F61 text12 CODE >23:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F62 text12 CODE >24:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F64 text12 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-F84 text12 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-CE4 text11 CODE >6:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CE4 text11 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CE6 text11 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CE7 text11 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CE8 text11 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CE9 text11 CODE >15:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CEA text11 CODE >16:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CEC text11 CODE >17:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CED text11 CODE >18:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CEE text11 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CEF text11 CODE >22:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CC8 text10 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CCA text10 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-CCC text10 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E85 text9 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E86 text9 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E87 text9 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E90 text9 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-E9B text9 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-EA0 text9 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-EA1 text9 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-EA7 text9 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-EAB text9 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-EAD text9 CODE >45:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-F85 text8 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-F85 text8 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-F87 text8 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-F8B text8 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-F8D text8 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-F8F text8 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-F96 text8 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-F9A text8 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-F9B text8 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-FA2 text8 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-FAA text8 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-FB0 text8 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-FB1 text8 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-FB8 text8 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-FBC text8 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-FC0 text8 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-EAE text7 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-EAE text7 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-EB2 text7 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-EB4 text7 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-EB6 text7 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-EBD text7 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-EC1 text7 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-EC2 text7 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-ECA text7 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-ED0 text7 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-ED7 text7 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-EDB text7 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-EDF text7 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-2BF text6 CODE >505:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-2C0 text6 CODE >550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-2C4 text6 CODE >553:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-2D4 text6 CODE >555:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-2D8 text6 CODE >558:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-2E3 text6 CODE >559:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-2E4 text6 CODE >565:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-2E5 text6 CODE >661:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-2FA text6 CODE >1285:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-306 text6 CODE >1287:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-308 text6 CODE >1288:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-30C text6 CODE >1289:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-311 text6 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-313 text6 CODE >1332:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-32C text6 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-334 text6 CODE >1464:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-338 text6 CODE >1465:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-343 text6 CODE >1498:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-347 text6 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-34E text6 CODE >1515:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-37A text6 CODE >1550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-385 text6 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-386 text6 CODE >1564:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-38A text6 CODE >1567:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-E0F text5 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
-E10 text5 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
-E16 text5 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
-E1A text5 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
-E1E text5 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
-E2F text5 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
-E34 text5 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
-D58 text4 CODE >4:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
-D59 text4 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
-D5D text4 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
-D62 text4 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
-D66 text4 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
-D67 text4 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
-D6D text4 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
-EE0 text3 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strncpy.c
-EE1 text3 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strncpy.c
-EE5 text3 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strncpy.c
-EE9 text3 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strncpy.c
-EEF text3 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strncpy.c
-F00 text3 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strncpy.c
-F08 text3 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strncpy.c
-38B text2 CODE >16:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-38B text2 CODE >18:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-391 text2 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3A6 text2 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3AF text2 CODE >22:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3B6 text2 CODE >23:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3BD text2 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3C1 text2 CODE >27:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3D6 text2 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3DF text2 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3E6 text2 CODE >30:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3ED text2 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-3F1 text2 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-406 text2 CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-40F text2 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-416 text2 CODE >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-41D text2 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-421 text2 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-436 text2 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-43F text2 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-446 text2 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-44D text2 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-44E text2 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-D46 text1 CODE >75:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-D46 text1 CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-D49 text1 CODE >79:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-D4C text1 CODE >78:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-D50 text1 CODE >79:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-D55 text1 CODE >78:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-D56 text1 CODE >80:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-D57 text1 CODE >81:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
-45 maintext CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-45 maintext CODE >80:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-48 maintext CODE >81:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-4A maintext CODE >82:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-4C maintext CODE >83:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-4D maintext CODE >84:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-4E maintext CODE >86:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-53 maintext CODE >87:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-58 maintext CODE >89:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-5A maintext CODE >91:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6B maintext CODE >92:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6D maintext CODE >94:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-6F maintext CODE >97:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-73 maintext CODE >98:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-7E maintext CODE >99:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-84 maintext CODE >100:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-87 maintext CODE >101:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-95 maintext CODE >102:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-9F maintext CODE >100:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-B1 maintext CODE >104:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-C1 maintext CODE >105:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-C4 maintext CODE >106:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-C7 maintext CODE >108:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-D0 maintext CODE >109:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-D9 maintext CODE >97:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-DA maintext CODE >113:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-DC maintext CODE >114:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-E1 maintext CODE >115:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-E6 maintext CODE >116:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-EF maintext CODE >117:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-F4 maintext CODE >118:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-F9 maintext CODE >119:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-FB maintext CODE >120:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-FD maintext CODE >121:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-103 maintext CODE >124:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-106 maintext CODE >126:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-11A maintext CODE >127:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-12A maintext CODE >130:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-152 maintext CODE >131:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-178 maintext CODE >132:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-17E maintext CODE >133:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-1A5 maintext CODE >134:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-1CD maintext CODE >137:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-1F0 maintext CODE >138:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-1FE maintext CODE >139:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-216 maintext CODE >140:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-21C maintext CODE >141:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-222 maintext CODE >143:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-22B maintext CODE >144:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-239 maintext CODE >148:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-24F maintext CODE >149:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-251 maintext CODE >150:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-253 maintext CODE >151:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-257 maintext CODE >152:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-27A maintext CODE >153:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-280 maintext CODE >154:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-28F maintext CODE >155:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-29E maintext CODE >156:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-2AD maintext CODE >158:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-2B0 maintext CODE >159:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-2B1 maintext CODE >161:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-2B2 maintext CODE >162:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-2B4 maintext CODE >172:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
-CD0 clrtext CODE >1554:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-CD0 clrtext CODE >1555:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-CD1 clrtext CODE >1556:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-CD1 clrtext CODE >1557:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-CD2 clrtext CODE >1558:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-CD3 clrtext CODE >1559:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-CD4 clrtext CODE >1560:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-CD5 clrtext CODE >1561:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-CD6 clrtext CODE >1562:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
-CD7 clrtext CODE >1563:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+15 cinit CODE >1628:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+15 cinit CODE >1631:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+15 cinit CODE >1671:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+16 cinit CODE >1672:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+1B cinit CODE >1673:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+1C cinit CODE >1674:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+21 cinit CODE >1675:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+22 cinit CODE >1676:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+27 cinit CODE >1677:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+28 cinit CODE >1678:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+2D cinit CODE >1679:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+2E cinit CODE >1680:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+33 cinit CODE >1681:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+34 cinit CODE >1685:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+35 cinit CODE >1686:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+3A cinit CODE >1687:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+3B cinit CODE >1706:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+3C cinit CODE >1707:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+3D cinit CODE >1708:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+3E cinit CODE >1709:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+3F cinit CODE >1710:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+44 cinit CODE >1713:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+45 cinit CODE >1714:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+46 cinit CODE >1715:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+47 cinit CODE >1716:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+48 cinit CODE >1717:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+4B cinit CODE >1723:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+4B cinit CODE >1725:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+4C cinit CODE >1726:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+4 intentry CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A5E text43 CODE >31:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A5F text43 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A62 text43 CODE >33:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C02 text42 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C02 text42 CODE >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C03 text42 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C29 text42 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C2F text42 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C33 text42 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C35 text42 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+D44 text41 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D44 text41 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D46 text41 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D4A text41 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D4C text41 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D4E text41 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D55 text41 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D59 text41 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D5A text41 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D61 text41 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D69 text41 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D6F text41 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D70 text41 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D77 text41 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D7B text41 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+D7F text41 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+BD0 text40 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BD0 text40 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BD4 text40 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BD6 text40 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BD8 text40 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BDF text40 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BE3 text40 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BE4 text40 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BEC text40 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BF2 text40 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BF9 text40 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+BFD text40 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C01 text40 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+44A text39 CODE >505:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+44A text39 CODE >550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+44E text39 CODE >553:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+45E text39 CODE >555:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+462 text39 CODE >558:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+471 text39 CODE >559:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+472 text39 CODE >565:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+473 text39 CODE >661:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+474 text39 CODE >760:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+47F text39 CODE >766:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+483 text39 CODE >767:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+487 text39 CODE >803:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+487 text39 CODE >804:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+493 text39 CODE >804:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+4B0 text39 CODE >803:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+4B1 text39 CODE >661:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+4C9 text39 CODE >1285:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+4D5 text39 CODE >1287:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+4D7 text39 CODE >1288:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+4DB text39 CODE >1289:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+4E0 text39 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+4E6 text39 CODE >1332:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+4FF text39 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+507 text39 CODE >1464:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+50B text39 CODE >1465:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+51A text39 CODE >1498:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+51E text39 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+525 text39 CODE >1515:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+551 text39 CODE >1550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+560 text39 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+561 text39 CODE >1564:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+567 text39 CODE >1567:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+F2E text38 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F2E text38 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F30 text38 CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F31 text38 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F33 text38 CODE >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F35 text38 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F3A text38 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F40 text38 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F42 text38 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F47 text38 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F58 text38 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F61 text38 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F64 text38 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F6A text38 CODE >52:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F6C text38 CODE >53:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F6D text38 CODE >54:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F70 text38 CODE >55:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F71 text38 CODE >56:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F72 text38 CODE >57:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F73 text38 CODE >58:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F74 text38 CODE >59:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F75 text38 CODE >60:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F77 text38 CODE >61:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F79 text38 CODE >62:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F7A text38 CODE >63:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F7A text38 CODE >64:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F7B text38 CODE >65:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F7D text38 CODE >66:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F7F text38 CODE >68:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+F88 text38 CODE >70:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+773 text37 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+773 text37 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+774 text37 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+776 text37 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+781 text37 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+783 text37 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+783 text37 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+785 text37 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+790 text37 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+794 text37 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+79C text37 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7A2 text37 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7A4 text37 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7A6 text37 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7AF text37 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7B3 text37 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7B4 text37 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7BD text37 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7CD text37 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7DB text37 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7DC text37 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7E5 text37 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7E9 text37 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7EC text37 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7F7 text37 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+7FF text37 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+6E6 text36 CODE >6:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+6E6 text36 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+6E7 text36 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+6E9 text36 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+6EA text36 CODE >15:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+6EC text36 CODE >16:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+6ED text36 CODE >17:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+6EE text36 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+6EF text36 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+71A text36 CODE >23:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+721 text36 CODE >24:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+724 text36 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+727 text36 CODE >27:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+73B text36 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+73F text36 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+754 text36 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+76A text36 CODE >33:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+76F text36 CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+772 text36 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+568 text35 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+568 text35 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+571 text35 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+578 text35 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+57B text35 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+57E text35 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+587 text35 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+58C text35 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+58D text35 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+599 text35 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+5A9 text35 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+5B7 text35 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+5B9 text35 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+5C3 text35 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+5C8 text35 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+5D8 text35 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+D80 text34 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
+D80 text34 CODE >119:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
+D88 text34 CODE >121:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
+D8A text34 CODE >122:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
+D9E text34 CODE >123:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
+DA7 text34 CODE >124:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
+DB0 text34 CODE >125:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
+DB6 text34 CODE >128:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
+DBE text34 CODE >129:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul32.c
+F93 text33 CODE >51:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+F94 text33 CODE >53:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+FE3 text33 CODE >54:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+FF0 text33 CODE >55:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+FFF text33 CODE >56:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+AA2 text32 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+AA2 text32 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+AA4 text32 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+AA5 text32 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+AA8 text32 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+AA9 text32 CODE >45:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+AAA text32 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+AAC text32 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+AAD text32 CODE >48:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\pwm.c
+B68 text31 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+B68 text31 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+B6A text31 CODE >45:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+B6C text31 CODE >46:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+B72 text31 CODE >47:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+B79 text31 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+B80 text31 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+B84 text31 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+B88 text31 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+A58 text30 CODE >5:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+A58 text30 CODE >6:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+A5A text30 CODE >7:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+A5D text30 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+A76 text29 CODE >5:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+A76 text29 CODE >7:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+A77 text29 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+A78 text29 CODE >9:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+A79 text29 CODE >10:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+A7A text29 CODE >11:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+A7B text29 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+A7C text29 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+A7D text29 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+A7E text29 CODE >16:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DBF text28 CODE >56:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DC0 text28 CODE >58:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DC1 text28 CODE >60:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DC2 text28 CODE >61:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DC4 text28 CODE >62:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DC6 text28 CODE >63:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DC7 text28 CODE >64:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DC8 text28 CODE >65:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DCD text28 CODE >66:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DDF text28 CODE >67:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DE0 text28 CODE >63:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DE8 text28 CODE >69:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DEA text28 CODE >70:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DEE text28 CODE >71:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DF0 text28 CODE >72:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DF0 text28 CODE >73:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DF1 text28 CODE >74:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DF6 text28 CODE >75:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DF9 text28 CODE >76:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DFC text28 CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+DFF text28 CODE >79:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+E00 text28 CODE >80:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+AB0 text27 CODE >24:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+AB0 text27 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+AB1 text27 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+AB2 text27 CODE >27:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+AB7 text27 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+ABA text27 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+ABD text27 CODE >30:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+ABE text26 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+ABE text26 CODE >33:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+ABF text26 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+AC0 text26 CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+AC5 text26 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+AC8 text26 CODE >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+ACB text26 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CD4 text25 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CD5 text25 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CD6 text25 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CD7 text25 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CEB text25 CODE >45:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CEC text25 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CF1 text25 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CF4 text25 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CFC text25 CODE >49:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+CFD text25 CODE >50:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+D02 text25 CODE >51:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+D05 text25 CODE >52:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+D08 text25 CODE >53:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+D0B text25 CODE >54:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\i2c.c
+E01 text24 CODE >5:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E01 text24 CODE >10:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E06 text24 CODE >11:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E0A text24 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E0F text24 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E14 text24 CODE >15:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E16 text24 CODE >18:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E1C text24 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E22 text24 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E27 text24 CODE >22:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E2C text24 CODE >23:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E2E text24 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E34 text24 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E3D text24 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E40 text24 CODE >30:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+E43 text24 CODE >31:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EDC text23 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EDC text23 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EE3 text23 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EE8 text23 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EEC text23 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EED text23 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EF2 text23 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EF7 text23 CODE >48:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EF9 text23 CODE >51:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+EFF text23 CODE >53:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+F05 text23 CODE >54:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+F0B text23 CODE >55:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+F10 text23 CODE >56:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+F16 text23 CODE >58:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\eeprom_ext.c
+A89 text22 CODE >189:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A89 text22 CODE >196:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A8B text22 CODE >197:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A8D text22 CODE >198:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A8F text22 CODE >199:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A90 text22 CODE >200:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A92 text22 CODE >201:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A93 text22 CODE >202:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A94 text22 CODE >204:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A95 text21 CODE >6:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
+A95 text21 CODE >7:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
+A96 text21 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
+A97 text21 CODE >9:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
+A99 text21 CODE >10:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
+A9B text21 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
+AA1 text21 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\matricial_key.c
+B89 text20 CODE >73:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B89 text20 CODE >76:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B93 text20 CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B94 text20 CODE >79:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B95 text20 CODE >80:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B96 text20 CODE >81:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B97 text20 CODE >82:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B98 text20 CODE >83:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B99 text20 CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+BA3 text20 CODE >76:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+A4F text19 CODE >4:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+A50 text19 CODE >5:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+A52 text19 CODE >6:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B4B text18 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B4D text18 CODE >9:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B4E text18 CODE >10:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B54 text18 CODE >11:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B55 text18 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B5E text18 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B5F text18 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B66 text18 CODE >15:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B67 text18 CODE >16:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+E8E text17 CODE >28:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+E8E text17 CODE >29:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+E90 text17 CODE >30:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+E91 text17 CODE >31:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+E9A text17 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+E9B text17 CODE >34:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+EA1 text17 CODE >35:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+EAA text17 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+EB0 text17 CODE >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+EB9 text17 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+EBF text17 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+EC5 text17 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+ECB text17 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+ED1 text17 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+ED7 text17 CODE >43:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+EDB text17 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B2F text16 CODE >18:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B30 text16 CODE >19:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B31 text16 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B37 text16 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B38 text16 CODE >22:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B41 text16 CODE >23:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B42 text16 CODE >24:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B49 text16 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+B4A text16 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+BAA text15 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+BAA text15 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+BAB text15 CODE >48:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+BBA text15 CODE >50:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+BCB text15 CODE >51:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+BCF text15 CODE >48:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+ADC text14 CODE >64:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+ADD text14 CODE >65:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+AE3 text14 CODE >66:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+AEC text14 CODE >67:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+ACC text13 CODE >68:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+ACE text13 CODE >69:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+AD4 text13 CODE >70:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+ADB text13 CODE >71:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+D0C text12 CODE >11:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D0D text12 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D0E text12 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D10 text12 CODE >17:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D12 text12 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D14 text12 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D15 text12 CODE >12:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D20 text12 CODE >22:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D20 text12 CODE >23:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D21 text12 CODE >24:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D23 text12 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+D43 text12 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+A7F text11 CODE >44:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A7F text11 CODE >45:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A83 text11 CODE >46:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A84 text11 CODE >47:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A85 text11 CODE >49:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A87 text11 CODE >50:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A88 text11 CODE >51:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C9E text10 CODE >69:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C9F text10 CODE >71:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+CA1 text10 CODE >72:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+CA3 text10 CODE >76:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+CAC text10 CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+CB6 text10 CODE >72:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+CC0 text10 CODE >73:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+CC8 text10 CODE >74:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+CC9 text10 CODE >76:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+CCC text10 CODE >79:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+CD3 text10 CODE >80:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AED text9 CODE >8:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AED text9 CODE >10:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AEF text9 CODE >13:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AF1 text9 CODE >14:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AF2 text9 CODE >15:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AF3 text9 CODE >16:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AF4 text9 CODE >17:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AF5 text9 CODE >19:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AF7 text9 CODE >20:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AF8 text9 CODE >21:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AF9 text9 CODE >24:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AFA text9 CODE >25:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AFC text9 CODE >26:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+AFD text9 CODE >27:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A66 text8 CODE >31:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A68 text8 CODE >32:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+A6A text8 CODE >33:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C36 text7 CODE >36:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C36 text7 CODE >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C37 text7 CODE >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C5D text7 CODE >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C63 text7 CODE >40:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C67 text7 CODE >41:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+C69 text7 CODE >42:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+E44 text6 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E44 text6 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E47 text6 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E4C text6 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E4F text6 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E52 text6 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E59 text6 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E5E text6 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E5F text6 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E67 text6 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E70 text6 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E76 text6 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E78 text6 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E80 text6 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E85 text6 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+E8D text6 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+C6A text5 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C6A text5 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C6E text5 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C70 text5 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C72 text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C79 text5 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C7F text5 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C80 text5 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C88 text5 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C8E text5 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C95 text5 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C99 text5 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+C9D text5 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+31F text4 CODE >505:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+31F text4 CODE >550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+323 text4 CODE >553:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+334 text4 CODE >555:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+338 text4 CODE >558:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+347 text4 CODE >559:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+348 text4 CODE >565:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+349 text4 CODE >661:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+34A text4 CODE >760:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+355 text4 CODE >766:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+359 text4 CODE >767:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+35D text4 CODE >803:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+35D text4 CODE >804:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+36C text4 CODE >804:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+38E text4 CODE >803:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+38F text4 CODE >661:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3A7 text4 CODE >1285:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3B3 text4 CODE >1287:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3B5 text4 CODE >1288:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3B9 text4 CODE >1289:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3BE text4 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3C0 text4 CODE >1332:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3D9 text4 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3E1 text4 CODE >1464:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3E5 text4 CODE >1465:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3F4 text4 CODE >1498:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3F8 text4 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+3FF text4 CODE >1515:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+433 text4 CODE >1550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+442 text4 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+443 text4 CODE >1564:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+449 text4 CODE >1567:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+5D9 text3 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
+5DA text3 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
+5E0 text3 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
+5E4 text3 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
+5E8 text3 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
+5F9 text3 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
+5FE text3 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcmp.c
+B15 text2 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcpy.c
+B16 text2 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcpy.c
+B1A text2 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcpy.c
+B26 text2 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcpy.c
+B2A text2 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcpy.c
+B2E text2 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcpy.c
+AFE text1 CODE >4:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
+B00 text1 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
+B04 text1 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
+B09 text1 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
+B0D text1 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
+B0E text1 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
+B14 text1 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strlen.c
+4F maintext CODE >75:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+4F maintext CODE >77:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+52 maintext CODE >78:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+54 maintext CODE >79:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+56 maintext CODE >80:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+57 maintext CODE >81:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+58 maintext CODE >83:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+5D maintext CODE >84:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+62 maintext CODE >86:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+64 maintext CODE >88:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+70 maintext CODE >89:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+81 maintext CODE >90:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+82 maintext CODE >91:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+84 maintext CODE >111:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+87 maintext CODE >112:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+8C maintext CODE >113:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+91 maintext CODE >114:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+9A maintext CODE >115:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+9F maintext CODE >116:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A4 maintext CODE >117:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A7 maintext CODE >118:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A8 maintext CODE >119:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+AE maintext CODE >122:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+B1 maintext CODE >124:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+C5 maintext CODE >125:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+D3 maintext CODE >128:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+FB maintext CODE >129:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+121 maintext CODE >130:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+127 maintext CODE >131:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+14E maintext CODE >132:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+176 maintext CODE >135:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+18F maintext CODE >136:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+19E maintext CODE >137:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+1BC maintext CODE >138:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+1C2 maintext CODE >139:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+1C8 maintext CODE >141:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+1CE maintext CODE >142:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+1DA maintext CODE >146:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+1F3 maintext CODE >147:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+1F5 maintext CODE >148:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+1F7 maintext CODE >149:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+1FB maintext CODE >150:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+214 maintext CODE >151:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+21E maintext CODE >152:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+22D maintext CODE >153:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+23C maintext CODE >154:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+24B maintext CODE >156:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+24E maintext CODE >157:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+24F maintext CODE >159:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+250 maintext CODE >160:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+252 maintext CODE >164:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+255 maintext CODE >165:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+25B maintext CODE >167:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+25C maintext CODE >168:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+25D maintext CODE >169:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+26A maintext CODE >170:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+2AB maintext CODE >171:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+2B5 maintext CODE >172:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+2C0 maintext CODE >174:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+2CC maintext CODE >175:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+2D7 maintext CODE >176:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+2E3 maintext CODE >177:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+2EE maintext CODE >178:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+2FA maintext CODE >179:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+305 maintext CODE >168:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+314 maintext CODE >183:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.c
+A6E clrtext CODE >1693:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+A6E clrtext CODE >1694:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+A6F clrtext CODE >1695:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+A6F clrtext CODE >1696:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+A70 clrtext CODE >1697:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+A71 clrtext CODE >1698:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+A72 clrtext CODE >1699:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+A73 clrtext CODE >1700:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+A74 clrtext CODE >1701:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
+A75 clrtext CODE >1702:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main.as
 $startup.obj
-E end_init CODE >74:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\startup.as
-E init CODE >71:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\startup.as
+12 end_init CODE >74:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\startup.as
+12 init CODE >71:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\startup.as
 0 functab ENTRY >37:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\startup.as
 0 functab ENTRY >38:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\startup.as
 0 functab ENTRY >39:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\startup.as
@@ -701,148 +753,153 @@ E init CODE >71:G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisiçã
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - main.obj
-___lwmod@counter 3D 0 BANK0 1 cstackBANK0 main.obj
+___lwmod@counter A7 0 BANK1 1 cstackBANK1 main.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
 __LdataBANK1 0 0 ABS 0 dataBANK1 -
 __Hspace_0 2008 0 ABS 0 - -
-__Hspace_1 DD 0 ABS 0 - -
+__Hspace_1 1B8 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __size_of_lcd_cmd 0 0 ABS 0 - main.obj
 __size_of_lcd_dat 0 0 ABS 0 - main.obj
 __size_of_lcd_str 0 0 ABS 0 - main.obj
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
 __HidataBANK1 0 0 ABS 0 idataBANK1 -
-__end_of_readADC 1F0A 0 CODE 0 text12 main.obj
-strncpy@cp 25 0 BANK0 1 cstackBANK0 main.obj
-strncpy@to 24 0 BANK0 1 cstackBANK0 main.obj
-keypad_scanner@i 20 0 BANK0 1 cstackBANK0 main.obj
-_PWM1_Init 9B8 0 CODE 0 text37 main.obj
-PWM1_Set_Duty@d 41 0 BANK0 1 cstackBANK0 main.obj
+__end_of_readADC 1A88 0 CODE 0 text12 main.obj
+_PWM1_Init DCC 0 CODE 0 text36 main.obj
+PWM1_Set_Duty@d AB 0 BANK1 1 cstackBANK1 main.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_i2c_stop 1A32 0 CODE 0 text27 main.obj
+_i2c_stop 157C 0 CODE 0 text26 main.obj
 __size_of_printlnL1LCD 0 0 ABS 0 - main.obj
 __size_of_printlnL2LCD 0 0 ABS 0 - main.obj
-main@i C4 0 BANK1 1 cstackBANK1 main.obj
+i1___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON main.obj
 __Hstrings 0 0 ABS 0 strings -
 ___sp 0 0 STACK 2 stack startup.obj
-_main 8A 0 CODE 0 maintext main.obj
+_main 9E 0 CODE 0 maintext main.obj
 btemp 7E 0 ABS 0 - main.obj
-start 1C 0 CODE 0 init startup.obj
+start 24 0 CODE 0 init startup.obj
 __size_of___aldiv 0 0 ABS 0 - main.obj
-__end_of_i2c_stop 1A4E 0 CODE 0 text27 main.obj
+__end_of_i2c_stop 1598 0 CODE 0 text26 main.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - main.obj
 __size_of_main 0 0 ABS 0 - main.obj
 __size_of___lldiv 0 0 ABS 0 - main.obj
 __size_of___lwdiv 0 0 ABS 0 - main.obj
 __size_of___lwmod 0 0 ABS 0 - main.obj
-__HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__end_of_PWM1_Start 1A16 0 CODE 0 text33 main.obj
-?___lmul 20 0 BANK0 1 cstackBANK0 main.obj
-?___wmul 2A 0 BANK0 1 cstackBANK0 main.obj
-__end_of_keypad_scanner 89E 0 CODE 0 text2 main.obj
-i1serial_tx_str@val 72 0 COMMON 1 cstackCOMMON main.obj
+__end_of_PWM1_Start 1560 0 CODE 0 text32 main.obj
+?___lmul 35 0 BANK0 1 cstackBANK0 main.obj
+?___wmul 3F 0 BANK0 1 cstackBANK0 main.obj
+i1serial_tx_str@val 71 0 COMMON 1 cstackCOMMON main.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
 __LidataBANK1 0 0 ABS 0 idataBANK1 -
-__end_of_printlnL1LCD 1A8C 0 CODE 0 text15 main.obj
-__end_of_printlnL2LCD 1A6A 0 CODE 0 text14 main.obj
+main@constHum D9 0 BANK1 1 cstackBANK1 main.obj
+__end_of_printlnL1LCD 15DA 0 CODE 0 text14 main.obj
+__end_of_printlnL2LCD 15B8 0 CODE 0 text13 main.obj
 __Hpowerup 0 0 CODE 0 powerup -
-_printlnLCD 1CBA 0 CODE 0 text13 main.obj
-printlnLCD@str1 2C 0 BANK0 1 cstackBANK0 main.obj
-printlnLCD@str2 2B 0 BANK0 1 cstackBANK0 main.obj
-__HdataCOMMON 0 0 ABS 0 dataCOMMON -
 intlevel0 0 0 ENTRY 0 functab startup.obj
 intlevel1 0 0 ENTRY 0 functab startup.obj
 intlevel2 0 0 ENTRY 0 functab startup.obj
 intlevel3 0 0 ENTRY 0 functab startup.obj
 intlevel4 0 0 ENTRY 0 functab startup.obj
 intlevel5 0 0 ENTRY 0 functab startup.obj
-__LbssCOMMON 0 0 ABS 0 bssCOMMON -
-___aldiv@divisor 20 0 BANK0 1 cstackBANK0 main.obj
+i1___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON main.obj
+___aldiv@divisor 35 0 BANK0 1 cstackBANK0 main.obj
 wtemp0 7E 0 ABS 0 - main.obj
 __Hfunctab 0 0 ENTRY 0 functab -
-___aldiv@sign 2A 0 BANK0 1 cstackBANK0 main.obj
-main@str_old A0 0 BANK1 1 cstackBANK1 main.obj
-readADC@ch 29 0 BANK0 1 cstackBANK0 main.obj
+i1___lwmod@dividend 7A 0 COMMON 1 cstackCOMMON main.obj
+___aldiv@sign 3F 0 BANK0 1 cstackBANK0 main.obj
+main@str_old C8 0 BANK1 1 cstackBANK1 main.obj
+readADC@ch 3E 0 BANK0 1 cstackBANK0 main.obj
 __Hclrtext 0 0 ABS 0 clrtext -
-__pidataCOMMON FFC 0 CODE 0 idataCOMMON main.obj
-delay_ms@val 20 0 BANK0 1 cstackBANK0 main.obj
-main@boolPass BE 0 BANK1 1 cstackBANK1 main.obj
-___wmul@multiplicand 2C 0 BANK0 1 cstackBANK0 main.obj
+delay_ms@val 35 0 BANK0 1 cstackBANK0 main.obj
+___wmul@multiplicand 41 0 BANK0 1 cstackBANK0 main.obj
 _ADCON0 1F 0 ABS 0 - main.obj
 _ADCON1 9F 0 ABS 0 - main.obj
 _ADRESH 1E 0 ABS 0 - main.obj
 _ADRESL 9E 0 ABS 0 - main.obj
-__end_of_lcd_cmd 1B14 0 CODE 0 text19 main.obj
-__end_of_lcd_dat 1B4E 0 CODE 0 text17 main.obj
-__end_of_lcd_str 1C1E 0 CODE 0 text16 main.obj
-__LdataCOMMON 0 0 ABS 0 dataCOMMON -
+__end_of_lcd_cmd 16D0 0 CODE 0 text18 main.obj
+__end_of_lcd_dat 1696 0 CODE 0 text16 main.obj
+__end_of_lcd_str 17A0 0 CODE 0 text15 main.obj
 _CCPR1L 15 0 ABS 0 - main.obj
-__end_of___lmul 2000 0 CODE 0 text35 main.obj
-__end_of___wmul 1B90 0 CODE 0 text32 main.obj
+__end_of___lmul 1B7E 0 CODE 0 text34 main.obj
+__end_of___wmul 1712 0 CODE 0 text31 main.obj
 __Lmaintext 0 0 ABS 0 maintext -
 __size_of_sprintf 0 0 ABS 0 - main.obj
-__end_of_i2c_start 1A32 0 CODE 0 text28 main.obj
-serial_tx_str@i 22 0 BANK0 1 cstackBANK0 main.obj
-__end_of_printlnLCD 1D0A 0 CODE 0 text13 main.obj
+__end_of_i2c_start 157C 0 CODE 0 text27 main.obj
+__end_ofi1___lwdiv 1B00 0 CODE 0 text41 main.obj
+__end_ofi1___lwmod 1804 0 CODE 0 text40 main.obj
+serial_tx_str@i 39 0 BANK0 1 cstackBANK0 main.obj
 __size_of_i2c_start 0 0 ABS 0 - main.obj
-i1_serial_tx 1980 0 CODE 0 text41 main.obj
-___lwmod@divisor 38 0 BANK0 1 cstackBANK0 main.obj
-__end_of___aldiv 9B8 0 CODE 0 text38 main.obj
-serial_tx_str@val 23 0 BANK0 1 cstackBANK0 main.obj
-__end_of___lldiv C44 0 CODE 0 text36 main.obj
-__end_of___lwdiv 1F82 0 CODE 0 text8 main.obj
-__end_of___lwmod 1DC0 0 CODE 0 text7 main.obj
-?_strcmp 20 0 BANK0 1 cstackBANK0 main.obj
-?_strlen 20 0 BANK0 1 cstackBANK0 main.obj
+i1_serial_tx 14BC 0 CODE 0 text43 main.obj
+___lwmod@divisor A3 0 BANK1 1 cstackBANK1 main.obj
+__size_ofi1___lwdiv 0 0 ABS 0 - main.obj
+__size_ofi1___lwmod 0 0 ABS 0 - main.obj
+__end_of___aldiv 1000 0 CODE 0 text37 main.obj
+serial_tx_str@val 36 0 BANK0 1 cstackBANK0 main.obj
+__end_of___lldiv BB2 0 CODE 0 text35 main.obj
+__end_of___lwdiv 1D1C 0 CODE 0 text6 main.obj
+__end_of___lwmod 193C 0 CODE 0 text5 main.obj
+?_strcmp 35 0 BANK0 1 cstackBANK0 main.obj
+?_strlen 35 0 BANK0 1 cstackBANK0 main.obj
 _OPTION_REG 81 0 ABS 0 - main.obj
 ___stackhi 0 0 ABS 0 - startup.obj
 ___stacklo 0 0 ABS 0 - startup.obj
-__size_of_strncpy 0 0 ABS 0 - main.obj
-_dpowers AD2 0 STRING 0 strings main.obj
-___lwdiv@quotient 35 0 BANK0 1 cstackBANK0 main.obj
+_dpowers C20 0 STRING 0 strings main.obj
+___lwdiv@quotient A1 0 BANK1 1 cstackBANK1 main.obj
 __size_of_delay 0 0 ABS 0 - main.obj
-__LidataCOMMON 0 0 ABS 0 idataCOMMON -
-_i2c_start 1A16 0 CODE 0 text28 main.obj
-__end_of_i2c_rb FEA 0 CODE 0 text29 main.obj
-__end_of_i2c_wb 1E9A 0 CODE 0 text26 main.obj
-___lwmod@dividend 3A 0 BANK0 1 cstackBANK0 main.obj
-___lldiv@counter 3A 0 BANK0 1 cstackBANK0 main.obj
-start_initialization 22 0 CODE 0 cinit main.obj
-main@tempRB3 BC 0 BANK1 1 cstackBANK1 main.obj
+_i2c_start 1560 0 CODE 0 text27 main.obj
+__end_of_i2c_rb 1C02 0 CODE 0 text28 main.obj
+__end_of_i2c_wb 1A18 0 CODE 0 text25 main.obj
+i1___lwdiv 1A88 0 CODE 0 text41 main.obj
+i1___lwmod 17A0 0 CODE 0 text40 main.obj
+___lwmod@dividend A5 0 BANK1 1 cstackBANK1 main.obj
+___lldiv@counter A4 0 BANK1 1 cstackBANK1 main.obj
+start_initialization 2A 0 CODE 0 cinit main.obj
+main@tempRB3 D6 0 BANK1 1 cstackBANK1 main.obj
 _TRISCbits 87 0 ABS 0 - main.obj
 _TRISDbits 88 0 ABS 0 - main.obj
-___aldiv@quotient 2B 0 BANK0 1 cstackBANK0 main.obj
-___lldiv@dividend 31 0 BANK0 1 cstackBANK0 main.obj
-__end_of_lcd_wr 1968 0 CODE 0 text20 main.obj
+___aldiv@quotient 40 0 BANK0 1 cstackBANK0 main.obj
+___lldiv@dividend 46 0 BANK0 1 cstackBANK0 main.obj
+__end_of_lcd_wr 14A6 0 CODE 0 text19 main.obj
 __size_of_e2pext_r 0 0 ABS 0 - main.obj
 __size_of_e2pext_w 0 0 ABS 0 - main.obj
-__size_of_switch_press_scan 0 0 ABS 0 - main.obj
-_keyboard_init 19E0 0 CODE 0 text22 main.obj
-i2c_rb@i 24 0 BANK0 1 cstackBANK0 main.obj
-i2c_wb@i 23 0 BANK0 1 cstackBANK0 main.obj
-__end_ofi1_serial_tx_str 1CBA 0 CODE 0 text40 main.obj
-clear_ram0 19A0 0 CODE 0 clrtext main.obj
+_keyboard_init 152A 0 CODE 0 text21 main.obj
+i2c_rb@i 39 0 BANK0 1 cstackBANK0 main.obj
+i2c_wb@i 38 0 BANK0 1 cstackBANK0 main.obj
+i1sprintf@c 2E 0 BANK0 1 cstackBANK0 main.obj
+i1sprintf@f 22 0 BANK0 1 cstackBANK0 main.obj
+__end_ofi1_serial_tx_str 186C 0 CODE 0 text42 main.obj
+readSerial@buf 37 0 BANK0 1 cstackBANK0 main.obj
+readSerial@tmp 3A 0 BANK0 1 cstackBANK0 main.obj
+clear_ram0 14DC 0 CODE 0 clrtext main.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 main.obj
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 main.obj
-main@bool_emerg BF 0 BANK1 1 cstackBANK1 main.obj
-__end_of_serial_init 19E0 0 CODE 0 text11 main.obj
-printlnL2LCD@str1 2B 0 BANK0 1 cstackBANK0 main.obj
-_readADC 1E9A 0 CODE 0 text12 main.obj
+main@bool_emerg D8 0 BANK1 1 cstackBANK1 main.obj
+__end_of_serial_init 15FC 0 CODE 0 text9 main.obj
+printlnL2LCD@str1 40 0 BANK0 1 cstackBANK0 main.obj
+_readADC 1A18 0 CODE 0 text12 main.obj
+main@constTemp DB 0 BANK1 1 cstackBANK1 main.obj
+main@constWind DD 0 BANK1 1 cstackBANK1 main.obj
 i1serial_tx@val 70 0 COMMON 1 cstackCOMMON main.obj
 __size_of_PWM1_Start 0 0 ABS 0 - main.obj
+i1___lwmod@counter 7D 0 COMMON 1 cstackCOMMON main.obj
 ___int_sp 0 0 STACK 2 stack startup.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
-__Hcinit 8A 0 CODE 0 cinit -
-__end_of_strcmp 1C6A 0 CODE 0 text5 main.obj
-__end_of_strlen 1ADC 0 CODE 0 text4 main.obj
+__Hcinit 9E 0 CODE 0 cinit -
+__end_of_strcmp BFE 0 CODE 0 text3 main.obj
+__end_of_strcpy 165E 0 CODE 0 text2 main.obj
+__end_of_strlen 162A 0 CODE 0 text1 main.obj
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
-__stringbase AD0 0 STRING 0 strings main.obj
-___lwdiv@counter 37 0 BANK0 1 cstackBANK0 main.obj
+__stringbase C1E 0 STRING 0 strings main.obj
+___lwdiv@counter A0 0 BANK1 1 cstackBANK1 main.obj
+__end_ofi1_sprintf AD0 0 CODE 0 text39 main.obj
 __Hmaintext 0 0 ABS 0 maintext -
-lcd_str@i 2A 0 BANK0 1 cstackBANK0 main.obj
-__end_of_sprintf 716 0 CODE 0 text6 main.obj
+lcd_str@i 3F 0 BANK0 1 cstackBANK0 main.obj
+__size_ofi1_sprintf 0 0 ABS 0 - main.obj
+__end_of_sprintf 894 0 CODE 0 text4 main.obj
 __size_of_lcd_init 0 0 ABS 0 - main.obj
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4010 0 CONFIG 0 config -
@@ -850,252 +907,272 @@ __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit 22 0 CODE 0 cinit -
+__Lcinit 2A 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lstack 0 0 STACK 2 stack -
-__end_of_serial_tx 19A0 0 CODE 0 text10 main.obj
+__end_of_serial_rx 1512 0 CODE 0 text11 main.obj
+__end_of_serial_tx 14DC 0 CODE 0 text8 main.obj
 _PORTBbits 6 0 ABS 0 - main.obj
 _PORTCbits 7 0 ABS 0 - main.obj
 _PORTDbits 8 0 ABS 0 - main.obj
 _PORTEbits 9 0 ABS 0 - main.obj
-__end_of_strncpy 1E2A 0 CODE 0 text3 main.obj
 _INTCONbits B 0 ABS 0 - main.obj
+__size_of_serial_rx 0 0 ABS 0 - main.obj
 __size_of_serial_tx 0 0 ABS 0 - main.obj
-i1_serial_tx_str 1C6A 0 CODE 0 text40 main.obj
+i1_serial_tx_str 1804 0 CODE 0 text42 main.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 1C 0 CODE 0 init -
+__Hinit 24 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
 __Hsfr3 0 0 ABS 0 sfr3 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
-_e2pext_r EE0 0 CODE 0 text25 main.obj
-_e2pext_w CFE 0 CODE 0 text24 main.obj
+_e2pext_r 1C02 0 CODE 0 text24 main.obj
+_e2pext_w 1DB8 0 CODE 0 text23 main.obj
 __Lcode 0 0 ABS 0 code -
-__Linit 1C 0 CODE 0 init -
+__Linit 24 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-___lmul 1F82 0 CODE 0 text35 main.obj
-___wmul 1B4E 0 CODE 0 text32 main.obj
+i1_sprintf 894 0 CODE 0 text39 main.obj
+___lmul 1B00 0 CODE 0 text34 main.obj
+___wmul 16D0 0 CODE 0 text31 main.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-PWM1_Set_Duty@temp 42 0 BANK0 1 cstackBANK0 main.obj
+PWM1_Set_Duty@temp AC 0 BANK1 1 cstackBANK1 main.obj
 _PR2 92 0 ABS 0 - main.obj
 __S0 2008 0 ABS 0 - -
-__S1 DD 0 ABS 0 - -
+__S1 1B8 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr DA2 0 CODE 0 text39 main.obj
-_run 7C 0 COMMON 1 dataCOMMON main.obj
-_str C8 0 BANK1 1 bssBANK1 main.obj
-PWM1_Init@f 2F 0 BANK0 1 cstackBANK0 main.obj
-__end_of_e2pext_r F66 0 CODE 0 text25 main.obj
-__end_of_e2pext_w DA2 0 CODE 0 text24 main.obj
-_serial_tx 1990 0 CODE 0 text10 main.obj
+_isr 1E5C 0 CODE 0 text38 main.obj
+_run 5A 0 BANK0 1 dataBANK0 main.obj
+PWM1_Init@f 44 0 BANK0 1 cstackBANK0 main.obj
+main@strConfig1 DF 0 BANK1 1 cstackBANK1 main.obj
+__end_of_e2pext_r 1C88 0 CODE 0 text24 main.obj
+__end_of_e2pext_w 1E5C 0 CODE 0 text23 main.obj
+_serial_rx 14FE 0 CODE 0 text11 main.obj
+_serial_tx 14CC 0 CODE 0 text8 main.obj
 saved_w 7E 0 ABS 0 - main.obj
-?_readADC 20 0 BANK0 1 cstackBANK0 main.obj
-_serial_tx_str 1D0A 0 CODE 0 text9 main.obj
-__size_of_keypad_scanner 0 0 ABS 0 - main.obj
-e2pext_r@addr 25 0 BANK0 1 cstackBANK0 main.obj
-__HidataCOMMON 0 0 ABS 0 idataCOMMON -
-sprintf@val 4B 0 BANK0 1 cstackBANK0 main.obj
-strcmp@s1 26 0 BANK0 1 cstackBANK0 main.obj
-strcmp@s2 20 0 BANK0 1 cstackBANK0 main.obj
-__end_of_isr E44 0 CODE 0 text39 main.obj
+?_readADC 35 0 BANK0 1 cstackBANK0 main.obj
+_serial_tx_str 186C 0 CODE 0 text7 main.obj
+e2pext_r@addr 3A 0 BANK0 1 cstackBANK0 main.obj
+sprintf@val B9 0 BANK1 1 cstackBANK1 main.obj
+strcmp@s1 3B 0 BANK0 1 cstackBANK0 main.obj
+strcmp@s2 35 0 BANK0 1 cstackBANK0 main.obj
+_readSerial 193C 0 CODE 0 text10 main.obj
+strcpy@cp 38 0 BANK0 1 cstackBANK0 main.obj
+strcpy@to 37 0 BANK0 1 cstackBANK0 main.obj
+__end_of_isr 1F26 0 CODE 0 text38 main.obj
+i1sprintf@ap 29 0 BANK0 1 cstackBANK0 main.obj
+i1sprintf@cp 2A 0 BANK0 1 cstackBANK0 main.obj
+i1sprintf@sp 20 0 BANK0 1 cstackBANK0 main.obj
 __size_of_keyboard_init 0 0 ABS 0 - main.obj
-_lcd_init E44 0 CODE 0 text18 main.obj
-_i2c_rb F66 0 CODE 0 text29 main.obj
-_i2c_wb 1E2A 0 CODE 0 text26 main.obj
+_lcd_init 1D1C 0 CODE 0 text17 main.obj
+_i2c_rb 1B7E 0 CODE 0 text28 main.obj
+_i2c_wb 19A8 0 CODE 0 text25 main.obj
 __Lintentry 8 0 CODE 0 intentry -
-___lldiv@divisor 2D 0 BANK0 1 cstackBANK0 main.obj
-__stringtab AB2 0 STRING 0 strings main.obj
-__size_of_printlnLCD 0 0 ABS 0 - main.obj
-strcmp@r 25 0 BANK0 1 cstackBANK0 main.obj
-_lcd_cmd 1ADC 0 CODE 0 text19 main.obj
-_lcd_dat 1B14 0 CODE 0 text17 main.obj
-_lcd_str 1BD2 0 CODE 0 text16 main.obj
+___lldiv@divisor 42 0 BANK0 1 cstackBANK0 main.obj
+__stringtab C00 0 STRING 0 strings main.obj
+strcmp@r 3A 0 BANK0 1 cstackBANK0 main.obj
+_lcd_cmd 1696 0 CODE 0 text18 main.obj
+_lcd_dat 165E 0 CODE 0 text16 main.obj
+_lcd_str 1754 0 CODE 0 text15 main.obj
 reset_vec 0 0 CODE 0 reset_vec startup.obj
-strlen@s 24 0 BANK0 1 cstackBANK0 main.obj
-e2pext_w@addr 2B 0 BANK0 1 cstackBANK0 main.obj
+strlen@s 39 0 BANK0 1 cstackBANK0 main.obj
+e2pext_w@addr 40 0 BANK0 1 cstackBANK0 main.obj
 __size_of_adc_init 0 0 ABS 0 - main.obj
-__pdataBANK1 D8 0 BANK1 1 dataBANK1 main.obj
-__end_of_switch_press_scan 1AB0 0 CODE 0 text1 main.obj
+__pdataBANK0 5A 0 BANK0 1 dataBANK0 main.obj
+__pdataBANK1 E6 0 BANK1 1 dataBANK1 main.obj
 __size_of___lmul 0 0 ABS 0 - main.obj
 __size_of___wmul 0 0 ABS 0 - main.obj
-__LbssBANK1 0 0 ABS 0 bssBANK1 -
-__end_of_lcd_init EE0 0 CODE 0 text18 main.obj
-lcd_str@str 27 0 BANK0 1 cstackBANK0 main.obj
-_lcd_wr 1960 0 CODE 0 text20 main.obj
-_nSeconds 78 0 COMMON 1 bssCOMMON main.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__LbssBANK3 0 0 ABS 0 bssBANK3 -
+__end_of_lcd_init 1DB8 0 CODE 0 text17 main.obj
+lcd_str@str 3C 0 BANK0 1 cstackBANK0 main.obj
+i1___lwdiv@dividend 72 0 COMMON 1 cstackCOMMON main.obj
+_lcd_wr 149E 0 CODE 0 text19 main.obj
+_nSeconds 4B 0 BANK0 1 bssBANK0 main.obj
 _RCSTAbits 18 0 ABS 0 - main.obj
 _PIE1bits 8C 0 ABS 0 - main.obj
 __size_of_isr_init 0 0 ABS 0 - main.obj
-sprintf@flag 49 0 BANK0 1 cstackBANK0 main.obj
-sprintf@prec 4A 0 BANK0 1 cstackBANK0 main.obj
-__ptext10 1990 0 CODE 0 text10 main.obj
-__ptext11 19C8 0 CODE 0 text11 main.obj
-__ptext12 1E9A 0 CODE 0 text12 main.obj
-__ptext13 1CBA 0 CODE 0 text13 main.obj
-__ptext14 1A4E 0 CODE 0 text14 main.obj
-__ptext15 1A6A 0 CODE 0 text15 main.obj
-__ptext16 1BD2 0 CODE 0 text16 main.obj
-__ptext17 1B14 0 CODE 0 text17 main.obj
-__ptext18 E44 0 CODE 0 text18 main.obj
-__ptext19 1ADC 0 CODE 0 text19 main.obj
-__ptext20 1960 0 CODE 0 text20 main.obj
-__ptext21 1B90 0 CODE 0 text21 main.obj
-__ptext22 19E0 0 CODE 0 text22 main.obj
-__ptext23 19B0 0 CODE 0 text23 main.obj
-__ptext24 CFE 0 CODE 0 text24 main.obj
-__ptext25 EE0 0 CODE 0 text25 main.obj
-__ptext26 1E2A 0 CODE 0 text26 main.obj
-__ptext27 1A32 0 CODE 0 text27 main.obj
-__ptext28 1A16 0 CODE 0 text28 main.obj
-__ptext29 F66 0 CODE 0 text29 main.obj
-__ptext30 FEA 0 CODE 0 text30 main.obj
-__ptext31 1972 0 CODE 0 text31 main.obj
-__ptext32 1B4E 0 CODE 0 text32 main.obj
-__ptext33 19FA 0 CODE 0 text33 main.obj
-__ptext34 C44 0 CODE 0 text34 main.obj
-__ptext35 1F82 0 CODE 0 text35 main.obj
-__ptext36 B88 0 CODE 0 text36 main.obj
-__ptext37 9B8 0 CODE 0 text37 main.obj
-__ptext38 89E 0 CODE 0 text38 main.obj
-__ptext39 DA2 0 CODE 0 text39 main.obj
-__ptext40 1C6A 0 CODE 0 text40 main.obj
-__ptext41 1980 0 CODE 0 text41 main.obj
-i2c_rb@ack 22 0 BANK0 1 cstackBANK0 main.obj
-i2c_rb@ret 23 0 BANK0 1 cstackBANK0 main.obj
-___aldiv 89E 0 CODE 0 text38 main.obj
-___lldiv B88 0 CODE 0 text36 main.obj
-___lwdiv 1F0A 0 CODE 0 text8 main.obj
-___lwmod 1D5C 0 CODE 0 text7 main.obj
-strlen@cp 23 0 BANK0 1 cstackBANK0 main.obj
-__pmaintext 8A 0 CODE 0 maintext main.obj
-___lmul@multiplier 20 0 BANK0 1 cstackBANK0 main.obj
-__end_of_keyboard_init 19FA 0 CODE 0 text22 main.obj
+sprintf@flag B4 0 BANK1 1 cstackBANK1 main.obj
+sprintf@prec B5 0 BANK1 1 cstackBANK1 main.obj
+__ptext10 193C 0 CODE 0 text10 main.obj
+__ptext11 14FE 0 CODE 0 text11 main.obj
+__ptext12 1A18 0 CODE 0 text12 main.obj
+__ptext13 1598 0 CODE 0 text13 main.obj
+__ptext14 15B8 0 CODE 0 text14 main.obj
+__ptext15 1754 0 CODE 0 text15 main.obj
+__ptext16 165E 0 CODE 0 text16 main.obj
+__ptext17 1D1C 0 CODE 0 text17 main.obj
+__ptext18 1696 0 CODE 0 text18 main.obj
+__ptext19 149E 0 CODE 0 text19 main.obj
+__ptext20 1712 0 CODE 0 text20 main.obj
+__ptext21 152A 0 CODE 0 text21 main.obj
+__ptext22 1512 0 CODE 0 text22 main.obj
+__ptext23 1DB8 0 CODE 0 text23 main.obj
+__ptext24 1C02 0 CODE 0 text24 main.obj
+__ptext25 19A8 0 CODE 0 text25 main.obj
+__ptext26 157C 0 CODE 0 text26 main.obj
+__ptext27 1560 0 CODE 0 text27 main.obj
+__ptext28 1B7E 0 CODE 0 text28 main.obj
+__ptext29 14EC 0 CODE 0 text29 main.obj
+__ptext30 14B0 0 CODE 0 text30 main.obj
+__ptext31 16D0 0 CODE 0 text31 main.obj
+__ptext32 1544 0 CODE 0 text32 main.obj
+__ptext33 1F26 0 CODE 0 text33 main.obj
+__ptext34 1B00 0 CODE 0 text34 main.obj
+__ptext35 AD0 0 CODE 0 text35 main.obj
+__ptext36 DCC 0 CODE 0 text36 main.obj
+__ptext37 EE6 0 CODE 0 text37 main.obj
+__ptext38 1E5C 0 CODE 0 text38 main.obj
+__ptext39 894 0 CODE 0 text39 main.obj
+__ptext40 17A0 0 CODE 0 text40 main.obj
+__ptext41 1A88 0 CODE 0 text41 main.obj
+__ptext42 1804 0 CODE 0 text42 main.obj
+__ptext43 14BC 0 CODE 0 text43 main.obj
+i2c_rb@ack 37 0 BANK0 1 cstackBANK0 main.obj
+i2c_rb@ret 38 0 BANK0 1 cstackBANK0 main.obj
+___aldiv EE6 0 CODE 0 text37 main.obj
+___lldiv AD0 0 CODE 0 text35 main.obj
+___lwdiv 1C88 0 CODE 0 text6 main.obj
+___lwmod 18D4 0 CODE 0 text5 main.obj
+strlen@cp 38 0 BANK0 1 cstackBANK0 main.obj
+__pmaintext 9E 0 CODE 0 maintext main.obj
+___lmul@multiplier 35 0 BANK0 1 cstackBANK0 main.obj
+__end_of_keyboard_init 1544 0 CODE 0 text21 main.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - main.obj
 __size_of_serial_init 0 0 ABS 0 - main.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - main.obj
-___wmul@multiplier 2A 0 BANK0 1 cstackBANK0 main.obj
-_PWM1_Set_Duty C44 0 CODE 0 text34 main.obj
-main@F1079 D8 0 BANK1 1 dataBANK1 main.obj
-__end_ofi1_serial_tx 1990 0 CODE 0 text41 main.obj
+___wmul@multiplier 3F 0 BANK0 1 cstackBANK0 main.obj
+i1___lwmod@divisor 78 0 COMMON 1 cstackCOMMON main.obj
+_PWM1_Set_Duty 1F26 0 CODE 0 text33 main.obj
+main@F1082 E6 0 BANK1 1 dataBANK1 main.obj
+__end_ofi1_serial_tx 14CC 0 CODE 0 text43 main.obj
 __size_ofi1_serial_tx_str 0 0 ABS 0 - main.obj
-main@code B5 0 BANK1 1 cstackBANK1 main.obj
-main@duty BA 0 BANK1 1 cstackBANK1 main.obj
-main@pass B0 0 BANK1 1 cstackBANK1 main.obj
+main@duty D4 0 BANK1 1 cstackBANK1 main.obj
+main@pass C3 0 BANK1 1 cstackBANK1 main.obj
 __size_of_i2c_rb 0 0 ABS 0 - main.obj
 __size_of_i2c_wb 0 0 ABS 0 - main.obj
-___lwdiv@divisor 30 0 BANK0 1 cstackBANK0 main.obj
-i2c_wb@val 22 0 BANK0 1 cstackBANK0 main.obj
-main@potP1 C6 0 BANK1 1 cstackBANK1 main.obj
-main@potP2 C0 0 BANK1 1 cstackBANK1 main.obj
-_strcmp 1C1E 0 CODE 0 text5 main.obj
-_strlen 1AB0 0 CODE 0 text4 main.obj
-main@tempC C2 0 BANK1 1 cstackBANK1 main.obj
-e2pext_r@ah 2A 0 BANK0 1 cstackBANK0 main.obj
-e2pext_r@al 29 0 BANK0 1 cstackBANK0 main.obj
-e2pext_w@ah 30 0 BANK0 1 cstackBANK0 main.obj
-e2pext_w@al 31 0 BANK0 1 cstackBANK0 main.obj
-e2pext_w@nt 32 0 BANK0 1 cstackBANK0 main.obj
-PWM1_Init@temp 35 0 BANK0 1 cstackBANK0 main.obj
-i1serial_tx_str@i 73 0 COMMON 1 cstackCOMMON main.obj
+___lwdiv@divisor 45 0 BANK0 1 cstackBANK0 main.obj
+i2c_wb@val 37 0 BANK0 1 cstackBANK0 main.obj
+main@potP1 E4 0 BANK1 1 cstackBANK1 main.obj
+main@potP2 E0 0 BANK1 1 cstackBANK1 main.obj
+_strADC 4F 0 BANK0 1 bssBANK0 main.obj
+_strcmp BB2 0 CODE 0 text3 main.obj
+_strcpy 162A 0 CODE 0 text2 main.obj
+_strlen 15FC 0 CODE 0 text1 main.obj
+main@tempC E2 0 BANK1 1 cstackBANK1 main.obj
+e2pext_r@ah 3F 0 BANK0 1 cstackBANK0 main.obj
+e2pext_r@al 3E 0 BANK0 1 cstackBANK0 main.obj
+e2pext_w@ah 45 0 BANK0 1 cstackBANK0 main.obj
+e2pext_w@al 46 0 BANK0 1 cstackBANK0 main.obj
+e2pext_w@nt 47 0 BANK0 1 cstackBANK0 main.obj
+PWM1_Init@temp A0 0 BANK1 1 cstackBANK1 main.obj
+__end_of_readSerial 19A8 0 CODE 0 text10 main.obj
+i1serial_tx_str@i 74 0 COMMON 1 cstackCOMMON main.obj
 _ADCON0bits 1F 0 ABS 0 - main.obj
-_adc_init 1972 0 CODE 0 text31 main.obj
-__end_of__stringtab AD2 0 STRING 0 strings main.obj
+_adc_init 14B0 0 CODE 0 text30 main.obj
+__end_of__stringtab C20 0 STRING 0 strings main.obj
 __CFG_LVP$OFF 0 0 ABS 0 - main.obj
+strcpy@from 35 0 BANK0 1 cstackBANK0 main.obj
 __size_of_lcd_wr 0 0 ABS 0 - main.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__pbssCOMMON 78 0 COMMON 1 bssCOMMON main.obj
-lcd_cmd@val 26 0 BANK0 1 cstackBANK0 main.obj
+lcd_cmd@val 3B 0 BANK0 1 cstackBANK0 main.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __size_of_serial_tx_str 0 0 ABS 0 - main.obj
-delay_ms@i 23 0 BANK0 1 cstackBANK0 main.obj
-delay_ms@j 25 0 BANK0 1 cstackBANK0 main.obj
+delay_ms@i 38 0 BANK0 1 cstackBANK0 main.obj
+delay_ms@j 3A 0 BANK0 1 cstackBANK0 main.obj
 _PIR1bits C 0 ABS 0 - main.obj
-__Lend_init 1C 0 CODE 0 end_init -
-__end_of_adc_init 1980 0 CODE 0 text31 main.obj
+__Lend_init 24 0 CODE 0 end_init -
+__end_of_adc_init 14BC 0 CODE 0 text30 main.obj
 __size_of_delay_ms 0 0 ABS 0 - main.obj
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_isr_init 19B0 0 CODE 0 text23 main.obj
-end_of_initialization 82 0 CODE 0 cinit main.obj
-_nMSeconds 7A 0 COMMON 1 bssCOMMON main.obj
-__Hintentry 1C 0 CODE 0 intentry -
+_isr_init 1512 0 CODE 0 text22 main.obj
+end_of_initialization 96 0 CODE 0 cinit main.obj
+_nMSeconds 4D 0 BANK0 1 bssBANK0 main.obj
+__Hintentry 24 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
-?___aldiv 20 0 BANK0 1 cstackBANK0 main.obj
-___lwdiv@dividend 32 0 BANK0 1 cstackBANK0 main.obj
-?___lldiv 2D 0 BANK0 1 cstackBANK0 main.obj
-?___lwdiv 30 0 BANK0 1 cstackBANK0 main.obj
-?___lwmod 38 0 BANK0 1 cstackBANK0 main.obj
-__end_of_isr_init 19C8 0 CODE 0 text23 main.obj
+?___aldiv 35 0 BANK0 1 cstackBANK0 main.obj
+___lwdiv@dividend 47 0 BANK0 1 cstackBANK0 main.obj
+?___lldiv 42 0 BANK0 1 cstackBANK0 main.obj
+?___lwdiv 45 0 BANK0 1 cstackBANK0 main.obj
+?___lwmod A3 0 BANK1 1 cstackBANK1 main.obj
+__end_of_isr_init 152A 0 CODE 0 text22 main.obj
 __Hreset_vec 6 0 CODE 0 reset_vec -
-__HbssBANK1 0 0 ABS 0 bssBANK1 -
-_switch_press_scan 1A8C 0 CODE 0 text1 main.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__HbssBANK3 0 0 ABS 0 bssBANK3 -
 __size_of_strcmp 0 0 ABS 0 - main.obj
+__size_of_strcpy 0 0 ABS 0 - main.obj
 __size_of_strlen 0 0 ABS 0 - main.obj
-__ptext1 1A8C 0 CODE 0 text1 main.obj
-__ptext2 716 0 CODE 0 text2 main.obj
-__ptext3 1DC0 0 CODE 0 text3 main.obj
-__ptext4 1AB0 0 CODE 0 text4 main.obj
-__ptext5 1C1E 0 CODE 0 text5 main.obj
-__ptext6 57E 0 CODE 0 text6 main.obj
-__ptext7 1D5C 0 CODE 0 text7 main.obj
-__ptext8 1F0A 0 CODE 0 text8 main.obj
-__ptext9 1D0A 0 CODE 0 text9 main.obj
-strncpy@from 20 0 BANK0 1 cstackBANK0 main.obj
-strncpy@size 21 0 BANK0 1 cstackBANK0 main.obj
-switch_press_scan@key 29 0 BANK0 1 cstackBANK0 main.obj
-___aldiv@dividend 24 0 BANK0 1 cstackBANK0 main.obj
-_sprintf 57E 0 CODE 0 text6 main.obj
-__end_of_serial_tx_str 1D5C 0 CODE 0 text9 main.obj
+__ptext1 15FC 0 CODE 0 text1 main.obj
+__ptext2 162A 0 CODE 0 text2 main.obj
+__ptext3 BB2 0 CODE 0 text3 main.obj
+__ptext4 63E 0 CODE 0 text4 main.obj
+__ptext5 18D4 0 CODE 0 text5 main.obj
+__ptext6 1C88 0 CODE 0 text6 main.obj
+__ptext7 186C 0 CODE 0 text7 main.obj
+__ptext8 14CC 0 CODE 0 text8 main.obj
+__ptext9 15DA 0 CODE 0 text9 main.obj
+___aldiv@dividend 39 0 BANK0 1 cstackBANK0 main.obj
+_sprintf 63E 0 CODE 0 text4 main.obj
+__end_of_serial_tx_str 18D4 0 CODE 0 text7 main.obj
 __Lpowerup 0 0 CODE 0 powerup -
+i1sprintf@flag 27 0 BANK0 1 cstackBANK0 main.obj
+i1sprintf@prec 28 0 BANK0 1 cstackBANK0 main.obj
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-sprintf@ap 48 0 BANK0 1 cstackBANK0 main.obj
-sprintf@sp 4D 0 BANK0 1 cstackBANK0 main.obj
+i1___lwdiv@counter 77 0 COMMON 1 cstackCOMMON main.obj
+sprintf@ap B6 0 BANK1 1 cstackBANK1 main.obj
+sprintf@cp B7 0 BANK1 1 cstackBANK1 main.obj
+sprintf@sp A8 0 BANK1 1 cstackBANK1 main.obj
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __CFG_FOSC$HS 0 0 ABS 0 - main.obj
-_strncpy 1DC0 0 CODE 0 text3 main.obj
+_strUART 190 0 BANK3 1 bssBANK3 main.obj
+?i1___lwdiv 70 0 COMMON 1 cstackCOMMON main.obj
+?i1___lwmod 78 0 COMMON 1 cstackCOMMON main.obj
+readSerial@i 38 0 BANK0 1 cstackBANK0 main.obj
 __size_of_readADC 0 0 ABS 0 - main.obj
-__end_of__initialization 82 0 CODE 0 cinit main.obj
+__end_of__initialization 96 0 CODE 0 cinit main.obj
 __size_of_PWM1_Set_Duty 0 0 ABS 0 - main.obj
-_delay_ms 1B90 0 CODE 0 text21 main.obj
+_delay_ms 1712 0 CODE 0 text20 main.obj
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK1 1968 0 CODE 0 idataBANK1 main.obj
+__pidataBANK0 BFE 0 CODE 0 idataBANK0 main.obj
+__pidataBANK1 14A6 0 CODE 0 idataBANK1 main.obj
 __Lclrtext 0 0 ABS 0 clrtext -
-___lmul@product 29 0 BANK0 1 cstackBANK0 main.obj
-__end_of_delay_ms 1BD2 0 CODE 0 text21 main.obj
-___lmul@multiplicand 24 0 BANK0 1 cstackBANK0 main.obj
-___lldiv@quotient 36 0 BANK0 1 cstackBANK0 main.obj
+___lmul@product 3E 0 BANK0 1 cstackBANK0 main.obj
+__end_of_delay_ms 1754 0 CODE 0 text20 main.obj
+___lmul@multiplicand 39 0 BANK0 1 cstackBANK0 main.obj
+___lldiv@quotient A0 0 BANK1 1 cstackBANK1 main.obj
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON main.obj
 _TXSTAbits 98 0 ABS 0 - main.obj
-__Hend_init 22 0 CODE 0 end_init -
-___aldiv@counter 29 0 BANK0 1 cstackBANK0 main.obj
-sprintf@c 4E 0 BANK0 1 cstackBANK0 main.obj
-sprintf@f 3E 0 BANK0 1 cstackBANK0 main.obj
-serial_tx@val 20 0 BANK0 1 cstackBANK0 main.obj
-lcd_dat@val 26 0 BANK0 1 cstackBANK0 main.obj
-__end_of_main 57E 0 CODE 0 maintext main.obj
-__end_of_dpowers AE6 0 STRING 0 strings main.obj
+__Hend_init 2A 0 CODE 0 end_init -
+___aldiv@counter 3E 0 BANK0 1 cstackBANK0 main.obj
+sprintf@c BB 0 BANK1 1 cstackBANK1 main.obj
+sprintf@f AA 0 BANK1 1 cstackBANK1 main.obj
+serial_tx@val 35 0 BANK0 1 cstackBANK0 main.obj
+lcd_dat@val 3B 0 BANK0 1 cstackBANK0 main.obj
+__end_of_main 63E 0 CODE 0 maintext main.obj
+__end_of_dpowers C34 0 STRING 0 strings main.obj
 __size_of_i2c_stop 0 0 ABS 0 - main.obj
-__end_of_delay FFC 0 CODE 0 text30 main.obj
-__end_of_PWM1_Set_Duty CFE 0 CODE 0 text34 main.obj
-printlnL1LCD@str1 2B 0 BANK0 1 cstackBANK0 main.obj
-?_sprintf 3E 0 BANK0 1 cstackBANK0 main.obj
+__end_of_delay 14FE 0 CODE 0 text29 main.obj
+__end_of_PWM1_Set_Duty 2000 0 CODE 0 text33 main.obj
+printlnL1LCD@str1 40 0 BANK0 1 cstackBANK0 main.obj
+?_sprintf A8 0 BANK1 1 cstackBANK1 main.obj
 _PORTB 6 0 ABS 0 - main.obj
 _PORTD 8 0 ABS 0 - main.obj
+_RCREG 1A 0 ABS 0 - main.obj
 _SPBRG 99 0 ABS 0 - main.obj
 _T1CON 10 0 ABS 0 - main.obj
 _TMR1H F 0 ABS 0 - main.obj
@@ -1110,34 +1187,34 @@ __size_ofi1_serial_tx 0 0 ABS 0 - main.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry main.obj
-_delay FEA 0 CODE 0 text30 main.obj
+_delay 14EC 0 CODE 0 text29 main.obj
 __CFG_CPD$OFF 0 0 ABS 0 - main.obj
-lcd_wr@val 20 0 BANK0 1 cstackBANK0 main.obj
-keypad_scanner@i_613 22 0 BANK0 1 cstackBANK0 main.obj
-keypad_scanner@i_614 24 0 BANK0 1 cstackBANK0 main.obj
-keypad_scanner@i_615 26 0 BANK0 1 cstackBANK0 main.obj
+lcd_wr@val 35 0 BANK0 1 cstackBANK0 main.obj
 _CCP1CON 17 0 ABS 0 - main.obj
 __pintentry 8 0 CODE 0 intentry main.obj
 __size_of_isr 0 0 ABS 0 - main.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
 __HdataBANK1 0 0 ABS 0 dataBANK1 -
-_PWM1_Start 19FA 0 CODE 0 text33 main.obj
-_printlnL1LCD 1A6A 0 CODE 0 text15 main.obj
-_printlnL2LCD 1A4E 0 CODE 0 text14 main.obj
-e2pext_r@ret 28 0 BANK0 1 cstackBANK0 main.obj
-__initialization 22 0 CODE 0 cinit main.obj
+_PWM1_Start 1544 0 CODE 0 text32 main.obj
+_printlnL1LCD 15B8 0 CODE 0 text14 main.obj
+_printlnL2LCD 1598 0 CODE 0 text13 main.obj
+e2pext_r@ret 3D 0 BANK0 1 cstackBANK0 main.obj
+__initialization 2A 0 CODE 0 cinit main.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - main.obj
-e2pext_w@tmp 33 0 BANK0 1 cstackBANK0 main.obj
-e2pext_w@val 2D 0 BANK0 1 cstackBANK0 main.obj
-__pbssBANK1 C8 0 BANK1 1 bssBANK1 main.obj
-__pdataCOMMON 7C 0 COMMON 1 dataCOMMON main.obj
+e2pext_w@tmp 48 0 BANK0 1 cstackBANK0 main.obj
+e2pext_w@val 42 0 BANK0 1 cstackBANK0 main.obj
+__pbssBANK0 4B 0 BANK0 1 bssBANK0 main.obj
+__pbssBANK3 190 0 BANK3 1 bssBANK3 main.obj
+i1sprintf@val 2C 0 BANK0 1 cstackBANK0 main.obj
 _T2CONbits 12 0 ABS 0 - main.obj
 __CFG_WRT$OFF 0 0 ABS 0 - main.obj
-_serial_init 19C8 0 CODE 0 text11 main.obj
-__pstrings AB2 0 STRING 0 strings main.obj
-_keypad_scanner 716 0 CODE 0 text2 main.obj
-___wmul@product 2E 0 BANK0 1 cstackBANK0 main.obj
-__end_of_PWM1_Init AB2 0 CODE 0 text37 main.obj
+_serial_init 15DA 0 CODE 0 text9 main.obj
+__pstrings C00 0 STRING 0 strings main.obj
+___wmul@product 43 0 BANK0 1 cstackBANK0 main.obj
+__end_of_PWM1_Init EE6 0 CODE 0 text36 main.obj
 __size_of_PWM1_Init 0 0 ABS 0 - main.obj
+__size_of_readSerial 0 0 ABS 0 - main.obj
+?i1_sprintf 20 0 BANK0 1 cstackBANK0 main.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1163,44 +1240,53 @@ __size_of_PWM1_Init 0 0 ABS 0 - main.obj
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text1 0 D46 1A8C 12 2
-text3 0 EE0 1DC0 35 2
-text4 0 D58 1AB0 16 2
-text5 0 E0F 1C1E 26 2
-text7 0 EAE 1D5C 32 2
-text8 0 F85 1F0A 3C 2
-text9 0 E85 1D0A 29 2
-text10 0 CC8 1990 8 2
-text11 0 CE4 19C8 C 2
-text12 0 F4D 1E9A 38 2
-text13 0 E5D 1CBA 28 2
-text14 0 D27 1A4E E 2
-text15 0 D35 1A6A 11 2
-text16 0 DE9 1BD2 26 2
-text17 0 D8A 1B14 1D 2
-text19 0 D6E 1ADC 1C 2
-text20 0 CB0 1960 4 2
-text21 0 DC8 1B90 21 2
-text22 0 CF0 19E0 D 2
-text23 0 CD8 19B0 C 2
-text26 0 F15 1E2A 38 2
-text27 0 D19 1A32 E 2
-text28 0 D0B 1A16 E 2
-text31 0 CB9 1972 7 2
-text32 0 DA7 1B4E 21 2
-text33 0 CFD 19FA E 2
-text35 0 FC1 1F82 3F 2
-text36 0 5C4 B88 23B 2
-text40 0 E35 1C6A 28 2
-text41 0 CC0 1980 8 2
-cstackCOMMON 1 70 70 D 1
-cstackBANK0 1 20 20 31 1
-cstackBANK1 1 A0 A0 3D 1
-intentry 0 4 8 555 2
+text1 0 AFE 15FC 17 2
+text2 0 B15 162A 1A 2
+text5 0 C6A 18D4 34 2
+text6 0 E44 1C88 4A 2
+text7 0 C36 186C 34 2
+text8 0 A66 14CC 8 2
+text9 0 AED 15DA 11 2
+text10 0 C9E 193C 36 2
+text11 0 A7F 14FE A 2
+text12 0 D0C 1A18 38 2
+text13 0 ACC 1598 10 2
+text14 0 ADC 15B8 11 2
+text15 0 BAA 1754 26 2
+text16 0 B2F 165E 1C 2
+text17 0 E8E 1D1C 4E 2
+text18 0 B4B 1696 1D 2
+text19 0 A4F 149E 4 2
+text20 0 B89 1712 21 2
+text21 0 A95 152A D 2
+text22 0 A89 1512 C 2
+text23 0 EDC 1DB8 52 2
+text24 0 E01 1C02 43 2
+text25 0 CD4 19A8 38 2
+text26 0 ABE 157C E 2
+text27 0 AB0 1560 E 2
+text28 0 DBF 1B7E 42 2
+text29 0 A76 14EC 9 2
+text30 0 A58 14B0 6 2
+text31 0 B68 16D0 21 2
+text32 0 AA2 1544 E 2
+text33 0 F93 1F26 6D 2
+text34 0 D80 1B00 3F 2
+text36 0 6E6 DCC 11A 2
+text38 0 F2E 1E5C 65 2
+text40 0 BD0 17A0 32 2
+text41 0 D44 1A88 3C 2
+text42 0 C02 1804 34 2
+text43 0 A5E 14BC 8 2
+cstackCOMMON 1 70 70 E 1
+cstackBANK0 1 20 20 3B 1
+cstackBANK1 1 A0 A0 4B 1
+intentry 0 4 8 5FC 2
 reset_vec 0 0 0 3 2
-idataBANK1 0 CB4 1968 5 2
-strings 0 559 AB2 6B 2
-clrtext 0 CD0 19A0 8 2
+bssBANK3 1 190 190 28 1
+idataBANK1 0 A53 14A6 5 2
+strings 0 600 C00 E6 2
+clrtext 0 A6E 14DC 8 2
 config 0 2007 400E 1 2
 # OTES Section
 # This section contains data of all the note-psects.  The beginning of the section

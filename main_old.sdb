@@ -43,10 +43,14 @@
 [v _main main `(i  1 e 2 0 ]
 "6 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
 [v _serial_init serial_init `(v  1 e 1 0 ]
-"23
+"28
 [v _serial_tx serial_tx `(v  1 e 1 0 ]
-"29
+"38
 [v _serial_tx_str serial_tx_str `(v  1 e 1 0 ]
+"53
+[v _serial_rx serial_rx `(uc  1 e 1 0 ]
+"78
+[v _readSerial readSerial `(v  1 e 1 0 ]
 [s S46 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
@@ -59,7 +63,7 @@
 "233 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [u S55 . 1 `S46 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES55  1 e 1 @6 ]
-[s S72 . 1 `uc 1 RC0 1 0 :1:0 
+[s S78 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -69,18 +73,30 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "295
-[u S81 . 1 `S72 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES81  1 e 1 @7 ]
+[u S87 . 1 `S78 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES87  1 e 1 @7 ]
 "340
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S205 . 1 `uc 1 RE0 1 0 :1:0 
+[s S210 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 ]
 "414
-[u S209 . 1 `S205 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES209  1 e 1 @9 ]
-[s S287 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S214 . 1 `S210 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES214  1 e 1 @9 ]
+[s S336 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"549
+[u S345 . 1 `S336 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES345  1 e 1 @12 ]
+[s S292 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -90,32 +106,34 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "994
-[s S296 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S301 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S300 . 1 `uc 1 . 1 0 :6:0 
+[s S305 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S303 . 1 `uc 1 . 1 0 :6:0 
+[s S308 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S306 . 1 `S287 1 . 1 0 `S296 1 . 1 0 `S300 1 . 1 0 `S303 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES306  1 e 1 @24 ]
+[u S311 . 1 `S292 1 . 1 0 `S301 1 . 1 0 `S305 1 . 1 0 `S308 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES311  1 e 1 @24 ]
 "1059
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1066
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1152
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 "1159
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
-[s S142 . 1 `uc 1 ADON 1 0 :1:0 
+[s S147 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 GO_nDONE 1 0 :1:2 
 `uc 1 CHS 1 0 :3:3 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1190
-[s S148 . 1 `uc 1 . 1 0 :2:0 
+[s S153 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO 1 0 :1:2 
 `uc 1 CHS0 1 0 :1:3 
 `uc 1 CHS1 1 0 :1:4 
@@ -123,25 +141,37 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S156 . 1 `uc 1 . 1 0 :2:0 
+[s S161 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nDONE 1 0 :1:2 
 ]
-[s S159 . 1 `uc 1 . 1 0 :2:0 
+[s S164 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO_DONE 1 0 :1:2 
 ]
-[u S162 . 1 `S142 1 . 1 0 `S148 1 . 1 0 `S156 1 . 1 0 `S159 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES162  1 e 1 @31 ]
+[u S167 . 1 `S147 1 . 1 0 `S153 1 . 1 0 `S161 1 . 1 0 `S164 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES167  1 e 1 @31 ]
 "1325
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1375
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S357 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1392
+[u S366 . 1 `S357 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES366  1 e 1 @134 ]
 "1437
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1499
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1561
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S250 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S255 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -151,15 +181,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2025
-[s S259 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S264 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S263 . 1 `uc 1 . 1 0 :6:0 
+[s S268 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S266 . 1 `S250 1 . 1 0 `S259 1 . 1 0 `S263 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES266  1 e 1 @152 ]
+[u S271 . 1 `S255 1 . 1 0 `S264 1 . 1 0 `S268 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES271  1 e 1 @152 ]
 "2080
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2222
@@ -175,7 +205,7 @@
 [v main@str str `[6]uc  1 a 6 34 ]
 "56
 [v main@tmp tmp `uc  1 a 1 40 ]
-"86
+"87
 } 0
 "505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -220,31 +250,50 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 4 ]
 "30
 } 0
-"29 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+"38 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
 [v _serial_tx_str serial_tx_str `(v  1 e 1 0 ]
 {
 [v serial_tx_str@val val `*.24DCuc  1 a 1 wreg ]
-"31
-[v serial_tx_str@i i `uc  1 a 1 3 ]
-"29
-[v serial_tx_str@val val `*.24DCuc  1 a 1 wreg ]
-"31
-[v serial_tx_str@val val `*.24DCuc  1 a 1 2 ]
 "40
+[v serial_tx_str@i i `uc  1 a 1 3 ]
+"38
+[v serial_tx_str@val val `*.24DCuc  1 a 1 wreg ]
+"40
+[v serial_tx_str@val val `*.24DCuc  1 a 1 2 ]
+"51
 } 0
-"23
+"28
 [v _serial_tx serial_tx `(v  1 e 1 0 ]
 {
 [v serial_tx@val val `uc  1 a 1 wreg ]
 [v serial_tx@val val `uc  1 a 1 wreg ]
-"25
+"30
 [v serial_tx@val val `uc  1 a 1 0 ]
-"27
+"36
 } 0
 "6
 [v _serial_init serial_init `(v  1 e 1 0 ]
 {
-"19
+"24
+} 0
+"78
+[v _readSerial readSerial `(v  1 e 1 0 ]
+{
+[v readSerial@buf buf `*.4uc  1 a 1 wreg ]
+"80
+[v readSerial@i i `i  1 a 2 6 ]
+"79
+[v readSerial@tmp tmp `uc  1 a 1 8 ]
+"78
+[v readSerial@buf buf `*.4uc  1 a 1 wreg ]
+[v readSerial@max_length max_length `i  1 p 2 0 ]
+[v readSerial@buf buf `*.4uc  1 a 1 5 ]
+"88
+} 0
+"53
+[v _serial_rx serial_rx `(uc  1 e 1 0 ]
+{
+"63
 } 0
 "11 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
 [v _readADC readADC `(ui  1 e 2 0 ]

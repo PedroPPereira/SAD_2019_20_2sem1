@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                                           Tue Apr 28 08:57:00 2020
+                                                                                                           Sat May 09 06:13:14 2020
 
 
      1                           	processor	16F877A
@@ -63,7 +63,7 @@ Microchip MPLAB XC8 Assembler V2.10 build 88905656
     57                           
     58                           ; No powerup routine
     59                           ; jump to start
-    60  0000  120A  118A  280E   	goto	(start& (0+2047))| (reset_vec& (0+-2048))
+    60  0000  120A  118A  2812   	goto	(start& (0+2047))| (reset_vec& (0+-2048))
     61                           
     62                           	psect	maintext
     63                           
@@ -90,10 +90,10 @@ Microchip MPLAB XC8 Assembler V2.10 build 88905656
     84  0000                     intlevel5:	
     85                           
     86                           	psect	init
-    87  000E                     start:	
+    87  0012                     start:	
     88                           
     89                           	psect	end_init
-    90  000E  120A  118A  2811   	ljmp	start_initialization	;jump to C runtime clear & initialization
+    90  0012  120A  118A  2815   	ljmp	start_initialization	;jump to C runtime clear & initialization
     91                           
     92                           	psect	clrtext
     93  0004                     FSR	set	4
@@ -106,9 +106,9 @@ Microchip MPLAB XC8 Assembler V2.10 build 88905656
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                               Tue Apr 28 08:57:00 2020
+Symbol Table                                                                                               Sat May 09 06:13:14 2020
 
-               ___sp 0000                 _main 0045                 start 000E  start_initialization 0011  
+               ___sp 0000                 _main 004F                 start 0012  start_initialization 0015  
           ___stackhi 0000            ___stacklo 0000             ___int_sp 0000             intlevel0 0000  
            intlevel1 0000             intlevel2 0000             intlevel3 0000             intlevel4 0000  
            intlevel5 0000             reset_vec 0000  

@@ -1800,13 +1800,10 @@ extern char * strrichr(const char *, int);
 
 # 3 "adc.h"
 void adc_init(void);
-
 unsigned int readADC(unsigned char canal);
 
 # 3 "display7s.h"
 unsigned char display7s(unsigned char v);
-
-
 unsigned char selDISP(unsigned int num);
 
 # 18 "lcd.h"
@@ -1819,11 +1816,12 @@ void delay_ms(unsigned int val);
 void printlnL1LCD(const char* str1);
 void printlnL2LCD(const char* str1);
 
-# 27 "serial.h"
+# 4 "serial.h"
 void serial_init(void);
 void serial_tx(unsigned char val);
 void serial_tx_str(const char* val);
-unsigned char serial_rx(unsigned int timeout);
+unsigned char serial_rx();
+void readSerial(char *buf, int max_length);
 
 
 # 12 "main_old.c"
@@ -1891,9 +1889,10 @@ TRISA=0x07;
 while(PORTBbits.RB1);
 
 serial_tx_str("\r\n Picsimlab\r\n Teste Serial TX\r\n");
+readSerial(str, sizeof(str));
+printlnLCD("Carregou em B1",str);
 
 PORTCbits.RC1 = 1;
-printlnLCD("Carregou em B1","Acender LED D0");
 PORTD = 0x02;
 delay_ms1(200);
 PORTD = 0x00;

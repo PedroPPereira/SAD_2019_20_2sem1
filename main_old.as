@@ -700,12 +700,14 @@ EECON2 equ 018Dh ;#
 	FNCALL	_main,_lcd_init
 	FNCALL	_main,_printlnLCD
 	FNCALL	_main,_readADC
+	FNCALL	_main,_readSerial
 	FNCALL	_main,_serial_init
 	FNCALL	_main,_serial_tx_str
 	FNCALL	_main,_sprintf
 	FNCALL	_sprintf,___lwdiv
 	FNCALL	_sprintf,___lwmod
 	FNCALL	_serial_tx_str,_serial_tx
+	FNCALL	_readSerial,_serial_rx
 	FNCALL	_printlnLCD,_lcd_cmd
 	FNCALL	_printlnLCD,_lcd_str
 	FNCALL	_lcd_str,_lcd_dat
@@ -767,8 +769,12 @@ _dpowers:
 	global __end_of_dpowers
 __end_of_dpowers:
 	global	_dpowers
+	global	_RCREG
+_RCREG	set	0x1A
 	global	_TXREG
 _TXREG	set	0x19
+	global	_PIR1bits
+_PIR1bits	set	0xC
 	global	_RCSTAbits
 _RCSTAbits	set	0x18
 	global	_PORTEbits
@@ -785,6 +791,8 @@ _PORTCbits	set	0x7
 _PORTBbits	set	0x6
 	global	_PORTD
 _PORTD	set	0x8
+	global	_TRISBbits
+_TRISBbits	set	0x86
 	global	_TXSTAbits
 _TXSTAbits	set	0x98
 	global	_SPBRG
@@ -840,24 +848,6 @@ STR_3:
 	retlw	0
 psect	strings
 	
-STR_5:	
-	retlw	65	;'A'
-	retlw	99	;'c'
-	retlw	101	;'e'
-	retlw	110	;'n'
-	retlw	100	;'d'
-	retlw	101	;'e'
-	retlw	114	;'r'
-	retlw	32	;' '
-	retlw	76	;'L'
-	retlw	69	;'E'
-	retlw	68	;'D'
-	retlw	32	;' '
-	retlw	68	;'D'
-	retlw	48	;'0'
-	retlw	0
-psect	strings
-	
 STR_4:	
 	retlw	67	;'C'
 	retlw	97	;'a'
@@ -876,7 +866,7 @@ STR_4:
 	retlw	0
 psect	strings
 	
-STR_7:	
+STR_6:	
 	retlw	65	;'A'
 	retlw	68	;'D'
 	retlw	67	;'C'
@@ -915,7 +905,7 @@ STR_2:
 	retlw	0
 psect	strings
 	
-STR_6:	
+STR_5:	
 	retlw	37	;'%'
 	retlw	100	;'d'
 	retlw	0
@@ -963,6 +953,7 @@ __pcstackCOMMON:
 ?_adc_init:	; 1 bytes @ 0x0
 ??_adc_init:	; 1 bytes @ 0x0
 ?_serial_tx_str:	; 1 bytes @ 0x0
+?_readSerial:	; 1 bytes @ 0x0
 ?_delay_ms:	; 1 bytes @ 0x0
 ?_delay_ms1:	; 1 bytes @ 0x0
 ?_lcd_wr:	; 1 bytes @ 0x0
@@ -971,6 +962,8 @@ __pcstackCOMMON:
 ?_lcd_dat:	; 1 bytes @ 0x0
 ?_serial_tx:	; 1 bytes @ 0x0
 ??_serial_tx:	; 1 bytes @ 0x0
+?_serial_rx:	; 1 bytes @ 0x0
+??_serial_rx:	; 1 bytes @ 0x0
 	global	?_readADC
 ?_readADC:	; 2 bytes @ 0x0
 ?_main:	; 2 bytes @ 0x0
@@ -982,9 +975,12 @@ serial_tx@val:	; 1 bytes @ 0x0
 delay_ms1@val:	; 2 bytes @ 0x0
 	global	delay_ms@val
 delay_ms@val:	; 2 bytes @ 0x0
+	global	readSerial@max_length
+readSerial@max_length:	; 2 bytes @ 0x0
 	ds	1
 ??_serial_tx_str:	; 1 bytes @ 0x1
 	ds	1
+??_readSerial:	; 1 bytes @ 0x2
 ??_readADC:	; 1 bytes @ 0x2
 ??_delay_ms:	; 1 bytes @ 0x2
 ??_delay_ms1:	; 1 bytes @ 0x2
@@ -1002,6 +998,8 @@ delay_ms@i:	; 2 bytes @ 0x3
 delay_ms1@j:	; 1 bytes @ 0x5
 	global	delay_ms@j
 delay_ms@j:	; 1 bytes @ 0x5
+	global	readSerial@buf
+readSerial@buf:	; 1 bytes @ 0x5
 	ds	1
 ??_lcd_cmd:	; 1 bytes @ 0x6
 ??_lcd_dat:	; 1 bytes @ 0x6
@@ -1009,12 +1007,17 @@ delay_ms@j:	; 1 bytes @ 0x5
 lcd_cmd@val:	; 1 bytes @ 0x6
 	global	lcd_dat@val
 lcd_dat@val:	; 1 bytes @ 0x6
+	global	readSerial@i
+readSerial@i:	; 2 bytes @ 0x6
 	ds	1
 ??_lcd_init:	; 1 bytes @ 0x7
 ?_lcd_str:	; 1 bytes @ 0x7
 	global	lcd_str@str
 lcd_str@str:	; 2 bytes @ 0x7
-	ds	2
+	ds	1
+	global	readSerial@tmp
+readSerial@tmp:	; 1 bytes @ 0x8
+	ds	1
 ??_lcd_str:	; 1 bytes @ 0x9
 	global	readADC@ch
 readADC@ch:	; 1 bytes @ 0x9
@@ -1108,7 +1111,7 @@ main@tmp:	; 1 bytes @ 0x28
 	ds	1
 ;!
 ;!Data Sizes:
-;!    Strings     96
+;!    Strings     81
 ;!    Constant    10
 ;!    Data        0
 ;!    BSS         0
@@ -1127,7 +1130,7 @@ main@tmp:	; 1 bytes @ 0x28
 ;!Pointer List with Targets:
 ;!
 ;!    sprintf@f	PTR const unsigned char  size(1) Largest target is 3
-;!		 -> STR_6(CODE[3]), 
+;!		 -> STR_5(CODE[3]), 
 ;!
 ;!    sprintf@sp	PTR unsigned char  size(1) Largest target is 6
 ;!		 -> main@str(BANK0[6]), 
@@ -1135,18 +1138,21 @@ main@tmp:	; 1 bytes @ 0x28
 ;!    sprintf@ap	PTR void [1] size(1) Largest target is 2
 ;!		 -> ?_sprintf(BANK0[2]), 
 ;!
+;!    readSerial@buf	PTR unsigned char  size(1) Largest target is 6
+;!		 -> main@str(BANK0[6]), 
+;!
 ;!    serial_tx_str@val	PTR const unsigned char  size(1) Largest target is 33
 ;!		 -> STR_3(CODE[33]), 
 ;!
-;!    printlnLCD@str2	PTR const unsigned char  size(2) Largest target is 15
-;!		 -> main@str(BANK0[6]), STR_5(CODE[15]), STR_2(CODE[9]), 
+;!    printlnLCD@str2	PTR const unsigned char  size(2) Largest target is 9
+;!		 -> main@str(BANK0[6]), STR_2(CODE[9]), 
 ;!
 ;!    printlnLCD@str1	PTR const unsigned char  size(1) Largest target is 15
-;!		 -> STR_7(CODE[11]), STR_4(CODE[15]), STR_1(CODE[10]), 
+;!		 -> STR_6(CODE[11]), STR_4(CODE[15]), STR_1(CODE[10]), 
 ;!
 ;!    lcd_str@str	PTR const unsigned char  size(2) Largest target is 15
-;!		 -> STR_7(CODE[11]), main@str(BANK0[6]), STR_5(CODE[15]), STR_4(CODE[15]), 
-;!		 -> STR_2(CODE[9]), STR_1(CODE[10]), 
+;!		 -> STR_6(CODE[11]), STR_4(CODE[15]), main@str(BANK0[6]), STR_2(CODE[9]), 
+;!		 -> STR_1(CODE[10]), 
 ;!
 
 
@@ -1193,7 +1199,7 @@ main@tmp:	; 1 bytes @ 0x28
 ;! ---------------------------------------------------------------------------------
 ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
 ;! ---------------------------------------------------------------------------------
-;! (0) _main                                                12    12      0    4909
+;! (0) _main                                                12    12      0    5102
 ;!                                             29 BANK0     12    12      0
 ;!                            ___lwdiv
 ;!                             ___wmul
@@ -1202,6 +1208,7 @@ main@tmp:	; 1 bytes @ 0x28
 ;!                           _lcd_init
 ;!                         _printlnLCD
 ;!                            _readADC
+;!                         _readSerial
 ;!                        _serial_init
 ;!                      _serial_tx_str
 ;!                            _sprintf
@@ -1229,28 +1236,34 @@ main@tmp:	; 1 bytes @ 0x28
 ;! ---------------------------------------------------------------------------------
 ;! (1) _serial_init                                          0     0      0       0
 ;! ---------------------------------------------------------------------------------
+;! (1) _readSerial                                           9     7      2     305
+;!                                              0 COMMON     9     7      2
+;!                          _serial_rx
+;! ---------------------------------------------------------------------------------
+;! (2) _serial_rx                                            0     0      0       0
+;! ---------------------------------------------------------------------------------
 ;! (1) _readADC                                             10     8      2      22
 ;!                                              0 COMMON    10     8      2
 ;! ---------------------------------------------------------------------------------
-;! (1) _printlnLCD                                           3     1      2    1654
+;! (1) _printlnLCD                                           3     1      2    1574
 ;!                                             11 COMMON     3     1      2
 ;!                            _lcd_cmd
 ;!                            _lcd_str
 ;! ---------------------------------------------------------------------------------
-;! (2) _lcd_str                                              4     2      2     823
+;! (2) _lcd_str                                              4     2      2     783
 ;!                                              7 COMMON     4     2      2
 ;!                            _lcd_dat
 ;! ---------------------------------------------------------------------------------
-;! (3) _lcd_dat                                              1     1      0     547
+;! (3) _lcd_dat                                              1     1      0     507
 ;!                                              6 COMMON     1     1      0
 ;!                           _delay_ms
 ;!                             _lcd_wr
 ;! ---------------------------------------------------------------------------------
-;! (1) _lcd_init                                             0     0      0    1050
+;! (1) _lcd_init                                             0     0      0     970
 ;!                           _delay_ms
 ;!                            _lcd_cmd
 ;! ---------------------------------------------------------------------------------
-;! (2) _lcd_cmd                                              1     1      0     547
+;! (2) _lcd_cmd                                              1     1      0     507
 ;!                                              6 COMMON     1     1      0
 ;!                           _delay_ms
 ;!                             _lcd_wr
@@ -1258,7 +1271,7 @@ main@tmp:	; 1 bytes @ 0x28
 ;! (4) _lcd_wr                                               1     1      0      22
 ;!                                              0 COMMON     1     1      0
 ;! ---------------------------------------------------------------------------------
-;! (4) _delay_ms                                             6     4      2     503
+;! (4) _delay_ms                                             6     4      2     463
 ;!                                              0 COMMON     6     4      2
 ;! ---------------------------------------------------------------------------------
 ;! (1) _delay_ms1                                            6     4      2     198
@@ -1299,6 +1312,8 @@ main@tmp:	; 1 bytes @ 0x28
 ;!         _delay_ms
 ;!         _lcd_wr
 ;!   _readADC
+;!   _readSerial
+;!     _serial_rx
 ;!   _serial_init
 ;!   _serial_tx_str
 ;!     _serial_tx
@@ -1354,7 +1369,7 @@ main@tmp:	; 1 bytes @ 0x28
 ;;  i               2    0        int 
 ;;  tmp             1   40[BANK0 ] unsigned char 
 ;; Return value:  Size  Location     Type
-;;                  2   42[None  ] int 
+;;                  2   44[None  ] int 
 ;; Registers used:
 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
 ;; Tracked objects:
@@ -1376,6 +1391,7 @@ main@tmp:	; 1 bytes @ 0x28
 ;;		_lcd_init
 ;;		_printlnLCD
 ;;		_readADC
+;;		_readSerial
 ;;		_serial_init
 ;;		_serial_tx_str
 ;;		_sprintf
@@ -1400,7 +1416,7 @@ _main:
 ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
 	line	42
 	
-l1268:	
+l1338:	
 	movlw	low(0C3h)
 	bsf	status, 5	;RP0=1, select bank1
 	movwf	(133)^080h	;volatile
@@ -1412,34 +1428,34 @@ l1268:
 	movwf	(135)^080h	;volatile
 	line	45
 	
-l1270:	
+l1340:	
 	clrf	(136)^080h	;volatile
 	line	46
 	
-l1272:	
+l1342:	
 	clrf	(137)^080h	;volatile
 	line	49
 	
-l1274:	
+l1344:	
 	fcall	_lcd_init
 	line	51
 	
-l1276:	
+l1346:	
 	fcall	_serial_init
 	line	52
 	
-l1278:	
+l1348:	
 	fcall	_adc_init
 	line	55
 	
-l1280:	
+l1350:	
 	line	58
 	
-l1282:	
+l1352:	
 	clrf	(8)	;volatile
 	line	62
 	
-l1284:	
+l1354:	
 	movlw	(low((((STR_2)-__stringbase)|8000h)))&0ffh
 	movwf	(printlnLCD@str2)
 	movlw	80h
@@ -1448,79 +1464,85 @@ l1284:
 	fcall	_printlnLCD
 	line	63
 	
-l1286:	
+l1356:	
 	clrf	(8)	;volatile
 	line	64
 	
-l1288:	
+l1358:	
 	movlw	low(07h)
 	bsf	status, 5	;RP0=1, select bank1
 	movwf	(133)^080h	;volatile
 	line	69
 	
-l44:	
+l46:	
 	bcf	status, 5	;RP0=0, select bank0
 	btfsc	(6),1	;volatile
-	goto	u691
-	goto	u690
-u691:
-	goto	l44
-u690:
+	goto	u791
+	goto	u790
+u791:
+	goto	l46
+u790:
 	line	71
 	
-l1290:	
+l1360:	
 	movlw	(low((((STR_3)-__stringbase)|8000h)))&0ffh
 	fcall	_serial_tx_str
+	line	72
+	movlw	06h
+	movwf	(readSerial@max_length)
+	movlw	0
+	movwf	((readSerial@max_length))+1
+	movlw	(low(main@str|((0x0)<<8)))&0ffh
+	fcall	_readSerial
 	line	73
 	
-l1292:	
-	bcf	status, 5	;RP0=0, select bank0
-	bsf	(7),1	;volatile
-	line	74
-	
-l1294:	
-	movlw	(low((((STR_5)-__stringbase)|8000h)))&0ffh
+l1362:	
+	movlw	(low(main@str|((0x0)<<8))&0ffh)
 	movwf	(printlnLCD@str2)
-	movlw	80h
+	movlw	(0x0)
 	movwf	(printlnLCD@str2+1)
 	movlw	(low((((STR_4)-__stringbase)|8000h)))&0ffh
 	fcall	_printlnLCD
 	line	75
 	
-l1296:	
-	movlw	low(02h)
-	movwf	(8)	;volatile
+l1364:	
+	bsf	(7),1	;volatile
 	line	76
 	
-l1298:	
+l1366:	
+	movlw	low(02h)
+	movwf	(8)	;volatile
+	line	77
+	
+l1368:	
 	movlw	0C8h
 	movwf	(delay_ms1@val)
 	movlw	0
 	movwf	((delay_ms1@val))+1
 	fcall	_delay_ms1
-	line	77
+	line	78
 	
-l1300:	
+l1370:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(8)	;volatile
-	line	78
+	line	79
 	
-l1302:	
+l1372:	
 	movlw	0C8h
 	movwf	(delay_ms1@val)
 	movlw	0
 	movwf	((delay_ms1@val))+1
 	fcall	_delay_ms1
-	line	79
+	line	80
 	
-l1304:	
+l1374:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(7),5	;volatile
-	line	81
+	line	82
 	
-l1306:	
+l1376:	
 	movlw	0CAh
 	movwf	(___lwdiv@divisor)
 	movlw	0
@@ -1545,10 +1567,10 @@ l1306:
 	movwf	(??_main+0)+0
 	movf	(??_main+0)+0,w
 	movwf	(main@tmp)
-	line	82
+	line	83
 	
-l1308:	
-	movlw	(low((((STR_6)-__stringbase)|8000h)))&0ffh
+l1378:	
+	movlw	(low((((STR_5)-__stringbase)|8000h)))&0ffh
 	movwf	(??_main+0)+0
 	movf	(??_main+0)+0,w
 	movwf	(sprintf@f)
@@ -1561,29 +1583,29 @@ l1308:
 	movwf	1+(?_sprintf)+01h
 	movlw	(low(main@str|((0x0)<<8)))&0ffh
 	fcall	_sprintf
-	line	83
+	line	84
 	
-l1310:	
+l1380:	
 	movlw	(low(main@str|((0x0)<<8))&0ffh)
 	movwf	(printlnLCD@str2)
 	movlw	(0x0)
 	movwf	(printlnLCD@str2+1)
-	movlw	(low((((STR_7)-__stringbase)|8000h)))&0ffh
+	movlw	(low((((STR_6)-__stringbase)|8000h)))&0ffh
 	fcall	_printlnLCD
-	line	84
+	line	85
 	
-l47:	
+l49:	
 	btfsc	(6),1	;volatile
-	goto	u701
-	goto	u700
-u701:
-	goto	l47
-u700:
-	goto	l1284
+	goto	u801
+	goto	u800
+u801:
+	goto	l49
+u800:
+	goto	l1354
 	global	start
 	ljmp	start
 	opt callstack 0
-	line	86
+	line	87
 GLOBAL	__end_of_main
 	__end_of_main:
 	signat	_main,90
@@ -1596,7 +1618,7 @@ GLOBAL	__end_of_main
 ;;  sp              1    wreg     PTR unsigned char 
 ;;		 -> main@str(6), 
 ;;  f               1   16[BANK0 ] PTR const unsigned char 
-;;		 -> STR_6(3), 
+;;		 -> STR_5(3), 
 ;; Auto vars:     Size  Location     Type
 ;;  sp              1   27[BANK0 ] PTR unsigned char 
 ;;		 -> main@str(6), 
@@ -1650,27 +1672,27 @@ _sprintf:
 	movwf	(sprintf@sp)
 	line	550
 	
-l1196:	
+l1266:	
 	movlw	(low(?_sprintf|((0x0)<<8)+01h))&0ffh
 	movwf	(??_sprintf+0)+0
 	movf	(??_sprintf+0)+0,w
 	movwf	(sprintf@ap)
 	line	553
-	goto	l1248
+	goto	l1318
 	line	555
 	
-l1198:	
+l1268:	
 		movlw	37
 	xorwf	((sprintf@c)),w
 	btfsc	status,2
-	goto	u581
-	goto	u580
-u581:
-	goto	l1204
-u580:
+	goto	u681
+	goto	u680
+u681:
+	goto	l1274
+u680:
 	line	558
 	
-l1200:	
+l1270:	
 	movf	(sprintf@c),w
 	movwf	(??_sprintf+0)+0
 	movf	(sprintf@sp),w
@@ -1679,20 +1701,20 @@ l1200:
 	bcf	status, 7	;select IRP bank0
 	movwf	indf
 	
-l1202:	
+l1272:	
 	movlw	low(01h)
 	movwf	(??_sprintf+0)+0
 	movf	(??_sprintf+0)+0,w
 	addwf	(sprintf@sp),f
 	line	559
-	goto	l1248
+	goto	l1318
 	line	565
 	
-l1204:	
+l1274:	
 	clrf	(sprintf@flag)
 	line	661
 	
-l1208:	
+l1278:	
 	movlw	01h
 	addwf	(sprintf@f),f
 	movlw	-01h
@@ -1712,19 +1734,19 @@ l1208:
 	opt asmopt_off
 	xorlw	0^0	; case 0
 	skipnz
-	goto	l1250
+	goto	l1320
 	xorlw	100^0	; case 100
 	skipnz
-	goto	l1210
+	goto	l1280
 	xorlw	105^100	; case 105
 	skipnz
-	goto	l1210
-	goto	l1248
+	goto	l1280
+	goto	l1318
 	opt asmopt_pop
 
 	line	1285
 	
-l1210:	
+l1280:	
 	movf	(sprintf@ap),w
 	movwf	fsr0
 	bcf	status, 7	;select IRP bank0
@@ -1734,30 +1756,30 @@ l1210:
 	movf	indf,w
 	movwf	(sprintf@val+1)
 	
-l1212:	
+l1282:	
 	movlw	low(02h)
 	movwf	(??_sprintf+0)+0
 	movf	(??_sprintf+0)+0,w
 	addwf	(sprintf@ap),f
 	line	1287
 	
-l1214:	
+l1284:	
 	btfss	(sprintf@val+1),7
-	goto	u591
-	goto	u590
-u591:
-	goto	l1220
-u590:
+	goto	u691
+	goto	u690
+u691:
+	goto	l1290
+u690:
 	line	1288
 	
-l1216:	
+l1286:	
 	movlw	low(03h)
 	movwf	(??_sprintf+0)+0
 	movf	(??_sprintf+0)+0,w
 	iorwf	(sprintf@flag),f
 	line	1289
 	
-l1218:	
+l1288:	
 	comf	(sprintf@val),f
 	comf	(sprintf@val+1),f
 	incf	(sprintf@val),f
@@ -1765,12 +1787,12 @@ l1218:
 	incf	(sprintf@val+1),f
 	line	1331
 	
-l1220:	
+l1290:	
 	clrf	(sprintf@c)
 	incf	(sprintf@c),f
 	line	1332
 	
-l1226:	
+l1296:	
 	movf	(sprintf@c),w
 	movwf	(??_sprintf+0)+0
 	addwf	(??_sprintf+0)+0,w
@@ -1783,20 +1805,20 @@ l1226:
 	movf	1+(??_sprintf+1)+0,w
 	subwf	(sprintf@val+1),w
 	skipz
-	goto	u605
+	goto	u705
 	movf	0+(??_sprintf+1)+0,w
 	subwf	(sprintf@val),w
-u605:
+u705:
 	skipnc
-	goto	u601
-	goto	u600
-u601:
-	goto	l1230
-u600:
-	goto	l1232
+	goto	u701
+	goto	u700
+u701:
+	goto	l1300
+u700:
+	goto	l1302
 	line	1331
 	
-l1230:	
+l1300:	
 	movlw	low(01h)
 	movwf	(??_sprintf+0)+0
 	movf	(??_sprintf+0)+0,w
@@ -1804,25 +1826,25 @@ l1230:
 		movlw	5
 	xorwf	((sprintf@c)),w
 	btfss	status,2
-	goto	u611
-	goto	u610
-u611:
-	goto	l1226
-u610:
+	goto	u711
+	goto	u710
+u711:
+	goto	l1296
+u710:
 	line	1464
 	
-l1232:	
+l1302:	
 	movf	(sprintf@flag),w
 	andlw	03h
 	btfsc	status,2
-	goto	u621
-	goto	u620
-u621:
-	goto	l1238
-u620:
+	goto	u721
+	goto	u720
+u721:
+	goto	l1308
+u720:
 	line	1465
 	
-l1234:	
+l1304:	
 	movlw	low(02Dh)
 	movwf	(??_sprintf+0)+0
 	movf	(sprintf@sp),w
@@ -1831,23 +1853,23 @@ l1234:
 	bcf	status, 7	;select IRP bank0
 	movwf	indf
 	
-l1236:	
+l1306:	
 	movlw	low(01h)
 	movwf	(??_sprintf+0)+0
 	movf	(??_sprintf+0)+0,w
 	addwf	(sprintf@sp),f
 	line	1498
 	
-l1238:	
+l1308:	
 	movf	(sprintf@c),w
 	movwf	(??_sprintf+0)+0
 	movf	(??_sprintf+0)+0,w
 	movwf	(sprintf@prec)
 	line	1500
-	goto	l1246
+	goto	l1316
 	line	1515
 	
-l1240:	
+l1310:	
 	movlw	0Ah
 	movwf	(___lwmod@divisor)
 	movlw	0
@@ -1878,7 +1900,7 @@ l1240:
 	movwf	(sprintf@c)
 	line	1550
 	
-l1242:	
+l1312:	
 	movf	(sprintf@c),w
 	movwf	(??_sprintf+0)+0
 	movf	(sprintf@sp),w
@@ -1887,28 +1909,28 @@ l1242:
 	bcf	status, 7	;select IRP bank0
 	movwf	indf
 	
-l1244:	
+l1314:	
 	movlw	low(01h)
 	movwf	(??_sprintf+0)+0
 	movf	(??_sprintf+0)+0,w
 	addwf	(sprintf@sp),f
 	line	1500
 	
-l1246:	
+l1316:	
 	movlw	low(-1)
 	movwf	(??_sprintf+0)+0
 	movf	(??_sprintf+0)+0,w
 	addwf	(sprintf@prec),f
 		incf	(((sprintf@prec))),w
 	btfss	status,2
-	goto	u631
-	goto	u630
-u631:
-	goto	l1240
-u630:
+	goto	u731
+	goto	u730
+u731:
+	goto	l1310
+u730:
 	line	553
 	
-l1248:	
+l1318:	
 	movlw	01h
 	addwf	(sprintf@f),f
 	movlw	-01h
@@ -1920,21 +1942,21 @@ l1248:
 	movwf	(sprintf@c)
 	movf	(((sprintf@c))),w
 	btfss	status,2
-	goto	u641
-	goto	u640
-u641:
-	goto	l1198
-u640:
+	goto	u741
+	goto	u740
+u741:
+	goto	l1268
+u740:
 	line	1564
 	
-l1250:	
+l1320:	
 	movf	(sprintf@sp),w
 	movwf	fsr0
 	bcf	status, 7	;select IRP bank0
 	clrf	indf
 	line	1567
 	
-l303:	
+l305:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_sprintf
@@ -1988,69 +2010,69 @@ ___lwmod:
 ; Regs used in ___lwmod: [wreg+status,2+status,0]
 	line	12
 	
-l1104:	
+l1146:	
 	movf	((___lwmod@divisor)),w
 iorwf	((___lwmod@divisor+1)),w
 	btfsc	status,2
-	goto	u471
-	goto	u470
-u471:
-	goto	l1122
-u470:
+	goto	u531
+	goto	u530
+u531:
+	goto	l1164
+u530:
 	line	13
 	
-l1106:	
+l1148:	
 	clrf	(___lwmod@counter)
 	incf	(___lwmod@counter),f
 	line	14
-	goto	l1112
+	goto	l1154
 	line	15
 	
-l1108:	
+l1150:	
 	movlw	01h
 	
-u485:
+u545:
 	clrc
 	rlf	(___lwmod@divisor),f
 	rlf	(___lwmod@divisor+1),f
 	addlw	-1
 	skipz
-	goto	u485
+	goto	u545
 	line	16
 	
-l1110:	
+l1152:	
 	movlw	low(01h)
 	movwf	(??___lwmod+0)+0
 	movf	(??___lwmod+0)+0,w
 	addwf	(___lwmod@counter),f
 	line	14
 	
-l1112:	
+l1154:	
 	btfss	(___lwmod@divisor+1),(15)&7
-	goto	u491
-	goto	u490
-u491:
-	goto	l1108
-u490:
+	goto	u551
+	goto	u550
+u551:
+	goto	l1150
+u550:
 	line	19
 	
-l1114:	
+l1156:	
 	movf	(___lwmod@divisor+1),w
 	subwf	(___lwmod@dividend+1),w
 	skipz
-	goto	u505
+	goto	u565
 	movf	(___lwmod@divisor),w
 	subwf	(___lwmod@dividend),w
-u505:
+u565:
 	skipc
-	goto	u501
-	goto	u500
-u501:
-	goto	l1118
-u500:
+	goto	u561
+	goto	u560
+u561:
+	goto	l1160
+u560:
 	line	20
 	
-l1116:	
+l1158:	
 	movf	(___lwmod@divisor),w
 	subwf	(___lwmod@dividend),f
 	movf	(___lwmod@divisor+1),w
@@ -2059,37 +2081,37 @@ l1116:
 	subwf	(___lwmod@dividend+1),f
 	line	21
 	
-l1118:	
+l1160:	
 	movlw	01h
 	
-u515:
+u575:
 	clrc
 	rrf	(___lwmod@divisor+1),f
 	rrf	(___lwmod@divisor),f
 	addlw	-1
 	skipz
-	goto	u515
+	goto	u575
 	line	22
 	
-l1120:	
+l1162:	
 	movlw	01h
 	subwf	(___lwmod@counter),f
 	btfss	status,2
-	goto	u521
-	goto	u520
-u521:
-	goto	l1114
-u520:
+	goto	u581
+	goto	u580
+u581:
+	goto	l1156
+u580:
 	line	24
 	
-l1122:	
+l1164:	
 	movf	(___lwmod@dividend+1),w
 	movwf	(?___lwmod+1)
 	movf	(___lwmod@dividend),w
 	movwf	(?___lwmod)
 	line	25
 	
-l725:	
+l727:	
 	return
 	opt callstack 0
 GLOBAL	__end_of___lwmod
@@ -2145,84 +2167,84 @@ ___lwdiv:
 ; Regs used in ___lwdiv: [wreg+status,2+status,0]
 	line	13
 	
-l1078:	
+l1120:	
 	clrf	(___lwdiv@quotient)
 	clrf	(___lwdiv@quotient+1)
 	line	14
 	
-l1080:	
+l1122:	
 	movf	((___lwdiv@divisor)),w
 iorwf	((___lwdiv@divisor+1)),w
 	btfsc	status,2
-	goto	u401
-	goto	u400
-u401:
-	goto	l1100
-u400:
+	goto	u461
+	goto	u460
+u461:
+	goto	l1142
+u460:
 	line	15
 	
-l1082:	
+l1124:	
 	clrf	(___lwdiv@counter)
 	incf	(___lwdiv@counter),f
 	line	16
-	goto	l1088
+	goto	l1130
 	line	17
 	
-l1084:	
+l1126:	
 	movlw	01h
 	
-u415:
+u475:
 	clrc
 	rlf	(___lwdiv@divisor),f
 	rlf	(___lwdiv@divisor+1),f
 	addlw	-1
 	skipz
-	goto	u415
+	goto	u475
 	line	18
 	
-l1086:	
+l1128:	
 	movlw	low(01h)
 	movwf	(??___lwdiv+0)+0
 	movf	(??___lwdiv+0)+0,w
 	addwf	(___lwdiv@counter),f
 	line	16
 	
-l1088:	
+l1130:	
 	btfss	(___lwdiv@divisor+1),(15)&7
-	goto	u421
-	goto	u420
-u421:
-	goto	l1084
-u420:
+	goto	u481
+	goto	u480
+u481:
+	goto	l1126
+u480:
 	line	21
 	
-l1090:	
+l1132:	
 	movlw	01h
 	
-u435:
+u495:
 	clrc
 	rlf	(___lwdiv@quotient),f
 	rlf	(___lwdiv@quotient+1),f
 	addlw	-1
 	skipz
-	goto	u435
+	goto	u495
 	line	22
 	movf	(___lwdiv@divisor+1),w
 	subwf	(___lwdiv@dividend+1),w
 	skipz
-	goto	u445
+	goto	u505
 	movf	(___lwdiv@divisor),w
 	subwf	(___lwdiv@dividend),w
-u445:
+u505:
 	skipc
-	goto	u441
-	goto	u440
-u441:
-	goto	l1096
-u440:
+	goto	u501
+	goto	u500
+u501:
+	goto	l1138
+u500:
 	line	23
 	
-l1092:	
+l1134:	
 	movf	(___lwdiv@divisor),w
 	subwf	(___lwdiv@dividend),f
 	movf	(___lwdiv@divisor+1),w
@@ -2231,41 +2253,41 @@ l1092:
 	subwf	(___lwdiv@dividend+1),f
 	line	24
 	
-l1094:	
+l1136:	
 	bsf	(___lwdiv@quotient)+(0/8),(0)&7
 	line	26
 	
-l1096:	
+l1138:	
 	movlw	01h
 	
-u455:
+u515:
 	clrc
 	rrf	(___lwdiv@divisor+1),f
 	rrf	(___lwdiv@divisor),f
 	addlw	-1
 	skipz
-	goto	u455
+	goto	u515
 	line	27
 	
-l1098:	
+l1140:	
 	movlw	01h
 	subwf	(___lwdiv@counter),f
 	btfss	status,2
-	goto	u461
-	goto	u460
-u461:
-	goto	l1090
-u460:
+	goto	u521
+	goto	u520
+u521:
+	goto	l1132
+u520:
 	line	29
 	
-l1100:	
+l1142:	
 	movf	(___lwdiv@quotient+1),w
 	movwf	(?___lwdiv+1)
 	movf	(___lwdiv@quotient),w
 	movwf	(?___lwdiv)
 	line	30
 	
-l715:	
+l717:	
 	return
 	opt callstack 0
 GLOBAL	__end_of___lwdiv
@@ -2275,7 +2297,7 @@ GLOBAL	__end_of___lwdiv
 
 ;; *************** function _serial_tx_str *****************
 ;; Defined at:
-;;		line 29 in file "serial.c"
+;;		line 38 in file "serial.c"
 ;; Parameters:    Size  Location     Type
 ;;  val             1    wreg     PTR const unsigned char 
 ;;		 -> STR_3(33), 
@@ -2289,7 +2311,7 @@ GLOBAL	__end_of___lwdiv
 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
 ;; Tracked objects:
 ;;		On entry : 300/0
-;;		On exit  : 300/100
+;;		On exit  : 300/0
 ;;		Unchanged: 0/0
 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
 ;;      Params:         0       0       0       0       0
@@ -2307,12 +2329,12 @@ GLOBAL	__end_of___lwdiv
 ;;
 psect	text4,local,class=CODE,delta=2,merge=1,group=0
 	file	"serial.c"
-	line	29
+	line	38
 global __ptext4
 __ptext4:	;psect for function _serial_tx_str
 psect	text4
 	file	"serial.c"
-	line	29
+	line	38
 	global	__size_of_serial_tx_str
 	__size_of_serial_tx_str	equ	__end_of_serial_tx_str-_serial_tx_str
 	
@@ -2321,52 +2343,57 @@ _serial_tx_str:
 	opt	callstack 6
 ; Regs used in _serial_tx_str: [wreg-fsr0h+status,2+status,0+pclath+cstack]
 	movwf	(serial_tx_str@val)
-	line	31
+	line	40
 	
-l1170:	
+l1218:	
 	clrf	(serial_tx_str@i)
-	line	33
-	goto	l1176
-	line	35
+	line	42
+	goto	l1224
+	line	44
 	
-l1172:	
+l1220:	
 	movf	(serial_tx_str@i),w
 	addwf	(serial_tx_str@val),w
 	movwf	fsr0
 	fcall	stringdir
 	fcall	_serial_tx
-	line	36
+	line	45
 	
-l1174:	
+l1222:	
 	movlw	low(01h)
 	movwf	(??_serial_tx_str+0)+0
 	movf	(??_serial_tx_str+0)+0,w
 	addwf	(serial_tx_str@i),f
-	line	33
+	line	42
 	
-l1176:	
+l1224:	
 	movf	(serial_tx_str@i),w
 	addwf	(serial_tx_str@val),w
 	movwf	fsr0
 	fcall	stringdir
 	xorlw	0
 	skipz
-	goto	u551
-	goto	u550
-u551:
-	goto	l1172
-u550:
-	line	38
+	goto	u611
+	goto	u610
+u611:
+	goto	l1220
+u610:
+	line	47
 	
-l1178:	
+l1226:	
 	movlw	low(0Ah)
 	fcall	_serial_tx
-	line	39
+	line	48
 	movlw	low(0Dh)
 	fcall	_serial_tx
-	line	40
+	line	50
 	
-l178:	
+l1228:	
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	(12),5	;volatile
+	line	51
+	
+l180:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_serial_tx_str
@@ -2376,7 +2403,7 @@ GLOBAL	__end_of_serial_tx_str
 
 ;; *************** function _serial_tx *****************
 ;; Defined at:
-;;		line 23 in file "serial.c"
+;;		line 28 in file "serial.c"
 ;; Parameters:    Size  Location     Type
 ;;  val             1    wreg     unsigned char 
 ;; Auto vars:     Size  Location     Type
@@ -2403,12 +2430,12 @@ GLOBAL	__end_of_serial_tx_str
 ;; This function uses a non-reentrant model
 ;;
 psect	text5,local,class=CODE,delta=2,merge=1,group=0
-	line	23
+	line	28
 global __ptext5
 __ptext5:	;psect for function _serial_tx
 psect	text5
 	file	"serial.c"
-	line	23
+	line	28
 	global	__size_of_serial_tx
 	__size_of_serial_tx	equ	__end_of_serial_tx-_serial_tx
 	
@@ -2417,25 +2444,25 @@ _serial_tx:
 	opt	callstack 6
 ; Regs used in _serial_tx: [wreg]
 	movwf	(serial_tx@val)
-	line	25
+	line	30
 	
-l1076:	
+l1112:	
 	movf	(serial_tx@val),w
 	bcf	status, 5	;RP0=0, select bank0
 	movwf	(25)	;volatile
-	line	26
+	line	31
 	
-l169:	
+l171:	
 	bsf	status, 5	;RP0=1, select bank1
 	btfss	(152)^080h,1	;volatile
-	goto	u391
-	goto	u390
-u391:
-	goto	l169
-u390:
-	line	27
+	goto	u441
+	goto	u440
+u441:
+	goto	l171
+u440:
+	line	36
 	
-l172:	
+l174:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_serial_tx
@@ -2456,7 +2483,7 @@ GLOBAL	__end_of_serial_tx
 ;;		wreg
 ;; Tracked objects:
 ;;		On entry : 300/0
-;;		On exit  : 300/0
+;;		On exit  : 300/100
 ;;		Unchanged: 0/0
 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
 ;;      Params:         0       0       0       0       0
@@ -2487,47 +2514,298 @@ _serial_init:
 ; Regs used in _serial_init: [wreg]
 	line	8
 	
-l1146:	
+l1188:	
 	movlw	low(067h)
 	bsf	status, 5	;RP0=1, select bank1
 	movwf	(153)^080h	;volatile
 	line	12
 	
-l1148:	
+l1190:	
 	bcf	(152)^080h,6	;volatile
 	line	13
 	
-l1150:	
+l1192:	
 	bsf	(152)^080h,5	;volatile
 	line	14
 	
-l1152:	
+l1194:	
 	bcf	(152)^080h,4	;volatile
 	line	15
 	
-l1154:	
+l1196:	
 	bsf	(152)^080h,2	;volatile
 	line	16
 	
-l1156:	
+l1198:	
 	bcf	status, 5	;RP0=0, select bank0
 	bsf	(24),7	;volatile
 	line	17
 	
-l1158:	
+l1200:	
 	bcf	(24),6	;volatile
 	line	18
 	
-l1160:	
+l1202:	
 	bsf	(24),4	;volatile
-	line	19
+	line	21
 	
-l166:	
+l1204:	
+	bcf	(12),5	;volatile
+	line	22
+	
+l1206:	
+	bsf	status, 5	;RP0=1, select bank1
+	bsf	(134)^080h,2	;volatile
+	line	23
+	
+l1208:	
+	bcf	(134)^080h,5	;volatile
+	line	24
+	
+l168:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_serial_init
 	__end_of_serial_init:
 	signat	_serial_init,89
+	global	_readSerial
+
+;; *************** function _readSerial *****************
+;; Defined at:
+;;		line 78 in file "serial.c"
+;; Parameters:    Size  Location     Type
+;;  buf             1    wreg     PTR unsigned char 
+;;		 -> main@str(6), 
+;;  max_length      2    0[COMMON] int 
+;; Auto vars:     Size  Location     Type
+;;  buf             1    5[COMMON] PTR unsigned char 
+;;		 -> main@str(6), 
+;;  i               2    6[COMMON] int 
+;;  tmp             1    8[COMMON] unsigned char 
+;; Return value:  Size  Location     Type
+;;                  1    wreg      void 
+;; Registers used:
+;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+;; Tracked objects:
+;;		On entry : 300/0
+;;		On exit  : 800/0
+;;		Unchanged: 0/0
+;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+;;      Params:         2       0       0       0       0
+;;      Locals:         4       0       0       0       0
+;;      Temps:          3       0       0       0       0
+;;      Totals:         9       0       0       0       0
+;;Total ram usage:        9 bytes
+;; Hardware stack levels used:    1
+;; Hardware stack levels required when called:    1
+;; This function calls:
+;;		_serial_rx
+;; This function is called by:
+;;		_main
+;; This function uses a non-reentrant model
+;;
+psect	text7,local,class=CODE,delta=2,merge=1,group=0
+	line	78
+global __ptext7
+__ptext7:	;psect for function _readSerial
+psect	text7
+	file	"serial.c"
+	line	78
+	global	__size_of_readSerial
+	__size_of_readSerial	equ	__end_of_readSerial-_readSerial
+	
+_readSerial:	
+;incstack = 0
+	opt	callstack 6
+; Regs used in _readSerial: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+	movwf	(readSerial@buf)
+	line	79
+	
+l1230:	
+	line	80
+	
+l1232:	
+	clrf	(readSerial@i)
+	clrf	(readSerial@i+1)
+	line	81
+	clrf	(readSerial@i)
+	clrf	(readSerial@i+1)
+	goto	l1246
+	line	82
+	
+l1234:	
+	fcall	_serial_rx
+	movwf	(??_readSerial+0)+0
+	movf	(??_readSerial+0)+0,w
+	movwf	(readSerial@tmp)
+	line	84
+	
+l1236:	
+	movf	((readSerial@tmp)),w
+	btfsc	status,2
+	goto	u621
+	goto	u620
+u621:
+	goto	l1248
+u620:
+	
+l1238:	
+		movlw	10
+	xorwf	((readSerial@tmp)),w
+	btfsc	status,2
+	goto	u631
+	goto	u630
+u631:
+	goto	l1248
+u630:
+	
+l1240:	
+		movlw	13
+	xorwf	((readSerial@tmp)),w
+	btfss	status,2
+	goto	u641
+	goto	u640
+u641:
+	goto	l1242
+u640:
+	goto	l1248
+	line	85
+	
+l1242:	
+	movf	(readSerial@tmp),w
+	movwf	(??_readSerial+0)+0
+	movf	(readSerial@i),w
+	addwf	(readSerial@buf),w
+	movwf	(??_readSerial+1)+0
+	movf	0+(??_readSerial+1)+0,w
+	movwf	fsr0
+	movf	(??_readSerial+0)+0,w
+	bcf	status, 7	;select IRP bank0
+	movwf	indf
+	line	81
+	
+l1244:	
+	movlw	01h
+	addwf	(readSerial@i),f
+	skipnc
+	incf	(readSerial@i+1),f
+	movlw	0
+	addwf	(readSerial@i+1),f
+	
+l1246:	
+	movf	(readSerial@max_length),w
+	addlw	low(-1)
+	movwf	(??_readSerial+0)+0
+	movf	(readSerial@max_length+1),w
+	skipnc
+	addlw	1
+	addlw	high(-1)
+	movwf	1+(??_readSerial+0)+0
+	movf	(readSerial@i+1),w
+	xorlw	80h
+	movwf	(??_readSerial+2)+0
+	movf	1+(??_readSerial+0)+0,w
+	xorlw	80h
+	subwf	(??_readSerial+2)+0,w
+	skipz
+	goto	u655
+	movf	0+(??_readSerial+0)+0,w
+	subwf	(readSerial@i),w
+u655:
+
+	skipc
+	goto	u651
+	goto	u650
+u651:
+	goto	l1234
+u650:
+	line	87
+	
+l1248:	
+	movf	(readSerial@i),w
+	addwf	(readSerial@buf),w
+	movwf	(??_readSerial+0)+0
+	incf	0+(??_readSerial+0)+0,w
+	movwf	fsr0
+	bcf	status, 7	;select IRP bank0
+	clrf	indf
+	line	88
+	
+l195:	
+	return
+	opt callstack 0
+GLOBAL	__end_of_readSerial
+	__end_of_readSerial:
+	signat	_readSerial,8313
+	global	_serial_rx
+
+;; *************** function _serial_rx *****************
+;; Defined at:
+;;		line 53 in file "serial.c"
+;; Parameters:    Size  Location     Type
+;;		None
+;; Auto vars:     Size  Location     Type
+;;		None
+;; Return value:  Size  Location     Type
+;;                  1    wreg      unsigned char 
+;; Registers used:
+;;		wreg
+;; Tracked objects:
+;;		On entry : 0/0
+;;		On exit  : 300/0
+;;		Unchanged: 0/0
+;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+;;      Params:         0       0       0       0       0
+;;      Locals:         0       0       0       0       0
+;;      Temps:          0       0       0       0       0
+;;      Totals:         0       0       0       0       0
+;;Total ram usage:        0 bytes
+;; Hardware stack levels used:    1
+;; This function calls:
+;;		Nothing
+;; This function is called by:
+;;		_readSerial
+;; This function uses a non-reentrant model
+;;
+psect	text8,local,class=CODE,delta=2,merge=1,group=0
+	line	53
+global __ptext8
+__ptext8:	;psect for function _serial_rx
+psect	text8
+	file	"serial.c"
+	line	53
+	global	__size_of_serial_rx
+	__size_of_serial_rx	equ	__end_of_serial_rx-_serial_rx
+	
+_serial_rx:	
+;incstack = 0
+	opt	callstack 6
+; Regs used in _serial_rx: [wreg]
+	line	60
+	
+l1114:	
+	
+l183:	
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	btfss	(12),5	;volatile
+	goto	u451
+	goto	u450
+u451:
+	goto	l183
+u450:
+	line	62
+	
+l1116:	
+	movf	(26),w	;volatile
+	line	63
+	
+l186:	
+	return
+	opt callstack 0
+GLOBAL	__end_of_serial_rx
+	__end_of_serial_rx:
+	signat	_serial_rx,89
 	global	_readADC
 
 ;; *************** function _readADC *****************
@@ -2558,12 +2836,12 @@ GLOBAL	__end_of_serial_init
 ;;		_main
 ;; This function uses a non-reentrant model
 ;;
-psect	text7,local,class=CODE,delta=2,merge=1,group=0
+psect	text9,local,class=CODE,delta=2,merge=1,group=0
 	file	"adc.c"
 	line	11
-global __ptext7
-__ptext7:	;psect for function _readADC
-psect	text7
+global __ptext9
+__ptext9:	;psect for function _readADC
+psect	text9
 	file	"adc.c"
 	line	11
 	global	__size_of_readADC
@@ -2576,32 +2854,32 @@ _readADC:
 	movwf	(readADC@ch)
 	line	12
 	
-l1180:	
-	goto	l1190
+l1250:	
+	goto	l1260
 	line	14
 	
-l1182:	
+l1252:	
 	movlw	low(01h)
 	movwf	(31)	;volatile
 	line	15
-	goto	l70
+	goto	l72
 	line	17
 	
-l1184:	
+l1254:	
 	movlw	low(09h)
 	movwf	(31)	;volatile
 	line	18
-	goto	l70
+	goto	l72
 	line	20
 	
-l1186:	
+l1256:	
 	movlw	low(011h)
 	movwf	(31)	;volatile
 	line	21
-	goto	l70
+	goto	l72
 	line	12
 	
-l1190:	
+l1260:	
 	movf	(readADC@ch),w
 	; Switch size 1, requested type "simple"
 ; Number of cases is 3, Range of values is 0 to 2
@@ -2616,43 +2894,43 @@ l1190:
 	opt asmopt_off
 	xorlw	0^0	; case 0
 	skipnz
-	goto	l1182
+	goto	l1252
 	xorlw	1^0	; case 1
 	skipnz
-	goto	l1184
+	goto	l1254
 	xorlw	2^1	; case 2
 	skipnz
-	goto	l1186
-	goto	l70
+	goto	l1256
+	goto	l72
 	opt asmopt_pop
 
 	line	22
 	
-l70:	
+l72:	
 	line	23
 	bsf	(31),2	;volatile
 	line	24
 	
-l73:	
+l75:	
 	btfsc	(31),2	;volatile
-	goto	u561
-	goto	u560
-u561:
-	goto	l73
-u560:
+	goto	u661
+	goto	u660
+u661:
+	goto	l75
+u660:
 	line	25
 	
-l1192:	
+l1262:	
 	bsf	status, 5	;RP0=1, select bank1
 	movf	(158)^080h,w	;volatile
 	movwf	(??_readADC+0)+0
 	movlw	06h
-u575:
+u675:
 	clrc
 	rrf	(??_readADC+0)+0,f
 	addlw	-1
 	skipz
-	goto	u575
+	goto	u675
 	movf	0+(??_readADC+0)+0,w
 	movwf	(??_readADC+1)+0
 	clrf	(??_readADC+1)+0+1
@@ -2678,7 +2956,7 @@ u575:
 	movwf	(?_readADC+1)
 	line	26
 	
-l76:	
+l78:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_readADC
@@ -2691,18 +2969,18 @@ GLOBAL	__end_of_readADC
 ;;		line 55 in file "lcd.c"
 ;; Parameters:    Size  Location     Type
 ;;  str1            1    wreg     PTR const unsigned char 
-;;		 -> STR_7(11), STR_4(15), STR_1(10), 
+;;		 -> STR_6(11), STR_4(15), STR_1(10), 
 ;;  str2            2   11[COMMON] PTR const unsigned char 
-;;		 -> main@str(6), STR_5(15), STR_2(9), 
+;;		 -> main@str(6), STR_2(9), 
 ;; Auto vars:     Size  Location     Type
 ;;  str1            1   13[COMMON] PTR const unsigned char 
-;;		 -> STR_7(11), STR_4(15), STR_1(10), 
+;;		 -> STR_6(11), STR_4(15), STR_1(10), 
 ;; Return value:  Size  Location     Type
 ;;                  1    wreg      void 
 ;; Registers used:
 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
 ;; Tracked objects:
-;;		On entry : 300/0
+;;		On entry : 0/0
 ;;		On exit  : 300/0
 ;;		Unchanged: 0/0
 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
@@ -2720,12 +2998,12 @@ GLOBAL	__end_of_readADC
 ;;		_main
 ;; This function uses a non-reentrant model
 ;;
-psect	text8,local,class=CODE,delta=2,merge=1,group=0
+psect	text10,local,class=CODE,delta=2,merge=1,group=0
 	file	"lcd.c"
 	line	55
-global __ptext8
-__ptext8:	;psect for function _printlnLCD
-psect	text8
+global __ptext10
+__ptext10:	;psect for function _printlnLCD
+psect	text10
 	file	"lcd.c"
 	line	55
 	global	__size_of_printlnLCD
@@ -2738,7 +3016,7 @@ _printlnLCD:
 	movwf	(printlnLCD@str1)
 	line	56
 	
-l1164:	
+l1212:	
 	movlw	low(01h)
 	fcall	_lcd_cmd
 	line	57
@@ -2746,7 +3024,7 @@ l1164:
 	fcall	_lcd_cmd
 	line	58
 	
-l1166:	
+l1214:	
 		movf	(printlnLCD@str1),w
 	movwf	(lcd_str@str)
 	movlw	0
@@ -2757,7 +3035,7 @@ l1166:
 	fcall	_lcd_str
 	line	59
 	
-l1168:	
+l1216:	
 	movlw	low(0C0h)
 	fcall	_lcd_cmd
 	line	60
@@ -2769,7 +3047,7 @@ movwf	(lcd_str@str+1)
 	fcall	_lcd_str
 	line	62
 	
-l135:	
+l137:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_printlnLCD
@@ -2782,8 +3060,8 @@ GLOBAL	__end_of_printlnLCD
 ;;		line 46 in file "lcd.c"
 ;; Parameters:    Size  Location     Type
 ;;  str             2    7[COMMON] PTR const unsigned char 
-;;		 -> STR_7(11), main@str(6), STR_5(15), STR_4(15), 
-;;		 -> STR_2(9), STR_1(10), 
+;;		 -> STR_6(11), STR_4(15), main@str(6), STR_2(9), 
+;;		 -> STR_1(10), 
 ;; Auto vars:     Size  Location     Type
 ;;  i               1   10[COMMON] unsigned char 
 ;; Return value:  Size  Location     Type
@@ -2808,11 +3086,11 @@ GLOBAL	__end_of_printlnLCD
 ;;		_printlnLCD
 ;; This function uses a non-reentrant model
 ;;
-psect	text9,local,class=CODE,delta=2,merge=1,group=0
+psect	text11,local,class=CODE,delta=2,merge=1,group=0
 	line	46
-global __ptext9
-__ptext9:	;psect for function _lcd_str
-psect	text9
+global __ptext11
+__ptext11:	;psect for function _lcd_str
+psect	text11
 	file	"lcd.c"
 	line	46
 	global	__size_of_lcd_str
@@ -2824,13 +3102,13 @@ _lcd_str:
 ; Regs used in _lcd_str: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
 	line	47
 	
-l1068:	
+l1104:	
 	clrf	(lcd_str@i)
 	line	48
-	goto	l1074
+	goto	l1110
 	line	50
 	
-l1070:	
+l1106:	
 	movf	(lcd_str@i),w
 	addwf	(lcd_str@str),w
 	movwf	fsr0
@@ -2842,14 +3120,14 @@ l1070:
 	fcall	_lcd_dat
 	line	51
 	
-l1072:	
+l1108:	
 	movlw	low(01h)
 	movwf	(??_lcd_str+0)+0
 	movf	(??_lcd_str+0)+0,w
 	addwf	(lcd_str@i),f
 	line	48
 	
-l1074:	
+l1110:	
 	movf	(lcd_str@i),w
 	addwf	(lcd_str@str),w
 	movwf	fsr0
@@ -2860,14 +3138,14 @@ l1074:
 	fcall	stringtab
 	xorlw	0
 	skipz
-	goto	u381
-	goto	u380
-u381:
-	goto	l1070
-u380:
+	goto	u431
+	goto	u430
+u431:
+	goto	l1106
+u430:
 	line	53
 	
-l132:	
+l134:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_lcd_str
@@ -2905,11 +3183,11 @@ GLOBAL	__end_of_lcd_str
 ;;		_lcd_str
 ;; This function uses a non-reentrant model
 ;;
-psect	text10,local,class=CODE,delta=2,merge=1,group=0
+psect	text12,local,class=CODE,delta=2,merge=1,group=0
 	line	18
-global __ptext10
-__ptext10:	;psect for function _lcd_dat
-psect	text10
+global __ptext12
+__ptext12:	;psect for function _lcd_dat
+psect	text12
 	file	"lcd.c"
 	line	18
 	global	__size_of_lcd_dat
@@ -2922,16 +3200,16 @@ _lcd_dat:
 	movwf	(lcd_dat@val)
 	line	19
 	
-l1048:	
+l1084:	
 	bsf	(9),1	;volatile
 	line	20
 	
-l1050:	
+l1086:	
 	movf	(lcd_dat@val),w
 	fcall	_lcd_wr
 	line	21
 	
-l1052:	
+l1088:	
 	bsf	(9),2	;volatile
 	line	22
 	movlw	03h
@@ -2941,7 +3219,7 @@ l1052:
 	fcall	_delay_ms
 	line	23
 	
-l1054:	
+l1090:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(9),1	;volatile
@@ -2953,13 +3231,13 @@ l1054:
 	fcall	_delay_ms
 	line	25
 	
-l1056:	
+l1092:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(9),1	;volatile
 	line	26
 	
-l123:	
+l125:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_lcd_dat
@@ -2997,11 +3275,11 @@ GLOBAL	__end_of_lcd_dat
 ;;		_main
 ;; This function uses a non-reentrant model
 ;;
-psect	text11,local,class=CODE,delta=2,merge=1,group=0
+psect	text13,local,class=CODE,delta=2,merge=1,group=0
 	line	28
-global __ptext11
-__ptext11:	;psect for function _lcd_init
-psect	text11
+global __ptext13
+__ptext13:	;psect for function _lcd_init
+psect	text13
 	file	"lcd.c"
 	line	28
 	global	__size_of_lcd_init
@@ -3013,14 +3291,14 @@ _lcd_init:
 ; Regs used in _lcd_init: [wreg+status,2+status,0+pclath+cstack]
 	line	29
 	
-l1140:	
+l1182:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	(9),1	;volatile
 	line	30
 	bcf	(9),2	;volatile
 	line	31
 	
-l1142:	
+l1184:	
 	movlw	014h
 	movwf	(delay_ms@val)
 	movlw	0
@@ -3028,7 +3306,7 @@ l1142:
 	fcall	_delay_ms
 	line	32
 	
-l1144:	
+l1186:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(9),1	;volatile
@@ -3070,7 +3348,7 @@ l1144:
 	fcall	_lcd_cmd
 	line	44
 	
-l126:	
+l128:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_lcd_init
@@ -3109,11 +3387,11 @@ GLOBAL	__end_of_lcd_init
 ;;		_printlnLCD
 ;; This function uses a non-reentrant model
 ;;
-psect	text12,local,class=CODE,delta=2,merge=1,group=0
+psect	text14,local,class=CODE,delta=2,merge=1,group=0
 	line	8
-global __ptext12
-__ptext12:	;psect for function _lcd_cmd
-psect	text12
+global __ptext14
+__ptext14:	;psect for function _lcd_cmd
+psect	text14
 	file	"lcd.c"
 	line	8
 	global	__size_of_lcd_cmd
@@ -3126,18 +3404,18 @@ _lcd_cmd:
 	movwf	(lcd_cmd@val)
 	line	9
 	
-l1058:	
+l1094:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(9),1	;volatile
 	line	10
 	
-l1060:	
+l1096:	
 	movf	(lcd_cmd@val),w
 	fcall	_lcd_wr
 	line	11
 	
-l1062:	
+l1098:	
 	bcf	(9),2	;volatile
 	line	12
 	movlw	03h
@@ -3147,7 +3425,7 @@ l1062:
 	fcall	_delay_ms
 	line	13
 	
-l1064:	
+l1100:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(9),1	;volatile
@@ -3159,13 +3437,13 @@ l1064:
 	fcall	_delay_ms
 	line	15
 	
-l1066:	
+l1102:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(9),1	;volatile
 	line	16
 	
-l120:	
+l122:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_lcd_cmd
@@ -3202,11 +3480,11 @@ GLOBAL	__end_of_lcd_cmd
 ;;		_lcd_dat
 ;; This function uses a non-reentrant model
 ;;
-psect	text13,local,class=CODE,delta=2,merge=1,group=0
+psect	text15,local,class=CODE,delta=2,merge=1,group=0
 	line	4
-global __ptext13
-__ptext13:	;psect for function _lcd_wr
-psect	text13
+global __ptext15
+__ptext15:	;psect for function _lcd_wr
+psect	text15
 	file	"lcd.c"
 	line	4
 	global	__size_of_lcd_wr
@@ -3219,12 +3497,12 @@ _lcd_wr:
 	movwf	(lcd_wr@val)
 	line	5
 	
-l1032:	
+l1068:	
 	movf	(lcd_wr@val),w
 	movwf	(8)	;volatile
 	line	6
 	
-l117:	
+l119:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_lcd_wr
@@ -3263,11 +3541,11 @@ GLOBAL	__end_of_lcd_wr
 ;;		_lcd_init
 ;; This function uses a non-reentrant model
 ;;
-psect	text14,local,class=CODE,delta=2,merge=1,group=0
+psect	text16,local,class=CODE,delta=2,merge=1,group=0
 	line	73
-global __ptext14
-__ptext14:	;psect for function _delay_ms
-psect	text14
+global __ptext16
+__ptext16:	;psect for function _delay_ms
+psect	text16
 	file	"lcd.c"
 	line	73
 	global	__size_of_delay_ms
@@ -3279,16 +3557,16 @@ _delay_ms:
 ; Regs used in _delay_ms: [wreg+status,2+status,0]
 	line	76
 	
-l1034:	
+l1070:	
 	clrf	(delay_ms@i)
 	clrf	(delay_ms@i+1)
-	goto	l144
+	goto	l146
 	line	77
 	
-l1036:	
+l1072:	
 	clrf	(delay_ms@j)
 	
-l146:	
+l148:	
 	line	79
 # 79 "lcd.c"
 NOP ;# 
@@ -3304,27 +3582,27 @@ NOP ;#
 	line	83
 # 83 "lcd.c"
 NOP ;# 
-psect	text14
+psect	text16
 	line	77
 	
-l1042:	
+l1078:	
 	movlw	low(01h)
 	movwf	(??_delay_ms+0)+0
 	movf	(??_delay_ms+0)+0,w
 	addwf	(delay_ms@j),f
 	
-l1044:	
+l1080:	
 	movlw	low(0C8h)
 	subwf	(delay_ms@j),w
 	skipc
-	goto	u361
-	goto	u360
-u361:
-	goto	l146
-u360:
+	goto	u411
+	goto	u410
+u411:
+	goto	l148
+u410:
 	line	76
 	
-l1046:	
+l1082:	
 	movlw	01h
 	addwf	(delay_ms@i),f
 	skipnc
@@ -3332,23 +3610,23 @@ l1046:
 	movlw	0
 	addwf	(delay_ms@i+1),f
 	
-l144:	
+l146:	
 	movf	(delay_ms@val+1),w
 	subwf	(delay_ms@i+1),w
 	skipz
-	goto	u375
+	goto	u425
 	movf	(delay_ms@val),w
 	subwf	(delay_ms@i),w
-u375:
+u425:
 	skipc
-	goto	u371
-	goto	u370
-u371:
-	goto	l1036
-u370:
+	goto	u421
+	goto	u420
+u421:
+	goto	l1072
+u420:
 	line	87
 	
-l149:	
+l151:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_delay_ms
@@ -3385,12 +3663,12 @@ GLOBAL	__end_of_delay_ms
 ;;		_main
 ;; This function uses a non-reentrant model
 ;;
-psect	text15,local,class=CODE,delta=2,merge=1,group=0
+psect	text17,local,class=CODE,delta=2,merge=1,group=0
 	file	"main_old.c"
 	line	23
-global __ptext15
-__ptext15:	;psect for function _delay_ms1
-psect	text15
+global __ptext17
+__ptext17:	;psect for function _delay_ms1
+psect	text17
 	file	"main_old.c"
 	line	23
 	global	__size_of_delay_ms1
@@ -3402,16 +3680,16 @@ _delay_ms1:
 ; Regs used in _delay_ms1: [wreg+status,2+status,0]
 	line	26
 	
-l1126:	
+l1168:	
 	clrf	(delay_ms1@i)
 	clrf	(delay_ms1@i+1)
-	goto	l33
+	goto	l35
 	line	27
 	
-l1128:	
+l1170:	
 	clrf	(delay_ms1@j)
 	
-l35:	
+l37:	
 	line	29
 # 29 "main_old.c"
 NOP ;# 
@@ -3427,27 +3705,27 @@ NOP ;#
 	line	33
 # 33 "main_old.c"
 NOP ;# 
-psect	text15
+psect	text17
 	line	27
 	
-l1134:	
+l1176:	
 	movlw	low(01h)
 	movwf	(??_delay_ms1+0)+0
 	movf	(??_delay_ms1+0)+0,w
 	addwf	(delay_ms1@j),f
 	
-l1136:	
+l1178:	
 	movlw	low(0C8h)
 	subwf	(delay_ms1@j),w
 	skipc
-	goto	u531
-	goto	u530
-u531:
-	goto	l35
-u530:
+	goto	u591
+	goto	u590
+u591:
+	goto	l37
+u590:
 	line	26
 	
-l1138:	
+l1180:	
 	movlw	01h
 	addwf	(delay_ms1@i),f
 	skipnc
@@ -3455,23 +3733,23 @@ l1138:
 	movlw	0
 	addwf	(delay_ms1@i+1),f
 	
-l33:	
+l35:	
 	movf	(delay_ms1@val+1),w
 	subwf	(delay_ms1@i+1),w
 	skipz
-	goto	u545
+	goto	u605
 	movf	(delay_ms1@val),w
 	subwf	(delay_ms1@i),w
-u545:
+u605:
 	skipc
-	goto	u541
-	goto	u540
-u541:
-	goto	l1128
-u540:
+	goto	u601
+	goto	u600
+u601:
+	goto	l1170
+u600:
 	line	37
 	
-l38:	
+l40:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_delay_ms1
@@ -3491,7 +3769,7 @@ GLOBAL	__end_of_delay_ms1
 ;; Registers used:
 ;;		wreg
 ;; Tracked objects:
-;;		On entry : 300/0
+;;		On entry : 300/100
 ;;		On exit  : 300/0
 ;;		Unchanged: 0/0
 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
@@ -3507,12 +3785,12 @@ GLOBAL	__end_of_delay_ms1
 ;;		_main
 ;; This function uses a non-reentrant model
 ;;
-psect	text16,local,class=CODE,delta=2,merge=1,group=0
+psect	text18,local,class=CODE,delta=2,merge=1,group=0
 	file	"adc.c"
 	line	5
-global __ptext16
-__ptext16:	;psect for function _adc_init
-psect	text16
+global __ptext18
+__ptext18:	;psect for function _adc_init
+psect	text18
 	file	"adc.c"
 	line	5
 	global	__size_of_adc_init
@@ -3524,9 +3802,8 @@ _adc_init:
 ; Regs used in _adc_init: [wreg]
 	line	6
 	
-l1162:	
+l1210:	
 	movlw	low(02h)
-	bsf	status, 5	;RP0=1, select bank1
 	movwf	(159)^080h	;volatile
 	line	7
 	movlw	low(041h)
@@ -3534,7 +3811,7 @@ l1162:
 	movwf	(31)	;volatile
 	line	8
 	
-l65:	
+l67:	
 	return
 	opt callstack 0
 GLOBAL	__end_of_adc_init
@@ -3571,12 +3848,12 @@ GLOBAL	__end_of_adc_init
 ;;		_main
 ;; This function uses a non-reentrant model
 ;;
-psect	text17,local,class=CODE,delta=2,merge=1,group=1
+psect	text19,local,class=CODE,delta=2,merge=1,group=1
 	file	"C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c"
 	line	15
-global __ptext17
-__ptext17:	;psect for function ___wmul
-psect	text17
+global __ptext19
+__ptext19:	;psect for function ___wmul
+psect	text19
 	file	"C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c"
 	line	15
 	global	__size_of___wmul
@@ -3588,21 +3865,21 @@ ___wmul:
 ; Regs used in ___wmul: [wreg+status,2+status,0]
 	line	43
 	
-l1254:	
+l1324:	
 	clrf	(___wmul@product)
 	clrf	(___wmul@product+1)
 	line	45
 	
-l1256:	
+l1326:	
 	btfss	(___wmul@multiplier),(0)&7
-	goto	u651
-	goto	u650
-u651:
-	goto	l307
-u650:
+	goto	u751
+	goto	u750
+u751:
+	goto	l309
+u750:
 	line	46
 	
-l1258:	
+l1328:	
 	movf	(___wmul@multiplicand),w
 	addwf	(___wmul@product),f
 	skipnc
@@ -3610,50 +3887,50 @@ l1258:
 	movf	(___wmul@multiplicand+1),w
 	addwf	(___wmul@product+1),f
 	
-l307:	
+l309:	
 	line	47
 	movlw	01h
 	
-u665:
+u765:
 	clrc
 	rlf	(___wmul@multiplicand),f
 	rlf	(___wmul@multiplicand+1),f
 	addlw	-1
 	skipz
-	goto	u665
+	goto	u765
 	line	48
 	
-l1260:	
+l1330:	
 	movlw	01h
 	
-u675:
+u775:
 	clrc
 	rrf	(___wmul@multiplier+1),f
 	rrf	(___wmul@multiplier),f
 	addlw	-1
 	skipz
-	goto	u675
+	goto	u775
 	line	49
 	
-l1262:	
+l1332:	
 	movf	((___wmul@multiplier)),w
 iorwf	((___wmul@multiplier+1)),w
 	btfss	status,2
-	goto	u681
-	goto	u680
-u681:
-	goto	l1256
-u680:
+	goto	u781
+	goto	u780
+u781:
+	goto	l1326
+u780:
 	line	52
 	
-l1264:	
+l1334:	
 	movf	(___wmul@product+1),w
 	movwf	(?___wmul+1)
 	movf	(___wmul@product),w
 	movwf	(?___wmul)
 	line	53
 	
-l309:	
+l311:	
 	return
 	opt callstack 0
 GLOBAL	__end_of___wmul

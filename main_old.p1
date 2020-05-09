@@ -12,7 +12,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISE `Vuc ~T0 @X0 0 e@137 ]
 "18 lcd.h
 [v _lcd_init `(v ~T0 @X0 0 ef ]
-"27 serial.h
+"4 serial.h
 [v _serial_init `(v ~T0 @X0 0 ef ]
 "3 adc.h
 [v _adc_init `(v ~T0 @X0 0 ef ]
@@ -28,8 +28,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S7 . . ]
 "233
 [v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
-"29 serial.h
+"6 serial.h
 [v _serial_tx_str `(v ~T0 @X0 0 ef1`*Cuc ]
+"8
+[v _readSerial `(v ~T0 @X0 0 ef2`*uc`i ]
 "284 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
@@ -38,7 +40,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S9 . . ]
 "295
 [v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
-"5 adc.h
+"4 adc.h
 [v _readADC `(ui ~T0 @X0 0 ef1`uc ]
 "194 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
@@ -280,46 +282,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 110 ]
 "71
 [e ( _serial_tx_str (1 :s 3C ]
+"72
+[e ( _readSerial (2 , &U _str -> -> # _str `ui `i ]
 "73
-[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"74
-[e ( _printlnLCD (2 , :s 4C :s 5C ]
+[e ( _printlnLCD (2 , :s 4C -> &U _str `*Cuc ]
 "75
-[e = _PORTD -> -> 2 `i `uc ]
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
 "76
-[e ( _delay_ms1 (1 -> -> 200 `i `ui ]
+[e = _PORTD -> -> 2 `i `uc ]
 "77
-[e = _PORTD -> -> 0 `i `uc ]
-"78
 [e ( _delay_ms1 (1 -> -> 200 `i `ui ]
+"78
+[e = _PORTD -> -> 0 `i `uc ]
 "79
+[e ( _delay_ms1 (1 -> -> 200 `i `ui ]
+"80
 [e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-"81
-[e = _tmp -> / * ( _readADC (1 -> -> 2 `i `uc -> -> 100 `i `ui -> -> 202 `i `ui `uc ]
 "82
-[e ( _sprintf (1 , (. , &U _str :s 6C -> _tmp `i ]
+[e = _tmp -> / * ( _readADC (1 -> -> 2 `i `uc -> -> 100 `i `ui -> -> 202 `i `ui `uc ]
 "83
-[e ( _printlnLCD (2 , :s 7C -> &U _str `*Cuc ]
+[e ( _sprintf (1 , (. , &U _str :s 5C -> _tmp `i ]
 "84
+[e ( _printlnLCD (2 , :s 6C -> &U _str `*Cuc ]
+"85
 [e $U 111  ]
 [e :U 112 ]
 [e :U 111 ]
 [e $ != -> . . _PORTBbits 0 1 `i -> -> -> 0 `i `Vuc `i 112  ]
 [e :U 113 ]
-"85
+"86
 }
 [e :U 105 ]
 "61
 [e $U 106  ]
 [e :U 107 ]
-"86
+"87
 [e :UE 104 ]
 }
 [p f _sprintf 8388736 ]
 [a 1C 66 101 109 32 118 105 110 100 111 0 ]
-[a 6C 37 100 0 ]
+[a 5C 37 100 0 ]
 [a 2C 50 48 32 97 32 83 65 68 0 ]
-[a 7C 65 68 67 32 118 97 108 117 101 58 0 ]
+[a 6C 65 68 67 32 118 97 108 117 101 58 0 ]
 [a 4C 67 97 114 114 101 103 111 117 32 101 109 32 66 49 0 ]
-[a 5C 65 99 101 110 100 101 114 32 76 69 68 32 68 48 0 ]
 [a 3C 13 10 32 80 105 99 115 105 109 108 97 98 13 10 32 84 101 115 116 101 32 83 101 114 105 97 108 32 84 88 13 10 0 ]

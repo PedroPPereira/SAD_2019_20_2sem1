@@ -69,9 +69,10 @@ int main(void)
 		while(PORTBbits.RB1);
 
 		serial_tx_str("\r\n Picsimlab\r\n Teste Serial TX\r\n");
-
+    readSerial(str);
+    printlnLCD("Carregou em B1",str);
+    //while(PORTBbits.RB1);
 		PORTCbits.RC1 = 1; //beep
-		printlnLCD("Carregou em B1","Acender LED D0");
 		PORTD = 0x02;
 		delay_ms1(TIME_MS);
 		PORTD = 0x00;

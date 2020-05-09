@@ -1819,12 +1819,12 @@ void delay_ms(unsigned int val);
 void printlnL1LCD(const char* str1);
 void printlnL2LCD(const char* str1);
 
-# 27 "serial.h"
+# 2 "serial.h"
 void serial_init(void);
 void serial_tx(unsigned char val);
 void serial_tx_str(const char* val);
 unsigned char serial_rx();
-char *readSerial(char *s, int len);
+void readSerial(char *buf);
 
 # 5 "pwm.h"
 void PWM1_Init(unsigned int);
@@ -1861,26 +1861,24 @@ void i2c_acktst(unsigned char val);
 #pragma config CP = OFF
 
 
-
-
 int nMSeconds = 0;
 int nSeconds = 0;
-char str[16];
+char strUART[40], strADC[11];
 bool run = 1;
-
 
 
 void interrupt isr(){
 
-if(PIR1bits.TMR1IF){
+if(PIR1bits.TMR1IF) {
 PIR1bits.TMR1IF = 0x00;
 TMR1H = 0xCF;
 TMR1L = 0x2C;
-if(nMSeconds==10){
+if(nMSeconds==10) {
 nSeconds++;
 nMSeconds = 0;
-if(nSeconds==51){
-serial_tx_str(str);
+if(nSeconds==51) {
+sprintf(strUART, "1min-%s", strADC);
+serial_tx_str(strUART);
 nSeconds = 0;
 }
 }
@@ -1888,7 +1886,8 @@ else nMSeconds++;
 }
 
 
-if(INTCONbits.INTF==1){
+
+if(INTCONbits.INTF==1) {
 INTCONbits.INTF = 0;
 if(run){
 PORTCbits.RC5 = 0;
@@ -1899,7 +1898,7 @@ T1CON = 0x00;
 nSeconds = 0;
 nMSeconds = 0;
 }
-else{
+else {
 PORTCbits.RC5 = 1;
 CCP1CON = 0x0F;
 T1CON = 0x31;
@@ -1911,9 +1910,7 @@ run = !run;
 void isr_init();
 
 
-
-int main(void)
-{
+int main(void) {
 
 TRISA=0xC3;
 TRISB=0xFF;
@@ -1926,28 +1923,12 @@ keyboard_init();
 
 int tempRB3 = 0;
 unsigned int potP1, potP2, tempC, duty;
-char pass[5] = "0862", code[5], str_old[16];
+int constHum=20, constTemp=40, constWind=80;
+char pass[5] = "0862", code[5], str_old[11], strConfig1[1];
 bool boolPass = 0, bool_emerg = 0;
-
 PORTCbits.RC1 = 1;
 
-
-while (!boolPass) {
-printlnLCD("Weather Station", "Pass:");
-lcd_cmd(0xC0+5);
-for(int i=0; i<4; i++) {
-code[i] = switch_press_scan();
-lcd_dat(code[i]);
-}
-if(!strcmp(code, pass)) {
-boolPass = 1;
-printlnL2LCD("Password correct");
-}
-else printlnL2LCD("Password incorrect");
-delay_ms(50);
-}
-
-
+# 111
 TRISA=0x07;
 serial_init();
 adc_init();
@@ -1956,10 +1937,10 @@ PWM1_Start();
 isr_init();
 run = 1;
 PORTCbits.RC5 = 1;
-printlnL1LCD("Temp/Fan/Hum");
+printlnL1LCD("Temp/Wind/Hum");
 
-while (1){
-if(run){
+while (1) {
+if(run) {
 
 if(!PORTBbits.RB3 && !tempRB3) PORTCbits.RC5 = !PORTCbits.RC5;
 tempRB3 = !PORTBbits.RB3;
@@ -1972,26 +1953,26 @@ potP2 = ((unsigned int)readADC(1)*10)/102;
 tempC = ((unsigned int)readADC(2)*100)/202;
 
 
-sprintf(str, "%d/%d/%d", tempC, potP1, potP2);
-if(strcmp(str, str_old)){
-if(strlen(str_old)!=strlen(str)){
+sprintf(strADC, "%d/%d/%d", tempC, potP1, potP2);
+if(strcmp(strADC, str_old)){
+if(strlen(str_old)!=strlen(strADC)){
 lcd_cmd(0x01);
-printlnL1LCD("Temp/Fan/Hum");
+printlnL1LCD("Temp/Wind/Hum");
 }
-printlnL2LCD(str);
-strncpy(str_old, str, 16);
+printlnL2LCD(strADC);
+strcpy(str_old, strADC);
 }
 
 
-if(potP2<20 && potP1>80 && tempC>40){
+if(potP2<constHum && potP1>constWind && tempC>constTemp) {
 PORTCbits.RC1 = 0;
 PORTD = 0x80;
 if(!bool_emerg) {
-sprintf(str, "e%d/%d/%d", tempC, potP1, potP2);
-serial_tx_str(str);
-e2pext_w(1,potP1);
-e2pext_w(2,potP2);
-e2pext_w(3,tempC);
+sprintf(strUART, "emergency-%d/%d/%d", tempC, potP1, potP2);
+serial_tx_str(strUART);
+e2pext_w(1,tempC);
+e2pext_w(2,potP1);
+e2pext_w(3,potP2);
 }
 bool_emerg = 1;
 }
@@ -2000,7 +1981,26 @@ bool_emerg = 0;
 PORTCbits.RC1 = 1;
 }
 
-# 172
+
+if(PIR1bits.RCIF) {
+readSerial(strConfig1);
+
+PIR1bits.RCIF = 0;
+switch (strConfig1[0]) {
+case 'h': if(e2pext_r(1)!=255) {
+sprintf(strUART, "last registered emergency %d/%d/%d", e2pext_r(1), e2pext_r(2), e2pext_r(3));
+serial_tx_str(strUART);
+} else serial_tx_str("emergencies not registered yet");
+break;
+case 'a': constHum=10; constTemp=50; constWind=90;
+serial_tx_str("emergency changed to option A"); break;
+case 'b': constHum=20; constTemp=40; constWind=80;
+serial_tx_str("emergency changed to option B"); break;
+case 'c': constHum=30; constTemp=30; constWind=70;
+serial_tx_str("emergency changed to option C"); break;
+default: break;
+}
+}
 delay_ms(20);
 }
 }
@@ -2009,7 +2009,7 @@ delay_ms(20);
 
 void isr_init(){
 
-# 185
+# 196
 T1CON = 0x31;
 TMR1H = 0xCF;
 TMR1L = 0x2C;
