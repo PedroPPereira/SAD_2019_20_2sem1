@@ -1,5 +1,4 @@
 #include <xc.h>
 
-
-unsigned char e2pext_r(unsigned int addr);
-void e2pext_w(unsigned int addr, unsigned char val);
+unsigned char readEEPROM(unsigned int addr);
+void writeEEPROM(unsigned int addr, unsigned char val);

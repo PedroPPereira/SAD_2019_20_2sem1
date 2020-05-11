@@ -1,24 +1,21 @@
 
-
 //ports
-#define LENA  PORTEbits.RE1 //enable
-#define LDAT  PORTEbits.RE2 //command RS
-#define LPORT PORTD
+#define DATA_BUS PORTD   //data bus
+#define RS PORTEbits.RE2 //RS (register select)
+#define EN PORTEbits.RE1 //EN (enable)
 
 //command lines
+#define L_CFG 0x38 //LCD configuration
 #define L_ON	0x0F //turn on
 #define L_OFF	0x08 //turn off
-#define L_CLR	0x01 //clear display
-#define L_L1	0x80 //write on 1 row
-#define L_L2	0xC0 //write on 2 row
-
-#define L_CFG   0x38 //LCD configuration
+#define L_CLR	0x01 //clear display and return home
+#define L_L1	0x80 //write on row1
+#define L_L2	0xC0 //write on row2
 
 //functions
-void lcd_init(void);
-void lcd_cmd(unsigned char val);
-void lcd_dat(unsigned char val);
-void lcd_str(const char* str);
+void initLCD(void);
+void rsLCD(unsigned char val, unsigned char string);
+void strLCD(const char* str);
 void printlnLCD(const char* str1,const char* str2);
 void delay_ms(unsigned int val);
 void printlnL1LCD(const char* str1);

@@ -1,74 +1,60 @@
 #include <xc.h>
 #include "lcd.h"
 
-void lcd_wr(unsigned char val) {
-  LPORT=val;
-}
-
-void lcd_cmd(unsigned char val) {
-	LENA=1;
-  lcd_wr(val);
-  LDAT=0;
-  delay_ms(3);
-  LENA=0;
-  delay_ms(3);
-	LENA=1;
-}
-
-void lcd_dat(unsigned char val) {
-	LENA=1;
-  lcd_wr(val);
-  LDAT=1;
-  delay_ms(3);
-  LENA=0;
-  delay_ms(3);
-	LENA=1;
-}
-
-void lcd_init(void) {
-	LENA=0;
-	LDAT=0;
+void initLCD(void) {
+	EN = 0; //turn off LCD
+	RS = 0;
 	delay_ms(20);
-	LENA=1;
-
-	lcd_cmd(L_CFG);
+	EN = 1; //turn on LCD
+  //---------------------
+	rsLCD(L_CFG, 'c'); //config
 	delay_ms(5);
-	lcd_cmd(L_CFG);
+	rsLCD(L_CFG, 'c'); //config
   delay_ms(1);
-	lcd_cmd(L_CFG); //config
-	lcd_cmd(L_OFF);
-	lcd_cmd(L_ON); //turn on
-	lcd_cmd(L_CLR); //clean
-	lcd_cmd(L_CFG); //config
-  lcd_cmd(L_L1);
+	rsLCD(L_CFG, 'c'); //config
+	rsLCD(L_OFF, 'c');
+	rsLCD(L_ON,  'c');  //turn on
+	rsLCD(L_CLR, 'c'); //clean and return home
+	rsLCD(L_CFG, 'c'); //config
+  rsLCD(L_L1,  'c');  //select row1
 }
 
-void lcd_str(const char* str) {
- unsigned char i=0;
- while(str[i] != 0 )
- {
-   lcd_dat(str[i]);
-   i++;
- }
+
+void rsLCD(unsigned char val, unsigned char string) {
+	EN = 1;
+  DATA_BUS = val;
+  if(string=='c') RS = 0; //set RS to select the command register
+  if(string=='d') RS = 1; //set RS to select the data register
+  delay_ms(3);
+  EN = 0;
+  delay_ms(3);
+	EN = 1;
 }
 
-void printlnLCD(const char* str1,const char* str2) {
-	lcd_cmd(L_CLR);
-	lcd_cmd(L_L1);
-	lcd_str(str1);
-	lcd_cmd(L_L2);
-	lcd_str(str2);
-	//TODO: shift words
+
+
+void strLCD(const char* str) {
+ unsigned char i = 0;
+ while(str[i] != 0 ) rsLCD(str[i++], 'd');
 }
+
 
 void printlnL1LCD(const char* str1) {
-	lcd_cmd(L_L1);
-	lcd_str(str1);
+	rsLCD(L_L1, 'c');
+	strLCD(str1);
 }
 void printlnL2LCD(const char* str1) {
-	lcd_cmd(L_L2);
-	lcd_str(str1);
+	rsLCD(L_L2, 'c');
+	strLCD(str1);
 }
+void printlnLCD(const char* str1,const char* str2) {
+	rsLCD(L_CLR, 'c');
+	rsLCD(L_L1, 'c');
+	strLCD(str1);
+	rsLCD(L_L2, 'c');
+	strLCD(str2);
+}
+
 
 void delay_ms(unsigned int val){
   unsigned int  i;

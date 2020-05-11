@@ -2,58 +2,40 @@
 #include"eeprom_ext.h"
 
 
-unsigned char e2pext_r(unsigned int addr) {
+unsigned char readEEPROM(unsigned int addr) {
   unsigned char ret;
-  unsigned char ah;
-  unsigned char al;
-
-  ah=(addr&0x0100)>>8;
-  al=addr&0x00FF;
-
-  i2c_start();
-  if(ah) {
-    i2c_wb(0xA2);
-  }
-  else {
-    i2c_wb(0xA0);
-  }
-  i2c_wb(al);
-  i2c_start();
-  if(ah) {
-    i2c_wb(0xA3);
-  }
-  else {
-    i2c_wb(0xA1);
-  }
-  ret=i2c_rb(1);
-  i2c_stop();
+  unsigned char ah = (addr&0x0100)>>8;
+  unsigned char al = addr&0x00FF;
+  //start formatting msg
+  startI2C();
+  if(ah) writeI2C(0xA2);
+  else   writeI2C(0xA0);
+  writeI2C(al);
+  //---------------------
+  startI2C();
+  if(ah) writeI2C(0xA3);
+  else   writeI2C(0xA1);
+  //get value from EEPROM
+  ret = readI2C(1);
+  stopI2C();
   return ret;
 }
 
 
-void e2pext_w(unsigned int addr, unsigned char val) {
-  unsigned int tmp;
-  unsigned char ah;
-  unsigned char al;
-  unsigned char nt;
-
-  tmp=val;
-  ah=(addr&0x0100)>>8;
-  al=addr&0x00FF;
-  nt=0;
-
+void writeEEPROM(unsigned int addr, unsigned char val) {
+  unsigned int tmp = val;
+  unsigned char ah = (addr&0x0100)>>8;
+  unsigned char al = addr&0x00FF;
+  unsigned char nt = 0;
+  //start formatting msg
   do {
-    i2c_start();
-    if(ah) {
-      i2c_wb(0xA2);
-    }
-    else {
-      i2c_wb(0xA0);
-    }
-    i2c_wb(al);
-    i2c_wb(tmp);
-    i2c_stop();
+    startI2C();
+    if(ah) writeI2C(0xA2);
+    else   writeI2C(0xA0);
+    writeI2C(al);
+    writeI2C(tmp);
+    stopI2C();
     nt++;
   }
-  while((tmp != e2pext_r(addr))&&(nt < 10));
+  while((tmp != readEEPROM(addr))&&(nt < 10));
 }

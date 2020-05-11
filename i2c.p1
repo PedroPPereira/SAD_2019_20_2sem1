@@ -135,189 +135,184 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "2363
 [; <" EECON2 equ 018Dh ;# ">
-"5 i2c.c
-[v _delay `(v ~T0 @X0 1 ef ]
+"4 i2c.c
+[v _delayI2C `(v ~T0 @X0 1 ef ]
 {
-[e :U _delay ]
+[e :U _delayI2C ]
 [f ]
-"7
-[; <"      NOP ;# ">
-"8
-[; <"  NOP ;# ">
-"9
-[; <"  NOP ;# ">
-"10
-[; <"  NOP ;# ">
-"11
-[; <"  NOP ;# ">
-"12
-[; <"  NOP ;# ">
-"13
-[; <"  NOP ;# ">
-"14
-[; <"  NOP ;# ">
-"16
+"5
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 96  ]
+[e $U 97  ]
+[e :U 96 ]
+{
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 5 `i 96  ]
+[e :U 97 ]
+}
+"6
 [e :UE 95 ]
 }
-"18
-[v _i2c_init `(v ~T0 @X0 1 ef ]
+"8
+[v _initI2C `(v ~T0 @X0 1 ef ]
 {
-[e :U _i2c_init ]
+[e :U _initI2C ]
 [f ]
-"19
+"9
 [e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
-"20
+"10
 [e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-"21
+"11
 [e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-"22
-[e :UE 96 ]
+"12
+[e :UE 99 ]
 }
-"24
-[v _i2c_start `(v ~T0 @X0 1 ef ]
+"14
+[v _startI2C `(v ~T0 @X0 1 ef ]
 {
-[e :U _i2c_start ]
+[e :U _startI2C ]
 [f ]
-"25
+"15
 [e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+"16
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"17
+[e ( _delayI2C ..  ]
+"18
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"19
+[e ( _delayI2C ..  ]
+"20
+[e :UE 100 ]
+}
+"22
+[v _stopI2C `(v ~T0 @X0 1 ef ]
+{
+[e :U _stopI2C ]
+[f ]
+"23
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+"24
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"25
+[e ( _delayI2C ..  ]
 "26
 [e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
 "27
-[e ( _delay ..  ]
+[e ( _delayI2C ..  ]
 "28
-[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"29
-[e ( _delay ..  ]
+[e :UE 101 ]
+}
 "30
-[e :UE 97 ]
-}
-"32
-[v _i2c_stop `(v ~T0 @X0 1 ef ]
+[v _writeI2C `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _i2c_stop ]
-[f ]
-"33
-[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-"34
-[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"35
-[e ( _delay ..  ]
-"36
-[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-"37
-[e ( _delay ..  ]
-"38
-[e :UE 98 ]
-}
-"40
-[v _i2c_wb `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _i2c_wb ]
+[e :U _writeI2C ]
 [v _val `uc ~T0 @X0 1 r1 ]
 [f ]
-"41
+"31
 [v _i `uc ~T0 @X0 1 a ]
-"42
+"32
 [e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
-"43
+"34
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 100  ]
-[e $U 101  ]
-[e :U 100 ]
+[e $ < -> _i `i -> 8 `i 103  ]
+[e $U 104  ]
+[e :U 103 ]
 {
-"44
+"35
 [e = . . _PORTCbits 0 4 -> & >> -> _val `i - -> 7 `i -> _i `i -> 1 `i `uc ]
-"45
+"36
 [e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-"46
-[e ( _delay ..  ]
-"47
+"37
+[e ( _delayI2C ..  ]
+"38
 [e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
-"48
+"39
 }
-"43
+"34
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 100  ]
-[e :U 101 ]
-"48
+[e $ < -> _i `i -> 8 `i 103  ]
+[e :U 104 ]
+"39
 }
-"49
+"40
 [e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-"50
-[e ( _delay ..  ]
-"51
+"41
+[e ( _delayI2C ..  ]
+"42
 [e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-"52
-[e ( _delay ..  ]
-"53
+"43
+[e ( _delayI2C ..  ]
+"44
 [e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
-"54
-[e :UE 99 ]
+"45
+[e :UE 102 ]
 }
-"56
-[v _i2c_rb `(uc ~T0 @X0 1 ef1`uc ]
+"48
+[v _readI2C `(uc ~T0 @X0 1 ef1`uc ]
 {
-[e :U _i2c_rb ]
+[e :U _readI2C ]
 [v _ack `uc ~T0 @X0 1 r1 ]
 [f ]
-"57
+"49
 [v _i `uc ~T0 @X0 1 a ]
-"58
+"50
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 0 `i `uc ]
-"60
+"51
 [e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
-"61
+"52
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"62
+"53
 [e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-"63
+"55
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 104  ]
-[e $U 105  ]
-[e :U 104 ]
+[e $ < -> _i `i -> 8 `i 107  ]
+[e $U 108  ]
+[e :U 107 ]
 {
-"64
+"56
 [e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-"65
-[e ( _delay ..  ]
-"66
+"57
+[e ( _delayI2C ..  ]
+"58
 [e =| _ret -> << -> . . _PORTCbits 0 4 `i - -> 7 `i -> _i `i `uc ]
+"59
+[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
+"60
+}
+"55
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 107  ]
+[e :U 108 ]
+"60
+}
+"61
+[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
+"62
+[e $ ! != -> _ack `i -> -> -> 0 `i `uc `i 110  ]
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+[e $U 111  ]
+"63
+[e :U 110 ]
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+[e :U 111 ]
+"64
+[e ( _delayI2C ..  ]
+"65
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+"66
+[e ( _delayI2C ..  ]
 "67
 [e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
 "68
-}
-"63
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 104  ]
-[e :U 105 ]
-"68
-}
-"69
-[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
-"70
-[e $ ! != -> _ack `i -> -> -> 0 `i `uc `i 107  ]
-"71
-[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-[e $U 108  ]
-"72
-[e :U 107 ]
-"73
-[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-[e :U 108 ]
-"74
-[e ( _delay ..  ]
-"75
-[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-"76
-[e ( _delay ..  ]
-"77
-[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
-"79
 [e ) _ret ]
-[e $UE 103  ]
-"80
-[e :UE 103 ]
+[e $UE 106  ]
+"69
+[e :UE 106 ]
 }

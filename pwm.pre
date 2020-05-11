@@ -1703,60 +1703,39 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 5 "pwm.h"
-void PWM1_Init(unsigned int);
-void PWM1_Start(void);
-void PWM1_Set_Duty(unsigned char);
+# 4 "pwm.h"
+void initPWM(unsigned int);
+void dutyPWM(unsigned char);
 
-# 6 "pwm.c"
-void PWM1_Init(unsigned int f) {
-unsigned int temp;
+# 5 "pwm.c"
+void initPWM(unsigned int freq) {
 
+CCP1CON = 0x00;
+TRISCbits.TRISC2 = 1;
+PORTCbits.RC2 = 0;
+CCPR1L = 0;
+T2CONbits.TMR2ON = 0;
 
-
-
-CCP1CON=0x00;
-TRISCbits.TRISC2=1;
-TRISDbits.TRISD5=1;
-PORTCbits.RC2=0;
-PORTDbits.RD5=0;
-CCPR1L=0;
-
-
-T2CONbits.TMR2ON=0;
-temp=4000000/(f*4l);
-
-if (temp < 256) {
-T2CONbits.T2CKPS=0;
-PR2=temp;
-}
-else if(temp/4 < 256 ) {
-T2CONbits.T2CKPS=1;
-PR2=(temp+2)/4;
-}
-else {
-PR2=(temp+8)/16;
-T2CONbits.T2CKPS=2;
-}
+T2CONbits.T2CKPS = 1;
+PR2 = 4000000/(freq*4*4) - 1;
 T2CONbits.TOUTPS=0;
-}
 
 
-void PWM1_Start(void) {
-TRISCbits.TRISC2=0;
-TRISDbits.TRISD5=0;
-CCP1CON=0x0F;
-T2CONbits.TMR2ON=1;
+TRISCbits.TRISC2 = 0;
+CCP1CON = 0x0F;
+T2CONbits.TMR2ON = 1;
 
-PIR1bits.TMR2IF=0;
+PIR1bits.TMR2IF = 0;
 while(PIR1bits.TMR2IF == 0);
-PIR1bits.TMR2IF=0;
+PIR1bits.TMR2IF = 0;
 while(PIR1bits.TMR2IF == 0);
 }
 
-void PWM1_Set_Duty(unsigned char d) {
+
+void dutyPWM(unsigned char d) {
+
 unsigned int temp;
-temp=(((unsigned long)(d))*((PR2<<2)|0x03))/255;
-CCPR1L= (0x03FC&temp)>>2;
-CCP1CON=((0x0003&temp)<<4)|0x0F;
+temp = (((unsigned long)(d))*((PR2<<2)|0x03))/255;
+CCPR1L = (0x03FC&temp)>>2;
+CCP1CON = ((0x0003&temp)<<4)|0x0F;
 }

@@ -1703,85 +1703,70 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 18 "lcd.h"
-void lcd_init(void);
-void lcd_cmd(unsigned char val);
-void lcd_dat(unsigned char val);
-void lcd_str(const char* str);
+# 16 "lcd.h"
+void initLCD(void);
+void rsLCD(unsigned char val, unsigned char string);
+void strLCD(const char* str);
 void printlnLCD(const char* str1,const char* str2);
 void delay_ms(unsigned int val);
 void printlnL1LCD(const char* str1);
 void printlnL2LCD(const char* str1);
 
 # 4 "lcd.c"
-void lcd_wr(unsigned char val) {
-PORTD=val;
-}
-
-void lcd_cmd(unsigned char val) {
-PORTEbits.RE1=1;
-lcd_wr(val);
-PORTEbits.RE2=0;
-delay_ms(3);
-PORTEbits.RE1=0;
-delay_ms(3);
-PORTEbits.RE1=1;
-}
-
-void lcd_dat(unsigned char val) {
-PORTEbits.RE1=1;
-lcd_wr(val);
-PORTEbits.RE2=1;
-delay_ms(3);
-PORTEbits.RE1=0;
-delay_ms(3);
-PORTEbits.RE1=1;
-}
-
-void lcd_init(void) {
-PORTEbits.RE1=0;
-PORTEbits.RE2=0;
+void initLCD(void) {
+PORTEbits.RE1 = 0;
+PORTEbits.RE2 = 0;
 delay_ms(20);
-PORTEbits.RE1=1;
+PORTEbits.RE1 = 1;
 
-lcd_cmd(0x38);
+rsLCD(0x38, 'c');
 delay_ms(5);
-lcd_cmd(0x38);
+rsLCD(0x38, 'c');
 delay_ms(1);
-lcd_cmd(0x38);
-lcd_cmd(0x08);
-lcd_cmd(0x0F);
-lcd_cmd(0x01);
-lcd_cmd(0x38);
-lcd_cmd(0x80);
+rsLCD(0x38, 'c');
+rsLCD(0x08, 'c');
+rsLCD(0x0F, 'c');
+rsLCD(0x01, 'c');
+rsLCD(0x38, 'c');
+rsLCD(0x80, 'c');
 }
 
-void lcd_str(const char* str) {
-unsigned char i=0;
-while(str[i] != 0 )
-{
-lcd_dat(str[i]);
-i++;
-}
+
+void rsLCD(unsigned char val, unsigned char string) {
+PORTEbits.RE1 = 1;
+PORTD = val;
+if(string=='c') PORTEbits.RE2 = 0;
+if(string=='d') PORTEbits.RE2 = 1;
+delay_ms(3);
+PORTEbits.RE1 = 0;
+delay_ms(3);
+PORTEbits.RE1 = 1;
 }
 
-void printlnLCD(const char* str1,const char* str2) {
-lcd_cmd(0x01);
-lcd_cmd(0x80);
-lcd_str(str1);
-lcd_cmd(0xC0);
-lcd_str(str2);
 
+
+void strLCD(const char* str) {
+unsigned char i = 0;
+while(str[i] != 0 ) rsLCD(str[i++], 'd');
 }
+
 
 void printlnL1LCD(const char* str1) {
-lcd_cmd(0x80);
-lcd_str(str1);
+rsLCD(0x80, 'c');
+strLCD(str1);
 }
 void printlnL2LCD(const char* str1) {
-lcd_cmd(0xC0);
-lcd_str(str1);
+rsLCD(0xC0, 'c');
+strLCD(str1);
 }
+void printlnLCD(const char* str1,const char* str2) {
+rsLCD(0x01, 'c');
+rsLCD(0x80, 'c');
+strLCD(str1);
+rsLCD(0xC0, 'c');
+strLCD(str2);
+}
+
 
 void delay_ms(unsigned int val){
 unsigned int i;
@@ -1789,7 +1774,7 @@ unsigned char j;
 for (i =0; i< val; i++) {
 for (j =0 ; j < 200; j++) {
 
-# 78
+# 64
 #asm
       NOP
  NOP
@@ -1797,7 +1782,7 @@ for (j =0 ; j < 200; j++) {
  NOP
  NOP
 #endasm 
-# 84
+# 70
 
  }
 }

@@ -3084,29 +3084,22 @@ CJSON_PUBLIC(char *)  jsonToString(int temp, int hum, int wind, char* sit, char 
   cJSON *group = NULL;
 	/* create root node */
 	cJSON *jsonObject = cJSON_CreateObject();
-
 	/* add elements to root */
   group = cJSON_CreateString("49836,50123,50775");
   cJSON_AddItemToObject(jsonObject, "group", group);
-  
   timestamp = cJSON_CreateString(strtok(time, "\n"));
   cJSON_AddItemToObject(jsonObject, "time", timestamp);
-
   situation = cJSON_CreateString(sit);
 	cJSON_AddItemToObject(jsonObject, "situation", situation);
-
 	sprintf(tempStr,"%d", temp);
 	temperature = cJSON_CreateString(tempStr);
 	cJSON_AddItemToObject(jsonObject, "temperature", temperature);
-
 	sprintf(tempStr,"%d", hum);
 	humidity = cJSON_CreateString(tempStr);
 	cJSON_AddItemToObject(jsonObject, "humidity", humidity);
-
 	sprintf(tempStr,"%d", wind);
 	windVelocity = cJSON_CreateString(tempStr);
 	cJSON_AddItemToObject(jsonObject, "windVelocity", windVelocity);
-
 	/* convert json to string */
 	string = cJSON_Print(jsonObject);
 	/* free all objects under root and root itself */

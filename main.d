@@ -1,1 +1,1 @@
- main.d  main.p1:  main.c pwm.h i2c.h lcd.h eeprom_ext.h adc.h matricial_key.h display7s.h serial.h
+ main.d  main.p1:  main.c pwm.h i2c.h lcd.h eeprom_ext.h adc.h matricial_key.h serial.h

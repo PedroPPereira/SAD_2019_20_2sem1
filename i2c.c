@@ -1,82 +1,69 @@
-#ifndef _18F4550
+#include <xc.h>
 #include "i2c.h"
 
-
-void delay(void) {
-  #asm
-     NOP
-     NOP
-     NOP
-     NOP
-     NOP
-     NOP
-     NOP
-     NOP
-  #endasm
+void delayI2C(void) {
+  for (int i=0; i<5; i++) {};
 }
 
-void i2c_init(void) {
-  TIDAT=0;
-  ICLK=1;
-  IDAT=1;
+void initI2C(void) {
+  TRIS_SDA = 0; //set SDA as output
+  SCL = 1;
+  SDA = 1;
 }
 
-void i2c_start(void) {
-  ICLK=1;
-  IDAT=1;
-  delay();
-  IDAT=0;
-  delay();
+void startI2C(void) {
+  SCL = 1;
+  SDA = 1;
+  delayI2C();
+  SDA = 0; // 1 -> 0
+  delayI2C();
 }
 
-void i2c_stop(void) {
-  ICLK=1;
-  IDAT=0;
-  delay();
-  IDAT=1;
-  delay();
+void stopI2C(void) {
+  SCL = 1;
+  SDA = 0;
+  delayI2C();
+  SDA = 1; // 0 -> 1
+  delayI2C();
 }
 
-void i2c_wb(unsigned char val) {
+void writeI2C(unsigned char val) {
   unsigned char i;
-  ICLK=0;
+  SCL = 0;
+  //convert val into binary and store it at SDA
   for(i=0;i<8;i++) {
-    IDAT=((val>>(7-i))& 0x01);
-    ICLK=1;
-    delay();
-    ICLK=0;
+    SDA = ((val>>(7-i))& 0x01);
+    SCL = 1; //+1 clock
+    delayI2C();
+    SCL = 0;
   }
-  IDAT=1;
-  delay();
-  ICLK=1;
-  delay();
-  ICLK=0;
+  SDA = 1;
+  delayI2C();
+  SCL = 1; //+1 clock
+  delayI2C();
+  SCL = 0;
 }
 
-unsigned char i2c_rb(unsigned char ack) {
+
+unsigned char readI2C(unsigned char ack) {
   char i;
-  unsigned char ret=0;
-
-  ICLK=0;
-  TIDAT=1;
-  IDAT=1;
+  unsigned char ret = 0;
+  SCL = 0;
+  TRIS_SDA = 1; //SDA as input
+  SDA = 1;
+  //get byte value from SDA
   for(i=0;i<8;i++) {
-    ICLK=1;
-    delay();
-    ret|=(IDAT<<(7-i));
-    ICLK=0;
+    SCL = 1; //+1 clock
+    delayI2C();
+    ret |= (SDA<<(7-i));
+    SCL = 0;
   }
-  TIDAT=0;
-  if(ack)
-    IDAT=0;
-  else
-	 IDAT=1;
-  delay();
-  ICLK=1;
-  delay();
-  ICLK=0;
-
+  TRIS_SDA = 0;
+  if(ack) SDA = 0; //acknowledgment
+  else SDA = 1;
+  delayI2C();
+  SCL = 1; //+1 clock
+  delayI2C();
+  SCL = 0;
   return ret;
 }
-
-#endif

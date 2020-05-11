@@ -1,12 +1,12 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "8 i2c.h
-[v _i2c_start `(v ~T0 @X0 0 ef ]
+[v _startI2C `(v ~T0 @X0 0 ef ]
 "10
-[v _i2c_wb `(v ~T0 @X0 0 ef1`uc ]
+[v _writeI2C `(v ~T0 @X0 0 ef1`uc ]
 "11
-[v _i2c_rb `(uc ~T0 @X0 0 ef1`uc ]
+[v _readI2C `(uc ~T0 @X0 0 ef1`uc ]
 "9
-[v _i2c_stop `(v ~T0 @X0 0 ef ]
+[v _stopI2C `(v ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; <" INDF equ 00h ;# ">
 "61
@@ -128,126 +128,96 @@ Version 3.2 HI-TECH Software Intermediate Code
 "2363
 [; <" EECON2 equ 018Dh ;# ">
 "5 eeprom_ext.c
-[v _e2pext_r `(uc ~T0 @X0 1 ef1`ui ]
+[v _readEEPROM `(uc ~T0 @X0 1 ef1`ui ]
 {
-[e :U _e2pext_r ]
+[e :U _readEEPROM ]
 [v _addr `ui ~T0 @X0 1 r1 ]
 [f ]
 "6
 [v _ret `uc ~T0 @X0 1 a ]
 "7
 [v _ah `uc ~T0 @X0 1 a ]
+[e = _ah -> >> & _addr -> -> 256 `i `ui -> 8 `i `uc ]
 "8
 [v _al `uc ~T0 @X0 1 a ]
-"10
-[e = _ah -> >> & _addr -> -> 256 `i `ui -> 8 `i `uc ]
-"11
 [e = _al -> & _addr -> -> 255 `i `ui `uc ]
-"13
-[e ( _i2c_start ..  ]
-"14
+"10
+[e ( _startI2C ..  ]
+"11
 [e $ ! != -> _ah `i -> -> -> 0 `i `uc `i 96  ]
-{
-"15
-[e ( _i2c_wb (1 -> -> 162 `i `uc ]
-"16
-}
+[e ( _writeI2C (1 -> -> 162 `i `uc ]
 [e $U 97  ]
-"17
+"12
 [e :U 96 ]
-{
-"18
-[e ( _i2c_wb (1 -> -> 160 `i `uc ]
-"19
-}
+[e ( _writeI2C (1 -> -> 160 `i `uc ]
 [e :U 97 ]
-"20
-[e ( _i2c_wb (1 _al ]
-"21
-[e ( _i2c_start ..  ]
-"22
+"13
+[e ( _writeI2C (1 _al ]
+"15
+[e ( _startI2C ..  ]
+"16
 [e $ ! != -> _ah `i -> -> -> 0 `i `uc `i 98  ]
-{
-"23
-[e ( _i2c_wb (1 -> -> 163 `i `uc ]
-"24
-}
+[e ( _writeI2C (1 -> -> 163 `i `uc ]
 [e $U 99  ]
-"25
+"17
 [e :U 98 ]
-{
-"26
-[e ( _i2c_wb (1 -> -> 161 `i `uc ]
-"27
-}
+[e ( _writeI2C (1 -> -> 161 `i `uc ]
 [e :U 99 ]
-"28
-[e = _ret ( _i2c_rb (1 -> -> 1 `i `uc ]
-"29
-[e ( _i2c_stop ..  ]
-"30
+"19
+[e = _ret ( _readI2C (1 -> -> 1 `i `uc ]
+"20
+[e ( _stopI2C ..  ]
+"21
 [e ) _ret ]
 [e $UE 95  ]
-"31
+"22
 [e :UE 95 ]
 }
-"34
-[v _e2pext_w `(v ~T0 @X0 1 ef2`ui`uc ]
+"25
+[v _writeEEPROM `(v ~T0 @X0 1 ef2`ui`uc ]
 {
-[e :U _e2pext_w ]
+[e :U _writeEEPROM ]
 [v _addr `ui ~T0 @X0 1 r1 ]
 [v _val `uc ~T0 @X0 1 r2 ]
 [f ]
-"35
+"26
 [v _tmp `ui ~T0 @X0 1 a ]
-"36
-[v _ah `uc ~T0 @X0 1 a ]
-"37
-[v _al `uc ~T0 @X0 1 a ]
-"38
-[v _nt `uc ~T0 @X0 1 a ]
-"40
 [e = _tmp -> _val `ui ]
-"41
+"27
+[v _ah `uc ~T0 @X0 1 a ]
 [e = _ah -> >> & _addr -> -> 256 `i `ui -> 8 `i `uc ]
-"42
+"28
+[v _al `uc ~T0 @X0 1 a ]
 [e = _al -> & _addr -> -> 255 `i `ui `uc ]
-"43
+"29
+[v _nt `uc ~T0 @X0 1 a ]
 [e = _nt -> -> 0 `i `uc ]
-"45
+"31
 [e :U 103 ]
 {
-"46
-[e ( _i2c_start ..  ]
-"47
+"32
+[e ( _startI2C ..  ]
+"33
 [e $ ! != -> _ah `i -> -> -> 0 `i `uc `i 104  ]
-{
-"48
-[e ( _i2c_wb (1 -> -> 162 `i `uc ]
-"49
-}
+[e ( _writeI2C (1 -> -> 162 `i `uc ]
 [e $U 105  ]
-"50
+"34
 [e :U 104 ]
-{
-"51
-[e ( _i2c_wb (1 -> -> 160 `i `uc ]
-"52
-}
+[e ( _writeI2C (1 -> -> 160 `i `uc ]
 [e :U 105 ]
-"53
-[e ( _i2c_wb (1 _al ]
-"54
-[e ( _i2c_wb (1 -> _tmp `uc ]
-"55
-[e ( _i2c_stop ..  ]
-"56
+"35
+[e ( _writeI2C (1 _al ]
+"36
+[e ( _writeI2C (1 -> _tmp `uc ]
+"37
+[e ( _stopI2C ..  ]
+"38
 [e ++ _nt -> -> 1 `i `uc ]
-"57
+"39
 }
-"58
-[e $ && != _tmp -> ( _e2pext_r (1 _addr `ui < -> _nt `i -> 10 `i 103  ]
+"40
+[e $ && != _tmp -> ( _readEEPROM (1 _addr `ui < -> _nt `i -> 10 `i 103  ]
 [e :U 102 ]
-"59
+"41
 [e :UE 100 ]
 }

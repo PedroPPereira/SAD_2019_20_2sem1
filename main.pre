@@ -1801,56 +1801,48 @@ extern char * strrichr(const char *, int);
 # 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 3 "adc.h"
-void adc_init(void);
+# 2 "adc.h"
+void initADC(void);
 unsigned int readADC(unsigned char canal);
 
-# 3 "display7s.h"
-unsigned char display7s(unsigned char v);
-unsigned char selDISP(unsigned int num);
-
-# 18 "lcd.h"
-void lcd_init(void);
-void lcd_cmd(unsigned char val);
-void lcd_dat(unsigned char val);
-void lcd_str(const char* str);
+# 16 "lcd.h"
+void initLCD(void);
+void rsLCD(unsigned char val, unsigned char string);
+void strLCD(const char* str);
 void printlnLCD(const char* str1,const char* str2);
 void delay_ms(unsigned int val);
 void printlnL1LCD(const char* str1);
 void printlnL2LCD(const char* str1);
 
 # 2 "serial.h"
-void serial_init(void);
-void serial_tx(unsigned char val);
-void serial_tx_str(const char* val);
-unsigned char serial_rx();
-void readSerial(char *buf);
+void initUART(void);
+void putUART(unsigned char val);
+void writeUART(const char* val);
+unsigned char getUART();
+void readUART(char *buf);
 
-# 5 "pwm.h"
-void PWM1_Init(unsigned int);
-void PWM1_Start(void);
-void PWM1_Set_Duty(unsigned char);
+# 4 "pwm.h"
+void initPWM(unsigned int);
+void dutyPWM(unsigned char);
 
 # 15 "matricial_key.h"
-void keyboard_init(void);
-char keypad_scanner(void);
-char switch_press_scan(void);
-char* matricialCode(void);
+void initMatricialKey(void);
+char scanKeypad(void);
+char pressSwitch(void);
 
-# 4 "eeprom_ext.h"
-unsigned char e2pext_r(unsigned int addr);
-void e2pext_w(unsigned int addr, unsigned char val);
+# 3 "eeprom_ext.h"
+unsigned char readEEPROM(unsigned int addr);
+void writeEEPROM(unsigned int addr, unsigned char val);
 
 # 7 "i2c.h"
-void i2c_init(void);
-void i2c_start(void);
-void i2c_stop(void);
-void i2c_wb(unsigned char val);
-unsigned char i2c_rb(unsigned char ack);
-void i2c_acktst(unsigned char val);
+void initI2C(void);
+void startI2C(void);
+void stopI2C(void);
+void writeI2C(unsigned char val);
+unsigned char readI2C(unsigned char ack);
 
 
-# 16 "main.c"
+# 15 "main.c"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -1878,13 +1870,12 @@ nSeconds++;
 nMSeconds = 0;
 if(nSeconds==51) {
 sprintf(strUART, "1min-%s", strADC);
-serial_tx_str(strUART);
+writeUART(strUART);
 nSeconds = 0;
 }
 }
 else nMSeconds++;
 }
-
 
 
 if(INTCONbits.INTF==1) {
@@ -1897,17 +1888,19 @@ CCP1CON = 0x00;
 T1CON = 0x00;
 nSeconds = 0;
 nMSeconds = 0;
+rsLCD(0x08, 'c');
 }
 else {
 PORTCbits.RC5 = 1;
 CCP1CON = 0x0F;
 T1CON = 0x31;
+rsLCD(0x0F, 'c');
 }
 run = !run;
 }
 }
 
-void isr_init();
+void initISR();
 
 
 int main(void) {
@@ -1918,8 +1911,8 @@ TRISC=0x80;
 TRISD=0x00;
 TRISE=0x00;
 
-lcd_init();
-keyboard_init();
+initLCD();
+initMatricialKey();
 
 int tempRB3 = 0;
 unsigned int potP1, potP2, tempC, duty;
@@ -1928,13 +1921,29 @@ char pass[5] = "0862", code[5], str_old[11], strConfig1[1];
 bool boolPass = 0, bool_emerg = 0;
 PORTCbits.RC1 = 1;
 
-# 111
+
+while (!boolPass) {
+printlnLCD("Weather Station", "Pass:");
+rsLCD(0xC0+5, 'c');
+for(int i=0; i<4; i++) {
+code[i] = pressSwitch();
+rsLCD(code[i], 'd');
+}
+if(!strcmp(code, pass)) {
+boolPass = 1;
+printlnL2LCD("Password correct");
+}
+else printlnL2LCD("Password incorrect");
+delay_ms(50);
+}
+
+
 TRISA=0x07;
-serial_init();
-adc_init();
-PWM1_Init(5000);
-PWM1_Start();
-isr_init();
+initUART();
+initADC();
+initPWM(1000);
+initI2C();
+initISR();
 run = 1;
 PORTCbits.RC5 = 1;
 printlnL1LCD("Temp/Wind/Hum");
@@ -1948,7 +1957,7 @@ tempRB3 = !PORTBbits.RB3;
 
 potP1 = ((unsigned int)readADC(0)*10)/102;
 duty = (potP1*255)/100;
-PWM1_Set_Duty(duty);
+dutyPWM(duty);
 potP2 = ((unsigned int)readADC(1)*10)/102;
 tempC = ((unsigned int)readADC(2)*100)/202;
 
@@ -1956,7 +1965,7 @@ tempC = ((unsigned int)readADC(2)*100)/202;
 sprintf(strADC, "%d/%d/%d", tempC, potP1, potP2);
 if(strcmp(strADC, str_old)){
 if(strlen(str_old)!=strlen(strADC)){
-lcd_cmd(0x01);
+rsLCD(0x01, 'c');
 printlnL1LCD("Temp/Wind/Hum");
 }
 printlnL2LCD(strADC);
@@ -1969,10 +1978,10 @@ PORTCbits.RC1 = 0;
 PORTD = 0x80;
 if(!bool_emerg) {
 sprintf(strUART, "emergency-%d/%d/%d", tempC, potP1, potP2);
-serial_tx_str(strUART);
-e2pext_w(1,tempC);
-e2pext_w(2,potP1);
-e2pext_w(3,potP2);
+writeUART(strUART);
+writeEEPROM(1,tempC);
+writeEEPROM(2,potP1);
+writeEEPROM(3,potP2);
 }
 bool_emerg = 1;
 }
@@ -1983,21 +1992,21 @@ PORTCbits.RC1 = 1;
 
 
 if(PIR1bits.RCIF) {
-readSerial(strConfig1);
+readUART(strConfig1);
 
 PIR1bits.RCIF = 0;
 switch (strConfig1[0]) {
-case 'h': if(e2pext_r(1)!=255) {
-sprintf(strUART, "last registered emergency %d/%d/%d", e2pext_r(1), e2pext_r(2), e2pext_r(3));
-serial_tx_str(strUART);
-} else serial_tx_str("emergencies not registered yet");
+case 'h': if(readEEPROM(1)!=255) {
+sprintf(strUART, "last registered emergency %d/%d/%d", readEEPROM(1), readEEPROM(2), readEEPROM(3));
+writeUART(strUART);
+} else writeUART("emergencies not registered yet");
 break;
 case 'a': constHum=10; constTemp=50; constWind=90;
-serial_tx_str("emergency changed to option A"); break;
+writeUART("emergency changed to option A"); break;
 case 'b': constHum=20; constTemp=40; constWind=80;
-serial_tx_str("emergency changed to option B"); break;
+writeUART("emergency changed to option B"); break;
 case 'c': constHum=30; constTemp=30; constWind=70;
-serial_tx_str("emergency changed to option C"); break;
+writeUART("emergency changed to option C"); break;
 default: break;
 }
 }
@@ -2007,15 +2016,15 @@ delay_ms(20);
 }
 
 
-void isr_init(){
-
-# 196
+void initISR() {
 T1CON = 0x31;
+
+
 TMR1H = 0xCF;
 TMR1L = 0x2C;
+
 INTCONbits.GIE = 1;
 PIE1bits.TMR1IE = 1;
 INTCONbits.PEIE = 1;
 INTCONbits.INTE = 1;
-
 }

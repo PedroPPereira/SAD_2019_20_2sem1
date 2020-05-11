@@ -1,14 +1,20 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"340 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"216
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"1499
-[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"1375
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"1255
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
+"1505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S60 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
+"1504
+[u S59 `S60 1 ]
+[n S59 . . ]
+"1516
+[v _TRISDbits `VS59 ~T0 @X0 0 e@136 ]
+"1381
+[s S56 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S56 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"1380
+[u S55 `S56 1 ]
+[n S55 . . ]
+"1392
+[v _TRISBbits `VS55 ~T0 @X0 0 e@134 ]
 "346
 [s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
@@ -145,35 +151,53 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "2363
 [; <" EECON2 equ 018Dh ;# ">
-"6 matricial_key.c
-[v _keyboard_init `(v ~T0 @X0 1 ef ]
+"5 matricial_key.c
+[v _initMatricialKey `(v ~T0 @X0 1 ef ]
 {
-[e :U _keyboard_init ]
+[e :U _initMatricialKey ]
 [f ]
+"6
+[e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
 "7
-[e = _PORTD -> -> 0 `i `uc ]
+[e = . . _TRISDbits 0 1 -> -> 0 `i `uc ]
 "8
-[e = _PORTB -> -> 0 `i `uc ]
+[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
 "9
-[e = _TRISD -> -> 0 `i `uc ]
-"10
-[e = _TRISB -> -> 15 `i `uc ]
+[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
+"11
+[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
 "12
-[e =& _OPTION_REG -> -> 127 `i `uc ]
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
 "13
+[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
+"15
+[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
+"16
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+"17
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"18
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+"20
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+"21
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"22
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+"23
 [e :UE 95 ]
 }
-"16
-[v _keypad_scanner `(uc ~T0 @X0 1 ef ]
+"26
+[v _scanKeypad `(uc ~T0 @X0 1 ef ]
 {
-[e :U _keypad_scanner ]
+[e :U _scanKeypad ]
 [f ]
-"18
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"27
+[e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
 [e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
-[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
-"20
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+"28
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -186,52 +210,52 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ < _i -> 5 `i 97  ]
 [e :U 98 ]
 }
-"21
-[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTDbits 0 0 `i -> 0 `i 100  ]
+"29
+[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTDbits 0 3 `i -> 0 `i 100  ]
 {
 [e $U 101  ]
 [e :U 102 ]
 [e :U 101 ]
 [e $ == -> . . _PORTBbits 0 0 `i -> 0 `i 102  ]
 [e :U 103 ]
-[e ) -> -> 42 `ui `uc ]
+[e ) -> -> 49 `ui `uc ]
 [e $UE 96  ]
 }
 [e $U 104  ]
-"22
+"30
 [e :U 100 ]
-[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTDbits 0 0 `i -> 0 `i 105  ]
+[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTDbits 0 3 `i -> 0 `i 105  ]
 {
 [e $U 106  ]
 [e :U 107 ]
 [e :U 106 ]
 [e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 107  ]
 [e :U 108 ]
-[e ) -> -> 48 `ui `uc ]
+[e ) -> -> 50 `ui `uc ]
 [e $UE 96  ]
 }
 [e $U 109  ]
-"23
+"31
 [e :U 105 ]
-[e $ ! && == -> . . _PORTBbits 0 2 `i -> 0 `i == -> . . _PORTDbits 0 0 `i -> 0 `i 110  ]
+[e $ ! && == -> . . _PORTBbits 0 2 `i -> 0 `i == -> . . _PORTDbits 0 3 `i -> 0 `i 110  ]
 {
 [e $U 111  ]
 [e :U 112 ]
 [e :U 111 ]
 [e $ == -> . . _PORTBbits 0 2 `i -> 0 `i 112  ]
 [e :U 113 ]
-[e ) -> -> 35 `ui `uc ]
+[e ) -> -> 51 `ui `uc ]
 [e $UE 96  ]
 }
 [e :U 110 ]
-"25
+"33
 [e :U 109 ]
 [e :U 104 ]
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
-[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
 [e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
-"27
+[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+"34
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -244,52 +268,52 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ < _i -> 5 `i 114  ]
 [e :U 115 ]
 }
-"28
-[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTDbits 0 1 `i -> 0 `i 117  ]
+"35
+[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTDbits 0 2 `i -> 0 `i 117  ]
 {
 [e $U 118  ]
 [e :U 119 ]
 [e :U 118 ]
 [e $ == -> . . _PORTBbits 0 0 `i -> 0 `i 119  ]
 [e :U 120 ]
-[e ) -> -> 55 `ui `uc ]
+[e ) -> -> 52 `ui `uc ]
 [e $UE 96  ]
 }
 [e $U 121  ]
-"29
+"36
 [e :U 117 ]
-[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTDbits 0 1 `i -> 0 `i 122  ]
+[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTDbits 0 2 `i -> 0 `i 122  ]
 {
 [e $U 123  ]
 [e :U 124 ]
 [e :U 123 ]
 [e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 124  ]
 [e :U 125 ]
-[e ) -> -> 56 `ui `uc ]
+[e ) -> -> 53 `ui `uc ]
 [e $UE 96  ]
 }
 [e $U 126  ]
-"30
+"37
 [e :U 122 ]
-[e $ ! && == -> . . _PORTBbits 0 2 `i -> 0 `i == -> . . _PORTDbits 0 1 `i -> 0 `i 127  ]
+[e $ ! && == -> . . _PORTBbits 0 2 `i -> 0 `i == -> . . _PORTDbits 0 2 `i -> 0 `i 127  ]
 {
 [e $U 128  ]
 [e :U 129 ]
 [e :U 128 ]
 [e $ == -> . . _PORTBbits 0 2 `i -> 0 `i 129  ]
 [e :U 130 ]
-[e ) -> -> 57 `ui `uc ]
+[e ) -> -> 54 `ui `uc ]
 [e $UE 96  ]
 }
 [e :U 127 ]
-"32
+"39
 [e :U 126 ]
 [e :U 121 ]
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
-[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
 [e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
-"34
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+"40
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -302,52 +326,52 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ < _i -> 5 `i 131  ]
 [e :U 132 ]
 }
-"35
-[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTDbits 0 2 `i -> 0 `i 134  ]
+"41
+[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTDbits 0 1 `i -> 0 `i 134  ]
 {
 [e $U 135  ]
 [e :U 136 ]
 [e :U 135 ]
 [e $ == -> . . _PORTBbits 0 0 `i -> 0 `i 136  ]
 [e :U 137 ]
-[e ) -> -> 52 `ui `uc ]
+[e ) -> -> 55 `ui `uc ]
 [e $UE 96  ]
 }
 [e $U 138  ]
-"36
+"42
 [e :U 134 ]
-[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTDbits 0 2 `i -> 0 `i 139  ]
+[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTDbits 0 1 `i -> 0 `i 139  ]
 {
 [e $U 140  ]
 [e :U 141 ]
 [e :U 140 ]
 [e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 141  ]
 [e :U 142 ]
-[e ) -> -> 53 `ui `uc ]
+[e ) -> -> 56 `ui `uc ]
 [e $UE 96  ]
 }
 [e $U 143  ]
-"37
+"43
 [e :U 139 ]
-[e $ ! && == -> . . _PORTBbits 0 2 `i -> 0 `i == -> . . _PORTDbits 0 2 `i -> 0 `i 144  ]
+[e $ ! && == -> . . _PORTBbits 0 2 `i -> 0 `i == -> . . _PORTDbits 0 1 `i -> 0 `i 144  ]
 {
 [e $U 145  ]
 [e :U 146 ]
 [e :U 145 ]
 [e $ == -> . . _PORTBbits 0 2 `i -> 0 `i 146  ]
 [e :U 147 ]
-[e ) -> -> 54 `ui `uc ]
+[e ) -> -> 57 `ui `uc ]
 [e $UE 96  ]
 }
 [e :U 144 ]
-"39
+"45
 [e :U 143 ]
 [e :U 138 ]
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
 [e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
-[e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
-"41
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+"46
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -360,104 +384,72 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ < _i -> 5 `i 148  ]
 [e :U 149 ]
 }
-"42
-[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTDbits 0 3 `i -> 0 `i 151  ]
+"47
+[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTDbits 0 0 `i -> 0 `i 151  ]
 {
 [e $U 152  ]
 [e :U 153 ]
 [e :U 152 ]
 [e $ == -> . . _PORTBbits 0 0 `i -> 0 `i 153  ]
 [e :U 154 ]
-[e ) -> -> 49 `ui `uc ]
+[e ) -> -> 42 `ui `uc ]
 [e $UE 96  ]
 }
 [e $U 155  ]
-"43
+"48
 [e :U 151 ]
-[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTDbits 0 3 `i -> 0 `i 156  ]
+[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTDbits 0 0 `i -> 0 `i 156  ]
 {
 [e $U 157  ]
 [e :U 158 ]
 [e :U 157 ]
 [e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 158  ]
 [e :U 159 ]
-[e ) -> -> 50 `ui `uc ]
+[e ) -> -> 48 `ui `uc ]
 [e $UE 96  ]
 }
 [e $U 160  ]
-"44
+"49
 [e :U 156 ]
-[e $ ! && == -> . . _PORTBbits 0 2 `i -> 0 `i == -> . . _PORTDbits 0 3 `i -> 0 `i 161  ]
+[e $ ! && == -> . . _PORTBbits 0 2 `i -> 0 `i == -> . . _PORTDbits 0 0 `i -> 0 `i 161  ]
 {
 [e $U 162  ]
 [e :U 163 ]
 [e :U 162 ]
 [e $ == -> . . _PORTBbits 0 2 `i -> 0 `i 163  ]
 [e :U 164 ]
-[e ) -> -> 51 `ui `uc ]
+[e ) -> -> 35 `ui `uc ]
 [e $UE 96  ]
 }
 [e :U 161 ]
-"46
+"51
 [e :U 160 ]
 [e :U 155 ]
 [e ) -> -> 120 `ui `uc ]
 [e $UE 96  ]
-"47
+"52
 [e :UE 96 ]
 }
-"75
-[v _switch_press_scan `(uc ~T0 @X0 1 ef ]
-"76
+"54
+[v _pressSwitch `(uc ~T0 @X0 1 ef ]
 {
-[e :U _switch_press_scan ]
+[e :U _pressSwitch ]
 [f ]
-"77
+"55
 [v _key `uc ~T0 @X0 1 a ]
 [e = _key -> -> 120 `ui `uc ]
-"78
+"56
 [e $U 166  ]
 [e :U 167 ]
-"79
-[e = _key ( _keypad_scanner ..  ]
+"57
+[e = _key ( _scanKeypad ..  ]
 [e :U 166 ]
-"78
+"56
 [e $ == -> _key `ui -> 120 `ui 167  ]
 [e :U 168 ]
-"80
+"58
 [e ) _key ]
 [e $UE 165  ]
-"81
+"59
 [e :UE 165 ]
-}
-"84
-[v _matricialCode `(*uc ~T0 @X0 1 ef ]
-{
-[e :U _matricialCode ]
-[f ]
-"85
-[v _code `*uc ~T0 @X0 1 a ]
-"86
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 170  ]
-[e $U 171  ]
-[e :U 170 ]
-{
-"87
-[e = *U + _code * -> _i `x -> -> # *U _code `i `x ( _switch_press_scan ..  ]
-"88
-}
-"86
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 170  ]
-[e :U 171 ]
-"88
-}
-"89
-[e ) _code ]
-[e $UE 169  ]
-"90
-[e :UE 169 ]
 }

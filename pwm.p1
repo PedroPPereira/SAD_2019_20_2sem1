@@ -9,14 +9,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S57 . . ]
 "1454
 [v _TRISCbits `VS57 ~T0 @X0 0 e@135 ]
-"1505
-[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S60 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-"1504
-[u S59 `S60 1 ]
-[n S59 . . ]
-"1516
-[v _TRISDbits `VS59 ~T0 @X0 0 e@136 ]
 "284
 [s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
@@ -25,14 +17,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S9 . . ]
 "295
 [v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
-"346
-[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"345
-[u S11 `S12 1 ]
-[n S11 . . ]
-"357
-[v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
 "892
 [v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
 "743
@@ -176,113 +160,67 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "2363
 [; <" EECON2 equ 018Dh ;# ">
-"6 pwm.c
-[v _PWM1_Init `(v ~T0 @X0 1 ef1`ui ]
+"5 pwm.c
+[v _initPWM `(v ~T0 @X0 1 ef1`ui ]
 {
-[e :U _PWM1_Init ]
-[v _f `ui ~T0 @X0 1 r1 ]
+[e :U _initPWM ]
+[v _freq `ui ~T0 @X0 1 r1 ]
 [f ]
 "7
-[v _temp `ui ~T0 @X0 1 a ]
-"12
 [e = _CCP1CON -> -> 0 `i `uc ]
-"13
+"8
 [e = . . _TRISCbits 0 2 -> -> 1 `i `uc ]
-"14
-[e = . . _TRISDbits 0 5 -> -> 1 `i `uc ]
-"15
+"9
 [e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
-"16
-[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
-"17
+"10
 [e = _CCPR1L -> -> 0 `i `uc ]
-"20
+"11
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"21
-[e = _temp -> / -> 4000000 `l * -> _f `l -> 4 `l `ui ]
-"23
-[e $ ! < _temp -> -> 256 `i `ui 96  ]
-{
-"24
-[e = . . _T2CONbits 0 0 -> -> 0 `i `uc ]
-"25
-[e = _PR2 -> _temp `uc ]
-"26
-}
-[e $U 97  ]
-"27
-[e :U 96 ]
-[e $ ! < / _temp -> -> 4 `i `ui -> -> 256 `i `ui 98  ]
-{
-"28
+"13
 [e = . . _T2CONbits 0 0 -> -> 1 `i `uc ]
-"29
-[e = _PR2 -> / + _temp -> -> 2 `i `ui -> -> 4 `i `ui `uc ]
-"30
-}
-[e $U 99  ]
-"31
-[e :U 98 ]
-{
-"32
-[e = _PR2 -> / + _temp -> -> 8 `i `ui -> -> 16 `i `ui `uc ]
-"33
-[e = . . _T2CONbits 0 0 -> -> 2 `i `uc ]
-"34
-}
-[e :U 99 ]
-[e :U 97 ]
-"35
+"14
+[e = _PR2 -> - / -> 4000000 `l -> * * _freq -> -> 4 `i `ui -> -> 4 `i `ui `l -> -> 1 `i `l `uc ]
+"15
 [e = . . _T2CONbits 0 2 -> -> 0 `i `uc ]
-"36
+"18
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"19
+[e = _CCP1CON -> -> 15 `i `uc ]
+"20
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+"22
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"23
+[e $U 96  ]
+[e :U 97 ]
+[e :U 96 ]
+[e $ == -> . . _PIR1bits 0 1 `i -> 0 `i 97  ]
+[e :U 98 ]
+"24
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"25
+[e $U 99  ]
+[e :U 100 ]
+[e :U 99 ]
+[e $ == -> . . _PIR1bits 0 1 `i -> 0 `i 100  ]
+[e :U 101 ]
+"26
 [e :UE 95 ]
 }
-"39
-[v _PWM1_Start `(v ~T0 @X0 1 ef ]
+"29
+[v _dutyPWM `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _PWM1_Start ]
-[f ]
-"40
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-"41
-[e = . . _TRISDbits 0 5 -> -> 0 `i `uc ]
-"42
-[e = _CCP1CON -> -> 15 `i `uc ]
-"43
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"45
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"46
-[e $U 101  ]
-[e :U 102 ]
-[e :U 101 ]
-[e $ == -> . . _PIR1bits 0 1 `i -> 0 `i 102  ]
-[e :U 103 ]
-"47
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"48
-[e $U 104  ]
-[e :U 105 ]
-[e :U 104 ]
-[e $ == -> . . _PIR1bits 0 1 `i -> 0 `i 105  ]
-[e :U 106 ]
-"49
-[e :UE 100 ]
-}
-"51
-[v _PWM1_Set_Duty `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _PWM1_Set_Duty ]
+[e :U _dutyPWM ]
 [v _d `uc ~T0 @X0 1 r1 ]
 [f ]
-"52
+"31
 [v _temp `ui ~T0 @X0 1 a ]
-"53
+"32
 [e = _temp -> / * -> _d `ul -> -> | << -> _PR2 `i -> 2 `i -> 3 `i `l `ul -> -> -> 255 `i `l `ul `ui ]
-"54
+"33
 [e = _CCPR1L -> >> & -> -> 1020 `i `ui _temp -> 2 `i `uc ]
-"55
+"34
 [e = _CCP1CON -> | << & -> -> 3 `i `ui _temp -> 4 `i -> -> 15 `i `ui `uc ]
-"56
-[e :UE 107 ]
+"35
+[e :UE 102 ]
 }

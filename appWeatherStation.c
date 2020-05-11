@@ -15,13 +15,12 @@
 int confirmParam( char *str );
 int strContains(char *str, char ch);
 void storeData(char *str, int* tempC, int* humi, int* windV, char *situation);
-void createdata(FILE *fb, int tempC, int humi, int windV, char *situation, char *time);
+void insertXML(FILE *fb, int tempC, int humi, int windV, char *situation, char *time);
 
 
 
 int main() {
     //serial port configuration
-    // Declare variables and structures
     HANDLE hSerial;
     DCB dcbSerialParams = {0};
     COMMTIMEOUTS timeouts = {0};
@@ -34,7 +33,7 @@ int main() {
       fprintf(stderr, "Error\n");
       return 1;
     }
-    else fprintf(stderr, "Connected\n\n");
+    else fprintf(stderr, "Connected\n");
     // Set device parameters (9600 baud, 1 start bit, 1 stop bit, no parity)
     dcbSerialParams.DCBlength = sizeof(dcbSerialParams);
     if (GetCommState(hSerial, &dcbSerialParams) == 0) {
@@ -62,6 +61,7 @@ int main() {
         CloseHandle(hSerial);
         return 1;
     }
+    //----------------------------------------------------------------------------------------------------------------------------------
     //socket server-client configuration
     WSADATA wsa;
     // initialize Winsock
@@ -72,39 +72,21 @@ int main() {
     SOCKET s;
     if((s = socket(AF_INET , SOCK_STREAM , 0 )) == INVALID_SOCKET) fprintf(stderr, "Could not create socket : %d\n" , WSAGetLastError());
     else fprintf(stderr, "Socket created\n");
-    //get IP address of a hostname/domain
-    /*char *hostname = "http://193.136.120.133/~sad/";
-    char ip[100];
-    struct hostent *he;
-    struct in_addr **addr_list;
-	  int j;
-    DWORD dwError;
-    if ( (he = gethostbyname( hostname ) ) == NULL) {
-      dwError = WSAGetLastError();
-      if (dwError != 0) {
-          if (dwError == WSAHOST_NOT_FOUND) fprintf(stderr,"gethostbyname failed - Host not found\n");
-          else if (dwError == WSANO_DATA)   fprintf(stderr,"gethostbyname failed - No data record found\n");
-          else fprintf(stderr,"gethostbyname failed - Function failed with error: %ld\n", dwError);
-      }
-    }
-    addr_list = (struct in_addr **) he->h_addr_list;
-    for(j = 0; addr_list[j] != NULL; j++)
-  		strcpy(ip , inet_ntoa(*addr_list[j]) );*/
     //specifies the address family
     struct sockaddr_in server;
-    server.sin_addr.s_addr = inet_addr("127.0.0.1"); //  "127.0.0.1"  "74.125.235.20" INADDR_ANY
+    server.sin_addr.s_addr = inet_addr("193.136.120.133"); //  "127.0.0.1"  "74.125.235.20" INADDR_ANY
     server.sin_family = AF_INET;
-    server.sin_port = htons(8888); //27015   80  8888
+    server.sin_port = htons(80); //27015   80  8888
     //connect to remote server
-    if ( connect(s , (struct sockaddr *) & server , sizeof(server) ) == SOCKET_ERROR) fprintf(stderr, "Connect error\n");
-    else fprintf(stderr, "Connected\n");
+    if ( connect(s , (struct sockaddr *) & server , sizeof(server) ) == SOCKET_ERROR) fprintf(stderr, "Connect error\n\n");
+    else fprintf(stderr, "Connected\n\n");
     //send data
     char *message;
     message = "GET / HTTP/1.1\r\n\r\n";
     if( send(s , message , strlen(message) , 0) < 0) fprintf(stderr, "Send failed\n");
-    else fprintf(stderr, "Data Send\n");
-
-
+    else fprintf(stderr, "Data Sent\n");
+    json = cJSON_Parse(jsonToString(tempC, humi, windV, situation, ctime(&t)));
+    //----------------------------------------------------------------------------------------------------------------------------------
 
     //init variables
     //init xml file and json object
@@ -136,10 +118,10 @@ int main() {
                     "---  Get info on the emergency   >>  emergency  ---\n"
                     "---------------------------------------------------\n\n");
 
-
+    //----------------------------------------------------------------------------------------------------------------------------------
     do {
-      /*****************************WRITE TO SERIAL PORT************************/
-      if( kbhit() ){ //check if key was pressed
+      /*************************************WRITE TO SERIAL PORT*************************************/
+      if(kbhit()) { //check if key was pressed
         ch = getch(); //get key pressed value
         if(ch == '1') { //History of risk situations
           strConfig = 'h';
@@ -171,7 +153,7 @@ int main() {
       }
 
 
-      /*****************************READ SERIAL PORT****************************/
+      /*************************************READ SERIAL PORT*************************************/
       // check for data on port and display it on screen.
       ReadFile(hSerial, buffer, sizeof(buffer), &read, NULL);
       if ( read && !boolWritePort ) {
@@ -187,7 +169,7 @@ int main() {
             storeData(str, &tempC, &humi, &windV, situation); //get elements out of the string
             strcpy(str,"/0"); //clean array
             //fprintf(stderr, "situation %s temp %d, hum %d, wind %d\n", situation, tempC, humi, windV);
-            createdata(xmlFile, tempC, humi, windV, situation, ctime(&t)); //update xml file
+            insertXML(xmlFile, tempC, humi, windV, situation, ctime(&t)); //update xml file
             json = cJSON_Parse(jsonToString(tempC, humi, windV, situation, ctime(&t))); //json object
             //fprintf(stderr, "%s", jsonToString(tempC, humi, windV, situation, ctime(&t)));
             fprintf(stderr, "\t>>updated database(xml) and server(json)\n");
@@ -272,7 +254,7 @@ void storeData(char *str, int* tempC, int* humi, int* windV, char *situation) {
 }
 
 
-void createdata(FILE *fb, int tempC, int humi, int windV, char *situation, char *time) {
+void insertXML(FILE *fb, int tempC, int humi, int windV, char *situation, char *time) {
   fprintf ( fb,"<Data>\n");
   fprintf ( fb,"\t<time> \"%s\" </time>\n", strtok(time, "\n"));
   fprintf ( fb,"\t<situation> \"%s\" </situation>\n", situation);

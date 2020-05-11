@@ -1,4 +1,3 @@
 
-
-void adc_init(void);
+void initADC(void);
 unsigned int readADC(unsigned char canal);

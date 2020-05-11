@@ -1,8 +1,14 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "2080 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
-"1437
-[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"1443
+[s S58 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S58 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1442
+[u S57 `S58 1 ]
+[n S57 . . ]
+"1454
+[v _TRISCbits `VS57 ~T0 @X0 0 e@135 ]
 "2005
 [s S81 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S81 . TX9D TRMT BRGH . SYNC TXEN TX9 CSRC ]
@@ -42,14 +48,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S20 . . ]
 "549
 [v _PIR1bits `VS20 ~T0 @X0 0 e@12 ]
-"1443
-[s S58 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S58 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"1442
-[u S57 `S58 1 ]
-[n S57 . . ]
-"1454
-[v _TRISCbits `VS57 ~T0 @X0 0 e@135 ]
 "1059
 [v _TXREG `Vuc ~T0 @X0 0 e@25 ]
 "1066
@@ -174,147 +172,134 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "2363
 [; <" EECON2 equ 018Dh ;# ">
-"8 serial.c
-[v _serial_init `(v ~T0 @X0 1 ef ]
-"9
+"5 serial.c
+[v _initUART `(v ~T0 @X0 1 ef ]
 {
-[e :U _serial_init ]
+[e :U _initUART ]
 [f ]
-"10
-[e = _SPBRG -> -> 12 `i `uc ]
-"13
-[e = _TRISC -> -> 128 `i `uc ]
-"14
-[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
-"15
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"16
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"17
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"19
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"20
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"21
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"24
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"25
+"7
+[e = _SPBRG -> -> 25 `i `uc ]
+"8
 [e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
-"26
+"9
 [e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+"11
+[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
+"12
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"13
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"14
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"16
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"17
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"18
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"20
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"21
+[e :UE 95 ]
+}
+"24
+[v _putUART `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _putUART ]
+[v _val `uc ~T0 @X0 1 r1 ]
+[f ]
+"25
+[e = _TXREG _val ]
+"26
+[e $U 97  ]
+[e :U 98 ]
+[e :U 97 ]
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 98  ]
+[e :U 99 ]
 "27
 [e :UE 96 ]
 }
-"31
-[v _serial_tx `(v ~T0 @X0 1 ef1`uc ]
+"30
+[v _writeUART `(v ~T0 @X0 1 ef1`*Cuc ]
 {
-[e :U _serial_tx ]
-[v _val `uc ~T0 @X0 1 r1 ]
-[f ]
-"32
-[e = _TXREG _val ]
-"33
-[e $U 98  ]
-[e :U 99 ]
-[e :U 98 ]
-[e $ ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 99  ]
-[e :U 100 ]
-"34
-[e :UE 97 ]
-}
-"36
-[v _serial_tx_str `(v ~T0 @X0 1 ef1`*Cuc ]
-{
-[e :U _serial_tx_str ]
+[e :U _writeUART ]
 [v _val `*Cuc ~T0 @X0 1 r1 ]
 [f ]
-"37
+"31
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"38
-[e $U 102  ]
-[e :U 103 ]
-[e ( _serial_tx (1 *U + _val * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U _val `ui `ux ]
+"32
+[e $U 101  ]
 [e :U 102 ]
-[e $ != -> *U + _val * -> _i `ux -> -> # *U _val `ui `ux `i -> -> -> 0 `i `Cuc `i 103  ]
-[e :U 104 ]
-"39
-[e ( _serial_tx (1 -> -> 10 `ui `uc ]
-"40
-[e ( _serial_tx (1 -> -> 13 `ui `uc ]
-"41
+[e ( _putUART (1 *U + _val * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U _val `ui `ux ]
+[e :U 101 ]
+[e $ != -> *U + _val * -> _i `ux -> -> # *U _val `ui `ux `i -> -> -> 0 `i `Cuc `i 102  ]
+[e :U 103 ]
+"33
+[e ( _putUART (1 -> -> 10 `ui `uc ]
+"34
+[e ( _putUART (1 -> -> 13 `ui `uc ]
+"35
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"42
-[e :UE 101 ]
+"36
+[e :UE 100 ]
 }
-"44
-[v _serial_rx `(uc ~T0 @X0 1 ef ]
+"39
+[v _getUART `(uc ~T0 @X0 1 ef ]
 {
-[e :U _serial_rx ]
+[e :U _getUART ]
 [f ]
-"45
-[e $ ! || != -> . . _RCSTAbits 0 2 `i -> -> -> 0 `i `Vuc `i != -> . . _RCSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 106  ]
-{
-"46
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"47
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"48
-}
+"40
+[e $U 105  ]
 [e :U 106 ]
-"49
-[e $U 107  ]
-[e :U 108 ]
+[e :U 105 ]
+[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 106  ]
 [e :U 107 ]
-[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 108  ]
-[e :U 109 ]
-"50
+"41
 [e ) _RCREG ]
-[e $UE 105  ]
-"51
-[e :UE 105 ]
+[e $UE 104  ]
+"42
+[e :UE 104 ]
 }
-"69
-[v _readSerial `(v ~T0 @X0 1 ef1`*uc ]
+"60
+[v _readUART `(v ~T0 @X0 1 ef1`*uc ]
 {
-[e :U _readSerial ]
+[e :U _readUART ]
 [v _buf `*uc ~T0 @X0 1 r1 ]
 [f ]
-"70
+"61
 [v _tmp `uc ~T0 @X0 1 a ]
 [e = _tmp -> -> 1 `i `uc ]
-"71
+"62
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
-"72
+"63
 {
 [e = _i -> -> 0 `i `ui ]
-[e $ < _i -> # _buf `ui 111  ]
-[e $U 112  ]
-[e :U 111 ]
+[e $ < _i -> # _buf `ui 109  ]
+[e $U 110  ]
+[e :U 109 ]
 {
-"73
-[e = _tmp ( _serial_rx ..  ]
-"74
+"64
+[e = _tmp ( _getUART ..  ]
+"65
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"76
-[e $ ! || || == -> _tmp `ui -> 0 `ui == -> _tmp `ui -> 10 `ui == -> _tmp `ui -> 13 `ui 114  ]
-[e $U 112  ]
-[e :U 114 ]
-"77
-[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux _tmp ]
-"78
-}
-"72
-[e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> # _buf `ui 111  ]
+"67
+[e $ ! || || == -> _tmp `ui -> 0 `ui == -> _tmp `ui -> 10 `ui == -> _tmp `ui -> 13 `ui 112  ]
+[e $U 110  ]
 [e :U 112 ]
-"78
+"68
+[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux _tmp ]
+"69
 }
-"79
+"63
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> # _buf `ui 109  ]
+[e :U 110 ]
+"69
+}
+"70
 [e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux -> -> 0 `ui `uc ]
-"80
-[e :UE 110 ]
+"71
+[e :UE 108 ]
 }

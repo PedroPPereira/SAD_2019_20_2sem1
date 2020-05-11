@@ -293,3 +293,52 @@
 	<humidity> 0 </humidity>
 	<windVelocity> 0 </windVelocity>
 </Data>
+<Data>
+	<time> "Mon May 11 12:56:26 2020" </time>
+	<situation> "emergency" </situation>
+	<temperature> 46 </temperature>
+	<humidity> 100 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 11 12:56:57 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 0 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 26 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 11 12:57:16 2020" </time>
+	<situation> "emergency" </situation>
+	<temperature> 0 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 11 12:57:31 2020" </time>
+	<situation> "emergency" </situation>
+	<temperature> 0 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 11 12:57:59 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 54 </temperature>
+	<humidity> 45 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 11 12:59:00 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 55 </temperature>
+	<humidity> 45 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 11 13:00:01 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 55 </temperature>
+	<humidity> 45 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>

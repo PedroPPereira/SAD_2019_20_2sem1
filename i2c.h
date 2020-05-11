@@ -1,12 +1,11 @@
 #include<xc.h>
 
-#define ICLK PORTCbits.RC3
-#define IDAT PORTCbits.RC4
-#define TIDAT TRISCbits.TRISC4
+#define SCL PORTCbits.RC3
+#define SDA PORTCbits.RC4
+#define TRIS_SDA TRISCbits.TRISC4
 
-void i2c_init(void);
-void i2c_start(void);
-void i2c_stop(void);
-void i2c_wb(unsigned char val);
-unsigned char i2c_rb(unsigned char ack);
-void i2c_acktst(unsigned char val);
+void initI2C(void);
+void startI2C(void);
+void stopI2C(void);
+void writeI2C(unsigned char val);
+unsigned char readI2C(unsigned char ack);
