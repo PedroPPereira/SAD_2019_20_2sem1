@@ -6,6 +6,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <winsock2.h>
+#include <memory.h>
 #include "cJSON.h"
 #pragma comment(lib,"ws2_32.lib")
 //gcc -o serial.exe appWeatherStation.c cJSON.c -lws2_32
@@ -16,6 +17,7 @@ int confirmParam( char *str );
 int strContains(char *str, char ch);
 void storeData(char *str, int* tempC, int* humi, int* windV, char *situation);
 void insertXML(FILE *fb, int tempC, int humi, int windV, char *situation, char *time);
+void sendServer(int tempC, int humi, int windV, char *situation, SOCKET s);
 
 
 
@@ -74,20 +76,13 @@ int main() {
     else fprintf(stderr, "Socket created\n");
     //specifies the address family
     struct sockaddr_in server;
-    server.sin_addr.s_addr = inet_addr("193.136.120.133"); //  "127.0.0.1"  "74.125.235.20" INADDR_ANY
+    server.sin_addr.s_addr = inet_addr("193.136.120.133");
     server.sin_family = AF_INET;
-    server.sin_port = htons(80); //27015   80  8888
+    server.sin_port = htons(80);
     //connect to remote server
     if ( connect(s , (struct sockaddr *) & server , sizeof(server) ) == SOCKET_ERROR) fprintf(stderr, "Connect error\n\n");
     else fprintf(stderr, "Connected\n\n");
-    //send data
-    char *message;
-    message = "GET / HTTP/1.1\r\n\r\n";
-    if( send(s , message , strlen(message) , 0) < 0) fprintf(stderr, "Send failed\n");
-    else fprintf(stderr, "Data Sent\n");
-    json = cJSON_Parse(jsonToString(tempC, humi, windV, situation, ctime(&t)));
     //----------------------------------------------------------------------------------------------------------------------------------
-
     //init variables
     //init xml file and json object
     FILE *xmlFile;
@@ -118,7 +113,6 @@ int main() {
                     "---  Get info on the emergency   >>  emergency  ---\n"
                     "---------------------------------------------------\n\n");
 
-    //----------------------------------------------------------------------------------------------------------------------------------
     do {
       /*************************************WRITE TO SERIAL PORT*************************************/
       if(kbhit()) { //check if key was pressed
@@ -163,15 +157,13 @@ int main() {
           fprintf(stderr, "\n///READ SERIAL PORT///\n"
                           "Recieved at %s"
                           "\t>>data: %s", ctime(&t), str);
-          //for (int j=0 ; j<strlen(str) ; j++)  fprintf(stderr, "%c %d\n", str[j], (int)str[j] );
           //separate data and write to json or xml
           if(strContains(str, '-')) {
-            storeData(str, &tempC, &humi, &windV, situation); //get elements out of the string
-            strcpy(str,"/0"); //clean array
+            storeData(str, &tempC, &humi, &windV, situation); //retrieve elements out of the recieved string
+            strcpy(str, "/0"); //clean array
             //fprintf(stderr, "situation %s temp %d, hum %d, wind %d\n", situation, tempC, humi, windV);
             insertXML(xmlFile, tempC, humi, windV, situation, ctime(&t)); //update xml file
-            json = cJSON_Parse(jsonToString(tempC, humi, windV, situation, ctime(&t))); //json object
-            //fprintf(stderr, "%s", jsonToString(tempC, humi, windV, situation, ctime(&t)));
+            sendServer(tempC, humi, windV, situation, s); //send data to the server in JSON
             fprintf(stderr, "\t>>updated database(xml) and server(json)\n");
           }
           strcpy(str,"/0"); //clean array
@@ -231,6 +223,7 @@ int strContains(char *str, char ch) {
 }
 
 
+
 void storeData(char *str, int* tempC, int* humi, int* windV, char *situation) {
   char temp[4], hum[4], wind[4];
   int boolCh=0, j=0;
@@ -254,6 +247,7 @@ void storeData(char *str, int* tempC, int* humi, int* windV, char *situation) {
 }
 
 
+
 void insertXML(FILE *fb, int tempC, int humi, int windV, char *situation, char *time) {
   fprintf ( fb,"<Data>\n");
   fprintf ( fb,"\t<time> \"%s\" </time>\n", strtok(time, "\n"));
@@ -262,4 +256,26 @@ void insertXML(FILE *fb, int tempC, int humi, int windV, char *situation, char *
   fprintf ( fb,"\t<humidity> %d </humidity>\n", humi);
   fprintf ( fb,"\t<windVelocity> %d </windVelocity>\n", windV);
   fprintf ( fb,"</Data>\n");
+}
+
+
+
+void sendServer(int tempC, int humi, int windV, char *situation, SOCKET s) {
+  time_t t;
+  time(&t);
+  char message[2048];
+  char contentLength[6];
+  char *contentJson = jsonToString(tempC, humi, windV, situation, ctime(&t));
+  sprintf(contentLength, "%d", strlen(contentJson));
+
+  strcpy(message, "POST /~sad/ HTTP/1.1\r\n");
+  strcat(message, "Host: 193.136.120.133:80\r\n");
+  strcat(message, "Content-Type: application/json\r\n");
+  strcat(message, "Content-Length: ");
+  strcat(message, contentLength);
+  strcat(message, "\r\n\r\n");
+  strcat(message, contentJson);
+  strcat(message, "\r\n");
+  if( send(s , message , strlen(message) , 0) < 0) fprintf(stderr, "\t>>failed to send data to the server\n");
+  else fprintf(stderr, "\t>>data sent to the server\n");
 }
