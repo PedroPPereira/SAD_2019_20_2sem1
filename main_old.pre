@@ -1798,30 +1798,34 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 3 "adc.h"
-void adc_init(void);
+# 2 "adc.h"
+void initADC(void);
 unsigned int readADC(unsigned char canal);
 
 # 3 "display7s.h"
 unsigned char display7s(unsigned char v);
 unsigned char selDISP(unsigned int num);
 
-# 18 "lcd.h"
-void lcd_init(void);
-void lcd_cmd(unsigned char val);
-void lcd_dat(unsigned char val);
-void lcd_str(const char* str);
+# 16 "lcd.h"
+void initLCD(void);
+void rsLCD(unsigned char val, unsigned char string);
+void strLCD(const char* str);
 void printlnLCD(const char* str1,const char* str2);
 void delay_ms(unsigned int val);
 void printlnL1LCD(const char* str1);
 void printlnL2LCD(const char* str1);
 
-# 4 "serial.h"
-void serial_init(void);
-void serial_tx(unsigned char val);
-void serial_tx_str(const char* val);
-unsigned char serial_rx();
-void readSerial(char *buf, int max_length);
+# 2 "serial.h"
+void initUART(void);
+void putUART(unsigned char val);
+void writeUART(const char* val);
+unsigned char getUART();
+char *readUART(char *buf, int len);
+
+char *readSerial(char *buf, int len);
+unsigned char getUART2();
+void readUART2(char *s);
+char *readUART3(char *s);
 
 
 # 12 "main_old.c"
@@ -1866,15 +1870,15 @@ TRISD=0x00;
 TRISE=0x00;
 
 
-lcd_init();
+initLCD();
 
-serial_init();
-adc_init();
+initUART();
+initADC();
 
 
 int i = 0;
 unsigned char tmp;
-char str[6];
+char str[11];
 PORTD = 0x00;
 
 
@@ -1883,13 +1887,16 @@ printlnLCD("Bem vindo","20 a SAD");
 PORTD = 0x00;
 TRISA=0x07;
 
-
-
-
+# 71
+while(1){
+printlnLCD("","rer");
 while(PORTBbits.RB1);
+writeUART("\r\n Picsimlab\r\n");
+readUART(str,11);
+writeUART(str);
+printlnLCD(str,"");
+}
 
-serial_tx_str("\r\n Picsimlab\r\n Teste Serial TX\r\n");
-readSerial(str, sizeof(str));
 printlnLCD("Carregou em B1",str);
 
 PORTCbits.RC1 = 1;

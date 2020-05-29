@@ -3,17 +3,7 @@
 
 
 void initPWM(unsigned int freq) {
-  //turn off CCP, PWM, outputs and timer
-  CCP1CON = 0x00;       //CCP disabled, PWM turn off
-  TRISCbits.TRISC2 = 1;
-  PORTCbits.RC2 = 0;    //turn off PWM output for fan
-  CCPR1L = 0;           //set duty clcle to 0
-  T2CONbits.TMR2ON = 0; //turn off timer2
-  //set PR2 = Fosc/(4*Fpwm*TMR2prescale) - 1
-  T2CONbits.T2CKPS = 1; //prescale 4
   PR2 = OSC_FREQ/(freq*4*4) - 1; //249
-  T2CONbits.TOUTPS=0;
-
   //turn on CCP, PWM, outputs and timer
   TRISCbits.TRISC2 = 0;
   CCP1CON = 0x0F;       //00001111, PWM mode 0x0F

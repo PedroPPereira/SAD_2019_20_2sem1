@@ -79,28 +79,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 17 ]
 "725
 [e $U 12  ]
-"754
-[e :U 18 ]
-"760
-[e = _cp *U -> ( ___va_arg , (. -> *U -> &U _ap `***Cuc `*v -> -> 0 `i `*Cuc `**Cuc ]
-"766
-[e $ ! ! != _cp -> -> 0 `i `*Cuc 19  ]
-"767
-[e = _cp :s 1C ]
-[e :U 19 ]
-"803
-[e $U 20  ]
-[e :U 21 ]
-"804
-[e = *U ++ _sp * -> -> 1 `i `x -> -> # *U _sp `i `x *U ++ _cp * -> -> 1 `i `x -> -> # *U _cp `i `x ]
-[e :U 20 ]
-"803
-[e $ != -> *U _cp `i -> -> -> 0 `i `Cuc `i 21  ]
-[e :U 22 ]
-"805
-[e $U 8  ]
 "828
-[e :U 23 ]
+[e :U 18 ]
 "839
 [e $U 8  ]
 "848
@@ -111,8 +91,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e [\ = _c *U ++ _f * -> -> 1 `i `x -> -> # *U _f `i `x , $ -> -> 0 `i `uc 14
  , $ -> -> 100 `ui `uc 16
  , $ -> -> 105 `ui `uc 17
- , $ -> -> 115 `ui `uc 18
- 23 ]
+ 18 ]
 "848
 [e :U 12 ]
 "1279
@@ -120,7 +99,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1285
 [e = _val -> *U -> ( ___va_arg , (. -> *U -> &U _ap `**i `*v -> 0 `i `*i `ui ]
 "1287
-[e $ ! < -> _val `i -> 0 `i 24  ]
+[e $ ! < -> _val `i -> 0 `i 19  ]
 {
 "1288
 [e =| _flag -> -> 3 `i `uc ]
@@ -128,39 +107,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _val -U _val ]
 "1290
 }
-[e :U 24 ]
+[e :U 19 ]
 "1292
 }
 "1331
 {
 [e = _c -> -> 1 `i `uc ]
-[e $ != -> _c `ui / -> # _dpowers `ui -> # *U + &U _dpowers * -> -> -> 0 `i `ui `ux -> -> # *U &U _dpowers `ui `ux `ui 25  ]
-[e $U 26  ]
+[e $ != -> _c `ui / -> # _dpowers `ui -> # *U + &U _dpowers * -> -> -> 0 `i `ui `ux -> -> # *U &U _dpowers `ui `ux `ui 20  ]
+[e $U 21  ]
 "1332
-[e :U 25 ]
-[e $ ! < _val *U + &U _dpowers * -> _c `ux -> -> # *U &U _dpowers `ui `ux 28  ]
+[e :U 20 ]
+[e $ ! < _val *U + &U _dpowers * -> _c `ux -> -> # *U &U _dpowers `ui `ux 23  ]
 "1333
-[e $U 26  ]
-[e :U 28 ]
+[e $U 21  ]
+[e :U 23 ]
 "1331
 [e ++ _c -> -> 1 `i `uc ]
-[e $ != -> _c `ui / -> # _dpowers `ui -> # *U + &U _dpowers * -> -> -> 0 `i `ui `ux -> -> # *U &U _dpowers `ui `ux `ui 25  ]
-[e :U 26 ]
+[e $ != -> _c `ui / -> # _dpowers `ui -> # *U + &U _dpowers * -> -> -> 0 `i `ui `ux -> -> # *U &U _dpowers `ui `ux `ui 20  ]
+[e :U 21 ]
 "1448
 }
 {
 "1464
-[e $ ! != & -> _flag `i -> 3 `i -> 0 `i 29  ]
+[e $ ! != & -> _flag `i -> 3 `i -> 0 `i 24  ]
 "1465
 [e = *U ++ _sp * -> -> 1 `i `x -> -> # *U _sp `i `x -> -> 45 `ui `uc ]
-[e :U 29 ]
+[e :U 24 ]
 "1495
 }
 "1498
 [e = _prec -> _c `c ]
 "1500
-[e $U 30  ]
-[e :U 31 ]
+[e $U 25  ]
+[e :U 26 ]
 {
 "1504
 {
@@ -172,10 +151,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U ++ _sp * -> -> 1 `i `x -> -> # *U _sp `i `x _c ]
 "1551
 }
-[e :U 30 ]
+[e :U 25 ]
 "1500
-[e $ != -> -- _prec -> -> 1 `i `c `i -> -> -> 0 `i `c `i 31  ]
-[e :U 32 ]
+[e $ != -> -- _prec -> -> 1 `i `c `i -> -> -> 0 `i `c `i 26  ]
+[e :U 27 ]
 "1559
 }
 [e :U 8 ]
@@ -192,5 +171,3 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1567
 [e :UE 7 ]
 }
-[a 1C 40 110 117 108 108 41 0 ]
-

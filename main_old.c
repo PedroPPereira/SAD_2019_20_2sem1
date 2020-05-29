@@ -46,15 +46,15 @@ int main(void)
 	TRISE=0x00;
 
 	//init components
-	lcd_init();
+	initLCD();
 	//testar
-	serial_init();
-	adc_init();
+	initUART();
+	initADC();
 
 	//init variables
 	int i = 0;
 	unsigned char tmp;
-	char str[6];
+	char str[11];
 	PORTD = 0x00;
 
 
@@ -65,11 +65,18 @@ int main(void)
 		//PORTA = selDISP(1);
 		//PORTD=display7s(5); //write 5 on DIS1 segment display
 		//delay_ms(TIME_MS);
+		//while(PORTBbits.RB1);
 
-		while(PORTBbits.RB1);
 
-		serial_tx_str("\r\n Picsimlab\r\n Teste Serial TX\r\n");
-    readSerial(str);
+    while(1){
+      printlnLCD("","rer");
+      while(PORTBbits.RB1);
+      writeUART("\r\n Picsimlab\r\n");
+      readUART(str,11);
+      writeUART(str);
+      printlnLCD(str,"");
+    }
+
     printlnLCD("Carregou em B1",str);
     //while(PORTBbits.RB1);
 		PORTCbits.RC1 = 1; //beep

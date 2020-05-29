@@ -1750,7 +1750,7 @@ while(!PIR1bits.RCIF);
 return RCREG;
 }
 
-# 60
+
 void readUART(char *buf) {
 char tmp = 1;
 unsigned int i = 0;

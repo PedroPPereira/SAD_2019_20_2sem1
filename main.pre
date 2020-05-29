@@ -1857,19 +1857,25 @@ int nMSeconds = 0;
 int nSeconds = 0;
 char strUART[40], strADC[11];
 bool run = 1;
+unsigned int potP1, potP2, tempC, oldPotP1=-1;
 
-
-void interrupt isr(){
+void interrupt isr() {
 
 if(PIR1bits.TMR1IF) {
 PIR1bits.TMR1IF = 0x00;
 TMR1H = 0xCF;
 TMR1L = 0x2C;
 if(nMSeconds==10) {
+if( oldPotP1!=-1 && (potP1-oldPotP1)>70 && potP1>oldPotP1 ) {
+sprintf(strUART, "{\"s\":\"emrg\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
+writeUART(strUART);
+}
+oldPotP1 = potP1;
 nSeconds++;
 nMSeconds = 0;
 if(nSeconds==51) {
-sprintf(strUART, "1min-%s", strADC);
+
+sprintf(strUART, "{\"s\":\"1min\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
 writeUART(strUART);
 nSeconds = 0;
 }
@@ -1915,10 +1921,10 @@ initLCD();
 initMatricialKey();
 
 int tempRB3 = 0;
-unsigned int potP1, potP2, tempC, duty;
+unsigned int duty;
 int constHum=20, constTemp=40, constWind=80;
-char pass[5] = "0862", code[5], str_old[11], strConfig1[1];
-bool boolPass = 0, bool_emerg = 0;
+char pass[5] = "0862", code[5], strOld[11], strConfig1[1];
+bool boolPass = 0, boolEmerg = 0;
 PORTCbits.RC1 = 1;
 
 
@@ -1957,56 +1963,56 @@ tempRB3 = !PORTBbits.RB3;
 
 potP1 = ((unsigned int)readADC(0)*10)/102;
 duty = (potP1*255)/100;
-dutyPWM(duty);
+dutyPWM(potP1);
 potP2 = ((unsigned int)readADC(1)*10)/102;
 tempC = ((unsigned int)readADC(2)*100)/202;
 
 
 sprintf(strADC, "%d/%d/%d", tempC, potP1, potP2);
-if(strcmp(strADC, str_old)){
-if(strlen(str_old)!=strlen(strADC)){
+if(strcmp(strADC, strOld)){
+if(strlen(strOld)!=strlen(strADC)){
 rsLCD(0x01, 'c');
 printlnL1LCD("Temp/Wind/Hum");
 }
 printlnL2LCD(strADC);
-strcpy(str_old, strADC);
+strcpy(strOld, strADC);
 }
 
 
 if(potP2<constHum && potP1>constWind && tempC>constTemp) {
 PORTCbits.RC1 = 0;
 PORTD = 0x80;
-if(!bool_emerg) {
-sprintf(strUART, "emergency-%d/%d/%d", tempC, potP1, potP2);
+if(!boolEmerg) {
+
+sprintf(strUART, "{\"s\":\"emrg\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
 writeUART(strUART);
 writeEEPROM(1,tempC);
 writeEEPROM(2,potP1);
 writeEEPROM(3,potP2);
 }
-bool_emerg = 1;
+boolEmerg = 1;
 }
 else {
-bool_emerg = 0;
+boolEmerg = 0;
 PORTCbits.RC1 = 1;
 }
 
 
 if(PIR1bits.RCIF) {
 readUART(strConfig1);
-
 PIR1bits.RCIF = 0;
 switch (strConfig1[0]) {
 case 'h': if(readEEPROM(1)!=255) {
-sprintf(strUART, "last registered emergency %d/%d/%d", readEEPROM(1), readEEPROM(2), readEEPROM(3));
+sprintf(strUART, "{\"s\":\"hist\", \"t\":%d, \"w\":%d, \"h\":%d}", readEEPROM(1), readEEPROM(2), readEEPROM(3));
 writeUART(strUART);
-} else writeUART("emergencies not registered yet");
+} else writeUART("{\"s\":\"no emergencies\"}");
 break;
 case 'a': constHum=10; constTemp=50; constWind=90;
-writeUART("emergency changed to option A"); break;
+writeUART("{\"s\":\"emergency config option A\"}"); break;
 case 'b': constHum=20; constTemp=40; constWind=80;
-writeUART("emergency changed to option B"); break;
+writeUART("{\"s\":\"emergency config option B\"}"); break;
 case 'c': constHum=30; constTemp=30; constWind=70;
-writeUART("emergency changed to option C"); break;
+writeUART("{\"s\":\"emergency config option C\"}"); break;
 default: break;
 }
 }

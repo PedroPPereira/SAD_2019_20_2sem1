@@ -4,8 +4,8 @@
 [d chip 16F877A ]
 [d frameptr 0 ]
 "5 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-[v _adc_init adc_init `(v  1 e 1 0 ]
-"11
+[v _initADC initADC `(v  1 e 1 0 ]
+"14
 [v _readADC readADC `(ui  1 e 2 0 ]
 "505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -24,33 +24,31 @@
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "4 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
-[v _lcd_wr lcd_wr `(v  1 e 1 0 ]
-"8
-[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
-"18
-[v _lcd_dat lcd_dat `(v  1 e 1 0 ]
-"28
-[v _lcd_init lcd_init `(v  1 e 1 0 ]
-"46
-[v _lcd_str lcd_str `(v  1 e 1 0 ]
-"55
+[v _initLCD initLCD `(v  1 e 1 0 ]
+"23
+[v _rsLCD rsLCD `(v  1 e 1 0 ]
+"36
+[v _strLCD strLCD `(v  1 e 1 0 ]
+"50
 [v _printlnLCD printlnLCD `(v  1 e 1 0 ]
-"73
+"59
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
 "23 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main_old.c
 [v _delay_ms1 delay_ms1 `(v  1 e 1 0 ]
 "39
 [v _main main `(i  1 e 2 0 ]
 "6 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-[v _serial_init serial_init `(v  1 e 1 0 ]
-"28
-[v _serial_tx serial_tx `(v  1 e 1 0 ]
-"38
-[v _serial_tx_str serial_tx_str `(v  1 e 1 0 ]
-"53
-[v _serial_rx serial_rx `(uc  1 e 1 0 ]
-"78
-[v _readSerial readSerial `(v  1 e 1 0 ]
+[v _initUART initUART `(v  1 e 1 0 ]
+"25
+[v _putUART putUART `(v  1 e 1 0 ]
+"31
+[v _writeUART writeUART `(v  1 e 1 0 ]
+"40
+[v _getUART getUART `(uc  1 e 1 0 ]
+"48
+[v _readUART readUART `(*.4uc  1 e 1 0 ]
+"118
+[v _getUART2 getUART2 `(uc  1 e 1 0 ]
 [s S46 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
@@ -77,14 +75,14 @@
 [v _PORTCbits PORTCbits `VES87  1 e 1 @7 ]
 "340
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S210 . 1 `uc 1 RE0 1 0 :1:0 
+[s S212 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 ]
 "414
-[u S214 . 1 `S210 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES214  1 e 1 @9 ]
-[s S336 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S216 . 1 `S212 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES216  1 e 1 @9 ]
+[s S360 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -94,9 +92,9 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "549
-[u S345 . 1 `S336 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES345  1 e 1 @12 ]
-[s S292 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S369 . 1 `S360 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES369  1 e 1 @12 ]
+[s S316 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -106,18 +104,18 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "994
-[s S301 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S325 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S305 . 1 `uc 1 . 1 0 :6:0 
+[s S329 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S308 . 1 `uc 1 . 1 0 :6:0 
+[s S332 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S311 . 1 `S292 1 . 1 0 `S301 1 . 1 0 `S305 1 . 1 0 `S308 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES311  1 e 1 @24 ]
+[u S335 . 1 `S316 1 . 1 0 `S325 1 . 1 0 `S329 1 . 1 0 `S332 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES335  1 e 1 @24 ]
 "1059
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1066
@@ -126,14 +124,14 @@
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 "1159
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
-[s S147 . 1 `uc 1 ADON 1 0 :1:0 
+[s S150 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 GO_nDONE 1 0 :1:2 
 `uc 1 CHS 1 0 :3:3 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1190
-[s S153 . 1 `uc 1 . 1 0 :2:0 
+[s S156 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO 1 0 :1:2 
 `uc 1 CHS0 1 0 :1:3 
 `uc 1 CHS1 1 0 :1:4 
@@ -141,37 +139,37 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S161 . 1 `uc 1 . 1 0 :2:0 
+[s S164 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nDONE 1 0 :1:2 
 ]
-[s S164 . 1 `uc 1 . 1 0 :2:0 
+[s S167 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO_DONE 1 0 :1:2 
 ]
-[u S167 . 1 `S147 1 . 1 0 `S153 1 . 1 0 `S161 1 . 1 0 `S164 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES167  1 e 1 @31 ]
+[u S170 . 1 `S150 1 . 1 0 `S156 1 . 1 0 `S164 1 . 1 0 `S167 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES170  1 e 1 @31 ]
 "1325
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1375
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S357 . 1 `uc 1 TRISB0 1 0 :1:0 
-`uc 1 TRISB1 1 0 :1:1 
-`uc 1 TRISB2 1 0 :1:2 
-`uc 1 TRISB3 1 0 :1:3 
-`uc 1 TRISB4 1 0 :1:4 
-`uc 1 TRISB5 1 0 :1:5 
-`uc 1 TRISB6 1 0 :1:6 
-`uc 1 TRISB7 1 0 :1:7 
-]
-"1392
-[u S366 . 1 `S357 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES366  1 e 1 @134 ]
 "1437
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S258 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1454
+[u S267 . 1 `S258 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES267  1 e 1 @135 ]
 "1499
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1561
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S255 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S279 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -181,15 +179,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2025
-[s S264 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S288 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S268 . 1 `uc 1 . 1 0 :6:0 
+[s S292 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S271 . 1 `S255 1 . 1 0 `S264 1 . 1 0 `S268 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES271  1 e 1 @152 ]
+[u S295 . 1 `S279 1 . 1 0 `S288 1 . 1 0 `S292 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES295  1 e 1 @152 ]
 "2080
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2222
@@ -202,10 +200,25 @@
 [v _main main `(i  1 e 2 0 ]
 {
 "57
-[v main@str str `[6]uc  1 a 6 34 ]
-"56
-[v main@tmp tmp `uc  1 a 1 40 ]
-"87
+[v main@str str `[11]uc  1 a 11 31 ]
+"94
+} 0
+"31 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+[v _writeUART writeUART `(v  1 e 1 0 ]
+{
+"32
+[v writeUART@i i `uc  1 a 1 4 ]
+"31
+[v writeUART@val val `*.26DCuc  1 p 2 1 ]
+"37
+} 0
+"25
+[v _putUART putUART `(v  1 e 1 0 ]
+{
+[v putUART@val val `uc  1 a 1 wreg ]
+[v putUART@val val `uc  1 a 1 wreg ]
+[v putUART@val val `uc  1 a 1 0 ]
+"28
 } 0
 "505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -250,116 +263,81 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 4 ]
 "30
 } 0
-"38 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
-[v _serial_tx_str serial_tx_str `(v  1 e 1 0 ]
+"48 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+[v _readUART readUART `(*.4uc  1 e 1 0 ]
 {
-[v serial_tx_str@val val `*.24DCuc  1 a 1 wreg ]
+[v readUART@s s `*.4uc  1 a 1 wreg ]
+"50
+[v readUART@fill fill `i  1 a 2 4 ]
+"48
+[v readUART@s s `*.4uc  1 a 1 wreg ]
+[v readUART@len len `i  1 p 2 0 ]
+[v readUART@s s `*.4uc  1 a 1 6 ]
+"62
+} 0
 "40
-[v serial_tx_str@i i `uc  1 a 1 3 ]
-"38
-[v serial_tx_str@val val `*.24DCuc  1 a 1 wreg ]
-"40
-[v serial_tx_str@val val `*.24DCuc  1 a 1 2 ]
-"51
-} 0
-"28
-[v _serial_tx serial_tx `(v  1 e 1 0 ]
+[v _getUART getUART `(uc  1 e 1 0 ]
 {
-[v serial_tx@val val `uc  1 a 1 wreg ]
-[v serial_tx@val val `uc  1 a 1 wreg ]
-"30
-[v serial_tx@val val `uc  1 a 1 0 ]
-"36
+"44
 } 0
-"6
-[v _serial_init serial_init `(v  1 e 1 0 ]
-{
-"24
-} 0
-"78
-[v _readSerial readSerial `(v  1 e 1 0 ]
-{
-[v readSerial@buf buf `*.4uc  1 a 1 wreg ]
-"80
-[v readSerial@i i `i  1 a 2 6 ]
-"79
-[v readSerial@tmp tmp `uc  1 a 1 8 ]
-"78
-[v readSerial@buf buf `*.4uc  1 a 1 wreg ]
-[v readSerial@max_length max_length `i  1 p 2 0 ]
-[v readSerial@buf buf `*.4uc  1 a 1 5 ]
-"88
-} 0
-"53
-[v _serial_rx serial_rx `(uc  1 e 1 0 ]
-{
-"63
-} 0
-"11 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+"14 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
 [v _readADC readADC `(ui  1 e 2 0 ]
 {
 [v readADC@ch ch `uc  1 a 1 wreg ]
 [v readADC@ch ch `uc  1 a 1 wreg ]
 [v readADC@ch ch `uc  1 a 1 9 ]
-"26
+"35
 } 0
-"55 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+"50 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
 [v _printlnLCD printlnLCD `(v  1 e 1 0 ]
 {
-[v printlnLCD@str1 str1 `*.24DCuc  1 a 1 wreg ]
-[v printlnLCD@str1 str1 `*.24DCuc  1 a 1 wreg ]
-[v printlnLCD@str2 str2 `*.26DCuc  1 p 2 11 ]
-[v printlnLCD@str1 str1 `*.24DCuc  1 a 1 13 ]
-"62
+[v printlnLCD@str1 str1 `*.26DCuc  1 p 2 0 ]
+[v printlnLCD@str2 str2 `*.26DCuc  1 p 2 2 ]
+"56
 } 0
-"46
-[v _lcd_str lcd_str `(v  1 e 1 0 ]
+"36
+[v _strLCD strLCD `(v  1 e 1 0 ]
 {
-"47
-[v lcd_str@i i `uc  1 a 1 10 ]
-"46
-[v lcd_str@str str `*.26DCuc  1 p 2 7 ]
-"53
+"37
+[v strLCD@i i `uc  1 a 1 11 ]
+"36
+[v strLCD@str str `*.26DCuc  1 p 2 8 ]
+"39
 } 0
-"18
-[v _lcd_dat lcd_dat `(v  1 e 1 0 ]
+"6 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\serial.c
+[v _initUART initUART `(v  1 e 1 0 ]
 {
-[v lcd_dat@val val `uc  1 a 1 wreg ]
-[v lcd_dat@val val `uc  1 a 1 wreg ]
-[v lcd_dat@val val `uc  1 a 1 6 ]
-"26
+"22
 } 0
-"28
-[v _lcd_init lcd_init `(v  1 e 1 0 ]
+"4 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\lcd.c
+[v _initLCD initLCD `(v  1 e 1 0 ]
 {
-"44
+"20
 } 0
-"8
-[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
+"23
+[v _rsLCD rsLCD `(v  1 e 1 0 ]
 {
-[v lcd_cmd@val val `uc  1 a 1 wreg ]
-[v lcd_cmd@val val `uc  1 a 1 wreg ]
-[v lcd_cmd@val val `uc  1 a 1 6 ]
-"16
+[v rsLCD@val val `uc  1 a 1 wreg ]
+[v rsLCD@val val `uc  1 a 1 wreg ]
+[v rsLCD@string string `uc  1 p 1 6 ]
+[v rsLCD@val val `uc  1 a 1 7 ]
+"32
 } 0
-"4
-[v _lcd_wr lcd_wr `(v  1 e 1 0 ]
-{
-[v lcd_wr@val val `uc  1 a 1 wreg ]
-[v lcd_wr@val val `uc  1 a 1 wreg ]
-[v lcd_wr@val val `uc  1 a 1 0 ]
-"6
-} 0
-"73
+"59
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
 {
-"74
+"60
 [v delay_ms@i i `ui  1 a 2 3 ]
-"75
+"61
 [v delay_ms@j j `uc  1 a 1 5 ]
-"73
+"59
 [v delay_ms@val val `ui  1 p 2 0 ]
-"87
+"73
+} 0
+"5 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
+[v _initADC initADC `(v  1 e 1 0 ]
+{
+"11
 } 0
 "23 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\main_old.c
 [v _delay_ms1 delay_ms1 `(v  1 e 1 0 ]
@@ -371,11 +349,6 @@
 "23
 [v delay_ms1@val val `ui  1 p 2 0 ]
 "37
-} 0
-"5 G:\My Drive\MIEEC\Mestrado\4ºAno\2ºSemestre\Sistemas de Aquisição de Dados\Laboratorios\TP3\picsimlab\adc.c
-[v _adc_init adc_init `(v  1 e 1 0 ]
-{
-"8
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]

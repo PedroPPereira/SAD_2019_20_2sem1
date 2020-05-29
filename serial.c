@@ -42,26 +42,11 @@ unsigned char getUART() {
 }
 
 
-/*
-char *readUART(char *s, int len){
-  char *p = s;
-  do{
-    *s = getUART();
-    s++;
-    len--;
-    }
-  while(len>1);
-  *s = '\0';
-  //clean recieve flag
-  PIR1bits.RCIF = 0;
-  return p;
-}*/
-
 void readUART(char *buf) {
     char tmp = 1;
     unsigned int i = 0;
     for (i=0 ; i<sizeof(buf) ; i++) {
-        tmp = getUART(); //get value
+        tmp = getUART();   //get value
         PIR1bits.RCIF = 0; //clean recieve flag
         //Stop reading if end of string is read
         if (tmp == '\0' || tmp == '\n' || tmp == '\r') break;

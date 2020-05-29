@@ -3098,13 +3098,13 @@ CJSON_PUBLIC(char *)  jsonToString(int temp, int hum, int wind, char* sit, char 
 	temperature = cJSON_CreateString(tempStr);
 	cJSON_AddItemToObject(jsonObject, "temperature", temperature);
 
+  sprintf(tempStr,"%d", wind);
+	windVelocity = cJSON_CreateString(tempStr);
+	cJSON_AddItemToObject(jsonObject, "windVelocity", windVelocity);
+
 	sprintf(tempStr,"%d", hum);
 	humidity = cJSON_CreateString(tempStr);
 	cJSON_AddItemToObject(jsonObject, "humidity", humidity);
-
-	sprintf(tempStr,"%d", wind);
-	windVelocity = cJSON_CreateString(tempStr);
-	cJSON_AddItemToObject(jsonObject, "windVelocity", windVelocity);
 
 	/* convert json to string */
 	string = cJSON_Print(jsonObject);

@@ -261,45 +261,45 @@ Version 3.2 HI-TECH Software Intermediate Code
 "42
 [e :UE 104 ]
 }
-"60
+"45
 [v _readUART `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _readUART ]
 [v _buf `*uc ~T0 @X0 1 r1 ]
 [f ]
-"61
+"46
 [v _tmp `uc ~T0 @X0 1 a ]
 [e = _tmp -> -> 1 `i `uc ]
-"62
+"47
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
-"63
+"48
 {
 [e = _i -> -> 0 `i `ui ]
 [e $ < _i -> # _buf `ui 109  ]
 [e $U 110  ]
 [e :U 109 ]
 {
-"64
+"49
 [e = _tmp ( _getUART ..  ]
-"65
+"50
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"67
+"52
 [e $ ! || || == -> _tmp `ui -> 0 `ui == -> _tmp `ui -> 10 `ui == -> _tmp `ui -> 13 `ui 112  ]
 [e $U 110  ]
 [e :U 112 ]
-"68
+"53
 [e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux _tmp ]
-"69
+"54
 }
-"63
+"48
 [e ++ _i -> -> 1 `i `ui ]
 [e $ < _i -> # _buf `ui 109  ]
 [e :U 110 ]
-"69
+"54
 }
-"70
+"55
 [e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux -> -> 0 `ui `uc ]
-"71
+"56
 [e :UE 108 ]
 }

@@ -412,3 +412,1732 @@
 	<humidity> 1 </humidity>
 	<windVelocity> 24 </windVelocity>
 </Data>
+<Data>
+	<time> "Fri May 15 17:29:25 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 51 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Fri May 15 17:30:26 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 52 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Fri May 15 17:31:27 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 52 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Fri May 15 17:32:29 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 52 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Fri May 15 17:34:31 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 52 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Fri May 15 17:35:33 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 52 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:34:35 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 48 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:35:36 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 51 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:37:43 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 52 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:38:44 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 52 </temperature>
+	<humidity> 50 </humidity>
+	<windVelocity> 50 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:48:44 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 62 </temperature>
+	<humidity> 31 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:49:45 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 62 </temperature>
+	<humidity> 31 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:52:14 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 61 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:53:16 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 61 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:54:17 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 61 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:55:18 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 61 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:56:20 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 61 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Sat May 16 19:57:21 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 61 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 12:48:49 2020" </time>
+	<situation> "emergency" </situation>
+	<temperature> 50 </temperature>
+	<humidity> 100 </humidity>
+	<windVelocity> 19 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 12:48:52 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 50 </temperature>
+	<humidity> 9 </humidity>
+	<windVelocity> 19 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 12:49:04 2020" </time>
+	<situation> "emergency" </situation>
+	<temperature> 49 </temperature>
+	<humidity> 100 </humidity>
+	<windVelocity> 19 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 12:49:53 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 53 </temperature>
+	<humidity> 4 </humidity>
+	<windVelocity> 41 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 12:50:55 2020" </time>
+	<situation> "hhh1min" </situation>
+	<temperature> 55 </temperature>
+	<humidity> 9 </humidity>
+	<windVelocity> 41 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 12:51:56 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 0 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 41 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 12:52:47 2020" </time>
+	<situation> "emergency" </situation>
+	<temperature> 0 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 12:53:06 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 55 </temperature>
+	<humidity> 63 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:40:52 2020" </time>
+	<situation> "" </situation>
+	<temperature> 0 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:40:57 2020" </time>
+	<situation> "" </situation>
+	<temperature> 0 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:41:58 2020" </time>
+	<situation> "" </situation>
+	<temperature> 0 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:42:15 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:43:14 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:44:28 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:45:26 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:46:28 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:47:29 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:47:39 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:48:31 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:49:32 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:50:34 2020" </time>
+	<situation> "1" </situation>
+	<temperature> 1 </temperature>
+	<humidity> 1 </humidity>
+	<windVelocity> 1 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:50:58 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 73 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 100 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:51:35 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 73 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 100 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:52:36 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 73 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 100 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:52:47 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 75 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 100 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:53:34 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 59 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 100 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:53:43 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 60 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 21 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:54:44 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 66 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 21 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 19:55:45 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 67 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 21 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:06:31 2020" </time>
+	<situation> "" </situation>
+	<temperature> 0 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 0 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:06:35 2020" </time>
+	<situation> "hist" </situation>
+	<temperature> 61 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 100 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:06:46 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 56 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 100 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:06:54 2020" </time>
+	<situation> "hist" </situation>
+	<temperature> 56 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 100 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:07:05 2020" </time>
+	<situation> "hist" </situation>
+	<temperature> 56 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 100 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:07:29 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 58 </temperature>
+	<humidity> 0 </humidity>
+	<windVelocity> 35 </windVelocity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:13:50 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 53 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:13:55 2020" </time>
+	<situation> "hist" </situation>
+	<temperature> 53 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:14:34 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 50 </temperature>
+	<windVelocity> 80 </windVelocity>
+	<humidity> 29 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 18 20:14:39 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 80 </windVelocity>
+	<humidity> 38 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:51:05 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 50 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 42 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:51:36 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 54 </temperature>
+	<windVelocity> 98 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:51:41 2020" </time>
+	<situation> "hist" </situation>
+	<temperature> 54 </temperature>
+	<windVelocity> 98 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:52:07 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 50 </temperature>
+	<windVelocity> 58 </windVelocity>
+	<humidity> 36 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:53:08 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 58 </windVelocity>
+	<humidity> 36 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:54:10 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 58 </windVelocity>
+	<humidity> 36 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:55:11 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 58 </windVelocity>
+	<humidity> 36 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:56:12 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 58 </windVelocity>
+	<humidity> 36 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:57:14 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 58 </windVelocity>
+	<humidity> 36 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:58:15 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 58 </windVelocity>
+	<humidity> 36 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 11:59:16 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 58 </windVelocity>
+	<humidity> 36 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:02:20 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 50 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:02:29 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 55 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:03:22 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 56 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:04:23 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 56 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:05:25 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:06:26 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:07:27 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:08:29 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:09:30 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:10:32 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:11:33 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:12:34 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:13:36 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:14:37 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Tue May 19 12:15:38 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 19:53:47 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 59 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 19:54:20 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 60 </temperature>
+	<windVelocity> 32 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 19:54:22 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 60 </temperature>
+	<windVelocity> 89 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 19:55:21 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 58 </temperature>
+	<windVelocity> 37 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 19:55:44 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 58 </temperature>
+	<windVelocity> 92 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 19:58:18 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 45 </temperature>
+	<windVelocity> 85 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 19:58:25 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 46 </temperature>
+	<windVelocity> 40 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 19:59:22 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 54 </temperature>
+	<windVelocity> 84 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 19:59:27 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 53 </temperature>
+	<windVelocity> 57 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:00:28 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 50 </temperature>
+	<windVelocity> 57 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:01:29 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 57 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:01:31 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 82 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:02:31 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 61 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:03:32 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:04:33 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:04:52 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 83 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:05:10 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 94 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:05:35 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 25 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:06:36 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 25 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:07:38 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 25 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:09:15 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:09:32 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 98 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:09:34 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 94 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:09:40 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 24 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:10:42 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 24 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:11:19 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 93 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:11:43 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:12:44 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:13:46 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:14:47 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:15:49 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:16:50 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:17:51 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:18:53 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:19:54 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:20:55 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:21:57 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:22:58 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:23:59 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 26 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:24:20 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 96 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:24:40 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 66 </temperature>
+	<windVelocity> 93 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:24:48 2020" </time>
+	<situation> "hist" </situation>
+	<temperature> 66 </temperature>
+	<windVelocity> 93 </windVelocity>
+	<humidity> 15 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:24:58 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 97 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:25:01 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:26:02 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:27:04 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:28:05 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:29:06 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:30:08 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:31:09 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:32:10 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:33:12 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:34:13 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:35:15 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:36:16 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:37:17 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:38:19 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:39:20 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:40:21 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:41:23 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:42:24 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:43:26 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 29 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:44:05 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 92 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:44:27 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 62 </temperature>
+	<windVelocity> 30 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:44:52 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 62 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:45:12 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 61 </temperature>
+	<windVelocity> 94 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:45:28 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 61 </temperature>
+	<windVelocity> 27 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:46:30 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 27 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:47:31 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 27 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:48:32 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 27 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Sun May 24 20:49:34 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 27 </windVelocity>
+	<humidity> 1 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:07:35 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 48 </temperature>
+	<windVelocity> 50 </windVelocity>
+	<humidity> 50 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:08:16 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 50 </temperature>
+	<windVelocity> 89 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:08:26 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 52 </temperature>
+	<windVelocity> 93 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:08:37 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 54 </temperature>
+	<windVelocity> 28 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:09:38 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 62 </temperature>
+	<windVelocity> 28 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:10:40 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 28 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:55:23 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 44 </temperature>
+	<windVelocity> 82 </windVelocity>
+	<humidity> 83 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:56:24 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 31 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 83 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:57:25 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 31 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:58:27 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 28 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 13:59:28 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:00:29 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:01:31 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:02:32 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:03:34 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:04:35 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:05:36 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:06:38 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:07:39 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:08:40 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:09:42 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 27 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 100 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:10:43 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 30 </temperature>
+	<windVelocity> 42 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:11:45 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:12:46 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 75 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:13:47 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 76 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:14:49 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 77 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:15:50 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 77 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:17:20 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 54 </temperature>
+	<windVelocity> 4 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:17:34 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 61 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:17:41 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 60 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:17:46 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 62 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:17:54 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:17:59 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 66 </temperature>
+	<windVelocity> 58 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:18:16 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 59 </temperature>
+	<windVelocity> 57 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:18:17 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 59 </temperature>
+	<windVelocity> 41 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:18:18 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 59 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:18:55 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 71 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:19:22 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 74 </temperature>
+	<windVelocity> 39 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:19:26 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 72 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:19:57 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 75 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:21:07 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 67 </temperature>
+	<windVelocity> 19 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:21:16 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 60 </temperature>
+	<windVelocity> 6 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:21:18 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 61 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:21:33 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:21:43 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 67 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:21:44 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 91 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:21:47 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 97 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:21:48 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 63 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:22:01 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 67 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:22:14 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 68 </temperature>
+	<windVelocity> 9 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:22:15 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 68 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:23:02 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 75 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:23:56 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 75 </temperature>
+	<windVelocity> 47 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:23:57 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 75 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:24:04 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 76 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:24:21 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 75 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:25:05 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 77 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:27:00 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 75 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 56 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:27:56 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 69 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 76 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:28:02 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 69 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 76 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:28:06 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 70 </temperature>
+	<windVelocity> 94 </windVelocity>
+	<humidity> 76 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:28:09 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 70 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 76 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:28:25 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 71 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 76 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:28:51 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 60 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:29:03 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 50 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 58 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:30:05 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 53 </temperature>
+	<windVelocity> 16 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:30:05 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 53 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:30:06 2020" </time>
+	<situation> "emerg" </situation>
+	<temperature> 53 </temperature>
+	<windVelocity> 94 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:31:06 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 57 </temperature>
+	<windVelocity> 38 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:32:07 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 58 </temperature>
+	<windVelocity> 38 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:33:09 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 58 </temperature>
+	<windVelocity> 38 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:34:10 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 58 </temperature>
+	<windVelocity> 38 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:35:11 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 58 </temperature>
+	<windVelocity> 38 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:37:22 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 68 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:38:23 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 75 </temperature>
+	<windVelocity> 0 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:39:25 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 61 </temperature>
+	<windVelocity> 46 </windVelocity>
+	<humidity> 65 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:40:26 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 55 </temperature>
+	<windVelocity> 46 </windVelocity>
+	<humidity> 65 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:42:29 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 65 </temperature>
+	<windVelocity> 23 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:43:30 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 66 </temperature>
+	<windVelocity> 23 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:45:17 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 64 </temperature>
+	<windVelocity> 21 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:46:19 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 66 </temperature>
+	<windVelocity> 21 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:47:20 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 67 </temperature>
+	<windVelocity> 21 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:48:22 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 67 </temperature>
+	<windVelocity> 21 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:49:24 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 67 </temperature>
+	<windVelocity> 21 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:50:25 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 67 </temperature>
+	<windVelocity> 21 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:51:26 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 67 </temperature>
+	<windVelocity> 21 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:52:28 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 67 </temperature>
+	<windVelocity> 21 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:53:29 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 38 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 79 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:54:30 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 29 </temperature>
+	<windVelocity> 100 </windVelocity>
+	<humidity> 79 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:55:35 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 30 </temperature>
+	<windVelocity> 95 </windVelocity>
+	<humidity> 90 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:55:55 2020" </time>
+	<situation> "emrg" </situation>
+	<temperature> 41 </temperature>
+	<windVelocity> 87 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:56:23 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 49 </temperature>
+	<windVelocity> 43 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
+<Data>
+	<time> "Mon May 25 14:57:25 2020" </time>
+	<situation> "1min" </situation>
+	<temperature> 54 </temperature>
+	<windVelocity> 43 </windVelocity>
+	<humidity> 0 </humidity>
+</Data>
