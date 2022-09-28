@@ -1,20 +1,4 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"538 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
-[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S21 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
-"537
-[u S20 `S21 1 ]
-[n S20 . . ]
-"549
-[v _PIR1bits `VS20 ~T0 @X0 0 e@12 ]
-"648
-[v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
-"641
-[v _TMR1L `Vuc ~T0 @X0 0 e@14 ]
-"194 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"4 serial.h
-[v _writeUART `(v ~T0 @X0 0 ef1`*Cuc ]
 "460 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S18 . RBIF INTF TMR0IF RBIE INTE TMR0IE PEIE GIE ]
@@ -26,7 +10,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S17 . . . ]
 "477
 [v _INTCONbits `VS17 ~T0 @X0 0 e@11 ]
-"284
+"648
+[v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
+"641
+[v _TMR1L `Vuc ~T0 @X0 0 e@14 ]
+"194 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"4 serial.h
+[v _writeUART `(v ~T0 @X0 0 ef1`*Cuc ]
+"284 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
 "283
@@ -36,8 +28,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
 "906
 [v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
-"655
-[v _T1CON `Vuc ~T0 @X0 0 e@16 ]
 "17 lcd.h
 [v _rsLCD `(v ~T0 @X0 0 ef2`uc`uc ]
 [p mainexit ]
@@ -74,6 +64,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "7 i2c.h
 [v _initI2C `(v ~T0 @X0 0 ef ]
 "78 main.c
+[v _initTimer0 `(v ~T0 @X0 0 ef ]
+"79
+[v _initTimer1 `(v ~T0 @X0 0 ef ]
+"77
 [v _initISR `(v ~T0 @X0 0 ef ]
 "21 lcd.h
 [v _printlnL1LCD `(v ~T0 @X0 0 ef1`*Cuc ]
@@ -97,6 +91,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "4 eeprom_ext.h
 [v _writeEEPROM `(v ~T0 @X0 0 ef2`ui`uc ]
+"538 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"537
+[u S20 `S21 1 ]
+[n S20 . . ]
+"549
+[v _PIR1bits `VS20 ~T0 @X0 0 e@12 ]
 "6 serial.h
 [v _readUART `(v ~T0 @X0 0 ef1`*uc ]
 "3 eeprom_ext.h
@@ -109,6 +111,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S63 . . ]
 "1635
 [v _PIE1bits `VS63 ~T0 @X0 0 e@140 ]
+"1261
+[s S51 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1269
+[s S52 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S52 . PS0 PS1 PS2 ]
+"1260
+[u S50 `S51 1 `S52 1 ]
+[n S50 . . . ]
+"1275
+[v _OPTION_REGbits `VS50 ~T0 @X0 0 e@129 ]
+"1443
+[s S58 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S58 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1442
+[u S57 `S58 1 ]
+[n S57 . . ]
+"1454
+[v _TRISCbits `VS57 ~T0 @X0 0 e@135 ]
+"661
+[s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
+[n S25 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS ]
+"668
+[s S26 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . . T1SYNC . T1CKPS0 T1CKPS1 ]
+"675
+[s S27 :2 `uc 1 :1 `uc 1 ]
+[n S27 . . T1INSYNC ]
+"660
+[u S24 `S25 1 `S26 1 `S27 1 ]
+[n S24 . . . . ]
+"680
+[v _T1CONbits `VS24 ~T0 @X0 0 e@16 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; <" INDF equ 00h ;# ">
 "61
@@ -264,153 +299,150 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 1 `i `uc
 ]
 "29
-[v _potP1 `ui ~T0 @X0 1 e ]
+[v _windV `ui ~T0 @X0 1 e ]
+[i _windV
+-> -> 0 `i `ui
+]
 [v _potP2 `ui ~T0 @X0 1 e ]
 [v _tempC `ui ~T0 @X0 1 e ]
+[v _potP1 `ui ~T0 @X0 1 e ]
 [v _oldPotP1 `ui ~T0 @X0 1 e ]
 [i _oldPotP1
 -> -U -> 1 `i `ui
 ]
+[v _tempWindV `ui ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-[v F1062 `(v ~T0 @X0 1 tf ]
-"31
-[v _isr `IF1062 ~T0 @X0 1 e ]
+[v F1064 `(v ~T0 @X0 1 tf ]
+"32
+[v _isr `IF1064 ~T0 @X0 1 e ]
 {
 [e :U _isr ]
 [f ]
-"33
-[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 97  ]
-{
 "34
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[e $ ! && != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i != -> _run `i -> -> -> 0 `i `uc `i 97  ]
+{
 "35
-[e = _TMR1H -> -> 207 `i `uc ]
-"36
-[e = _TMR1L -> -> 44 `i `uc ]
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "37
-[e $ ! == _nMSeconds -> 10 `i 98  ]
+[e $ ! == _nMSeconds -> 14 `i 98  ]
 {
 "38
-[e $ ! && && != _oldPotP1 -> -U -> 1 `i `ui > - _potP1 _oldPotP1 -> -> 70 `i `ui > _potP1 _oldPotP1 99  ]
-{
+[e = _windV - -> + << -> _TMR1H `i -> 8 `i -> _TMR1L `i `ui _tempWindV ]
 "39
-[e ( _sprintf (1 , , , (. , &U _strUART :s 1C _tempC _potP1 _potP2 ]
+[e = _tempWindV -> + << -> _TMR1H `i -> 8 `i -> _TMR1L `i `ui ]
 "40
-[e ( _writeUART (1 -> &U _strUART `*Cuc ]
+[e $ ! && && != _oldPotP1 -> -U -> 1 `i `ui > - _potP1 _oldPotP1 -> -> 60 `i `ui > _potP1 _oldPotP1 99  ]
+{
 "41
+[e ( _sprintf (1 , , , (. , &U _strUART :s 1C _tempC _windV _potP2 ]
+"42
+[e ( _writeUART (1 -> &U _strUART `*Cuc ]
+"43
 }
 [e :U 99 ]
-"42
-[e = _oldPotP1 _potP1 ]
-"43
-[e ++ _nSeconds -> 1 `i ]
 "44
-[e = _nMSeconds -> 0 `i ]
+[e = _oldPotP1 _potP1 ]
 "45
-[e $ ! == _nSeconds -> 51 `i 100  ]
-{
-"47
-[e ( _sprintf (1 , , , (. , &U _strUART :s 2C _tempC _potP1 _potP2 ]
+[e ++ _nSeconds -> 1 `i ]
+"46
+[e = _nMSeconds -> 0 `i ]
 "48
-[e ( _writeUART (1 -> &U _strUART `*Cuc ]
+[e $ ! == _nSeconds -> 55 `i 100  ]
+{
 "49
-[e = _nSeconds -> 0 `i ]
+[e ( _sprintf (1 , , , (. , &U _strUART :s 2C _tempC _windV _potP2 ]
 "50
+[e ( _writeUART (1 -> &U _strUART `*Cuc ]
+"51
+[e = _nSeconds -> 0 `i ]
+"52
 }
 [e :U 100 ]
-"51
+"53
 }
 [e $U 101  ]
-"52
+"54
 [e :U 98 ]
 [e ++ _nMSeconds -> 1 `i ]
 [e :U 101 ]
-"53
+"55
 }
 [e :U 97 ]
-"56
+"58
 [e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 102  ]
 {
-"57
+"59
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"58
+"60
 [e $ ! != -> _run `i -> -> -> 0 `i `uc `i 103  ]
 {
-"59
-[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"60
-[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
 "61
-[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
 "62
-[e = _CCP1CON -> -> 0 `i `uc ]
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
 "63
-[e = _T1CON -> -> 0 `i `uc ]
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
 "64
-[e = _nSeconds -> 0 `i ]
+[e = _CCP1CON -> -> 0 `i `uc ]
 "65
-[e = _nMSeconds -> 0 `i ]
-"66
 [e ( _rsLCD (2 , -> -> 8 `i `uc -> -> 99 `ui `uc ]
-"67
+"66
 }
 [e $U 104  ]
-"68
+"67
 [e :U 103 ]
 {
-"69
+"68
 [e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-"70
+"69
 [e = _CCP1CON -> -> 15 `i `uc ]
-"71
-[e = _T1CON -> -> 49 `i `uc ]
-"72
+"70
 [e ( _rsLCD (2 , -> -> 15 `i `uc -> -> 99 `ui `uc ]
-"73
+"71
 }
 [e :U 104 ]
-"74
+"72
 [e = _run -> -> ! != -> _run `i -> -> -> 0 `i `uc `i `i `uc ]
-"75
+"73
 }
 [e :U 102 ]
-"76
+"74
 [e :UE 96 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"81
+"82
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"83
-[e = _TRISA -> -> 195 `i `uc ]
 "84
-[e = _TRISB -> -> 255 `i `uc ]
+[e = _TRISA -> -> 195 `i `uc ]
 "85
-[e = _TRISC -> -> 128 `i `uc ]
+[e = _TRISB -> -> 255 `i `uc ]
 "86
-[e = _TRISD -> -> 0 `i `uc ]
+[e = _TRISC -> -> 128 `i `uc ]
 "87
+[e = _TRISD -> -> 0 `i `uc ]
+"88
 [e = _TRISE -> -> 0 `i `uc ]
-"89
-[e ( _initLCD ..  ]
 "90
+[e ( _initLCD ..  ]
+"91
 [e ( _initMatricialKey ..  ]
-"92
+"93
 [v _tempRB3 `i ~T0 @X0 1 a ]
 [e = _tempRB3 -> 0 `i ]
-"93
-[v _duty `ui ~T0 @X0 1 a ]
 "94
+[v _duty `ui ~T0 @X0 1 a ]
+"95
 [v _constHum `i ~T0 @X0 1 a ]
 [e = _constHum -> 20 `i ]
 [v _constTemp `i ~T0 @X0 1 a ]
 [e = _constTemp -> 40 `i ]
 [v _constWind `i ~T0 @X0 1 a ]
-[e = _constWind -> 80 `i ]
-[v F1072 `uc ~T0 @X0 -> 5 `i s ]
-[i F1072
+[e = _constWind -> 60 `i ]
+[v F1076 `uc ~T0 @X0 -> 5 `i s ]
+[i F1076
 :U ..
 -> 48 `c
 -> 56 `c
@@ -419,28 +451,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"95
+"96
 [v _pass `uc ~T0 @X0 -> 5 `i a ]
-[e = _pass F1072 ]
+[e = _pass F1076 ]
 [v _code `uc ~T0 @X0 -> 5 `i a ]
 [v _strOld `uc ~T0 @X0 -> 11 `i a ]
 [v _strConfig1 `uc ~T0 @X0 -> -> 1 `i `ux a ]
-"96
+"97
 [v _boolPass `uc ~T0 @X0 1 a ]
 [e = _boolPass -> -> 0 `i `uc ]
 [v _boolEmerg `uc ~T0 @X0 1 a ]
 [e = _boolEmerg -> -> 0 `i `uc ]
-"97
+"98
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"100
+"101
 [e $U 106  ]
 [e :U 107 ]
 {
-"101
-[e ( _printlnLCD (2 , :s 3C :s 4C ]
 "102
-[e ( _rsLCD (2 , -> + -> 192 `i -> 5 `i `uc -> -> 99 `ui `uc ]
+[e ( _printlnLCD (2 , :s 3C :s 4C ]
 "103
+[e ( _rsLCD (2 , -> + -> 192 `i -> 5 `i `uc -> -> 99 `ui `uc ]
+"104
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -448,249 +480,293 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 110  ]
 [e :U 109 ]
 {
-"104
-[e = *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ( _pressSwitch ..  ]
 "105
-[e ( _rsLCD (2 , *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux -> -> 100 `ui `uc ]
+[e = *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux ( _pressSwitch ..  ]
 "106
+[e ( _rsLCD (2 , *U + &U _code * -> -> _i `ui `ux -> -> # *U &U _code `ui `ux -> -> 100 `ui `uc ]
+"107
 }
-"103
+"104
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 109  ]
 [e :U 110 ]
-"106
-}
 "107
+}
+"108
 [e $ ! ! != ( _strcmp (2 , -> &U _code `*Cuc -> &U _pass `*Cuc -> 0 `i 112  ]
 {
-"108
-[e = _boolPass -> -> 1 `i `uc ]
 "109
-[e ( _printlnL2LCD (1 :s 5C ]
+[e = _boolPass -> -> 1 `i `uc ]
 "110
+[e ( _printlnL2LCD (1 :s 5C ]
+"111
 }
 [e $U 113  ]
-"111
+"112
 [e :U 112 ]
 [e ( _printlnL2LCD (1 :s 6C ]
 [e :U 113 ]
-"112
-[e ( _delay_ms (1 -> -> 50 `i `ui ]
 "113
+[e ( _delay_ms (1 -> -> 50 `i `ui ]
+"114
 }
 [e :U 106 ]
-"100
+"101
 [e $ ! != -> _boolPass `i -> -> -> 0 `i `uc `i 107  ]
 [e :U 108 ]
-"116
-[e = _TRISA -> -> 7 `i `uc ]
 "117
-[e ( _initUART ..  ]
+[e = _TRISA -> -> 7 `i `uc ]
 "118
-[e ( _initADC ..  ]
+[e ( _initUART ..  ]
 "119
-[e ( _initPWM (1 -> -> 1000 `i `ui ]
+[e ( _initADC ..  ]
 "120
-[e ( _initI2C ..  ]
+[e ( _initPWM (1 -> -> 1000 `i `ui ]
 "121
-[e ( _initISR ..  ]
+[e ( _initI2C ..  ]
 "122
-[e = _run -> -> 1 `i `uc ]
+[e ( _initTimer0 ..  ]
 "123
-[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+[e ( _initTimer1 ..  ]
 "124
-[e ( _printlnL1LCD (1 :s 7C ]
+[e ( _initISR ..  ]
+"125
+[e = _run -> -> 1 `i `uc ]
 "126
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+"127
+[e ( _printlnL1LCD (1 :s 7C ]
+"129
 [e :U 115 ]
 {
-"127
+"130
 [e $ ! != -> _run `i -> -> -> 0 `i `uc `i 117  ]
 {
-"129
+"132
 [e $ ! && ! != -> . . _PORTBbits 0 3 `i -> -> -> 0 `i `Vuc `i ! != _tempRB3 -> 0 `i 118  ]
 [e = . . _PORTCbits 0 5 -> -> ! != -> . . _PORTCbits 0 5 `i -> -> -> 0 `i `Vuc `i `i `uc ]
 [e :U 118 ]
-"130
-[e = _tempRB3 -> ! != -> . . _PORTBbits 0 3 `i -> -> -> 0 `i `Vuc `i `i ]
 "133
-[e = _potP1 / * ( _readADC (1 -> -> 0 `i `uc -> -> 10 `i `ui -> -> 102 `i `ui ]
-"134
-[e = _duty / * _potP1 -> -> 255 `i `ui -> -> 100 `i `ui ]
-"135
-[e ( _dutyPWM (1 -> _potP1 `uc ]
+[e = _tempRB3 -> ! != -> . . _PORTBbits 0 3 `i -> -> -> 0 `i `Vuc `i `i ]
 "136
-[e = _potP2 / * ( _readADC (1 -> -> 1 `i `uc -> -> 10 `i `ui -> -> 102 `i `ui ]
+[e = _potP1 / * ( _readADC (1 -> -> 0 `i `uc -> -> 10 `i `ui -> -> 102 `i `ui ]
 "137
-[e = _tempC / * ( _readADC (1 -> -> 2 `i `uc -> -> 100 `i `ui -> -> 202 `i `ui ]
+[e = _duty / * _potP1 -> -> 255 `i `ui -> -> 100 `i `ui ]
+"138
+[e ( _dutyPWM (1 -> _duty `uc ]
+"139
+[e = _potP2 / * ( _readADC (1 -> -> 1 `i `uc -> -> 10 `i `ui -> -> 102 `i `ui ]
 "140
-[e ( _sprintf (1 , , , (. , &U _strADC :s 8C _tempC _potP1 _potP2 ]
-"141
+[e = _tempC / * ( _readADC (1 -> -> 2 `i `uc -> -> 100 `i `ui -> -> 202 `i `ui ]
+"143
+[e ( _sprintf (1 , , , (. , &U _strADC :s 8C _tempC _windV _potP2 ]
+"144
 [e $ ! != ( _strcmp (2 , -> &U _strADC `*Cuc -> &U _strOld `*Cuc -> 0 `i 119  ]
 {
-"142
+"145
 [e $ ! != ( _strlen (1 -> &U _strOld `*Cuc ( _strlen (1 -> &U _strADC `*Cuc 120  ]
 {
-"143
-[e ( _rsLCD (2 , -> -> 1 `i `uc -> -> 99 `ui `uc ]
-"144
-[e ( _printlnL1LCD (1 :s 9C ]
-"145
-}
-[e :U 120 ]
 "146
-[e ( _printlnL2LCD (1 -> &U _strADC `*Cuc ]
+[e ( _rsLCD (2 , -> -> 1 `i `uc -> -> 99 `ui `uc ]
 "147
-[e ( _strcpy (2 , &U _strOld -> &U _strADC `*Cuc ]
+[e ( _printlnL1LCD (1 :s 9C ]
 "148
 }
-[e :U 119 ]
+[e :U 120 ]
+"149
+[e ( _printlnL2LCD (1 -> &U _strADC `*Cuc ]
+"150
+[e ( _strcpy (2 , &U _strOld -> &U _strADC `*Cuc ]
 "151
-[e $ ! && && < _potP2 -> _constHum `ui > _potP1 -> _constWind `ui > _tempC -> _constTemp `ui 121  ]
-{
-"152
-[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
-"153
-[e = _PORTD -> -> 128 `i `uc ]
+}
+[e :U 119 ]
 "154
+[e $ ! && && < _potP2 -> _constHum `ui > _windV -> _constWind `ui > _tempC -> _constTemp `ui 121  ]
+{
+"155
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+"156
+[e = _PORTD -> -> 128 `i `uc ]
+"157
 [e $ ! ! != -> _boolEmerg `i -> -> -> 0 `i `uc `i 122  ]
 {
-"156
-[e ( _sprintf (1 , , , (. , &U _strUART :s 10C _tempC _potP1 _potP2 ]
-"157
-[e ( _writeUART (1 -> &U _strUART `*Cuc ]
 "158
-[e ( _writeEEPROM (2 , -> -> 1 `i `ui -> _tempC `uc ]
+[e ( _sprintf (1 , , , (. , &U _strUART :s 10C _tempC _windV _potP2 ]
 "159
-[e ( _writeEEPROM (2 , -> -> 2 `i `ui -> _potP1 `uc ]
+[e ( _writeUART (1 -> &U _strUART `*Cuc ]
 "160
-[e ( _writeEEPROM (2 , -> -> 3 `i `ui -> _potP2 `uc ]
+[e ( _writeEEPROM (2 , -> -> 1 `i `ui -> _tempC `uc ]
 "161
-}
-[e :U 122 ]
+[e ( _writeEEPROM (2 , -> -> 2 `i `ui -> _windV `uc ]
 "162
-[e = _boolEmerg -> -> 1 `i `uc ]
+[e ( _writeEEPROM (2 , -> -> 3 `i `ui -> _potP2 `uc ]
 "163
 }
-[e $U 123  ]
+[e :U 122 ]
 "164
+[e = _boolEmerg -> -> 1 `i `uc ]
+"165
+}
+[e $U 123  ]
+"166
 [e :U 121 ]
 {
-"165
-[e = _boolEmerg -> -> 0 `i `uc ]
-"166
-[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
 "167
+[e = _boolEmerg -> -> 0 `i `uc ]
+"168
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"169
 }
 [e :U 123 ]
-"170
+"172
 [e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 124  ]
 {
-"171
-[e ( _readUART (1 &U _strConfig1 ]
-"172
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
 "173
+[e ( _readUART (1 &U _strConfig1 ]
+"174
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"175
 [e $U 126  ]
 {
-"174
+"176
 [e :U 127 ]
 [e $ ! != -> ( _readEEPROM (1 -> -> 1 `i `ui `i -> 255 `i 128  ]
 {
-"175
-[e ( _sprintf (1 , , , (. , &U _strUART :s 11C -> ( _readEEPROM (1 -> -> 1 `i `ui `i -> ( _readEEPROM (1 -> -> 2 `i `ui `i -> ( _readEEPROM (1 -> -> 3 `i `ui `i ]
-"176
-[e ( _writeUART (1 -> &U _strUART `*Cuc ]
 "177
+[e ( _sprintf (1 , , , (. , &U _strUART :s 11C -> ( _readEEPROM (1 -> -> 1 `i `ui `i -> ( _readEEPROM (1 -> -> 2 `i `ui `i -> ( _readEEPROM (1 -> -> 3 `i `ui `i ]
+"178
+[e ( _writeUART (1 -> &U _strUART `*Cuc ]
+"179
 }
 [e $U 129  ]
 [e :U 128 ]
 [e ( _writeUART (1 :s 12C ]
 [e :U 129 ]
-"178
+"180
 [e $U 125  ]
-"179
+"181
 [e :U 130 ]
 [e = _constHum -> 10 `i ]
 [e = _constTemp -> 50 `i ]
-[e = _constWind -> 90 `i ]
-"180
+[e = _constWind -> 70 `i ]
+"182
 [e ( _writeUART (1 :s 13C ]
 [e $U 125  ]
-"181
+"183
 [e :U 131 ]
 [e = _constHum -> 20 `i ]
 [e = _constTemp -> 40 `i ]
-[e = _constWind -> 80 `i ]
-"182
+[e = _constWind -> 60 `i ]
+"184
 [e ( _writeUART (1 :s 14C ]
 [e $U 125  ]
-"183
+"185
 [e :U 132 ]
 [e = _constHum -> 30 `i ]
 [e = _constTemp -> 30 `i ]
-[e = _constWind -> 70 `i ]
-"184
+[e = _constWind -> 50 `i ]
+"186
 [e ( _writeUART (1 :s 15C ]
 [e $U 125  ]
-"185
+"187
 [e :U 133 ]
 [e $U 125  ]
-"186
+"188
 }
 [e $U 125  ]
-"173
+"175
 [e :U 126 ]
 [e [\ *U + &U _strConfig1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _strConfig1 `ui `ux , $ -> -> 104 `ui `uc 127
  , $ -> -> 97 `ui `uc 130
  , $ -> -> 98 `ui `uc 131
  , $ -> -> 99 `ui `uc 132
  133 ]
-"186
-[e :U 125 ]
-"187
-}
-[e :U 124 ]
 "188
-[e ( _delay_ms (1 -> -> 20 `i `ui ]
+[e :U 125 ]
 "189
 }
-[e :U 117 ]
+[e :U 124 ]
 "190
+[e ( _delay_ms (1 -> -> 20 `i `ui ]
+"191
+}
+[e :U 117 ]
+"192
 }
 [e :U 114 ]
-"126
+"129
 [e $U 115  ]
 [e :U 116 ]
-"191
+"193
 [e :UE 105 ]
 }
-"194
+"196
 [v _initISR `(v ~T0 @X0 1 ef ]
 {
 [e :U _initISR ]
 [f ]
-"195
-[e = _T1CON -> -> 49 `i `uc ]
-"198
-[e = _TMR1H -> -> 207 `i `uc ]
-"199
-[e = _TMR1L -> -> 44 `i `uc ]
-"201
+"197
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"202
+"198
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"199
 [e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-"203
+"200
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"204
+"201
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"205
+"202
 [e :UE 134 ]
+}
+"204
+[v _initTimer0 `(v ~T0 @X0 1 ef ]
+{
+[e :U _initTimer0 ]
+[f ]
+"205
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
+"206
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
+"207
+[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
+"208
+[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+"209
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+"210
+[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+"211
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"212
+[e :UE 135 ]
+}
+"214
+[v _initTimer1 `(v ~T0 @X0 1 ef ]
+{
+[e :U _initTimer1 ]
+[f ]
+"215
+[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
+"216
+[e = . . _T1CONbits 1 4 -> -> 1 `i `uc ]
+"217
+[e = . . _T1CONbits 1 3 -> -> 1 `i `uc ]
+"218
+[e = . . _T1CONbits 0 3 -> -> 0 `i `uc ]
+"219
+[e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
+"220
+[e = . . _T1CONbits 0 1 -> -> 1 `i `uc ]
+"221
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"222
+[e :UE 136 ]
 }
 [p f _sprintf 8388736 ]
 [a 11C 123 34 115 34 58 34 104 105 115 116 34 44 32 34 116 34 58 37 100 44 32 34 119 34 58 37 100 44 32 34 104 34 58 37 100 125 0 ]
 [a 2C 123 34 115 34 58 34 49 109 105 110 34 44 32 34 116 34 58 37 100 44 32 34 119 34 58 37 100 44 32 34 104 34 58 37 100 125 0 ]
-[a 1C 123 34 115 34 58 34 101 109 114 103 34 44 32 34 116 34 58 37 100 44 32 34 119 34 58 37 100 44 32 34 104 34 58 37 100 125 0 ]
 [a 10C 123 34 115 34 58 34 101 109 114 103 34 44 32 34 116 34 58 37 100 44 32 34 119 34 58 37 100 44 32 34 104 34 58 37 100 125 0 ]
+[a 1C 123 34 115 34 58 34 101 109 114 103 87 34 44 32 34 116 34 58 37 100 44 32 34 119 34 58 37 100 44 32 34 104 34 58 37 100 125 0 ]
 [a 12C 123 34 115 34 58 34 110 111 32 101 109 101 114 103 101 110 99 105 101 115 34 125 0 ]
 [a 15C 123 34 115 34 58 34 101 109 101 114 103 101 110 99 121 32 99 111 110 102 105 103 32 111 112 116 105 111 110 32 67 34 125 0 ]
 [a 14C 123 34 115 34 58 34 101 109 101 114 103 101 110 99 121 32 99 111 110 102 105 103 32 111 112 116 105 111 110 32 66 34 125 0 ]

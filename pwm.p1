@@ -11,8 +11,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISCbits `VS57 ~T0 @X0 0 e@135 ]
 "906
 [v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
-"892
-[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
 "743
 [s S29 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
 [n S29 . T2CKPS TMR2ON TOUTPS ]
@@ -32,6 +30,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S20 . . ]
 "549
 [v _PIR1bits `VS20 ~T0 @X0 0 e@12 ]
+"892
+[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; <" INDF equ 00h ;# ">
 "61
@@ -165,40 +165,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 "9
 [e = _CCP1CON -> -> 15 `i `uc ]
 "10
-[e = _CCPR1L -> -> 255 `i `uc ]
-"11
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"13
+"12
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"14
+"13
 [e $U 96  ]
 [e :U 97 ]
 [e :U 96 ]
 [e $ == -> . . _PIR1bits 0 1 `i -> 0 `i 97  ]
 [e :U 98 ]
-"15
+"14
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"16
+"15
 [e $U 99  ]
 [e :U 100 ]
 [e :U 99 ]
 [e $ == -> . . _PIR1bits 0 1 `i -> 0 `i 100  ]
 [e :U 101 ]
-"17
+"16
 [e :UE 95 ]
 }
-"20
+"19
 [v _dutyPWM `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _dutyPWM ]
 [v _d `uc ~T0 @X0 1 r1 ]
 [f ]
-"27
-[e = _CCP1CON -> -> 15 `i `uc ]
-"28
-[e = _CCPR1L -> >> -> _d `i -> 2 `i `uc ]
-"29
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"30
+"21
+[v _temp `ui ~T0 @X0 1 a ]
+"22
+[e = _temp -> / * -> _d `ul -> -> | << -> _PR2 `i -> 2 `i -> 3 `i `l `ul -> -> -> 255 `i `l `ul `ui ]
+"23
+[e = _CCPR1L -> >> & -> -> 1020 `i `ui _temp -> 2 `i `uc ]
+"24
+[e = _CCP1CON -> | << & -> -> 3 `i `ui _temp -> 4 `i -> -> 15 `i `ui `uc ]
+"25
 [e :UE 102 ]
 }

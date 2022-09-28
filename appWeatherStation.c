@@ -114,9 +114,9 @@ int main() {
         else if(ch == '2') { //Risk situation config options
           fprintf(stderr, "\n///WRITE TO SERIAL PORT///\n"
                           "Options for the risk situations config:\n"
-                          "press 'a' -> Humidity<10, Wind Speed>90, Temperature>50\n"
-                          "press 'b' -> Humidity<20, Wind Speed>80, Temperature>40\n"
-                          "press 'c' -> Humidity<30, Wind Speed>70, Temperature>30\n"
+                          "press 'a' -> Humidity<10, Wind Speed>70, Temperature>50\n"
+                          "press 'b' -> Humidity<20, Wind Speed>60, Temperature>40\n"
+                          "press 'c' -> Humidity<30, Wind Speed>50, Temperature>30\n"
                           "\t>> option: ");
           while ( (c = getchar())!='\n' ) strConfig = c; //key pressed for the option
           if((int)strConfig>=97 && (int)strConfig<=99) boolWritePort = true;
@@ -153,7 +153,7 @@ int main() {
           strcpy(str, "/0"); //clean array
           if(boolJSON) {
             insertXML(xmlFile, tempC, humi, windV, situation, ctime(&t)); //update xml file
-            if(!strcmp(situation, "emrg")) sendServer(tempC, humi, windV, situation); //send data to the server in JSON
+            if(!strcmp(situation, "emrg") || !strcmp(situation, "emrgW")) sendServer(tempC, humi, windV, situation); //send data to the server in JSON
           }
           i = 0;
         }

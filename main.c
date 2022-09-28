@@ -26,54 +26,31 @@ int nMSeconds = 0;                //represents 100ms
 int nSeconds = 0;                 //represents 1sec
 char strUART[40], strADC[11];     //string with adquire data
 bool run = true;                  //current machine state
-unsigned int potP1, potP2, tempC, oldPotP1=-1, counterT1; //values adquired from ADC
+unsigned int windV=0, potP2, tempC, potP1, oldPotP1=-1, tempWindV; //values adquired from ADC
+
 //interrupt
 void interrupt isr() {
 	//send periodic (1min) msgs to the app
+	if(INTCONbits.TMR0IF && run) {  //timer0 overflow flag
+		INTCONbits.TMR0IF = 0; //clean flag
 
-	/*
-	if(PIR1bits.TMR1IF) {     //timer1 overflow flag
-		PIR1bits.TMR1IF = 0x00; //clean flag
-		TMR1H = 0xCF;           //reset default values
-		TMR1L = 0x2C;
-		if(nMSeconds==10) {  //1 second
-			if( oldPotP1!=-1 && (potP1-oldPotP1)>70 && potP1>oldPotP1 ) {  //check wind variation speed
- 				sprintf(strUART, "{\"s\":\"emrg\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
+		if(nMSeconds==14) {  //1 second
+			windV = (((TMR1H<<8) + TMR1L) - tempWindV);
+      tempWindV = ((TMR1H<<8) + TMR1L);
+			if(oldPotP1!=-1 && (potP1-oldPotP1)>60 && potP1>oldPotP1 ) {  //check wind variation speed
+ 				sprintf(strUART, "{\"s\":\"emrgW\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, windV, potP2);
  				writeUART(strUART);
 			}
 			oldPotP1 = potP1;
 			nSeconds++;
 			nMSeconds = 0;
-			if(nSeconds==51) { //should be 60 (1 minute)
-				//sprintf(strUART, "1min-%s", strADC);
-				sprintf(strUART, "{\"s\":\"1min\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
+
+			if(nSeconds==55) { // 1 minute
+				sprintf(strUART, "{\"s\":\"1min\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, windV, potP2);
 				writeUART(strUART);
 				nSeconds = 0;
 			}
 		}
-		else nMSeconds++;
-	}
-	*/
-	if(PIR1bits.TMR0IF) {     //timer1 overflow flag
-		PIR1bits.TMR0IF = 0; //clean flag
-
-		if(nMSeconds==60) {  //1 second
-			counterT1 = (TMR1H<<8)+TMR1L;
-			if( oldPotP1!=-1 && counterT1>oldPotP1 ) {  //check wind variation speed
- 				sprintf(strUART, "{\"s\":\"emrg\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
- 				writeUART(strUART);
-			}
-			oldPotP1 = counterT1;
-			nSeconds++;
-			nMSeconds = 0;
-			if(nSeconds==60) { //should be 60 (1 minute)
-				//sprintf(strUART, "1min-%s", strADC);
-				sprintf(strUART, "{\"s\":\"1min\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
-				writeUART(strUART);
-				nSeconds = 0;
-			}
-		}
-
 		else nMSeconds++;
 	}
 
@@ -85,29 +62,28 @@ void interrupt isr() {
 			PORTCbits.RC1 = 1;   //turn off buzzer
 			PORTCbits.RC2 = 0;   //turn off fan
 			CCP1CON = 0x00;
-			T1CON = 0x00;        //turn off timer
-			nSeconds = 0;
-			nMSeconds = 0;
 			rsLCD(L_OFF, 'c');//turn off LCD
 		}
 		else {    //if it was OFF, now is ON
 			PORTCbits.RC5 = 1;   //turn on temp
 			CCP1CON = 0x0F;      //turn on fan
-			T1CON = 0x31;        //turn on timer
 			rsLCD(L_ON, 'c'); //turn on LCD
 		}
 		run = !run;
 	}
 }
+
 //functions
 void initISR();
+void initTimer0();
+void initTimer1();
 
 /********************************************************************************************************/
 int main(void) {
 	//init ports
 	TRISA=0xC3; //11000011
 	TRISB=0xFF; //11111111  LED B7 / buttons
-	TRISC=0x80; //10000000
+	TRISC=0x80; //10000001
 	TRISD=0x00; //00000000  display DATAx for LCD / LEDS as outputs
 	TRISE=0x00; //00000000  EN and RS from LCD
 	//init components
@@ -116,7 +92,7 @@ int main(void) {
 	//init variables
 	int tempRB3 = 0; //temp value for RB3 (debounce)
 	unsigned int duty; //for ADC values
-	int constHum=20, constTemp=40, constWind=80;//emergency constants
+	int constHum=20, constTemp=40, constWind=60;//emergency constants
 	char pass[5] = "0862", code[5], strOld[11], strConfig1[1];
 	bool boolPass = false, boolEmerg = false; //boolean for password verification and emergency situation
 	PORTCbits.RC1 = 1; //buzzer off
@@ -143,6 +119,8 @@ int main(void) {
 	initADC();
 	initPWM(1000);
 	initI2C();
+	initTimer0();
+	initTimer1();
 	initISR();
 	run = true;
 	PORTCbits.RC5 = 1; //temperature on
@@ -162,7 +140,7 @@ int main(void) {
 			tempC = ((unsigned int)readADC(2)*100)/202; //get temperature
 
 			//print info retrieved to the LCD
-			sprintf(strADC, "%d/%d/%d", tempC, potP1, potP2);
+			sprintf(strADC, "%d/%d/%d", tempC, windV, potP2);
 			if(strcmp(strADC, strOld)){
 				if(strlen(strOld)!=strlen(strADC)){
 					rsLCD(L_CLR, 'c');
@@ -173,15 +151,14 @@ int main(void) {
 			}
 
 			//check for dangerous situations
-			if(potP2<constHum && potP1>constWind && tempC>constTemp) {
+			if(potP2<constHum && windV>constWind && tempC>constTemp) {
 				PORTCbits.RC1 = 0; //buzzer on
 				PORTD = 0x80;      //turn on LED D7
 				if(!boolEmerg) {
-					//sprintf(strUART, "emergency-%d/%d/%d", tempC, potP1, potP2);
-					sprintf(strUART, "{\"s\":\"emrg\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
+					sprintf(strUART, "{\"s\":\"emrg\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, windV, potP2);
 					writeUART(strUART);   //send emergency msg to app
 					writeEEPROM(1,tempC); //store info to eeprom
-					writeEEPROM(2,potP1);
+					writeEEPROM(2,windV);
 					writeEEPROM(3,potP2);
 				}
 				boolEmerg = true;
@@ -201,11 +178,11 @@ int main(void) {
 											writeUART(strUART);
 										} else writeUART("{\"s\":\"no emergencies\"}");
 										break;
-					case 'a': constHum=10; constTemp=50; constWind=90;
+					case 'a': constHum=10; constTemp=50; constWind=70;
 										writeUART("{\"s\":\"emergency config option A\"}"); break;
-					case 'b': constHum=20; constTemp=40; constWind=80;
+					case 'b': constHum=20; constTemp=40; constWind=60;
 										writeUART("{\"s\":\"emergency config option B\"}"); break;
-					case 'c': constHum=30; constTemp=30; constWind=70;
+					case 'c': constHum=30; constTemp=30; constWind=50;
 										writeUART("{\"s\":\"emergency config option C\"}"); break;
 					default: break;
 				}
@@ -217,30 +194,29 @@ int main(void) {
 
 
 void initISR() {
-	//timer1
-	T1CONbits.TMR1CS = 1;
-	T1CONbits.T1OSCEN = 0;
-	T1CONbits.T1SYNC = 0;
-	T1CONbits.T1CKPS1 = 1;
-	T1CONbits.T1CKPS0 = 0;
-	T1CONbits.TMR1ON = 1;
-	//timer0
-	TRISCbits.TRISC0=1;
-	TMR0 = 1;
-	OPTION_REGbits.T0CS = 0;
-	OPTION_REGbits.T0SE = 0;
-	OPTION_REGbits.PSA = 0;
-	OPTION_REGbits.PS2 = 1;
-	OPTION_REGbits.PS1 = 0;
-	OPTION_REGbits.PS0 = 1;
-	//T1CON = 0x31; //00110001
-		//TMR1ON          = 1
-		//T1CKPS1:T1CKPS0 = 11 (prescale 8)
-	//TMR1H = 0xCF;
-	//TMR1L = 0x2C;
-	//TMR1H:TMR1L = 65536 - overflow*Fosc/(TMR1prescale*4)
-	INTCONbits.GIE  = 1; //enable global interrupt
-	PIE1bits.TMR1IE = 1; //enable timer interrupt bit in PIE1 register
-	INTCONbits.PEIE = 1; //enable the peripheral interrupt
-	INTCONbits.INTE = 1; //enable RB0 as external interrupt pin
+	INTCONbits.GIE  = 1;   //enable global interrupt
+	INTCONbits.TMR0IE = 1; //enable timer0 interrupt
+	PIE1bits.TMR1IE = 1;   //enable timer interrupt bit in PIE1 register
+	INTCONbits.PEIE = 1;   //enable the peripheral interrupt
+	INTCONbits.INTE = 1;   //enable RB0 as external interrupt pin
+}
+
+void initTimer0() {
+	OPTION_REGbits.T0CS = 0; //TMR0 Clock Source Select bit : internal instruction cycle clock (CLKO)
+	OPTION_REGbits.T0CS = 0; //increment on low-to-high transition on T0CKI pin
+	OPTION_REGbits.PSA  = 0; //prescaler assigned to Timer0 module
+	OPTION_REGbits.PS2  = 1; //prescaler 1:256
+	OPTION_REGbits.PS1  = 1;
+	OPTION_REGbits.PS0  = 1;
+	INTCONbits.TMR0IF   = 0; //turn flag off
+}
+
+void initTimer1() {
+	TRISCbits.TRISC0 = 1;
+	T1CONbits.T1CKPS1 = 1; //prescaler 1:8
+	T1CONbits.T1CKPS0 = 1;
+	T1CONbits.T1OSCEN = 0; //oscillator is shut-off
+	T1CONbits.T1SYNC  = 0; //synchronize external clock input
+	T1CONbits.TMR1CS  = 1; //external clock from pin RC0/T1OSO/T1CKI (on the rising edge)
+	T1CONbits.TMR1ON  = 1; //enable Timer1
 }

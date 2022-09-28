@@ -1713,7 +1713,6 @@ PR2 = 4000000/(freq*4*4) - 1;
 
 TRISCbits.TRISC2 = 0;
 CCP1CON = 0x0F;
-CCPR1L = 255;
 T2CONbits.TMR2ON = 1;
 
 PIR1bits.TMR2IF = 0;
@@ -1725,8 +1724,8 @@ while(PIR1bits.TMR2IF == 0);
 
 void dutyPWM(unsigned char d) {
 
-# 27
-CCP1CON = 0x0F;
-CCPR1L = d>>2;
-T2CONbits.TMR2ON = 1;
+unsigned int temp;
+temp = (((unsigned long)(d))*((PR2<<2)|0x03))/255;
+CCPR1L = (0x03FC&temp)>>2;
+CCP1CON = ((0x0003&temp)<<4)|0x0F;
 }

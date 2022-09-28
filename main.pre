@@ -1857,25 +1857,27 @@ int nMSeconds = 0;
 int nSeconds = 0;
 char strUART[40], strADC[11];
 bool run = 1;
-unsigned int potP1, potP2, tempC, oldPotP1=-1;
+unsigned int windV=0, potP2, tempC, potP1, oldPotP1=-1, tempWindV;
+
 
 void interrupt isr() {
 
-if(PIR1bits.TMR1IF) {
-PIR1bits.TMR1IF = 0x00;
-TMR1H = 0xCF;
-TMR1L = 0x2C;
-if(nMSeconds==10) {
-if( oldPotP1!=-1 && (potP1-oldPotP1)>70 && potP1>oldPotP1 ) {
-sprintf(strUART, "{\"s\":\"emrg\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
+if(INTCONbits.TMR0IF && run) {
+INTCONbits.TMR0IF = 0;
+
+if(nMSeconds==14) {
+windV = (((TMR1H<<8) + TMR1L) - tempWindV);
+tempWindV = ((TMR1H<<8) + TMR1L);
+if(oldPotP1!=-1 && (potP1-oldPotP1)>60 && potP1>oldPotP1 ) {
+sprintf(strUART, "{\"s\":\"emrgW\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, windV, potP2);
 writeUART(strUART);
 }
 oldPotP1 = potP1;
 nSeconds++;
 nMSeconds = 0;
-if(nSeconds==51) {
 
-sprintf(strUART, "{\"s\":\"1min\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
+if(nSeconds==55) {
+sprintf(strUART, "{\"s\":\"1min\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, windV, potP2);
 writeUART(strUART);
 nSeconds = 0;
 }
@@ -1891,22 +1893,21 @@ PORTCbits.RC5 = 0;
 PORTCbits.RC1 = 1;
 PORTCbits.RC2 = 0;
 CCP1CON = 0x00;
-T1CON = 0x00;
-nSeconds = 0;
-nMSeconds = 0;
 rsLCD(0x08, 'c');
 }
 else {
 PORTCbits.RC5 = 1;
 CCP1CON = 0x0F;
-T1CON = 0x31;
 rsLCD(0x0F, 'c');
 }
 run = !run;
 }
 }
 
+
 void initISR();
+void initTimer0();
+void initTimer1();
 
 
 int main(void) {
@@ -1922,7 +1923,7 @@ initMatricialKey();
 
 int tempRB3 = 0;
 unsigned int duty;
-int constHum=20, constTemp=40, constWind=80;
+int constHum=20, constTemp=40, constWind=60;
 char pass[5] = "0862", code[5], strOld[11], strConfig1[1];
 bool boolPass = 0, boolEmerg = 0;
 PORTCbits.RC1 = 1;
@@ -1949,6 +1950,8 @@ initUART();
 initADC();
 initPWM(1000);
 initI2C();
+initTimer0();
+initTimer1();
 initISR();
 run = 1;
 PORTCbits.RC5 = 1;
@@ -1963,12 +1966,12 @@ tempRB3 = !PORTBbits.RB3;
 
 potP1 = ((unsigned int)readADC(0)*10)/102;
 duty = (potP1*255)/100;
-dutyPWM(potP1);
+dutyPWM(duty);
 potP2 = ((unsigned int)readADC(1)*10)/102;
 tempC = ((unsigned int)readADC(2)*100)/202;
 
 
-sprintf(strADC, "%d/%d/%d", tempC, potP1, potP2);
+sprintf(strADC, "%d/%d/%d", tempC, windV, potP2);
 if(strcmp(strADC, strOld)){
 if(strlen(strOld)!=strlen(strADC)){
 rsLCD(0x01, 'c');
@@ -1979,15 +1982,14 @@ strcpy(strOld, strADC);
 }
 
 
-if(potP2<constHum && potP1>constWind && tempC>constTemp) {
+if(potP2<constHum && windV>constWind && tempC>constTemp) {
 PORTCbits.RC1 = 0;
 PORTD = 0x80;
 if(!boolEmerg) {
-
-sprintf(strUART, "{\"s\":\"emrg\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, potP1, potP2);
+sprintf(strUART, "{\"s\":\"emrg\", \"t\":%d, \"w\":%d, \"h\":%d}", tempC, windV, potP2);
 writeUART(strUART);
 writeEEPROM(1,tempC);
-writeEEPROM(2,potP1);
+writeEEPROM(2,windV);
 writeEEPROM(3,potP2);
 }
 boolEmerg = 1;
@@ -2007,11 +2009,11 @@ sprintf(strUART, "{\"s\":\"hist\", \"t\":%d, \"w\":%d, \"h\":%d}", readEEPROM(1)
 writeUART(strUART);
 } else writeUART("{\"s\":\"no emergencies\"}");
 break;
-case 'a': constHum=10; constTemp=50; constWind=90;
+case 'a': constHum=10; constTemp=50; constWind=70;
 writeUART("{\"s\":\"emergency config option A\"}"); break;
-case 'b': constHum=20; constTemp=40; constWind=80;
+case 'b': constHum=20; constTemp=40; constWind=60;
 writeUART("{\"s\":\"emergency config option B\"}"); break;
-case 'c': constHum=30; constTemp=30; constWind=70;
+case 'c': constHum=30; constTemp=30; constWind=50;
 writeUART("{\"s\":\"emergency config option C\"}"); break;
 default: break;
 }
@@ -2023,14 +2025,29 @@ delay_ms(20);
 
 
 void initISR() {
-T1CON = 0x31;
-
-
-TMR1H = 0xCF;
-TMR1L = 0x2C;
-
 INTCONbits.GIE = 1;
+INTCONbits.TMR0IE = 1;
 PIE1bits.TMR1IE = 1;
 INTCONbits.PEIE = 1;
 INTCONbits.INTE = 1;
+}
+
+void initTimer0() {
+OPTION_REGbits.T0CS = 0;
+OPTION_REGbits.T0CS = 0;
+OPTION_REGbits.PSA = 0;
+OPTION_REGbits.PS2 = 1;
+OPTION_REGbits.PS1 = 1;
+OPTION_REGbits.PS0 = 1;
+INTCONbits.TMR0IF = 0;
+}
+
+void initTimer1() {
+TRISCbits.TRISC0 = 1;
+T1CONbits.T1CKPS1 = 1;
+T1CONbits.T1CKPS0 = 1;
+T1CONbits.T1OSCEN = 0;
+T1CONbits.T1SYNC = 0;
+T1CONbits.TMR1CS = 1;
+T1CONbits.TMR1ON = 1;
 }
