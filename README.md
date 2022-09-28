@@ -11,7 +11,7 @@
 **Technologies Used:** C, PIC16
 
 **Brief Description:** Acquisition, analysis, monitoring and registry solution
-data for a weather station.
+data for a weather station
 
 **System Architecture:**
 
