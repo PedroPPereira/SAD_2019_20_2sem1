@@ -32,6 +32,41 @@ data for a weather station
 
 ---
 
-### PICSimLab Simulator
+---
+
+### PICSimLab Demo
+
+<details>
+ <summary>Initial State</summary>
+
+![InitialState](https://user-images.githubusercontent.com/46992334/193118577-d101125b-f260-44ed-8ec9-07874c74b3ab.png)
+</details>
+
+<details>
+ <summary>Password Insertion</summary>
+
+![PassInsertion](https://user-images.githubusercontent.com/46992334/193118623-44b8778c-f7e3-4077-9ee5-6d523dc0f2b6.png)
+</details>
+
+<details>
+ <summary>Normal Situation</summary>
 
 ![PICSimLab](https://user-images.githubusercontent.com/46992334/192907042-49589ef9-de6c-4de3-8385-192dbb938891.png)
+</details>
+
+<details>
+ <summary>Stop System</summary>
+
+![StopSystem](https://user-images.githubusercontent.com/46992334/193118641-50eca19e-1d4e-444a-9f49-9bc91a79b12e.png)
+</details>
+
+<details>
+ <summary>Turn Off Heat Resistance</summary>
+
+![TurnOffHeatResistance](https://user-images.githubusercontent.com/46992334/193118657-258a18aa-a3cc-48b8-bd6c-49560973cb1d.png)
+</details>
+
+
+
+
+
